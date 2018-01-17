@@ -6,10 +6,13 @@
 \contentsline {section}{\numberline {1.2}Area of research}{3}
 \contentsline {section}{\numberline {1.3}Personal motivation}{3}
 \contentsline {section}{\numberline {1.4}Research method in brief}{3}
-\contentsline {section}{\numberline {1.5}Structure of the report}{3}
-\contentsline {chapter}{\numberline {2}Related literature and theoretical focus}{4}
-\contentsline {chapter}{\numberline {3}Presentation of domain where technology is used}{5}
-\contentsline {chapter}{\numberline {4}Method}{6}
-\contentsline {chapter}{\numberline {5}Results}{7}
-\contentsline {chapter}{\numberline {6}Discussion}{8}
-\contentsline {chapter}{\numberline {7}Conclusion}{9}
+\contentsline {section}{\numberline {1.5}Most relevant previous findings}{4}
+\contentsline {section}{\numberline {1.6}Why is this worthwhile}{4}
+\contentsline {section}{\numberline {1.7}How far will this advance the field?}{4}
+\contentsline {section}{\numberline {1.8}Structure of the report}{4}
+\contentsline {chapter}{\numberline {2}Related literature and theoretical focus}{5}
+\contentsline {chapter}{\numberline {3}Presentation of domain where technology is used}{6}
+\contentsline {chapter}{\numberline {4}Method}{7}
+\contentsline {chapter}{\numberline {5}Results}{8}
+\contentsline {chapter}{\numberline {6}Discussion}{9}
+\contentsline {chapter}{\numberline {7}Conclusion}{10}
