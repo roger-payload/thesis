@@ -1,6 +1,13 @@
 \documentclass[a4paper,english]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{babel,duomasterforside}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true, %set true if you want colored links
+	linktocpage=all,     %set to all if you want both sections and subsections linked
+	linkcolor=blue,  %choose some color if you want links to stand out
+}
 
 \title{Masteroppgaven min}
 \subtitle{Et resultat av to års arbeid}
@@ -12,7 +19,7 @@
 	short]
 	\section{Summary}
 	\section{Foreword}
-	I got nothing.
+	I got nothing. Put this on a different page though, maybe with a dramatic font or something.
 	\tableofcontents
 	\chapter{Introduction/Background ?}
 		\section{Target group}
@@ -31,14 +38,25 @@
 		\section{Structure of the report}
 		Add comments about every chapter here.
 	\chapter{Related literature and theoretical focus}
+		\section{Gunther}
+		Gunther\cite{gunther} has done something very very similar. Need to speak to my supervisors to sort this out.
 	\chapter{Presentation of domain where technology is used}
+		BMC Software, Inc states the following about Apache Hadoop:\\
+		\emph{Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications.
+		Retailers use it to help analyze structured and unstructured data to better understand and serve their customers.
+		In the asset-intensive energy industry Hadoop-powered analytics are used for predictive maintenance, with input from Internet of Things (IoT) devices feeding data into big data programs.
+		Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings. Examples of Hadoop
+		There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats.
+		Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities. Hadoop is a de facto standard in big data.}\cite{bmc}
 	\chapter{Method}
 	\chapter{Results}
 	\chapter{Discussion}
 	\chapter{Conclusion}
 	\begin{thebibliography}{1}
 		
-		\bibitem{bigdata3}
-		Bollier, D., \& Firestone, C. M. (2010). \emph{The promise and peril of big data (p. 1).} Washington, DC: Aspen Institute, Communications and Society Program.
+		\bibitem{gunther}
+		Liao, G., Datta, K., \& Willke, T. L. (2013, August). \emph{Gunther: Search-based auto-tuning of mapreduce.} In European Conference on Parallel Processing (pp. 406-419). Springer Berlin Heidelberg.
+		\bibitem{bmc}
+		BMC Software, Inc (2018 January) \emph{http://www.bmc.com/guides/hadoop-examples.html}
 	\end{thebibliography}
 \end{document}
