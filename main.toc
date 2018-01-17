@@ -1,11 +1,12 @@
 \select@language {english}
 \contentsline {section}{\numberline {0.1}Summary}{1}
 \contentsline {section}{\numberline {0.2}Foreword}{1}
-\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {chapter}{\numberline {1}Introduction/Background ?}{3}
 \contentsline {section}{\numberline {1.1}Target group}{3}
-\contentsline {section}{\numberline {1.2}Personal motivation}{3}
-\contentsline {section}{\numberline {1.3}Research method in brief}{3}
-\contentsline {section}{\numberline {1.4}Structure of the report}{3}
+\contentsline {section}{\numberline {1.2}Area of research}{3}
+\contentsline {section}{\numberline {1.3}Personal motivation}{3}
+\contentsline {section}{\numberline {1.4}Research method in brief}{3}
+\contentsline {section}{\numberline {1.5}Structure of the report}{3}
 \contentsline {chapter}{\numberline {2}Related literature and theoretical focus}{4}
 \contentsline {chapter}{\numberline {3}Presentation of domain where technology is used}{5}
 \contentsline {chapter}{\numberline {4}Method}{6}
