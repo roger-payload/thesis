@@ -32,7 +32,8 @@
 		Throughout this thesis we will develop an entire suite of tools centered around a genetic algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. Metrics will NEED MORE RESEARCH TO DECLARE
 		\section{Most relevant previous findings}
 		There arent really any research done on the impact of tuning Apache Drill.
-		
+		Other types of performance tuning: Hadoop, Web, MySQL etc.
+		Load profiling - type of queries with load profiling.
 		\section{Why is this worthwhile}
 		During my previous research the motivation for all the papers surveyed was mostly the same. \textbf{First and foremost, it was well acknowledged that Hadoop clusters show very suboptimal performance with out-of-the-box settings. Secondly, it was shown that finding optimal parameters for a Hadoop cluster is very time consuming and hard. As organizations often run with a lack of resources, time and domain-specific engineers, this is a field ripe for improvement.}
 		\section{How far will this advance the field?}
@@ -81,10 +82,13 @@
 					\end{itemize}
 					\textit{The ResourceManager and the NodeManager form the data-computation framework. The per-application ApplicationMaster is, in effect, a framework specific library and is tasked with negotiating resources from the ResourceManager and working with the NodeManager(s) to execute and monitor the tasks.}\cite{yarn}
 				\subsubsection{MapReduce}
-					MapReduce is the heart of a Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is  
+					MapReduce is the heart of a Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is a model for distributed processing of big data, to process and consolidate. It is defined by two stages - the mapping phase, and the reduce phase. Both of these phases require resources from the node it is run on, defined by a set amount of map slots and reduce slots. The amount of slots on a node for each task is parameterized and can be set by an administrator / or typically algorithmically. The map phase consists of parallel map tasks, that map a key to a value. All of these map tasks then consolidate into the reduce phase, where they are combined so that one key exists for all accumulated values. So for instance if we're counting cards in several decks across several nodes, they would each map something like "(Queen of Hearts, 1)". In the end the reduce task consolidates all these single queens, so it ends up looking like "(Queen of Hearts", 27)". This is a far more effective approach than for instance looping through all the decks and incrementing a key by one for each matching key we find. Especially when the data that typically gets handled by a Hadoop cluster is diverse and hard to predict.
 						
 			\subsection{Zookeeper}
+				Zookeeper is not a part of the Hadoop core utilities, but is is often to be found in Hadoop clusters. It is a distributed storage platform for configuration information, synchronization and naming. While YARN handles the distribution of tasks between the nodes in the cluster, Zookeper takes care of failover, race conditions and sequential consistency. This tool looks more like orchestration frameworks such as Puppet or Chef, in that it organizes the amount of YARN nodes and distributes configurations, availability and atomicity.
 			\subsection{Apache Drill}
+				Apache drill is the newest technology to be introduced in this chapter. All the previously mentioned frameworks are tried and tested - proven over time. Apache drill rests on top of all these technologies, and provides a way to query almost any non-relational database. This means that we can set up a cluster on a data lake with a very diverse data type, and still perform standard ANSI SQL queries on it. Even in formats like JSON, a simple SQL query can provide all the insights one might need.\\
+				Apache Drill is inspired by Google Dremel, which again is the driving force behind their advanced Big Data Analytics tool - Google BigQuery.
 	\chapter{Results}
 	\chapter{Discussion}
 	\chapter{Conclusion}
