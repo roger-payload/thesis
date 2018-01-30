@@ -17,35 +17,62 @@
 	\duoforside[dept={Institutt for informatikk},
 	program={Informatikk: språkteknologi},
 	short]
+	
 	\section{Summary}
+	
 	\section{Foreword}
 	I got nothing. Put this on a different page though, maybe with a dramatic font or something.
 	\tableofcontents
+	
+	
 	\chapter{Introduction/Background ?}
+		
 		\section{Target group}
 		This thesis covers the deep technical aspects of big data analysis and genetic algorithms. All techniques used will be explained in detail, but it is advised to have a certain degree of technical insight before reading.
+		
 		\section{Area of research}
 		Hadoop and MapReduce are already well established technologies employed in countless applications around the world, Apache Drill however is a fairly new concept with little to no research from the community. We propose a new method of implementing Hadoop clusters with Apache Drill, automatically optimizing the performance tuning in a lightweight and low effort way.
+		
 		\section{Personal motivation}
 		The subject for this master thesis is a natural continuation of our previous work \emph{Hadoop MapReduce Scheduling Paradigms}, published in 2017, in the 2nd IEEE International Conference on Cloud Computing and Big Data Analysis (ISSSBDA 2017). Back then the topic was haphazardly picked from a list of eligible ones, but the more we read into it - the more we understood the incredible use cases for Hadoop within the massive industries that are driving forces for our technological advancements. As is common in IT, levels of abstraction get added on top of proven technologies both to make implementation better, and often to increase performance. Since then Apache Drill has seen plenty of stable builds and proven itself to be potentially industry-changing in the way we handle our data - entering a schema-on-the-fly paradigm.
+		
 		\section{Research method in brief}
 		Throughout this thesis we will develop an entire suite of tools centered around a genetic algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. Metrics will NEED MORE RESEARCH TO DECLARE
+		
 		\section{Most relevant previous findings}
-		There arent really any research done on the impact of tuning Apache Drill.
+		There is little to no research done on the impact of tuning Apache Drill. However, tuning of parameterized frameworks have been done a lot in the past on industry standards like SQL, MySQL, traditional Hadoop clusters (mapreduce scheduling algorithms), and Web applications. Since Apache Drill has its own SQL execution engine,  the tuning of SQL systems in previous works has value for how we will benchmark our Drill perfomance.
+		
+		\section{Starfish}
+		Herodotos et al made on of the most cited papers in the Hadoop research field, when they proposed Starfish \cite{starfish}. Starfish is a self-tuning system for Hadoop clusters, citing the lackluster performance of default cluster parameters to be the motivation. They designed a modular system where the main parts include:
+		\begin{itemize}
+			\item A profiler that analyzes jobs and determines cost estimation and the data flow.
+			\item A novel approach to predictive tuning they named the "what-if-engine". It's job is to predict how different parameter configuration tweaks will change the performance of the system.
+			\item A cost-based optimizer, that performs the pure tuning aspects, based on estimations from the what-if-engine.
+		\end{itemize}
+		
+		
+		
 		Other types of performance tuning: Hadoop, Web, MySQL etc.
 		Load profiling - type of queries with load profiling.
+		
 		\section{Why is this worthwhile}
 		During my previous research the motivation for all the papers surveyed was mostly the same. \textbf{First and foremost, it was well acknowledged that Hadoop clusters show very suboptimal performance with out-of-the-box settings. Secondly, it was shown that finding optimal parameters for a Hadoop cluster is very time consuming and hard. As organizations often run with a lack of resources, time and domain-specific engineers, this is a field ripe for improvement.}
+		
 		\section{How far will this advance the field?}
 		Hopefully this will provide a fully functional, open source light weight framework allowing companies to easily deploy Hadoop Clusters without worrying about tailoring the solution or suboptimal performance. If the task proves to be too big, this will lay the foundation for further work to make a de facto solution. Or something.
+		
 		\section{Structure of the report}
 		Add comments about every chapter here.
+		
+		
 	\chapter{Related literature and theoretical focus}
 		\section{Performance tuning MapReduce as a Research Field}
 		There is a ton of research to be read about MapReduce optimization, trying to tune map- and reduce-slots, and improve the inherent job tracker. Looking at a few essential papers within this field shows a general consensus that tuning default performance parameters in a variety of environments will lead to 10-30\% performance increase, which naturally results in considerable cost savings. For instance Min Li et. al. could report that "\textit{Our results using a real implemen-
 		tation on a representative 19-node cluster show that dynamic performance tuning can effectively improve MapReduce application performance by up to 30\% compared to the default configuration used in YARN.}"\cite{mronline} Furthermore, manually tuning these clusters are too demanding for most businesses to even consider, requiring both deep technical and domain-specific insight. These findings further maintain our vision of bringing auto-tuning to the Apache Drill framework, which we believe to be the next natural step forwards, even paradigm-defining, for big data handling.
+		
 		\section{Gunther}
 		Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal perfomance of the cluster.\cite{gunther} This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
+		
 		\section{mrOnline}
 		"MapReduce job parameter configuration significantly impacts
 		application performance, yet extant implementations place the bur-
@@ -54,6 +81,8 @@
 		have the system-level expertise and information needed to select
 		the best configuration. Consequently, the system is utilized inef-
 		ficiently which leads to degraded application performance."\cite{mronline}
+		
+		
 	\chapter{Presentation of domain where technology is used}
 		BMC Software, Inc states the following about Apache Hadoop:\\
 		\emph{Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications.
@@ -62,13 +91,20 @@
 		Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings. Examples of Hadoop
 		There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats.
 		Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities. Hadoop is a de facto standard in big data.}\cite{bmc}
+	
+	
 	\chapter{Method}
+		
 		\section{Technology}
+			
 			\subsection{Hadoop features}
+				
 				\subsubsection{Hadoop common}
 					Hadoop common consists of a few select core libraries, that drives the services and basic processes of Hadoop, such as abstraction of the underlying operating system and file system. It also contains documentation and Java implementation specifications. 
+				
 				\subsubsection{HDFS}
 					HDFS (Hadoop Distributed File System) is a highly fault tolerant, distributed file system designed to run efficiently, even on low-cost hardware. HDFS is tailor made to express large files and huge amounts of data, with high throughput access to application data and high scalability across an arbitrary amount of nodes.
+				
 				\subsubsection{YARN}
 					YARN (Yet Another Resource Negotiator) is actually a set of daemons that run in the cluster to handle how the jobs get distributed. 
 					\begin{itemize}
@@ -81,17 +117,27 @@
 							\end{itemize}
 					\end{itemize}
 					\textit{The ResourceManager and the NodeManager form the data-computation framework. The per-application ApplicationMaster is, in effect, a framework specific library and is tasked with negotiating resources from the ResourceManager and working with the NodeManager(s) to execute and monitor the tasks.}\cite{yarn}
+				
 				\subsubsection{MapReduce}
-					MapReduce is the heart of a Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is a model for distributed processing of big data, to process and consolidate. It is defined by two stages - the mapping phase, and the reduce phase. Both of these phases require resources from the node it is run on, defined by a set amount of map slots and reduce slots. The amount of slots on a node for each task is parameterized and can be set by an administrator / or typically algorithmically. The map phase consists of parallel map tasks, that map a key to a value. All of these map tasks then consolidate into the reduce phase, where they are combined so that one key exists for all accumulated values. So for instance if we're counting cards in several decks across several nodes, they would each map something like "(Queen of Hearts, 1)". In the end the reduce task consolidates all these single queens, so it ends up looking like "(Queen of Hearts", 27)". This is a far more effective approach than for instance looping through all the decks and incrementing a key by one for each matching key we find. Especially when the data that typically gets handled by a Hadoop cluster is diverse and hard to predict.
+					MapReduce is the heart of a traditional Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is a model for distributed processing of big data, to process and consolidate. It is defined by two stages - the mapping phase, and the reduce phase. Both of these phases require resources from the node it is run on, defined by a set amount of map slots and reduce slots. The amount of slots on a node for each task is parameterized and can be set by an administrator / or typically algorithmically. The map phase consists of parallel map tasks, that map a key to a value. All of these map tasks then consolidate into the reduce phase, where they are combined so that one key exists for all accumulated values. So for instance if we're counting cards in several decks across several nodes, they would each map something like "(Queen of Hearts, 1)". In the end the reduce task consolidates all these single queens, so it ends up looking like "(Queen of Hearts", 27)". This is a far more effective approach than for instance looping through all the decks and incrementing a key by one for each matching key we find. Especially when the data that typically gets handled by a Hadoop cluster is diverse and hard to predict.
 						
 			\subsection{Zookeeper}
 				Zookeeper is not a part of the Hadoop core utilities, but is is often to be found in Hadoop clusters. It is a distributed storage platform for configuration information, synchronization and naming. While YARN handles the distribution of tasks between the nodes in the cluster, Zookeper takes care of failover, race conditions and sequential consistency. This tool looks more like orchestration frameworks such as Puppet or Chef, in that it organizes the amount of YARN nodes and distributes configurations, availability and atomicity.
+			
 			\subsection{Apache Drill}
 				Apache drill is the newest technology to be introduced in this chapter. All the previously mentioned frameworks are tried and tested - proven over time. Apache drill rests on top of all these technologies, and provides a way to query almost any non-relational database. This means that we can set up a cluster on a data lake with a very diverse data type, and still perform standard ANSI SQL queries on it. Even in formats like JSON, a simple SQL query can provide all the insights one might need.\\
 				Apache Drill is inspired by Google Dremel, which again is the driving force behind their advanced Big Data Analytics tool - Google BigQuery.
+	
+	
 	\chapter{Results}
+	
+	
 	\chapter{Discussion}
+	
+	
 	\chapter{Conclusion}
+	
+	
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
 		Li, M., Zeng, L., Meng, S., Tan, J., Zhang, L., Butt, A. R., \& Fuller, N. (2014, June). \emph{Mronline: Mapreduce online performance tuning. In Proceedings of the 23rd international symposium on High-performance parallel and distributed computing (pp. 165-176).} ACM.
@@ -101,5 +147,7 @@
 		BMC Software, Inc (2018 January) \emph{http://www.bmc.com/guides/hadoop-examples.html}
 		\bibitem{yarn}
 		Apache Software Foundation (January 2018)\emph{https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html}
+		\bibitem{starfish}
+		Herodotou, H., Lim, H., Luo, G., Borisov, N., Dong, L., Cetin, F. B., \& Babu, S. (2011, January). \emph{Starfish: A Self-tuning System for Big Data Analytics.} In Cidr (Vol. 11, No. 2011, pp. 261-272).
 	\end{thebibliography}
 \end{document}
