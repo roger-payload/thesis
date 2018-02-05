@@ -1,0 +1,17 @@
+Hadoop Configuration Using Evolutionary Computing
+
+Apache Hadoop provides more than hundreds of default parameter configuration
+settings common for all type of clusters and applications. Apache Hadoop
+Yarn provides functionality that users can customize parameter configuration
+settings as per their needs through xml file setting as well as in writing program
+coding for performance tuning of resources likes CPU, I/O, Memory, and Network.
+Customizing parameter configuration is a black art which requires good
+knowledge of each parameter and what is the impact when we change its default
+values because all parameters are interconnected and affect each others performance.
+Proper parameter configuration can improve and tune performance as
+well as misparameter configuration setting can decrease performance of the system.
+In this project, we will investigate using Evolutionary Computing (genetic
+algorithms) in order to evolve Hadoop configuration for the aim of maximizing
+performance.
+
+Contact persons: Anis Yazidi and Stefano Nichele

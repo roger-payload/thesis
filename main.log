@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  2 FEB 2018 12:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  5 FEB 2018 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -624,7 +624,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 19.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<DUO_UiO_segl.png, id=108, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=132, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
 Package pdftex.def Info: DUO_UiO_segl.png  used on input line 19. on input line
@@ -649,7 +649,7 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [1]
 Package hyperref Info: Option `pageanchor' set `true' on input line 19.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
  [1] (./main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
@@ -663,21 +663,27 @@ Chapter 1.
 
 ] [4] [5]
 Chapter 2.
+
+Overfull \hbox (3.58401pt too wide) in paragraph at lines 75--76
+\OT1/cmr/m/n/10 First, Google cre-ated the Google File Sys-tem in 2003[[]], pre
+-dict-ing the paradigm
+ []
+
 [6
 
-] [7]
-Chapter 3.
-[8
-
 ]
+Chapter 3.
+[7
+
+] [8]
 Chapter 4.
 [9
 
-] [10] [11]
-Chapter 5.
-[12
-
 ]
+Chapter 5.
+[10
+
+] [11] [12]
 Chapter 6.
 [13
 
@@ -686,44 +692,64 @@ Chapter 7.
 [14
 
 ]
-Overfull \hbox (66.54912pt too wide) in paragraph at lines 157--158
+Chapter 8.
+[15
+
+]
+Overfull \hbox (66.54912pt too wide) in paragraph at lines 172--173
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (Jan-uary 2018)\OT1/cmr/m/it/10
  https://hadoop.apache.org/docs/stable/hadoop-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
-[15
+
+Overfull \hbox (17.82553pt too wide) in paragraph at lines 178--179
+[]\OT1/cmr/m/n/10 Michael Klee-ham-mer (2018, Febru-ary) \OT1/cmr/m/it/10 https
+://github.com/mkleehammer/pyodbc 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 190.
+[16
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 572C6F0DF5E485445129EB53589B6943;1623.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 190.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: EEE297C362459DC5A5E930C8B9A47513;2010
+(rerunfilecheck)             After:  4A124D5DFF16F14BEACDBCFB12CC1083;1952.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 190.
  ) 
 Here is how much of TeX's memory you used:
- 6348 strings out of 494931
- 91705 string characters out of 6180851
- 176882 words of memory out of 5000000
- 9512 multiletter control sequences out of 15000+600000
+ 6376 strings out of 494931
+ 92067 string characters out of 6180851
+ 178102 words of memory out of 5000000
+ 9525 multiletter control sequences out of 15000+600000
  25081 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,5n,28p,1270b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/roger/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600
-pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
-elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (19 pages, 181812 bytes).
+pdfTeX warning (dest): name{section.2.2} has been referenced but does not exi
+st, replaced by a fixed one
+
+ </home/roger/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk
+>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
+vetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (20 pages, 187621 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 
