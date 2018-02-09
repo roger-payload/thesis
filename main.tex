@@ -55,8 +55,6 @@
 			\item A cost-based optimizer, that performs the pure tuning aspects, based on estimations from the what-if-engine.
 		\end{itemize}
 		
-		
-		
 		Other types of performance tuning: Hadoop, Web, MySQL etc.
 		Load profiling - type of queries with load profiling.
 		
@@ -70,12 +68,25 @@
 		Add comments about every chapter here.
 		
 	\chapter{Background}
+	\emph{"Apache Drill is one of the fastest growing open source projects, with the community making rapid progress with monthly releases. The key difference is Drill’s agility and flexibility. Along with meeting the table stakes for SQL-on-Hadoop, which is to achieve low latency performance at scale, Drill allows users to analyze the data without any ETL or up-front schema definitions. The data can be in any file format such as text, JSON, or Parquet. Data can have simple types such as strings, integers, dates, or more complex multi-structured data, such as nested maps and arrays. Data can exist in any file system, local or distributed, such as HDFS or S3. Drill, has a “no schema” approach, which enables you to get value from your data in just a few minutes."}\cite{drill}
 		\section{History}
 			\subsection{Creation and adoption of Hadoop}
 			First, Google created the Google File System in 2003\cite{gfs}, predicting the paradigm of distributed storage. Then, the MapReduce concept for sorting / counting data was added in 2004\cite{mapredoriginal}. Hadoop was introduced as a platform in 2006\cite{hadoopguide}, and together with MapReduce, it made an impact in the industry, attracting talent and big companies eager to contribute and deploy. Yahoo was a big early adopter, being one of the first companies deploying big clusters as early as 2006\cite{hadoopguide}. Then in 2008, Hadoop got the world record for fastest system to sort a terabyte of data\cite{hadoopguide}. After this, development accelerated with more contributers and interest was at an all time high. Since that point in time Apache Hadoop has become the most widely used platform for Big Data handling, empowering advanced analytics and business intelligence across several industries. The Hadoop stack is now highly scalable, ensures high availability of data, and utilizes parallel processing to deliver high performance data readings.
+			
 			\subsection{Google branching out with Dremel}
 			In 2010 Google did further research on distributed data processing and published their paper on Dremel\cite{dremel}. Dremel is the framework that empowers Google's current platform Google BigQuery, delivered as Infrastructure as a Service (IaaS). Among customers of BigQuery is well recognized brands like Spotiy, Coca Cola, Philips, HTC and Niantic\cite{dremelcustomers}. The success of Google BigQuery (by extension of Dremel), this inspired Apache to create Drill, the framework being examined in this thesis.
 			
+			\section{Genetic algorithms}
+			Genetic algorithms are higher level procedures for generating high-quality configurations / solutions to problems with a wide range of parameters, typically where exhaustive searches are infeasible. The procedure starts out with a population of \textit{n} candidates, each representing a set of pseudo-randomly generated values for the respective parameters (properties) that will yield a result for the given problem. Once each candidate has attempted to solve the problem by applying their properties to it, a fitness score is given and compared amongst them. The fitness score represents how good their solution to the problem was, and lets us pick out the best candidates among our population. After the optimal candidates of a generation is chosen, a new generation is generated, inheriting the properties of the previous best candidates. This process repeats until a stop criterion is reached and the properties of the candidate is considered an optimal solution. The number of generations to be generated, and the number of parent candidates from which the next generation is generated from are tweakable parameters. 
+			\subsection{NASA applying genetic algorithms}A very famous application of genetic algorithms is the high-performance antenna NASA made, that actually flew in their Space Technology 5 (ST5) mission\cite{nasa}. In NASAs case, they needed to make a highly receptive antenna with very small physical dimensions. It could have any number of branches, each going in any arbitrary direction. Because of these seemingly infinite possible configurations for the antenna, applying genetic algorithms to gradually evolve a design by testing randomly generated populations and combining the best traits from each candidate, proved to be a great way of solving this. \emph{"(...) the current practice of designing antennas by hand is severely limited because it is both time and labor intensive and requires a significant amount of domain knowledge, evolutionary algorithms can be used to search the design space and automatically find novel antenna designs that are more effective than would otherwise be developed."}\cite{nasa}
+				\subsection{Limitations of genetic algorithms}
+					\subsubsection{Fitness function}
+					At first glance it sounds like applying genetic algorithm techniques to any problem would yield an optimal solution, with relative ease. The problem though, is the fitness function for determining the candidate solution. As the complexity of the problem scales in size the search space for the fitness function will end up being too big to complete in a reasonable time. For instance if one single candidate evaluation took days, performed for the whole population, across generations, it could end up taking months completing just one single optimization. In those cases machine learning approaches or simply manual labor through technical and domain specific knowledge would prove to be more efficient.
+					\subsubsection{Reaching the optimal solution}
+					The only way to evaluate a solution is to compare it against other solutions within the population, all of which have are derived from random mutations. Therefore it is impossible to know whether a truly optimal solution is reached, or if one more generation of mutations will prove to give a better result. In practice a stop criterion for the candidate generation is therefore needed, where a solution is considered to be optimal.
+			
+				\subsection{Tweak this part, or delete it}
+				The properties are not truly random, as it would be inefficient to have too much variation. For instance, if a parameter has a rule of thumb value of 50, it would be expected that the optimal solution is within a range of this value, and not in the millions, or negative millions. Thus setting 50 as a central value for this property, and generating this property for the candidates as a normally distributed variation (bell curve) with 50 at its' peak, will avoid spending hundreds of generations tweaking this value.
 		
 	\chapter{Related literature and theoretical focus}
 		\section{Performance tuning MapReduce as a Research Field}
@@ -91,8 +102,7 @@
 		den of tuning the parameters on application programmers. This is
 		not ideal, especially because the application developers may not
 		have the system-level expertise and information needed to select
-		the best configuration. Consequently, the system is utilized inef-
-		ficiently which leads to degraded application performance."\cite{mronline}
+		the best configuration. Consequently, the system is utilized inefficiently which leads to degraded application performance."\cite{mronline}
 		
 		
 	\chapter{Presentation of domain where technology is used}
@@ -103,6 +113,9 @@
 		Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings. Examples of Hadoop
 		There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats.
 		Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities. Hadoop is a de facto standard in big data.}\cite{bmc}
+		
+		\section{Why Drill?}
+		It is safe to say that information technology as a subject is only getting more popular by demand. According to projections made by renown recruitment company Modis, tech employment will see a 12\% growth by 2024, vs 6,5\% in all other industries\cite{modis}. In addition to this DATA STORAGE INCREASE HERE
 	
 	
 	\chapter{Method}
@@ -169,7 +182,7 @@
 		\bibitem{bmc}
 		BMC Software, Inc (2018, January) \emph{http://www.bmc.com/guides/hadoop-examples.html}
 		\bibitem{yarn}
-		Apache Software Foundation (January 2018)\emph{https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html}
+		Apache Software Foundation (January 2018) \emph{https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html}
 		\bibitem{starfish}
 		Herodotou, H., Lim, H., Luo, G., Borisov, N., Dong, L., Cetin, F. B., \& Babu, S. (2011, January). \emph{Starfish: A Self-tuning System for Big Data Analytics.} In Cidr (Vol. 11, No. 2011, pp. 261-272).
 		\bibitem{unixodbc}
@@ -186,5 +199,13 @@
 		Dean, J., \& Ghemawat, S. (2008). \emph{MapReduce: simplified data processing on large clusters.} Communications of the ACM, 51(1), 107-113.
 		\bibitem{dremelcustomers}
 		Google LLC (2018, February) \emph{https://cloud.google.com/customers/}
+		\bibitem{modis}
+		Modis (2018, February) \emph{http://www.modis.com/it-insights/infographics/top-it-jobs-of-2018/}
+		\bibitem{own}
+		Johannessen, R., Yazidi, A., \& Feng, B. (2017, April). \emph{Hadoop MapReduce scheduling paradigms. In Cloud Computing and Big Data Analysis} (ICCCBDA), 2017 IEEE 2nd International Conference on (pp. 175-179). IEEE.
+		\bibitem{nasa}
+		Hornby, G., Globus, A., Linden, D., \& Lohn, J. (2006). \emph{Automated antenna design with evolutionary algorithms.} In Space 2006 (p. 7242).
+		\bibitem{drill}
+		Apache Software Foundation (January 2018) \emph{https://drill.apache.org/docs/analyzing-the-yelp-academic-dataset/}
 	\end{thebibliography}
 \end{document}
