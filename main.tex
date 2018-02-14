@@ -19,13 +19,26 @@
 	program={Informatikk: språkteknologi},
 	short]
 	\section{Summary}
-			Apache has introduced a new building block that's best suited on top of the Hadoop Stack called Apache Drill. Drill enables the user to perform schema-free querying of distributed data, and ANSI SQL programming on top of NoSQL datatypes like JSON or XML. As it is with the core Hadoop stack, Drill is also highly customizable, with plenty of performance tuning parameters to ensure optimal efficiency. Tweaking these parameters however, requires deep domain knowledge and technical insight, and even then the optimal configuration may not be evident. Businesses will want to use Apache Drill in a Hadoop cluster, without the hassle of configuring it, for the most cost-effective implementation. This can be done by solving the following problems:
-	\begin{itemize}
-		\item How to apply genetic algorithms in the most cost-effective way to automatically tune a distributed Apache Drill configuration, regardless of cluster environment.
-		\item How do we benchmark the cluster against default Drill settings, as well as known SQL performance tests, to ensure that the algorithm is adding value to the cluster performance, measured as execution time.
-	\end{itemize}
-	\subsubsection{Research question}
-	How can we make a self optimizing distributed Apache Drill cluster, for high performance data readings across several file formats and database architectures?
+		\subsection{Research question}
+		How can we make a self optimizing distributed Apache Drill cluster, for high performance data readings across several file formats and database architectures?
+		\subsection{Overview}
+		Apache has introduced a new building block that's best suited on top of the Hadoop Stack called Apache Drill. Drill enables the user to perform schema-free querying of distributed data, and ANSI SQL programming on top of NoSQL datatypes like JSON or XML. As it is with the core Hadoop stack, Drill is also highly customizable, with plenty of performance tuning parameters to ensure optimal efficiency. Tweaking these parameters however, requires deep domain knowledge and technical insight, and even then the optimal configuration may not be evident. Businesses will want to use Apache Drill in a Hadoop cluster, without the hassle of configuring it, for the most cost-effective implementation. This can be done by solving the following problems:
+		\begin{itemize}
+			\item How to apply genetic algorithms in the most cost-effective way to automatically tune a distributed Apache Drill configuration, regardless of cluster environment.
+			\item How do we benchmark the cluster against default Drill settings, as well as known SQL performance tests, to ensure that the algorithm is adding value to the cluster performance, measured as execution time.
+		\end{itemize}
+		\subsection{Details}
+			\subsubsection{Self optimizing}
+			The goal here is that no human intervention is needed to fine tune the Drill configuration. Once the framework / algorithm is executed on the Drill environment, it should only end execution when performance is proven to be optimized.
+			\subsubsection{Genetic Algorithms}
+			The methodology for self optimization in this thesis is genetic algorithms. A branch of evolutionary algorithms that rely on randomly distributed properties given to a population of candidates. The properties are hereditary and define the next generation of candidates, eventually resulting in a "proven optimal candidate", to solve a given problem.
+			\subsubsection{Distributed file systems / cluster environments}
+			Apache Drill can easily be run on any file system, as they are mounted when needed. As such a single node environment is entirely possible to set up, with the local file system mounted as a "Drill Bit". However this thesis focuses on current and future industry standards, and how to optimize Drill in a relevant a big data environment. This is more representative of its intended use, and gives the thesis more value as a research field advancement.
+			\subsubsection{ANSI SQL}
+			There are similar platforms to Apache Drill, like the popular Apache Spark. Spark also provides SQL querying on data, however this is only a subset of SQL. Only Drill has the full suit of SQL programming capabilities as defines by ANSI (American National Standards Institute), which gives more in depth querying.
+			\subsubsection{NoSQL}
+			Previously NoSQL databases where known as "Non-SQL" databases, but this has now changed to be "Not Only SQL" databases as they have begun supporting SQL-like querying. The main point about them is that they are non-relational, distributed, open-source and horizontally scalable.\cite{no_sql}
+	\pagebreak
 	\section{Foreword}
 	I got nothing. Put this on a different page though, maybe with a dramatic font or something.
 	
@@ -281,5 +294,7 @@
 		Huang, G., He, J., Chi, C. H., Zhou, W., \& Zhang, Y. (2015, June). \emph{A Data as a Product Model for Future Consumption of Big Stream Data in	Clouds.} In 2015 IEEE International Conference on Services Computing (SCC), (pp. 256-263). IEEE.
 		\bibitem{statista}
 		Statista, Inc (2018, February) \emph{https://www.statista.com/statistics/ + [266206/googles-annual-global-revenue/, 277229/facebooks-annual-revenue-and-net-income/]}
+		\bibitem{no_sql}
+		Github user Edlich, curated list (2018, February) \emph{http://nosql-database.org/}
 	\end{thebibliography}
 \end{document}

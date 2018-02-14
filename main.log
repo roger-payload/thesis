@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  14 FEB 2018 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  14 FEB 2018 12:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,7 +661,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 20.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<DUO_UiO_segl.png, id=172, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=184, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
 Package pdftex.def Info: DUO_UiO_segl.png  used on input line 20. on input line
@@ -686,148 +686,154 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [1]
 Package hyperref Info: Option `pageanchor' set `true' on input line 20.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
- [1] (./main.toc
-[2
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
+ [1] [2] [3]
+(./main.toc [4
 
 ])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3]
+ [5]
 Chapter 1.
-[4
+[6
 
 ]
 Chapter 2.
-[5
+[7
 
-] [6] [7]
-<drill_advantages.png, id=291, 737.75626pt x 409.53pt>
+] [8] [9]
+<drill_advantages.png, id=322, 737.75626pt x 409.53pt>
 File: drill_advantages.png Graphic file (type png)
 <use drill_advantages.png>
-Package pdftex.def Info: drill_advantages.png  used on input line 105. on input
- line 105.
-Package pdftex.def Info: Requested size: 345.0pt x 191.51054pt on input line 10
-5.
+Package pdftex.def Info: drill_advantages.png  used on input line 118. on input
+ line 118.
+Package pdftex.def Info: Requested size: 345.0pt x 191.51054pt on input line 11
+8.
 
-Overfull \hbox (0.39029pt too wide) in paragraph at lines 113--116
+Overfull \hbox (0.39029pt too wide) in paragraph at lines 126--129
 []\OT1/cmr/m/it/10 "Object and re-la-tional tech-nolo-gies are grounded in dif-
 fer-ent paradigms. Each
  []
 
-[8 <./drill_advantages.png>] [9]
+[10 <./drill_advantages.png>] [11]
 Chapter 3.
 
-Overfull \hbox (3.58401pt too wide) in paragraph at lines 130--131
+Overfull \hbox (3.58401pt too wide) in paragraph at lines 143--144
 \OT1/cmr/m/n/10 First, Google cre-ated the Google File Sys-tem in 2003[[]], pre
 -dict-ing the paradigm
  []
 
-[10
+[12
 
-] [11] [12]
+] [13] [14]
 Chapter 4.
-[13
-
-] [14]
-Chapter 5.
 [15
+
+] [16]
+Chapter 5.
+[17
 
 ]
 Chapter 6.
-[16
+[18
 
-] [17] [18]
+] [19] [20]
 Chapter 7.
-[19
-
-]
-Chapter 8.
-[20
-
-]
-Chapter 9.
 [21
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Chapter 8.
+[22
+
+]
+Chapter 9.
+[23
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (Jan-uary 2018)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 \OT1/cmr/m/it/10 https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-
 
  []
 
 
-Overfull \hbox (17.82553pt too wide) in paragraph at lines 246--247
+Overfull \hbox (17.82553pt too wide) in paragraph at lines 259--260
 []\OT1/cmr/m/n/10 Michael Klee-ham-mer (2018, Febru-ary) \OT1/cmr/m/it/10 https
 ://github.com/mkleehammer/pyodbc 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 []\OT1/cmr/m/n/10 Modis (2018, Febru-ary) \OT1/cmr/m/it/10 http://www.modis.com
 /it-
  []
 
-[22
+[24
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 []\OT1/cmr/m/n/10 2018 Bet-ter-Cloud Mon-i-tor (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 \OT1/cmr/m/it/10 https://www.bettercloud.com/monitor/real-time-enterprise-messa
 ging-
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 273--274
+Underfull \hbox (badness 4805) in paragraph at lines 286--287
 []\OT1/cmr/m/n/10 Stack Ex-change Inc, posted by user: Thoth (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 \OT1/cmr/m/it/10 https://stackoverflow.com/questions/42403229/mysql-database-wi
 th-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 283--284
+Underfull \hbox (badness 1478) in paragraph at lines 296--297
 []\OT1/cmr/m/n/10 Statista, Inc (2018, Febru-ary) \OT1/cmr/m/it/10 https://www.
 statista.com/statistics/ +
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
-[23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
+
+Underfull \hbox (badness 6428) in paragraph at lines 298--299
+[]\OT1/cmr/m/n/10 Github user Edlich, cu-rated list (2018, Febru-ary) \OT1/cmr/
+m/it/10 http://nosql-
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
+[25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 285.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A606CD5AE4A6705A695D719BD3B6EB07;2771.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
+(rerunfilecheck)             Checksum: 54C245B88943F95128ACBFD550FEC067;2965.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 300.
  ) 
 Here is how much of TeX's memory you used:
- 7522 strings out of 494931
- 111160 string characters out of 6180851
- 222694 words of memory out of 5000000
- 10607 multiletter control sequences out of 15000+600000
+ 7536 strings out of 494931
+ 111339 string characters out of 6180851
+ 223723 words of memory out of 5000000
+ 10611 multiletter control sequences out of 15000+600000
  25081 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,42p,1372b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -840,10 +846,10 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
 elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (27 pages, 243968 bytes).
+Output written on main.pdf (29 pages, 247563 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 428 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 456 compressed objects within 5 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 
