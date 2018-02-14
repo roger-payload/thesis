@@ -84,6 +84,7 @@
 		\label{sec:why_drill}
 			\subsection{Ease of use}It is safe to say that information technology as a subject is only getting more popular by demand. According to projections made by renown recruitment company Modis, tech employment will see a 12\% growth by 2024, vs 6,5\% in all other industries\cite{modis}. This means that a lot of new engineers will enter the workforce, and start building and maintaining enterprise applications. Apache Drill serves a very low barrier of entry for newcomers with its' SQL ANSI queries when handling big amounts of data, as opposed to i.e the popular Java Enterprise framework Persistence. Using Apache Drill will therefore require less training, thus increasing productivity and agility in young teams.
 			\subsection{Increasing relevance of Big Data infrastructures}
+			\label{big_data}
 			\textit{"From 2005 to 2020, the digital universe is expected to grow dramatically by a factor of 300, from 130 exabytes to 40 trillion gigabytes, i.e more than 5,200 gigabytes per person in 2020. Moreover, the digital universe is expected to double every two years."}\cite{bigdata}
 				\subsubsection{Real time data usage}
 				Successful digitalization of businesses often require applications to utilize data in real time, serving customers relevant data instantaneously. \textit{"Now, most applications are generating real-time data, so superfast data capturing and analysis within a fraction of a second are mandatory."}\cite{management_analytics}
@@ -112,13 +113,12 @@
 			impedance mismatch."}\cite{impedance}
 			\\
 			Traditional databases contain tables (entities) with relations between them. Sometimes these systems consist of thousands of tables, even going as far as tens of thousand (like this database of the human genome with 20000 tables\cite{humangenome}). Object-oriented programming classes is difficult and oftentimes inefficient to map directly to the raw data. Especially when there are large amounts of data, it can take a while just initializing the objects, and then again when serializing them to store them. Adopting complex storage file types like JSON for raw data would overcome this mismatch, and allow for more agile, and reactive development of enterprise applications utilizing huge data sources. The global IT industry is increasingly transitioning to deliver RESTful APIs to their customers. With Apache Drill, it is extremely easy to perform queries on the results, even joining them against several other data sources or combining results from several APIs at the same time, in real time. For application developers this will eliminate the middleware of a relational database, having to translate the data for different purposes. Instead of having one format for storing, one for interfacing and one for application logic, Apache Drill and the schema-free paradigm will provide one single interface for all dimensions of data.
-			
-
-		
-
 		
 		\section{How far will this advance the field?}
-		The ambition for this project is to provide a fully functional, open source light weight framework allowing companies to easily deploy Hadoop Clusters with Apache Drill without worrying about tailoring the solution or suboptimal performance. We believe that traditional databases 
+			\subsubsection{Advances in research}
+			The ambition for this project is to provide a fully functional, open source light weight framework allowing companies to easily deploy Hadoop Clusters with Apache Drill without worrying about tailoring the solution or suboptimal performance. In terms of research, this is the first thesis written about performance tuning of Apache Drill, and as such will lay a foundation for the future of this field.
+			\subsubsection{Advances in industry}
+			As the previous section highlighted (\hyperref[big_data]{Increasing relevance of Big Data infrastructures}), we predict an increase in future global data collection, going as far as doubling the amount of data per person, per year. This data is only collected to add value to a business, and the revenue increase for businesses that embrace big data analytics will not go unnoticed by the industry, leading to wider adoption. Some businesses already make huge profits simply by gathering and selling information, like Google and Facebook, increasing their yearly revenue since 2011 by 289\% and 1095\% respectively\cite{statista}. Data is becoming the world’s new natural resource\cite{future_data}. To be able to more fluidly handle this data in applications, we believe agile teams will want flexible frameworks that empower more cost effective development and big data utilization. When the industry realizes Apache Drill can deliver that, this will lead to a paradigm shift to schema-free querying of data, and on-the-fly data reads without tailoring.
 		
 		\section{Structure of the report}
 		Add comments about every chapter here.
@@ -277,5 +277,9 @@
 		Porter, M. E., \& Heppelmann, J. E. (2015). \emph{How smart, connected products are transforming companies.} Harvard Business Review, 93(10), 96-114.
 		\bibitem{management_analytics}
 		Bendre, M. R., \& Thool, V. R. (2016). \emph{Analytics, challenges and applications in big data environment: a survey.} Journal of Management Analytics, 3(3), 206-239.
+		\bibitem{future_data}
+		Huang, G., He, J., Chi, C. H., Zhou, W., \& Zhang, Y. (2015, June). \emph{A Data as a Product Model for Future Consumption of Big Stream Data in	Clouds.} In 2015 IEEE International Conference on Services Computing (SCC), (pp. 256-263). IEEE.
+		\bibitem{statista}
+		Statista, Inc (2018, February) \emph{https://www.statista.com/statistics/ + [266206/googles-annual-global-revenue/, 277229/facebooks-annual-revenue-and-net-income/]}
 	\end{thebibliography}
 \end{document}
