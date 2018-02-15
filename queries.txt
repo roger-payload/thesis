@@ -1,0 +1,13 @@
+SELECT business.name,checkin.`time`.Thursday.`20:00` as ThursdayCheckins FROM `/user/hadoop/drill/yelp_data/checkin.json` AS checkin JOIN `/user/hadoop/drill/yelp_data/business.json` AS business ON business.business_id=checkin.business_id LIMIT 1;
+
+SELECT tot.TIMES.key as Days,FLATTEN(KVGEN(tot.TIMES.`value`)) as Checkins FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as TIMES FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json` LIMIT 1) as tbl) as tot;
+
+SELECT SUM(tot1.Checkins.`value`) FROM (SELECT tot.TIMES.key as Days, FLATTEN(KVGEN(tot.TIMES.`value`)) as Checkins FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as TIMES FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json` LIMIT 1) as tbl) as tot) as tot1;
+
+SELECT Business, Days, Total_Checkins FROM (SELECT Business, Days, SUM(tot1.Checkins.`value`) as Total_Checkins FROM (SELECT tot.name as Business, tot.TIMES.key as Days, FLATTEN(KVGEN(tot.TIMES.`value`)) as Checkins FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as TIMES, business.name FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json` LIMIT 10) as tbl JOIN `/user/hadoop/drill/yelp_data/business.json` as business ON business.business_id=tbl.business_id) as tot) as tot1 GROUP BY Business,Days) WHERE Total_Checkins>10;
+
+The culmination - SELECT The names of all the businesses, and the days of which they have had at least 20 checkins throughout the year.
+SELECT Business, Days, Total_Checkins FROM (SELECT Business, Days, SUM(tot1.Checkins.`value`) as Total_Checkins FROM (SELECT tot.name as Business, tot.TIMES.key as Days, FLATTEN(KVGEN(tot.TIMES.`value`)) as Checkins FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as TIMES, business.name FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json`) as tbl JOIN `/user/hadoop/drill/yelp_data/business.json` as business ON business.business_id=tbl.business_id) as tot) as tot1 GROUP BY Business,Days) WHERE Total_Checkins>20;
+
+LIMIT 1000, ordered.
+SELECT Business, Days, Total_Checkins FROM (SELECT Business, Days, SUM(tot1.Checkins.`value`) as Total_Checkins FROM (SELECT tot.name as Business, tot.TIMES.key as Days, FLATTEN(KVGEN(tot.TIMES.`value`)) as Checkins FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as TIMES, business.name FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json` LIMIT 1000) as tbl JOIN `/user/hadoop/drill/yelp_data/business.json` as business ON business.business_id=tbl.business_id) as tot) as tot1 GROUP BY Business,Days) WHERE Total_Checkins>20 ORDER BY Business,Total_Checkins;

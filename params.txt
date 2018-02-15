@@ -1,0 +1,30 @@
+
+Mentioned in Performance Tuning Section of official documentation
+
+planner.enable_multiphase_agg	 	 Default: True 		Range: False/True
+planner.enable_broadcast_join		 Default: True		Range: False/True
+planner.enable_hashagg			 Default: True		Range: False/True
+planner.enable_hashjoin			 Default: True		Range: False/True
+planner.memory.enable_memory_estimation	 Default: False		Range: False/True
+exec.queue.enable			 Default: False		Range: False/True
+
+planner.broadcast_factor 		 Default:1 		Range: 0-17976931348623157e+308
+planner.broadcast_threshold 		 Default: 10000000 	Range: 0-2147483647
+planner.broadcast_threshold		 Default: 10000000	Range: integer
+planner.slice_target			 Default: 1000		Range: integer
+planner.width_max_per_query		 Default: 1000		Range: integer. note, only on big clusters
+exec.min_hash_table_size		 Default: 65536		Range: 0 to 1073741824.
+exec.max_hash_table_size		 Default: 1073741824	Range: 0 to 1073741824.
+exec.queue.large			 Default: 10		Range: 0-1000
+exec.queue.small			 Default: 100		Range: 0 to 1073741824.
+exec.queue.threshold			 Default: 30000000	Range: 0-9223372036854775807
+exec.queue.timeout_millis		 Default: 300000	Range: 0-9223372036854775807
+exec.queue.memory_ratio			 Default: 10		Range: integer
+exec.queue.memory_reserve_ratio		 Default: 0.2		Range: 0-1
+
+planner.memory.max_query_memory_per_node Default: 2147483648 bytes (2GB)
+planner.width.max_per_node		number of active drillbits (nodes) * number of cores per node * 0.7
+
+There are PLENTY of other options not mentioned as performance tuning variables here:
+https://drill.apache.org/docs/configuration-options-introduction/
+Worth looking into?
