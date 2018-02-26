@@ -55,7 +55,8 @@
 		\begin{tabular}{ll}
 			Load profiling	& Explanation1 \\
 			TTE	& Explanation2 \\
-			Object-oriented programming	& Explanation3 \\
+			OOP	& Explanation3 \\
+			HDFS & Explanation4 \\
 		\end{tabular}
 	\end{table}
 
@@ -189,6 +190,7 @@
 	\chapter{Method}
 		
 		\section{Technology}
+		\label{technology}
 			
 			\subsection{Hadoop stack}
 				
@@ -231,8 +233,26 @@
 				
 			\subsection{pyodbc}
 				There are plenty of ways to interface with an ODBC. We chose python as a preferred language because of familiarity. Therefore we chose to use pyodbc\cite{pyodbc} to communicate with the ODBC, allowing a fully functional interface against our Drill configuration. pyodbc is a well established open source module, implementing the DB API 2.0 specification which is an API defined to encourage similarity between the Python modules that are used to access databases. Defining the Drill ODBC Driver as a datasource, which again points to the Zookeeper Quorum, proved effortless and fast.
-	
-	
+		\section{Development}
+			\subsection{Infrastructure}
+				To emulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them.
+				\begin{figure}[h]
+					\includegraphics[width=\textwidth]{cluster}
+					\caption{Cluster architecture}
+				\end{figure}
+				The infrastructure stack consists of the technologies listed in the \hyperref[technology]{technology section}. All technologies are installed on all machines, except for the ODBC drivers, that are exclusively on the gateway. During a drill exection, any node can act as the orchestrator, named the \textit{foreman}.
+				\begin{figure}[h]
+					\includegraphics[width=\textwidth]{tech_stack}
+					\caption{Cluster architecture}
+				\end{figure}
+		\section{Testing}
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{test_workflow}
+				\caption{How tests are conducted}
+			\end{figure}
+			\subsection{Load profiles}
+				It should be infeasible for one configuration to solve all problems. After all, the concept of optimization takes great consideration to its specific context. Expecting to solve all aspects of a complex problem with one remedy leads to a candidate being a jack of all trades but master of none. Hence the solution should be tailored to a specific context, by letting the algorithm aggressively tune the system to work in its current state. To make sure this algorithm performs this way, testing was done on different kinds of data sets, with different kinds of queries.
+				
 	\chapter{Results}
 	
 	
