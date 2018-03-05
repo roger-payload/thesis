@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  5 MAR 2018 13:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  5 MAR 2018 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,111 +771,121 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./cluster.png>] [22 <./tech_stack.png>] [23 <./test_workflow.png>]
 Chapter 6.
+<overview.png, id=498, 627.34375pt x 739.76375pt>
+File: overview.png Graphic file (type png)
+<use overview.png>
+Package pdftex.def Info: overview.png  used on input line 271. on input line 27
+1.
+Package pdftex.def Info: Requested size: 345.0pt x 406.83745pt on input line 27
+1.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [24
 
-]
+] [25 <./overview.png>]
 Chapter 7.
-[25
-
-]
-Chapter 8.
 [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Chapter 8.
+[27
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (Jan-uary 2018)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 \OT1/cmr/m/it/10 https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-
 
  []
 
 
-Overfull \hbox (17.82553pt too wide) in paragraph at lines 292--293
+Overfull \hbox (17.82553pt too wide) in paragraph at lines 296--297
 []\OT1/cmr/m/n/10 Michael Klee-ham-mer (2018, Febru-ary) \OT1/cmr/m/it/10 https
 ://github.com/mkleehammer/pyodbc 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 []\OT1/cmr/m/n/10 Modis (2018, Febru-ary) \OT1/cmr/m/it/10 http://www.modis.com
 /it-
  []
 
-[27
+[28
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
+Underfull \hbox (badness 10000) in paragraph at lines 316--318
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
 []\OT1/cmr/m/n/10 2018 Bet-ter-Cloud Mon-i-tor (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
 \OT1/cmr/m/it/10 https://www.bettercloud.com/monitor/real-time-enterprise-messa
 ging-
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 322--323
+Underfull \hbox (badness 4805) in paragraph at lines 326--327
 []\OT1/cmr/m/n/10 Stack Ex-change Inc, posted by user: Thoth (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
 \OT1/cmr/m/it/10 https://stackoverflow.com/questions/42403229/mysql-database-wi
 th-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 332--333
+Underfull \hbox (badness 1478) in paragraph at lines 336--337
 []\OT1/cmr/m/n/10 Statista, Inc (2018, Febru-ary) \OT1/cmr/m/it/10 https://www.
 statista.com/statistics/ +
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 334--335
+Underfull \hbox (badness 6428) in paragraph at lines 338--339
 []\OT1/cmr/m/n/10 Github user Edlich, cu-rated list (2018, Febru-ary) \OT1/cmr/
 m/it/10 http://nosql-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--342
+Underfull \hbox (badness 10000) in paragraph at lines 344--346
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, March)
  []
 
-[28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
- [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
+[29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
+ [30]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 349.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4167328DFF2DE45496ECCA8D4852C1B6;3538.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 349.
  ) 
 Here is how much of TeX's memory you used:
- 7587 strings out of 494931
- 112089 string characters out of 6180851
+ 7594 strings out of 494931
+ 112185 string characters out of 6180851
  223916 words of memory out of 5000000
- 10637 multiletter control sequences out of 15000+600000
+ 10641 multiletter control sequences out of 15000+600000
  25081 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,42p,1372b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -888,10 +898,10 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
 elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (33 pages, 382587 bytes).
+Output written on main.pdf (34 pages, 448919 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 530 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
- 450 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 608 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 455 words of extra memory for PDF output out of 10000 (max. 10000000)
 
