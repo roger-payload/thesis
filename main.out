@@ -27,23 +27,27 @@
 \BOOKMARK [1][-]{section.3.2}{Genetic algorithms}{chapter.3}% 27
 \BOOKMARK [2][-]{subsection.3.2.1}{NASA applying genetic algorithms}{section.3.2}% 28
 \BOOKMARK [2][-]{subsection.3.2.2}{Limitations of genetic algorithms}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.3}{Tweak this part, or delete it}{section.3.2}% 30
-\BOOKMARK [0][-]{chapter.4}{Related literature and theoretical focus}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Performance tuning MapReduce as a Research Field}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.2}{Gunther}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.3}{mrOnline}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{Presentation of domain where technology is used}{}% 35
-\BOOKMARK [0][-]{chapter.6}{Method}{}% 36
-\BOOKMARK [1][-]{section.6.1}{Technology}{chapter.6}% 37
-\BOOKMARK [2][-]{subsection.6.1.1}{Hadoop stack}{section.6.1}% 38
-\BOOKMARK [2][-]{subsection.6.1.2}{Zookeeper}{section.6.1}% 39
-\BOOKMARK [2][-]{subsection.6.1.3}{Apache Drill}{section.6.1}% 40
-\BOOKMARK [2][-]{subsection.6.1.4}{Drill ODBC Driver, and unixODBC}{section.6.1}% 41
-\BOOKMARK [2][-]{subsection.6.1.5}{pyodbc}{section.6.1}% 42
-\BOOKMARK [1][-]{section.6.2}{Development}{chapter.6}% 43
-\BOOKMARK [2][-]{subsection.6.2.1}{Infrastructure}{section.6.2}% 44
-\BOOKMARK [1][-]{section.6.3}{Testing}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.3.1}{Load profiles}{section.6.3}% 46
-\BOOKMARK [0][-]{chapter.7}{Results}{}% 47
-\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 48
-\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 49
+\BOOKMARK [1][-]{section.3.3}{Population based incremental learning}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.1}{Advantage of PBIL}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.2}{Limitation of PBIL}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Related literature and theoretical focus}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.4.1}{Performance tuning MapReduce as a Research Field}{section.3.4}% 34
+\BOOKMARK [2][-]{subsection.3.4.2}{Mapreduce optimization}{section.3.4}% 35
+\BOOKMARK [2][-]{subsection.3.4.3}{Other Hadoop SQL engines}{section.3.4}% 36
+\BOOKMARK [2][-]{subsection.3.4.4}{Impala}{section.3.4}% 37
+\BOOKMARK [2][-]{subsection.3.4.5}{Spark}{section.3.4}% 38
+\BOOKMARK [0][-]{chapter.4}{Presentation of domain where technology is used}{}% 39
+\BOOKMARK [0][-]{chapter.5}{Method}{}% 40
+\BOOKMARK [1][-]{section.5.1}{Technology}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.1.1}{Hadoop stack}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.2}{Zookeeper}{section.5.1}% 43
+\BOOKMARK [2][-]{subsection.5.1.3}{Apache Drill}{section.5.1}% 44
+\BOOKMARK [2][-]{subsection.5.1.4}{Drill ODBC Driver, and unixODBC}{section.5.1}% 45
+\BOOKMARK [2][-]{subsection.5.1.5}{pyodbc}{section.5.1}% 46
+\BOOKMARK [1][-]{section.5.2}{Development}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.2.1}{Infrastructure}{section.5.2}% 48
+\BOOKMARK [1][-]{section.5.3}{Testing}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.3.1}{Load profiles}{section.5.3}% 50
+\BOOKMARK [0][-]{chapter.6}{Results}{}% 51
+\BOOKMARK [0][-]{chapter.7}{Discussion}{}% 52
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 53

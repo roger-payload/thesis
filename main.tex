@@ -57,6 +57,8 @@
 			TTE	& Explanation2 \\
 			OOP	& Explanation3 \\
 			HDFS & Explanation4 \\
+			PBIL & Explanation5 \\
+			GA & Explanation6 \\
 		\end{tabular}
 	\end{table}
 
@@ -148,33 +150,44 @@
 			
 			\section{Genetic algorithms}
 			Genetic algorithms are higher level procedures for generating high-quality configurations / solutions to problems with a wide range of parameters, typically where exhaustive searches are infeasible. The procedure starts out with a population of \textit{n} candidates, each representing a set of pseudo-randomly generated values for the respective parameters (properties) that will yield a result for the given problem. Once each candidate has attempted to solve the problem by applying their properties to it, a fitness score is given and compared amongst them. The fitness score represents how good their solution to the problem was, and lets us pick out the best candidates among our population. After the optimal candidates of a generation is chosen, a new generation is generated, inheriting the properties of the previous best candidates. This process repeats until a stop criterion is reached and the properties of the candidate is considered an optimal solution. The number of generations to be generated, and the number of parent candidates from which the next generation is generated from are tweakable parameters. 
-			\subsection{NASA applying genetic algorithms}A very famous application of genetic algorithms is the high-performance antenna NASA made, that actually flew in their Space Technology 5 (ST5) mission\cite{nasa}. In NASAs case, they needed to make a highly receptive antenna with very small physical dimensions. It could have any number of branches, each going in any arbitrary direction. Because of these seemingly infinite possible configurations for the antenna, applying genetic algorithms to gradually evolve a design by testing randomly generated populations and combining the best traits from each candidate, proved to be a great way of solving this. \emph{"(...) the current practice of designing antennas by hand is severely limited because it is both time and labor intensive and requires a significant amount of domain knowledge, evolutionary algorithms can be used to search the design space and automatically find novel antenna designs that are more effective than would otherwise be developed."}\cite{nasa}
+				\subsection{NASA applying genetic algorithms}A very famous application of genetic algorithms is the high-performance antenna NASA made, that actually flew in their Space Technology 5 (ST5) mission\cite{nasa}. In NASAs case, they needed to make a highly receptive antenna with very small physical dimensions. It could have any number of branches, each going in any arbitrary direction. Because of these seemingly infinite possible configurations for the antenna, applying genetic algorithms to gradually evolve a design by testing randomly generated populations and combining the best traits from each candidate, proved to be a great way of solving this. \emph{"(...) the current practice of designing antennas by hand is severely limited because it is both time and labor intensive and requires a significant amount of domain knowledge, evolutionary algorithms can be used to search the design space and automatically find novel antenna designs that are more effective than would otherwise be developed."}\cite{nasa}
 				\subsection{Limitations of genetic algorithms}
 					\subsubsection{Fitness function}
 					At first glance it sounds like applying genetic algorithm techniques to any problem would yield an optimal solution, with relative ease. The problem though, is the fitness function for determining the candidate solution. As the complexity of the problem scales in size the search space for the fitness function will end up being too big to complete in a reasonable time. For instance if one single candidate evaluation took days, performed for the whole population, across generations, it could end up taking months completing just one single optimization. In those cases machine learning approaches or simply manual labor through technical and domain specific knowledge would prove to be more efficient.
 					\subsubsection{Reaching the optimal solution}
 					The only way to evaluate a solution is to compare it against other solutions within the population, all of which have are derived from random mutations. Therefore it is impossible to know whether a truly optimal solution is reached, or if one more generation of mutations will prove to give a better result. In practice a stop criterion for the candidate generation is therefore needed, where a solution is considered to be optimal.
+			\section{Population based incremental learning}
+			The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected, but there is always a chance that the next mutation will lead to the considered optimal solution. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are	attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm."}\cite{pbil}.
+				\subsection{Advantage of PBIL}
+				The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"}\cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Whereas in traditional GA there is always a given chance for each generation iteration for this value to mutate in a candidate, essentially wasting resources by running a test with it.
+				\subsection{Limitation of PBIL}
+				The main limitation of PBIL is that each candidate property needs a preset of valid values. Thus finding the optimal solution is still based widely on the amount of options, and the effectiveness of them, defined by the developer of the algorithm. Naturally - in terms of boolean properties there lies no challenge. However when linear parameters need to be set, i.e properties with ranges from zero to infinity, the developer must define a set of valid options existing within that range. In the context of Apache Drill there are default rule of thumb values for each property, so the list of valid options for each property is generated around the default.
+				Another drawback of PBIL lies in the risk of premature convergence. This can however be mitigated by effective mutation functions that ensure diversity.
+				
+		
+	\section{Related literature and theoretical focus}
+		\subsection{Performance tuning MapReduce as a Research Field}
+		There is a ton of research to be read about MapReduce optimization, trying to tune map- and reduce-slots, and improve the inherent job tracker. Looking at a few essential papers within this field shows a general consensus that tuning default performance parameters in a variety of environments will lead to 10-30\% performance increase, which naturally results in considerable cost savings. For instance Min Li et. al. could report that "\textit{Our results using a real implementation on a representative 19-node cluster show that dynamic performance tuning can effectively improve MapReduce application performance by up to 30\% compared to the default configuration used in YARN.}"\cite{mronline} Furthermore, manually tuning these clusters are too demanding for most businesses to even consider, requiring both deep technical and domain-specific insight. These findings further maintain our vision of bringing auto-tuning to the Apache Drill framework, which we believe to be the next natural step forwards, even paradigm-defining, for big data handling.
+	
+		\subsection{Mapreduce optimization}
+			\subsubsection{Gunther}
+			Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal perfomance of the cluster.\cite{gunther} This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
 			
-				\subsection{Tweak this part, or delete it}
-				The properties are not truly random, as it would be inefficient to have too much variation. For instance, if a parameter has a rule of thumb value of 50, it would be expected that the optimal solution is within a range of this value, and not in the millions, or negative millions. Thus setting 50 as a central value for this property, and generating this property for the candidates as a normally distributed variation (bell curve) with 50 at its' peak, will avoid spending hundreds of generations tweaking this value.
-		
-	\chapter{Related literature and theoretical focus}
-		\section{Performance tuning MapReduce as a Research Field}
-		There is a ton of research to be read about MapReduce optimization, trying to tune map- and reduce-slots, and improve the inherent job tracker. Looking at a few essential papers within this field shows a general consensus that tuning default performance parameters in a variety of environments will lead to 10-30\% performance increase, which naturally results in considerable cost savings. For instance Min Li et. al. could report that "\textit{Our results using a real implemen-
-		tation on a representative 19-node cluster show that dynamic performance tuning can effectively improve MapReduce application performance by up to 30\% compared to the default configuration used in YARN.}"\cite{mronline} Furthermore, manually tuning these clusters are too demanding for most businesses to even consider, requiring both deep technical and domain-specific insight. These findings further maintain our vision of bringing auto-tuning to the Apache Drill framework, which we believe to be the next natural step forwards, even paradigm-defining, for big data handling.
-		
-		\section{Gunther}
-		Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal perfomance of the cluster.\cite{gunther} This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
-		
-		\section{mrOnline}
-		"MapReduce job parameter configuration significantly impacts
-		application performance, yet extant implementations place the bur-
-		den of tuning the parameters on application programmers. This is
-		not ideal, especially because the application developers may not
-		have the system-level expertise and information needed to select
-		the best configuration. Consequently, the system is utilized inefficiently which leads to degraded application performance."\cite{mronline}
-		
-		
+			\subsubsection{mrOnline}
+			"MapReduce job parameter configuration significantly impacts
+			application performance, yet extant implementations place the bur-
+			den of tuning the parameters on application programmers. This is
+			not ideal, especially because the application developers may not
+			have the system-level expertise and information needed to select
+			the best configuration. Consequently, the system is utilized inefficiently which leads to degraded application performance."\cite{mronline}
+			
+		\subsection{Other Hadoop SQL engines}
+		There are plenty of SQL-on-hadoop engines available right now, like CitusDB, Impala, Concurrent Lingual, Hadapt, InfiniDB, JethroData, MammothDB, Apache Drill, MemSQL or Pivotal HawQ, and the amount of independently developed engines speaks volumes of the interest in this field. Why Apache Drill was chosen in this thesis is detailed in the \hyperref[sec:why_drill]{Why Drill section}, but the fact that Drill is (at the time of this writing) the only schema-free engine is a major selling point. However Impala and Spark are often considered as alternatives in similar environments.
+			\subsection{Impala}
+			Impala, developed by Apache is an opensource SQL engine that was designed to bring parallel DBMS technology to the Hadoop environment\cite{impala}. The main idea is shared between Drill and Impala where they both set up daemons on each node of a distributed cluster, to perform MPP (Massively Parallel Processing) for data reads, circumventing MapReduce. Impala is made for Big Data Analyics, priding itself in having \textit{"order-of-magnitude faster performance than Hive"}\cite{impalasite}.
+			\subsection{Spark}
+			Apache also developed Spark, a popular open-source platform for large-scale data processing that is	well-suited for iterative machine learning tasks\cite{spark_ml}. Spark is built with Hive, and runs very similarly to MapReduce but also has extended functionality. The key difference is that Spark keeps things in memory, while MapReduce keeps shuffling data in and out of disk. This allows Spark to facilitate machine learning algorithms on top of big data clusters, reading and processing data in the same workflow.
+			
 	\chapter{Presentation of domain where technology is used}
 		BMC Software, Inc states the following about Apache Hadoop:\\
 		\emph{Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications.
@@ -295,6 +308,9 @@
 		Hornby, G., Globus, A., Linden, D., \& Lohn, J. (2006). \emph{Automated antenna design with evolutionary algorithms.} In Space 2006 (p. 7242).
 		\bibitem{drill}
 		Apache Software Foundation (2018, January) \emph{https://drill.apache.org/docs/analyzing-the-yelp-academic-dataset/}
+		\bibitem{joinplanning}
+		Apache Software Foundation (2018, January)
+		\emph{https://drill.apache.org/docs/join-planning-guidelines/}
 		\bibitem{drill_releases}
 		Apache Software Foundation (2018, February) 	\emph{https://drill.apache.org/docs/release-notes/}
 		\bibitem{impedance}
@@ -316,5 +332,14 @@
 		Statista, Inc (2018, February) \emph{https://www.statista.com/statistics/ + [266206/googles-annual-global-revenue/, 277229/facebooks-annual-revenue-and-net-income/]}
 		\bibitem{no_sql}
 		Github user Edlich, curated list (2018, February) \emph{http://nosql-database.org/}
+		\bibitem{pbil}
+		Baluja, S. (1994). \emph{Population-based incremental learning. a method for integrating genetic search based function optimization and competitive learning} (No. CMU-CS-94-163). Carnegie-Mellon Univ Pittsburgh Pa Dept Of Computer Science.
+		\bibitem{impala}
+		Bittorf, M. K. A. B. V., Bobrovytsky, T., Erickson, C. C. A. C. J., Hecht, M. G. D., Kuff, M. J. I. J. L., Leblang, D. K. A., ... \& Yoder, M. M. (2015). \emph{Impala: A modern, open-source SQL engine for Hadoop.} In Proceedings of the 7th Biennial Conference on Innovative Data Systems Research.
+		\bibitem{impalasite}
+		Apache Software Foundation (2018, March) 
+		\emph{https://impala.apache.org/overview.html}
+		\bibitem{spark_ml}
+		Meng, X., Bradley, J., Yavuz, B., Sparks, E., Venkataraman, S., Liu, D., ... \& Xin, D. (2016). \emph{Mllib: Machine learning in apache spark.} The Journal of Machine Learning Research, 17(1), 1235-1241.
 	\end{thebibliography}
 \end{document}
