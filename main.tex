@@ -18,7 +18,7 @@
 	\duoforside[dept={Institutt for informatikk},
 	program={Informatikk: språkteknologi},
 	short]
-	\section{Summary}
+	\section{Abstract}
 		\subsection{Research question}
 		How can we make a self optimizing distributed Apache Drill cluster, for high performance data readings across several file formats and database architectures?
 		\subsection{Overview}
@@ -38,9 +38,10 @@
 			There are similar platforms to Apache Drill, like the popular Apache Spark. Spark also provides SQL querying on data, however this is only a subset of SQL. Only Drill has the full suit of SQL programming capabilities as defines by ANSI (American National Standards Institute), which gives more in depth querying.
 			\subsubsection{NoSQL}
 			Previously NoSQL databases where known as "Non-SQL" databases, but this has now changed to be "Not Only SQL" databases as they have begun supporting SQL-like querying. The main point about them is that they are non-relational, distributed, open-source and horizontally scalable.\cite{no_sql}
+	
 	\pagebreak
 	\section{Foreword}
-	I got nothing. Put this on a different page though, maybe with a dramatic font or something.
+	Can be omitted if I want, keeping it for now.
 	
 	\tableofcontents
 	
@@ -53,12 +54,14 @@
 		\centering
 		\caption{Technical terms}
 		\begin{tabular}{ll}
-			Load profiling	& Explanation1 \\
-			TTE	& Explanation2 \\
-			OOP	& Explanation3 \\
-			HDFS & Explanation4 \\
-			PBIL & Explanation5 \\
-			GA & Explanation6 \\
+			TTE	& Time to execute \\
+			OOP	& Object Oriented Programming \\
+			HDFS & Hadoop Distributed File System \\
+			PBIL & Population Based Incremental Learning \\
+			GA & Genetic Algorithms \\
+			ER & Entity Relation \\
+			SMB & Small / Medium Business \\
+			SQL EE & Structured Query Language Execution Engine
 		\end{tabular}
 	\end{table}
 
@@ -71,6 +74,22 @@
 		\section{Area of research}
 		Hadoop and MapReduce are already well established technologies employed in countless applications around the world, Apache Drill however is a fairly new concept with little to no research from the community. We propose a new method of implementing Hadoop clusters with Apache Drill, automatically optimizing the performance tuning in a lightweight and low effort way. As such this is a technical thesis regarding performance tuning, and the implementation aspects of an Apache Drill cluster.
 		
+		\section{Research question - in full}
+		\subsection{Goal, justification and challenges}
+		The goal for this thesis is to optimize a SQL Engine that sits on top of a distributed storage, for more cost-effective big data handling, business intelligence and advanced analytics. Businesses that handle big data will most likely perform plenty of queries every day, or even every hour. If we were to add up the amount of time spent waiting for a query to complete, for a year, and converted the hours into money - we would find it costs a lot of money to convert raw data into information. That's why saving even 10\% in execution time can mean a big difference when it comes to overhead costs. So naturally there is a massive amount of research for improving execution time and other metrics, even more so when it comes to shared computing like cloud services where you pay by the minute. The SQL Engine chosen here is Apache Drill, a fairly new framework inspired by Google Dremel, and currently the only schema-free engine to run on top of HDFS, allowing users to drill into complex data like JSON. Looking to for example Yelp, we can see that their entire database is available as JSON\cite{yelp}, allowing for far more complex  and flexible handling of metrics than conventional ER databases. As with the other data handling engines on distributed storage platforms, there are many parameters to consider if one wants to increase performance - in fact so many that it is considered infeasible without in depth expertise of domain and engine. Considerations are:
+		\begin{itemize}
+			\item Type of storage (distributed or single node)
+			\item Amount of computing nodes (cluster or not)
+			\item Size of nodes (memory and CPU)
+			\item Type of data (complex or not)
+			\item Size of data (few large files or plenty small ones)
+			\item Distribution of data (heavy skew or uniform distribution)
+			\item Execution engine specific parameters (for which there are many)
+		\end{itemize}
+		All of these parameters work in tandem to produce a measurable performance. That's why genetic algorithms was chosen as a tool for self optimization, to take all of these parameters into consideration automatically - and simply test solutions until converging into a good one (considered optimal). Some of the parameters are statically set in this thesis, such as cluster size, to simulate a SMB environment, and to have some testing grounds. There would be no alterations needed to apply the methods presented in this thesis in either an enterprise with 1000 clustered nodes, or a single node laptop, but for the sake of argument we mimic a real world use case.
+		\subsection{Resarch question}
+		How can we make a self optimizing distributed Apache Drill cluster, for high performance data readings across several file formats and database architectures?
+		
 		\section{Personal motivation}
 			\subsubsection{Subject}
 			The subject for this master thesis is a natural continuation of our previous work \emph{Hadoop MapReduce Scheduling Paradigms}, published in 2017, in the 2nd IEEE International Conference on Cloud Computing and Big Data Analysis (ISSSBDA 2017). Back then the topic was haphazardly picked from a list of eligible ones, but the more we read into it - the more we understood the incredible use cases for Hadoop within the massive industries that are driving forces for our technological advancements. As is common in IT, levels of abstraction get added on top of proven technologies both to make implementation better, and often to increase performance. Since then Apache Drill has seen plenty of stable builds and proven itself to be potentially industry-changing in the way we handle our data - entering a schema-on-the-fly paradigm.
@@ -78,7 +97,7 @@
 			As mentioned previously there is little to no research done on Apache Drill as a platform. Some of the reasoning might be the that some still considers it to be in the early development phase, but as of this writing there has already been one major release, \textbf{1.0} in 2015, and 12 subsequent minor releases up till \textbf{1.12}.\cite{drill_releases} So we would argue the project is past the early development phase, and moving into the early adopter phase. But why choose to use this platform over more established ones, and what other options are there? This is discussed further in a following section: \hyperref[sec:why_drill]{Why is this worthwhile?}
 		
 		\section{Research method in brief}
-		Throughout this thesis we will develop an entire suite of tools centered around a genetic algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. As the framework is expected to change, all of the parameters tweaked will be in relation to the current version being used, \textbf{1.12}. The main goal is to achieve a performance increase, measured as TTE (Time to Execute) for single queries. Examining previous studies on SQL performance will provide a good basis for best practices within SQL query execution optimization, and how to measure it.
+		Throughout this thesis we will develop an entire suite of tools centered around a genetic algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. As the framework is expected to change, all of the parameters tweaked will be in relation to the current version being used, \textbf{1.12}. The main goal is to achieve a performance increase, measured as TTE (Time to Execute) for single and/or concurrent queries. Examining previous studies on SQL performance will provide a good basis for best practices within SQL query execution optimization, and how to measure it.
 		
 		\section{Most relevant previous findings}
 		There is little to no research done on the impact of tuning Apache Drill. However, tuning of parameterized frameworks have been done a lot in the past on industry standards like SQL, MySQL, traditional Hadoop clusters (mapreduce scheduling algorithms), and Web applications. Since Apache Drill has its own SQL execution engine,  the tuning of SQL systems in previous works has value for how we will benchmark our Drill perfomance.
@@ -90,11 +109,6 @@
 				\item A cost-based optimizer, that performs the pure tuning aspects, based on estimations from the what-if-engine.
 			\end{itemize}
 			Our project has very similar goals and motivations compared to this project, except on a framework on top of Hadoop, instead of directly on it.
-		
-		
-		HAVING TROUBLES HERE....
-		
-		Other types of performance tuning: Hadoop, Web, MySQL etc.
 		
 		\section{Why is this worthwhile, why Drill?}
 		\label{sec:why_drill}
@@ -138,9 +152,55 @@
 		
 		\section{Structure of the report}
 		Add comments about every chapter here.
+
 		
 	\chapter{Background}
 	\emph{"Apache Drill is one of the fastest growing open source projects, with the community making rapid progress with monthly releases. The key difference is Drill’s agility and flexibility. Along with meeting the table stakes for SQL-on-Hadoop, which is to achieve low latency performance at scale, Drill allows users to analyze the data without any ETL or up-front schema definitions. The data can be in any file format such as text, JSON, or Parquet. Data can have simple types such as strings, integers, dates, or more complex multi-structured data, such as nested maps and arrays. Data can exist in any file system, local or distributed, such as HDFS or S3. Drill, has a “no schema” approach, which enables you to get value from your data in just a few minutes."}\cite{drill}
+	
+		\section{Technology}
+		\label{technology}
+		
+		\subsection{Hadoop stack}
+		
+		\subsubsection{Hadoop common}
+		Hadoop common consists of a few select core libraries, that drives the services and basic processes of Hadoop, such as abstraction of the underlying operating system and file system. It also contains documentation and Java implementation specifications. 
+		
+		\subsubsection{HDFS}
+		HDFS (Hadoop Distributed File System) is a highly fault tolerant, distributed file system designed to run efficiently, even on low-cost hardware. HDFS is tailor made to express large files and huge amounts of data, with high throughput access to application data and high scalability across an arbitrary amount of nodes.
+		
+		\subsubsection{YARN}
+		YARN (Yet Another Resource Negotiator) is actually a set of daemons that run in the cluster to handle how the jobs get distributed. 
+		\begin{itemize}
+			\item There is a NM (NodeManager) that represents each node in the cluster, monitoring and reporting to the RM whether or not they are idle, and resource usage (CPU, memory, disk, network). A node in a Hadoop cluster divides its resources into abstract Containers, and reports on how many containers there are available for the RM to assign jobs to.
+			\item There is an AM (ApplicationMaster) per job, or per chain of jobs, representing the task at hand. This AM gets inserted into containers on nodes, when a job is running.
+			\item Finally there is a global RM (ResourceManager), which is the ultimate authority on how to distribute loads and arbitrate resources. The RM consists of two entities, the Scheduler and the ApplicationsManager.
+			\begin{itemize}	
+				\item The ApplicationsManager is responsible for accepting job submissions (at this point represented as an ApplicationMaster), i.e by doing code verification on submitted jobs, changing their status from "submitted" to "accepted". Once a job is accepted, the ApplicationsManager sends the ApplicationMaster to the scheduler to negotiate and supply containers for the job on the nodes in the cluster. The ApplicationsManager also has services to restart failed ApplicationMasters in containers, and retry entire jobs.
+				\item The Scheduler is a pure scheduler in the sense that it only cares about delivering tasks to idle slots, based on free resources on the node. It calculates distributions across multiple nodes / containers, and can prioritize - i.e compute smaller jobs in front of large ones to more effectively complete job queue, even though the large job was submitted first. The Scheduler does not care for monitoring task completions or failures, simply distributing loads on the cluster.
+			\end{itemize}
+		\end{itemize}
+		\textit{The ResourceManager and the NodeManager form the data-computation framework. The per-application ApplicationMaster is, in effect, a framework specific library and is tasked with negotiating resources from the ResourceManager and working with the NodeManager(s) to execute and monitor the tasks.}\cite{yarn}
+		
+		\subsubsection{MapReduce}
+		MapReduce is the heart of a traditional Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is a model for distributed processing of big data, to process and consolidate. It is defined by two stages - the mapping phase, and the reduce phase. Both of these phases require resources from the node it is run on, defined by a set amount of map slots and reduce slots. The amount of slots on a node for each task is parameterized and can be set by an administrator / or typically algorithmically. The map phase consists of parallel map tasks, that map a key to a value. All of these map tasks then consolidate into the reduce phase, where they are combined so that one key exists for all accumulated values. So for instance if we're counting cards in several decks across several nodes, they would each map something like "(Queen of Hearts, 1)". In the end the reduce task consolidates all these single queens, so it ends up looking like "(Queen of Hearts", 27)". This is a far more effective approach than for instance looping through all the decks and incrementing a key by one for each matching key we find. Especially when the data that typically gets handled by a Hadoop cluster is diverse and hard to predict.
+		
+		\subsection{Zookeeper}
+		Zookeeper is not a part of the Hadoop core utilities, but is is often to be found in Hadoop clusters. It is used as a distributed storage platform for configuration information, synchronization and naming. While YARN handles the distribution of tasks between the nodes in the cluster, Zookeper takes care of failover, race conditions and sequential consistency. This tool looks more like orchestration frameworks such as Puppet or Chef, in that it organizes the amount of YARN nodes and distributes configurations, availability and atomicity.
+		
+		\subsubsection{Zookeeper Quorum}
+		Even though Zookeeper is made as a distributed configuration management and failover safeguard, it can be installed on a single node. Running Zookeeper in this way is called a Standalone Operation, and give a user a interface to remotely connect to, to get some data on running services etc. However, we need Zookeper distributed across all our nodes. This is called a Quorum. In a Quorum, every node will check the health of the others. If there is a consensus among nodes that one is down, Zookeeper is able to communicate this to YARN, letting it distribute loads across the remaining healthy nodes. 
+		
+		\subsection{Apache Drill}
+		Apache drill is the newest technology to be introduced in this chapter. All the previously mentioned frameworks are tried and tested - proven over time. Apache drill rests on top of all these technologies, and provides a way to query almost any non-relational database. This means that we can set up a cluster on a data lake with a very diverse data type, and still perform standard ANSI SQL queries on it. Even in formats like JSON, a simple SQL query can provide all the insights one might need.\\
+		Apache Drill is inspired by Google Dremel, which again is the driving force behind their advanced Big Data Analytics tool - Google BigQuery.
+		
+		NEED MORE HERE. SHOULD BE BIGGEST ONE?
+		
+		\subsection{Drill ODBC Driver, and unixODBC}
+		To be able to programatically perform queries to the Drill cluster we need an interface to connect to. This is done via a Open DataBase Connectivity (ODBC), that is installed on the NameNode of the Hadoop cluster. unixODBC is the self-proclaimed definitive standard for ODBC on non MS Windows	platforms\cite{unixodbc}. Once unixODBC was set up, the Drill ODBC Driver was installed on a arbitrary drillbit, although we chose the Hadoop NameNode for this as well. This then allows for setting up a Datasource referencing the Zookeeper Quorum which can then be contacted programmatically, interfacing Drill as if it were a standard SQL server / database.
+		
+		\subsection{pyodbc}
+		There are plenty of ways to interface with an ODBC. We chose python as a preferred language because of familiarity. Therefore we chose to use pyodbc\cite{pyodbc} to communicate with the ODBC, allowing a fully functional interface against our Drill configuration. pyodbc is a well established open source module, implementing the DB API 2.0 specification which is an API defined to encourage similarity between the Python modules that are used to access databases. Defining the Drill ODBC Driver as a datasource, which again points to the Zookeeper Quorum, proved effortless and fast.
 		\section{History}
 			\subsection{Creation and adoption of Hadoop}
 			First, Google created the Google File System in 2003\cite{gfs}, predicting the paradigm of distributed storage. Then, the MapReduce concept for sorting / counting data was added in 2004\cite{mapredoriginal}. Hadoop was introduced as a platform in 2006\cite{hadoopguide}, and together with MapReduce, it made an impact in the industry, attracting talent and big companies eager to contribute and deploy. Yahoo was a big early adopter, being one of the first companies deploying big clusters as early as 2006\cite{hadoopguide}. Then in 2008, Hadoop got the world record for fastest system to sort a terabyte of data\cite{hadoopguide}. After this, development accelerated with more contributers and interest was at an all time high. Since that point in time Apache Hadoop has become the most widely used platform for Big Data handling, empowering advanced analytics and business intelligence across several industries. The Hadoop stack is now highly scalable, ensures high availability of data, and utilizes parallel processing to deliver high performance data readings.
@@ -157,13 +217,12 @@
 					\subsubsection{Reaching the optimal solution}
 					The only way to evaluate a solution is to compare it against other solutions within the population, all of which have are derived from random mutations. Therefore it is impossible to know whether a truly optimal solution is reached, or if one more generation of mutations will prove to give a better result. In practice a stop criterion for the candidate generation is therefore needed, where a solution is considered to be optimal.
 			\section{Population based incremental learning}
-			The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected, but there is always a chance that the next mutation will lead to the considered optimal solution. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are	attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm."}\cite{pbil}.
+			The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected, but there is always a chance that the next mutation will lead to the considered optimal solution. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm."}\cite{pbil}.
 				\subsection{Advantage of PBIL}
-				The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"}\cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Whereas in traditional GA there is always a given chance for each generation iteration for this value to mutate in a candidate, essentially wasting resources by running a test with it.
+				The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties, and generally faster convergence. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"}\cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Further more PBIL allows for complex values as genetic material instead of the usual binary representation, making it easier to implement linear parameters. A shared genetic memory for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the \hyperref[sec:judge]{method chapter}.
 				\subsection{Limitation of PBIL}
 				The main limitation of PBIL is that each candidate property needs a preset of valid values. Thus finding the optimal solution is still based widely on the amount of options, and the effectiveness of them, defined by the developer of the algorithm. Naturally - in terms of boolean properties there lies no challenge. However when linear parameters need to be set, i.e properties with ranges from zero to infinity, the developer must define a set of valid options existing within that range. In the context of Apache Drill there are default rule of thumb values for each property, so the list of valid options for each property is generated around the default.
 				Another drawback of PBIL lies in the risk of premature convergence. This can however be mitigated by effective mutation functions that ensure diversity.
-				
 		
 	\section{Related literature and theoretical focus}
 		\subsection{Performance tuning MapReduce as a Research Field}
@@ -189,64 +248,28 @@
 			Apache also developed Spark, a popular open-source platform for large-scale data processing that is	well-suited for iterative machine learning tasks\cite{spark_ml}. Spark is built with Hive, and runs very similarly to MapReduce but also has extended functionality. The key difference is that Spark keeps things in memory, while MapReduce keeps shuffling data in and out of disk. This allows Spark to facilitate machine learning algorithms on top of big data clusters, reading and processing data in the same workflow.
 			
 	\section{Presentation of domain where technology is used}
-		TODO: Fix this part
-		BMC Software, Inc states the following about Apache Hadoop:\\
-		\emph{Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications.
-		Retailers use it to help analyze structured and unstructured data to better understand and serve their customers.
-		In the asset-intensive energy industry Hadoop-powered analytics are used for predictive maintenance, with input from Internet of Things (IoT) devices feeding data into big data programs.
-		Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings. Examples of Hadoop
-		There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats.
-		Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities. Hadoop is a de facto standard in big data.}\cite{bmc}
-		
+		The field of big data analytics is now becoming nigh impossible to ignore for enterprises dealing with customer information. Within this field Hadoop is currently the biggest platform. SiliconANGLE wrote a 5 year future broadcast in 2012, stating that \textit{"Hadoop-MapReduce solution [will] be the de-facto industry standard for business intelligence and projects a 58\% compound annual growth rate"}.\cite{siliconA}
+		Global Knowledge Training highlights some of the reasons why Hadoop is seeing such success and adoption rate
+		\textit{"It's becoming clear that the open-source Apache Hadoop platform changes the economics and dynamics of large-scale data analytics due to its scalability, cost effectiveness, flexibility, and built-in fault tolerance. It makes possible the massive parallel computing that today's data analysis requires."}\cite{globalknowledge}
+		Further more BMC Software lists industries and sectors where Hadoop is currently being utilized to gain a competitive advantage, increase customer satisfaction or even improve citizen health:
+		\begin{itemize}
+			\item Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications.\cite{bmc}
+			\item Retailers use it to help analyze structured and unstructured data to better understand and serve their customers.\cite{bmc}
+			\item In the asset-intensive energy industry Hadoop-powered analytics are used for predictive maintenance, with input from Internet of Things (IoT) devices feeding data into big data programs.\cite{bmc}
+			\item Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings.\cite{bmc}
+			\item There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats.\cite{bmc}
+			Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities.\cite{bmc}
+			\item Hadoop is a de facto standard in big data.\cite{bmc}
+		\end{itemize}
+	
+		Now it may seem like the Hadoop platform is an all-encompassing 
+		technology when businesses wants to deal with big data. There are however some bleaker recent reports stating that Hadoop adoption is going slower than previously predicted. A 2015 Gartner press release stated that \textit{"[the] future demand for Hadoop looks fairly anemic"}\cite{Gartner}. The reasons businesses aren't adopting Hadoop as a big data framework however was fairly coherent, and is also highlighted in this thesis. It is too technically demanding to set up effectively. Companies that were reluctant or hesitant with Hadoop adoption cited skills shortage and user-unfriendliness as reasons for not thinking about Hadoop.\cite{Gartner} This is the exact reason why self optimizing frameworks like the one introduced in this thesis are needed. Making the Hadoop platform more approachable through a "out-of-the-box" mindset could potentially severely lower the threshold for taking a leap into big data. Through the methods presented in this thesis, we try to directly tackle this problem.
 
 	
 	
 	\chapter{Method}
 		
-		\section{Technology}
-		\label{technology}
-			
-			\subsection{Hadoop stack}
-				
-				\subsubsection{Hadoop common}
-					Hadoop common consists of a few select core libraries, that drives the services and basic processes of Hadoop, such as abstraction of the underlying operating system and file system. It also contains documentation and Java implementation specifications. 
-				
-				\subsubsection{HDFS}
-					HDFS (Hadoop Distributed File System) is a highly fault tolerant, distributed file system designed to run efficiently, even on low-cost hardware. HDFS is tailor made to express large files and huge amounts of data, with high throughput access to application data and high scalability across an arbitrary amount of nodes.
-				
-				\subsubsection{YARN}
-					YARN (Yet Another Resource Negotiator) is actually a set of daemons that run in the cluster to handle how the jobs get distributed. 
-					\begin{itemize}
-						\item There is a NM (NodeManager) that represents each node in the cluster, monitoring and reporting to the RM whether or not they are idle, and resource usage (CPU, memory, disk, network). A node in a Hadoop cluster divides its resources into abstract Containers, and reports on how many containers there are available for the RM to assign jobs to.
-						\item There is an AM (ApplicationMaster) per job, or per chain of jobs, representing the task at hand. This AM gets inserted into containers on nodes, when a job is running.
-						\item Finally there is a global RM (ResourceManager), which is the ultimate authority on how to distribute loads and arbitrate resources. The RM consists of two entities, the Scheduler and the ApplicationsManager.
-							\begin{itemize}	
-								\item The ApplicationsManager is responsible for accepting job submissions (at this point represented as an ApplicationMaster), i.e by doing code verification on submitted jobs, changing their status from "submitted" to "accepted". Once a job is accepted, the ApplicationsManager sends the ApplicationMaster to the scheduler to negotiate and supply containers for the job on the nodes in the cluster. The ApplicationsManager also has services to restart failed ApplicationMasters in containers, and retry entire jobs.
-								\item The Scheduler is a pure scheduler in the sense that it only cares about delivering tasks to idle slots, based on free resources on the node. It calculates distributions across multiple nodes / containers, and can prioritize - i.e compute smaller jobs in front of large ones to more effectively complete job queue, even though the large job was submitted first. The Scheduler does not care for monitoring task completions or failures, simply distributing loads on the cluster.
-							\end{itemize}
-					\end{itemize}
-					\textit{The ResourceManager and the NodeManager form the data-computation framework. The per-application ApplicationMaster is, in effect, a framework specific library and is tasked with negotiating resources from the ResourceManager and working with the NodeManager(s) to execute and monitor the tasks.}\cite{yarn}
-				
-				\subsubsection{MapReduce}
-					MapReduce is the heart of a traditional Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is a model for distributed processing of big data, to process and consolidate. It is defined by two stages - the mapping phase, and the reduce phase. Both of these phases require resources from the node it is run on, defined by a set amount of map slots and reduce slots. The amount of slots on a node for each task is parameterized and can be set by an administrator / or typically algorithmically. The map phase consists of parallel map tasks, that map a key to a value. All of these map tasks then consolidate into the reduce phase, where they are combined so that one key exists for all accumulated values. So for instance if we're counting cards in several decks across several nodes, they would each map something like "(Queen of Hearts, 1)". In the end the reduce task consolidates all these single queens, so it ends up looking like "(Queen of Hearts", 27)". This is a far more effective approach than for instance looping through all the decks and incrementing a key by one for each matching key we find. Especially when the data that typically gets handled by a Hadoop cluster is diverse and hard to predict.
-						
-			\subsection{Zookeeper}
-				Zookeeper is not a part of the Hadoop core utilities, but is is often to be found in Hadoop clusters. It is used as a distributed storage platform for configuration information, synchronization and naming. While YARN handles the distribution of tasks between the nodes in the cluster, Zookeper takes care of failover, race conditions and sequential consistency. This tool looks more like orchestration frameworks such as Puppet or Chef, in that it organizes the amount of YARN nodes and distributes configurations, availability and atomicity.
-				
-				\subsubsection{Zookeeper Quorum}
-				Even though Zookeeper is made as a distributed configuration management and failover safeguard, it can be installed on a single node. Running Zookeeper in this way is called a Standalone Operation, and give a user a interface to remotely connect to, to get some data on running services etc. However, we need Zookeper distributed across all our nodes. This is called a Quorum. In a Quorum, every node will check the health of the others. If there is a consensus among nodes that one is down, Zookeeper is able to communicate this to YARN, letting it distribute loads across the remaining healthy nodes. 
-			
-			\subsection{Apache Drill}
-				Apache drill is the newest technology to be introduced in this chapter. All the previously mentioned frameworks are tried and tested - proven over time. Apache drill rests on top of all these technologies, and provides a way to query almost any non-relational database. This means that we can set up a cluster on a data lake with a very diverse data type, and still perform standard ANSI SQL queries on it. Even in formats like JSON, a simple SQL query can provide all the insights one might need.\\
-				Apache Drill is inspired by Google Dremel, which again is the driving force behind their advanced Big Data Analytics tool - Google BigQuery.
-				
-				NEED MORE HERE. SHOULD BE BIGGEST ONE?
-				
-			\subsection{Drill ODBC Driver, and unixODBC}
-				To be able to programatically perform queries to the Drill cluster we need an interface to connect to. This is done via a Open DataBase Connectivity (ODBC), that is installed on the NameNode of the Hadoop cluster. unixODBC is the self-proclaimed definitive standard for ODBC on non MS Windows	platforms\cite{unixodbc}. Once unixODBC was set up, the Drill ODBC Driver was installed on a arbitrary drillbit, although we chose the Hadoop NameNode for this as well. This then allows for setting up a Datasource referencing the Zookeeper Quorum which can then be contacted programmatically, interfacing Drill as if it were a standard SQL server / database.
-				
-			\subsection{pyodbc}
-				There are plenty of ways to interface with an ODBC. We chose python as a preferred language because of familiarity. Therefore we chose to use pyodbc\cite{pyodbc} to communicate with the ODBC, allowing a fully functional interface against our Drill configuration. pyodbc is a well established open source module, implementing the DB API 2.0 specification which is an API defined to encourage similarity between the Python modules that are used to access databases. Defining the Drill ODBC Driver as a datasource, which again points to the Zookeeper Quorum, proved effortless and fast.
+		
 		\section{Development}
 			\subsection{Infrastructure}
 				To emulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them.
@@ -346,5 +369,18 @@
 		\emph{https://impala.apache.org/overview.html}
 		\bibitem{spark_ml}
 		Meng, X., Bradley, J., Yavuz, B., Sparks, E., Venkataraman, S., Liu, D., ... \& Xin, D. (2016). \emph{Mllib: Machine learning in apache spark.} The Journal of Machine Learning Research, 17(1), 1235-1241.
+		\bibitem{yelp}
+		 Yelp Inc. Yelp (2018, March)
+		\emph{https://www.yelp.com/dataset/challenge}
+		\bibitem{globalknowledge}
+		 Global Knowledge Training LLC. (2018, March)\\
+		 Big Data and Apache Hadoop Adoption: Key Challenges and Rewards
+		\emph{https://www.globalknowledge.com/us-en/content/articles/big-data-and-apache-hadoop-adoption/}
+		\bibitem{siliconA}
+		SiliconANGLE Media, Inc. (2018, March)
+		\emph{https://siliconangle.com/blog/2012/08/01/hadoop-big-data-reports-future-growth/}
+		\bibitem{Gartner}
+		Gartner, Inc, Gartner Survey Highlights Challenges to Hadoop Adoption
+		\emph{https://www.gartner.com/newsroom/id/3051717} STAMFORD, Conn., May 13, 2015
 	\end{thebibliography}
 \end{document}

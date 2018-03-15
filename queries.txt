@@ -11,3 +11,8 @@ SELECT Business, Days, Total_Checkins FROM (SELECT Business, Days, SUM(tot1.Chec
 
 LIMIT 1000, ordered.
 SELECT Business, Days, Total_Checkins FROM (SELECT Business, Days, SUM(tot1.Checkins.`value`) as Total_Checkins FROM (SELECT tot.name as Business, tot.TIMES.key as Days, FLATTEN(KVGEN(tot.TIMES.`value`)) as Checkins FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as TIMES, business.name FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json` LIMIT 1000) as tbl JOIN `/user/hadoop/drill/yelp_data/business.json` as business ON business.business_id=tbl.business_id) as tot) as tot1 GROUP BY Business,Days) WHERE Total_Checkins>20 ORDER BY Business,Total_Checkins;
+
+
+######## BASEBALL
+Select names of players that received awards after 2015
+SELECT info.nameFirst, info.nameLast, awards.awardID, awards.yearID FROM `/user/hadoop/drill/baseball/Master.csv` as info JOIN `/user/hadoop/drill/baseball/AwardsPlayers.csv` as awards ON info.playerID=awards.playerID WHERE awards.yearID > 2015 ;
