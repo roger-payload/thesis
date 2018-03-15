@@ -61,7 +61,9 @@
 			GA & Genetic Algorithms \\
 			ER & Entity Relation \\
 			SMB & Small / Medium Business \\
-			SQL EE & Structured Query Language Execution Engine
+			SQL EE & Structured Query Language Execution Engine \\
+			MPP & Massively Parallel Processing \\
+			RPC & Remote Procedure Call \\
 		\end{tabular}
 	\end{table}
 
@@ -191,10 +193,33 @@
 		Even though Zookeeper is made as a distributed configuration management and failover safeguard, it can be installed on a single node. Running Zookeeper in this way is called a Standalone Operation, and give a user a interface to remotely connect to, to get some data on running services etc. However, we need Zookeper distributed across all our nodes. This is called a Quorum. In a Quorum, every node will check the health of the others. If there is a consensus among nodes that one is down, Zookeeper is able to communicate this to YARN, letting it distribute loads across the remaining healthy nodes. 
 		
 		\subsection{Apache Drill}
-		Apache drill is the newest technology to be introduced in this chapter. All the previously mentioned frameworks are tried and tested - proven over time. Apache drill rests on top of all these technologies, and provides a way to query almost any non-relational database. This means that we can set up a cluster on a data lake with a very diverse data type, and still perform standard ANSI SQL queries on it. Even in formats like JSON, a simple SQL query can provide all the insights one might need.\\
-		Apache Drill is inspired by Google Dremel, which again is the driving force behind their advanced Big Data Analytics tool - Google BigQuery.
+		In this thesis there won't be any in-depth explanations of the inner workings or architecture of Drill, but we'll gloss over the broader picture in this section.
+		\subsubsection{What is it}
+		Apache drill is the newest technology to be introduced in this chapter. All the previously mentioned frameworks are tried and tested - proven over time. Apache drill rests on top of all these technologies, and provides a way to query almost any non-relational database. This means that we can set up a cluster on a data lake with a very diverse data type, and still perform standard ANSI SQL queries on it. Even in formats like JSON, a simple SQL query can provide all the insights one might need. Apache Drill is inspired by Google Dremel, which as mentioned is the driving force behind their advanced Big Data Analytics tool - Google BigQuery. Apache Drill is a SQL EE for MPP, that works in almost any environment and on almost any file type. Whether querying complex data, text files or entire directories of log files, Apache Drill allows for standard SQL interfaces for reading the data.
+		\subsubsection{How does it do it}
+		\paragraph{The drillbit}
+		In its core Apache Drill simply consists of a Daemon service called a Drillbit. The drillbit can be installed on any server or client device that has data, or on any number of nodes within a Hadoop cluster, to perform SQL queries. This means that Drill is an entirely independent piece of software, able to perform its intended task without any environment specific needs. 
+		\paragraph{Querying drill} In addition to its flexible installation needs, the query inputs to Drill can come from a wide variety of sources - JDBC, ODBC, a REST interface, and from a C++ or Java API.
+		\paragraph{Key components}
+		\begin{itemize}
+			\item An RPC end point to receive queries and communicate with clients
+			\item An SQL parser that interprets the SQL input and outputs a logical plan
+			\item An optimizer that takes the logical plan and translates it to a physical plan based on data locality and node resources
+			\item A storage engine interface that has the ability to mount any type of storage, from a local hard drive to a distributed storage like HDFS
+		\end{itemize}
+		\begin{figure}[h]
+			\includegraphics[width=\textwidth]{mapr_drill1}
+			\caption{Drill components\cite{mapr_drill}}
+		\end{figure}
+	
+		\paragraph{Drill in a cluster}
+		When using Drill as an SQL EE in a distributed storage, it is highly recommended to install a drillbit on all nodes. When set to perform MPP drill is dependent on Zookeeper to keep track of all the drillbits.  When a query is submitted, the first node to respond to the initial request from Zookeeper becomes the \textit{Foreman}. In Drill there is no master or slave hierarchy, and for every query submitted a new foreman is selected. Every drillbit contains all services and capabilities of Drill, which makes it highly scalable - just add another node and install Drill and you're done (after adding it to the Zookeeper Quorum). The foreman gets a list of available Drillbit nodes in the cluster from ZooKeeper, and determines the appropriate nodes to execute various query plan fragments to maximize data locality. This means that Apache Drill both performs the planning, distribution and execution of queries, only depending on Zookeeper to keep track of available nodes. Once a foreman has decided on the distribution of the query, the workload gets split downwards into fragments to the nodes, and the results get consolidated upwards until reaching the foreman, which then returns the results to the client.
 		
-		NEED MORE HERE. SHOULD BE BIGGEST ONE?
+		\begin{figure}[h]
+			\includegraphics[width=\textwidth]{mapr_drill2}
+			\caption{Drill parallel processing\cite{mapr_drill}}
+		\end{figure}
+		
 		
 		\subsection{Drill ODBC Driver, and unixODBC}
 		To be able to programatically perform queries to the Drill cluster we need an interface to connect to. This is done via a Open DataBase Connectivity (ODBC), that is installed on the NameNode of the Hadoop cluster. unixODBC is the self-proclaimed definitive standard for ODBC on non MS Windows	platforms\cite{unixodbc}. Once unixODBC was set up, the Drill ODBC Driver was installed on a arbitrary drillbit, although we chose the Hadoop NameNode for this as well. This then allows for setting up a Datasource referencing the Zookeeper Quorum which can then be contacted programmatically, interfacing Drill as if it were a standard SQL server / database.
@@ -272,7 +297,7 @@
 		
 		\section{Development}
 			\subsection{Infrastructure}
-				To emulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them.
+				To simulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them.
 				\begin{figure}[h]
 					\includegraphics[width=\textwidth]{cluster}
 					\caption{Cluster architecture}
@@ -280,7 +305,7 @@
 				The infrastructure stack consists of the technologies listed in the \hyperref[technology]{technology section}. All technologies are installed on all machines, except for the ODBC drivers, that are exclusively on the gateway. During a drill exection, any node can act as the orchestrator, named the \textit{foreman}.
 				\begin{figure}[h]
 					\includegraphics[width=\textwidth]{tech_stack}
-					\caption{Cluster architecture}
+					\caption{Technology stack}
 				\end{figure}
 		\section{Testing}
 			\begin{figure}[h]
@@ -382,5 +407,8 @@
 		\bibitem{Gartner}
 		Gartner, Inc, Gartner Survey Highlights Challenges to Hadoop Adoption
 		\emph{https://www.gartner.com/newsroom/id/3051717} STAMFORD, Conn., May 13, 2015
+		\bibitem{mapr_drill}
+		MapR Technologies, Inc. (2018, March)
+		\emph{https://mapr.com/blog/apache-drill-architecture-ultimate-guide/}
 	\end{thebibliography}
 \end{document}
