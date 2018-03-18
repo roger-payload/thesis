@@ -36,48 +36,60 @@
 \contentsline {subsubsection}{Advances in industry}{12}{section*.12}
 \contentsline {section}{\numberline {2.9}Structure of the report}{12}{section.2.9}
 \contentsline {chapter}{\numberline {3}Background}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Technology}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Hadoop stack}{13}{subsection.3.1.1}
-\contentsline {subsubsection}{Hadoop common}{13}{section*.13}
-\contentsline {subsubsection}{HDFS}{13}{section*.14}
-\contentsline {subsubsection}{YARN}{13}{section*.15}
-\contentsline {subsubsection}{MapReduce}{14}{section*.16}
-\contentsline {subsection}{\numberline {3.1.2}Zookeeper}{15}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.1}History}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Creation and adoption of Hadoop}{13}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Google branching out with Dremel}{13}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Technology}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Hadoop stack}{14}{subsection.3.2.1}
+\contentsline {subsubsection}{Hadoop common}{14}{section*.13}
+\contentsline {subsubsection}{HDFS}{14}{section*.14}
+\contentsline {subsubsection}{YARN}{14}{section*.15}
+\contentsline {subsubsection}{MapReduce}{15}{section*.16}
+\contentsline {subsection}{\numberline {3.2.2}Zookeeper}{15}{subsection.3.2.2}
 \contentsline {subsubsection}{Zookeeper Quorum}{15}{section*.17}
-\contentsline {subsection}{\numberline {3.1.3}Apache Drill}{15}{subsection.3.1.3}
-\contentsline {subsubsection}{What is it}{15}{section*.18}
-\contentsline {subsubsection}{How does it do it}{15}{section*.19}
-\contentsline {paragraph}{The drillbit}{15}{section*.20}
+\contentsline {subsection}{\numberline {3.2.3}Apache Drill}{16}{subsection.3.2.3}
+\contentsline {subsubsection}{What is it}{16}{section*.18}
+\contentsline {subsubsection}{How does it do it}{16}{section*.19}
+\contentsline {paragraph}{The drillbit}{16}{section*.20}
 \contentsline {paragraph}{Querying drill}{16}{section*.21}
 \contentsline {paragraph}{Key components}{16}{section*.22}
-\contentsline {paragraph}{Drill in a cluster}{16}{section*.23}
-\contentsline {subsection}{\numberline {3.1.4}Drill ODBC Driver, and unixODBC}{17}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}pyodbc}{17}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}History}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Creation and adoption of Hadoop}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Google branching out with Dremel}{18}{subsection.3.2.2}
+\contentsline {paragraph}{Drill in a cluster}{17}{section*.23}
+\contentsline {subsection}{\numberline {3.2.4}Drill ODBC Driver, and unixODBC}{18}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}pyodbc}{18}{subsection.3.2.5}
 \contentsline {section}{\numberline {3.3}Genetic algorithms}{18}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}NASA applying genetic algorithms}{18}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Limitations of genetic algorithms}{19}{subsection.3.3.2}
 \contentsline {subsubsection}{Fitness function}{19}{section*.24}
-\contentsline {subsubsection}{Reaching the optimal solution}{19}{section*.25}
-\contentsline {section}{\numberline {3.4}Population based incremental learning}{19}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Advantage of PBIL}{19}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Limitation of PBIL}{20}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Related literature and theoretical focus}{20}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Performance tuning MapReduce as a Research Field}{20}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Mapreduce optimization}{21}{subsection.3.5.2}
-\contentsline {subsubsection}{Gunther}{21}{section*.26}
-\contentsline {subsubsection}{mrOnline}{21}{section*.27}
-\contentsline {subsection}{\numberline {3.5.3}Other Hadoop SQL engines}{21}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Impala}{21}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Spark}{21}{subsection.3.5.5}
-\contentsline {section}{\numberline {3.6}Presentation of domain where technology is used}{22}{section.3.6}
-\contentsline {chapter}{\numberline {4}Method}{24}{chapter.4}
-\contentsline {section}{\numberline {4.1}Development}{24}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Infrastructure}{24}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Testing}{25}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Load profiles}{25}{subsection.4.2.1}
-\contentsline {chapter}{\numberline {5}Results}{27}{chapter.5}
-\contentsline {chapter}{\numberline {6}Discussion}{29}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusion}{30}{chapter.7}
+\contentsline {subsubsection}{Reaching the optimal solution}{20}{section*.25}
+\contentsline {section}{\numberline {3.4}Population based incremental learning}{21}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Advantage of PBIL}{22}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Limitation of PBIL}{22}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Related literature and theoretical focus}{23}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Performance tuning MapReduce as a Research Field}{23}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Mapreduce optimization}{23}{subsection.3.5.2}
+\contentsline {subsubsection}{Gunther}{23}{section*.26}
+\contentsline {subsubsection}{mrOnline}{23}{section*.27}
+\contentsline {subsection}{\numberline {3.5.3}Other Hadoop SQL engines}{23}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Impala}{24}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Spark}{24}{subsection.3.5.5}
+\contentsline {section}{\numberline {3.6}Presentation of domain where technology is used}{24}{section.3.6}
+\contentsline {chapter}{\numberline {4}Method}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Infrastructure}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}System overview}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Judge}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Memory}{27}{subsection.4.2.2}
+\contentsline {paragraph}{Core function}{27}{section*.28}
+\contentsline {paragraph}{Extended funcion}{27}{section*.29}
+\contentsline {subsection}{\numberline {4.2.3}Candidate}{28}{subsection.4.2.3}
+\contentsline {paragraph}{Run}{28}{section*.30}
+\contentsline {paragraph}{Mutation}{28}{section*.31}
+\contentsline {subsection}{\numberline {4.2.4}Settings}{28}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Configuration file}{28}{subsection.4.2.5}
+\contentsline {paragraph}{Configuration parameters}{29}{section*.32}
+\contentsline {subsection}{\numberline {4.2.6}How it all comes together}{29}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}Testing}{29}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Load profiles}{29}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Data collection}{29}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Results}{32}{chapter.5}
+\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusion}{34}{chapter.7}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  15 MAR 2018 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  18 MAR 2018 15:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,7 +661,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 20.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<DUO_UiO_segl.png, id=229, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=257, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
 Package pdftex.def Info: DUO_UiO_segl.png  used on input line 20. on input line
@@ -703,7 +703,7 @@ Chapter 2.
 [7
 
 ] [8] [9] [10]
-<drill_advantages.png, id=384, 737.75626pt x 409.53pt>
+<drill_advantages.png, id=419, 737.75626pt x 409.53pt>
 File: drill_advantages.png Graphic file (type png)
 <use drill_advantages.png>
 Package pdftex.def Info: drill_advantages.png  used on input line 137. on input
@@ -721,214 +721,235 @@ Chapter 3.
 [13
 
 ] [14] [15]
-<mapr_drill1.png, id=433, 602.25pt x 286.06876pt>
+<mapr_drill1.png, id=478, 602.25pt x 286.06876pt>
 File: mapr_drill1.png Graphic file (type png)
 <use mapr_drill1.png>
-Package pdftex.def Info: mapr_drill1.png  used on input line 211. on input line
- 211.
+Package pdftex.def Info: mapr_drill1.png  used on input line 218. on input line
+ 218.
 Package pdftex.def Info: Requested size: 345.0pt x 163.88152pt on input line 21
-1.
-<mapr_drill2.png, id=435, 602.25pt x 277.035pt>
-File: mapr_drill2.png Graphic file (type png)
-<use mapr_drill2.png>
-Package pdftex.def Info: mapr_drill2.png  used on input line 219. on input line
- 219.
-Package pdftex.def Info: Requested size: 345.0pt x 158.7063pt on input line 219
-.
+8.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./mapr_drill1.png>]
-Overfull \hbox (3.58401pt too wide) in paragraph at lines 231--232
-\OT1/cmr/m/n/10 First, Google cre-ated the Google File Sys-tem in 2003[[]], pre
--dict-ing the paradigm
- []
+[16]
+<mapr_drill2.png, id=489, 602.25pt x 277.035pt>
+File: mapr_drill2.png Graphic file (type png)
+<use mapr_drill2.png>
+Package pdftex.def Info: mapr_drill2.png  used on input line 226. on input line
+ 226.
+Package pdftex.def Info: Requested size: 345.0pt x 158.7063pt on input line 226
+.
+ [17 <./mapr_drill1.png> <./mapr_drill2.png>]
+<GA.png, id=503, 398.48875pt x 370.38374pt>
+File: GA.png Graphic file (type png)
+<use GA.png>
+Package pdftex.def Info: GA.png  used on input line 238. on input line 238.
+Package pdftex.def Info: Requested size: 345.0pt x 320.68271pt on input line 23
+8.
+ [18] [19 <./GA.png>] [20]
+<PBIL.png, id=525, 447.6725pt x 635.37375pt>
+File: PBIL.png Graphic file (type png)
+<use PBIL.png>
+Package pdftex.def Info: PBIL.png  used on input line 253. on input line 253.
+Package pdftex.def Info: Requested size: 310.0pt x 439.98865pt on input line 25
+3.
 
-[17 <./mapr_drill2.png>] [18]
+[21 <./PBIL.png>]
 
-LaTeX Warning: Hyper reference `sec:judge' on page 19 undefined on input line 2
-47.
+LaTeX Warning: Hyper reference `sec:judge' on page 22 undefined on input line 2
+58.
 
-[19] [20]
-Overfull \hbox (12.50081pt too wide) in paragraph at lines 269--270
+[22]
+Overfull \hbox (12.50081pt too wide) in paragraph at lines 280--281
 \OT1/cmr/m/n/10 Im-pala, Con-cur-rent Lin-gual, Hadapt, In-finiDB, Jethro-Data,
  Mam-mothDB, Apache
  []
 
-[21]
-Overfull \hbox (0.86168pt too wide) in paragraph at lines 284--285
+[23]
+Overfull \hbox (0.86168pt too wide) in paragraph at lines 295--296
 []\OT1/cmr/m/n/10 Telecommunications com-pa-nies can adapt all the afore-men-ti
 oned use cases.
  []
 
-[22] [23]
+[24] [25]
 Chapter 4.
-<cluster.png, id=533, 667.49374pt x 491.8375pt>
+<cluster.png, id=583, 667.49374pt x 491.8375pt>
 File: cluster.png Graphic file (type png)
 <use cluster.png>
-Package pdftex.def Info: cluster.png  used on input line 302. on input line 302
+Package pdftex.def Info: cluster.png  used on input line 309. on input line 309
 .
 Package pdftex.def Info: Requested size: 345.0pt x 254.21848pt on input line 30
-2.
-<tech_stack.png, id=535, 765.86125pt x 392.46625pt>
+9.
+<tech_stack.png, id=585, 765.86125pt x 392.46625pt>
 File: tech_stack.png Graphic file (type png)
 <use tech_stack.png>
-Package pdftex.def Info: tech_stack.png  used on input line 307. on input line 
-307.
-Package pdftex.def Info: Requested size: 345.0pt x 176.79381pt on input line 30
-7.
-[24
+Package pdftex.def Info: tech_stack.png  used on input line 314. on input line 
+314.
+Package pdftex.def Info: Requested size: 345.0pt x 176.79381pt on input line 31
+4.
+[26
 
  <./cluster.png>]
-<test_workflow.png, id=542, 668.4975pt x 498.86375pt>
-File: test_workflow.png Graphic file (type png)
-<use test_workflow.png>
-Package pdftex.def Info: test_workflow.png  used on input line 312. on input li
-ne 312.
-Package pdftex.def Info: Requested size: 345.0pt x 257.46196pt on input line 31
-2.
+<OOP.png, id=593, 242.9075pt x 416.55624pt>
+File: OOP.png Graphic file (type png)
+<use OOP.png>
+Package pdftex.def Info: OOP.png  used on input line 320. on input line 320.
+Package pdftex.def Info: Requested size: 150.0pt x 257.22615pt on input line 32
+0.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25 <./tech_stack.png>] [26 <./test_workflow.png>]
-Chapter 5.
-<overview.png, id=555, 627.34375pt x 739.76375pt>
+[27 <./tech_stack.png>] [28 <./OOP.png>]
+<overview.png, id=613, 627.34375pt x 1016.79875pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
-Package pdftex.def Info: overview.png  used on input line 320. on input line 32
-0.
-Package pdftex.def Info: Requested size: 345.0pt x 406.83745pt on input line 32
-0.
+Package pdftex.def Info: overview.png  used on input line 341. on input line 34
+1.
+Package pdftex.def Info: Requested size: 345.0pt x 559.1945pt on input line 341
+.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27
+<test_workflow.png, id=614, 668.4975pt x 498.86375pt>
+File: test_workflow.png Graphic file (type png)
+<use test_workflow.png>
+Package pdftex.def Info: test_workflow.png  used on input line 346. on input li
+ne 346.
+Package pdftex.def Info: Requested size: 345.0pt x 257.46196pt on input line 34
+6.
 
-] [28 <./overview.png>]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29] [30 <./overview.png>] [31 <./test_workflow.png>]
+Chapter 5.
+[32
+
+]
 Chapter 6.
-[29
+[33
 
 ]
 Chapter 7.
-[30
+[34
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (Jan-uary 2018)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 \OT1/cmr/m/it/10 https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-
 
  []
 
 
-Overfull \hbox (17.82553pt too wide) in paragraph at lines 345--346
+Overfull \hbox (17.82553pt too wide) in paragraph at lines 376--377
 []\OT1/cmr/m/n/10 Michael Klee-ham-mer (2018, Febru-ary) \OT1/cmr/m/it/10 https
 ://github.com/mkleehammer/pyodbc 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 []\OT1/cmr/m/n/10 Modis (2018, Febru-ary) \OT1/cmr/m/it/10 http://www.modis.com
 /it-
  []
 
-[31
+[35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 396--398
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 403--405
 []\OT1/cmr/m/n/10 2018 Bet-ter-Cloud Mon-i-tor (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 403--405
 \OT1/cmr/m/it/10 https://www.bettercloud.com/monitor/real-time-enterprise-messa
 ging-
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 375--376
+Underfull \hbox (badness 4805) in paragraph at lines 406--407
 []\OT1/cmr/m/n/10 Stack Ex-change Inc, posted by user: Thoth (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 \OT1/cmr/m/it/10 https://stackoverflow.com/questions/42403229/mysql-database-wi
 th-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 385--386
+Underfull \hbox (badness 1478) in paragraph at lines 416--417
 []\OT1/cmr/m/n/10 Statista, Inc (2018, Febru-ary) \OT1/cmr/m/it/10 https://www.
 statista.com/statistics/ +
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 387--388
+Underfull \hbox (badness 6428) in paragraph at lines 418--419
 []\OT1/cmr/m/n/10 Github user Edlich, cu-rated list (2018, Febru-ary) \OT1/cmr/
 m/it/10 http://nosql-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, March)
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 401--404
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 432--435
 \OT1/cmr/m/it/10 https://www.globalknowledge.com/us-en/content/articles/big-dat
 a-and-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
 []\OT1/cmr/m/n/10 SiliconANGLE Me-dia, Inc. (2018, March)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
 \OT1/cmr/m/it/10 https://siliconangle.com/blog/2012/08/01/hadoop-big-data-repor
 ts-future-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
-[33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+[37]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 414.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E63E1EB18FB09F7B16A40D68330C57BB;3782.
+(rerunfilecheck)             Checksum: D4281F460308FE83F68E5190341A6304;4243.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
  ) 
 Here is how much of TeX's memory you used:
- 7632 strings out of 494931
- 112710 string characters out of 6180851
+ 7673 strings out of 494931
+ 113213 string characters out of 6180851
  224077 words of memory out of 5000000
- 10658 multiletter control sequences out of 15000+600000
+ 10677 multiletter control sequences out of 15000+600000
  25081 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,42p,1503b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -941,10 +962,10 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
 elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (37 pages, 518065 bytes).
+Output written on main.pdf (41 pages, 637625 bytes).
 PDF statistics:
- 672 PDF objects out of 1000 (max. 8388607)
- 591 compressed objects within 6 object streams
- 162 named destinations out of 1000 (max. 500000)
- 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 654 compressed objects within 7 object streams
+ 181 named destinations out of 1000 (max. 500000)
+ 560 words of extra memory for PDF output out of 10000 (max. 10000000)
 

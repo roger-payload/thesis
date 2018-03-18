@@ -1,0 +1,40 @@
+  748  cd hadoop/
+  749  ls
+  750  cd bin/
+  751  ls
+  752  ./hdfs
+  753  ./hdfs start
+  754  ls
+  755  history
+  756  hdfs --daemon start namenode
+  757  jps
+  758  ./start-dfs.sh 
+  759  cd ..
+  760  ls
+  761  cd s
+  762  cd sbin/
+  763  ls
+  764  ./start-dfs.sh 
+  765  jps
+  766  hdfs dfsadmin -report
+  767  ./start-yarn.sh
+  768  jps
+  769  yarn node -list
+  770  ./zkServer.sh status
+  771  cd
+  772  cd zookeeper/bin/
+  773  ./zkServer.sh status (DO THIS ON ALL NODES)
+  774  ssh node-1
+  775  ssh node-2
+  776  ssh node-3
+  777  ./zkServer.sh status
+  778  cat ../conf/zoo.cfg 
+  779  history
+  371  cd apache-drill/
+  372  ls
+  373  cd bin/
+  374  ls
+  375  ./drillbit.sh start (DO THIS ON ALL NODES)
+  376  ssh node-1 
+  377  ssh node-2
+  378  ssh node-3
