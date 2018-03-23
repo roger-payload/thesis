@@ -75,21 +75,27 @@
 \contentsline {section}{\numberline {3.6}Presentation of domain where technology is used}{24}{section.3.6}
 \contentsline {chapter}{\numberline {4}Method}{26}{chapter.4}
 \contentsline {section}{\numberline {4.1}Infrastructure}{26}{section.4.1}
-\contentsline {section}{\numberline {4.2}System overview}{27}{section.4.2}
+\contentsline {section}{\numberline {4.2}Optimization system overview}{27}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Judge}{27}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Memory}{27}{subsection.4.2.2}
-\contentsline {paragraph}{Core function}{27}{section*.28}
-\contentsline {paragraph}{Extended funcion}{27}{section*.29}
-\contentsline {subsection}{\numberline {4.2.3}Candidate}{28}{subsection.4.2.3}
-\contentsline {paragraph}{Run}{28}{section*.30}
-\contentsline {paragraph}{Mutation}{28}{section*.31}
-\contentsline {subsection}{\numberline {4.2.4}Settings}{28}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Configuration file}{28}{subsection.4.2.5}
-\contentsline {paragraph}{Configuration parameters}{29}{section*.32}
-\contentsline {subsection}{\numberline {4.2.6}How it all comes together}{29}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Testing}{29}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Load profiles}{29}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Data collection}{29}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Results}{32}{chapter.5}
-\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusion}{34}{chapter.7}
+\contentsline {subsubsection}{Judge operations}{27}{section*.28}
+\contentsline {paragraph}{Memory}{27}{section*.29}
+\contentsline {paragraph}{Default candidate}{27}{section*.30}
+\contentsline {paragraph}{Population}{28}{section*.31}
+\contentsline {subsection}{\numberline {4.2.2}Memory}{29}{subsection.4.2.2}
+\contentsline {paragraph}{Probability vector algorithm}{29}{figure.4.4}
+\contentsline {subsection}{\numberline {4.2.3}Candidate}{31}{subsection.4.2.3}
+\contentsline {paragraph}{Run}{31}{section*.33}
+\contentsline {paragraph}{Mutation}{31}{section*.34}
+\contentsline {subsection}{\numberline {4.2.4}Settings}{31}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Configuration file}{31}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}This section has garbage text}{31}{subsection.4.2.6}
+\contentsline {paragraph}{Core function}{31}{section*.35}
+\contentsline {paragraph}{Extended funcion}{31}{section*.36}
+\contentsline {paragraph}{Configuration parameters}{31}{section*.37}
+\contentsline {subsection}{\numberline {4.2.7}How it all comes together}{32}{subsection.4.2.7}
+\contentsline {section}{\numberline {4.3}Testing}{32}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Load profiles}{32}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Data collection}{32}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Results}{34}{chapter.5}
+\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusion}{36}{chapter.7}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  18 MAR 2018 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.17)  23 MAR 2018 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -587,38 +587,51 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
 
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 11.
-Package hyperref Info: Option `linktocpage' set `true' on input line 11.
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen112
+\WF@size=\dimen113
+\c@WF@wrappedlines=\count106
+\WF@box=\box26
+\WF@everypar=\toks17
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count107
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 12.
+Package hyperref Info: Option `linktocpage' set `true' on input line 12.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen112
-\scratchbox=\box26
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen113
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count108
+\scratchdimen=\dimen114
+\scratchbox=\box27
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen115
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks19
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -636,8 +649,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring ON on input line 17.
+\AtBeginShipoutBox=\box28
+Package hyperref Info: Link coloring ON on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -645,48 +658,48 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count112
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-Package hyperref Info: Option `pageanchor' set `false' on input line 20.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 20.
+Package hyperref Info: Option `pageanchor' set `false' on input line 21.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<DUO_UiO_segl.png, id=257, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=261, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
-Package pdftex.def Info: DUO_UiO_segl.png  used on input line 20. on input line
- 20.
+Package pdftex.def Info: DUO_UiO_segl.png  used on input line 21. on input line
+ 21.
 Package pdftex.def Info: Requested size: 170.71652pt x 170.73027pt on input lin
-e 20.
+e 21.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./DUO_UiO_segl.png>] [1] [
 1]
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 20.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 20.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [1]
-Package hyperref Info: Option `pageanchor' set `true' on input line 20.
+Package hyperref Info: Option `pageanchor' set `true' on input line 21.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
  [1] [2] [3]
 (./main.toc [4
 
@@ -703,15 +716,15 @@ Chapter 2.
 [7
 
 ] [8] [9] [10]
-<drill_advantages.png, id=419, 737.75626pt x 409.53pt>
+<drill_advantages.png, id=424, 737.75626pt x 409.53pt>
 File: drill_advantages.png Graphic file (type png)
 <use drill_advantages.png>
-Package pdftex.def Info: drill_advantages.png  used on input line 137. on input
- line 137.
+Package pdftex.def Info: drill_advantages.png  used on input line 138. on input
+ line 138.
 Package pdftex.def Info: Requested size: 345.0pt x 191.51054pt on input line 13
-7.
+8.
 
-Overfull \hbox (0.39029pt too wide) in paragraph at lines 145--148
+Overfull \hbox (0.39029pt too wide) in paragraph at lines 146--149
 []\OT1/cmr/m/it/10 "Object and re-la-tional tech-nolo-gies are grounded in dif-
 fer-ent paradigms. Each
  []
@@ -721,251 +734,262 @@ Chapter 3.
 [13
 
 ] [14] [15]
-<mapr_drill1.png, id=478, 602.25pt x 286.06876pt>
+<mapr_drill1.png, id=483, 602.25pt x 286.06876pt>
 File: mapr_drill1.png Graphic file (type png)
 <use mapr_drill1.png>
-Package pdftex.def Info: mapr_drill1.png  used on input line 218. on input line
- 218.
+Package pdftex.def Info: mapr_drill1.png  used on input line 219. on input line
+ 219.
 Package pdftex.def Info: Requested size: 345.0pt x 163.88152pt on input line 21
-8.
+9.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16]
-<mapr_drill2.png, id=489, 602.25pt x 277.035pt>
+<mapr_drill2.png, id=494, 602.25pt x 277.035pt>
 File: mapr_drill2.png Graphic file (type png)
 <use mapr_drill2.png>
-Package pdftex.def Info: mapr_drill2.png  used on input line 226. on input line
- 226.
-Package pdftex.def Info: Requested size: 345.0pt x 158.7063pt on input line 226
+Package pdftex.def Info: mapr_drill2.png  used on input line 227. on input line
+ 227.
+Package pdftex.def Info: Requested size: 345.0pt x 158.7063pt on input line 227
 .
  [17 <./mapr_drill1.png> <./mapr_drill2.png>]
-<GA.png, id=503, 398.48875pt x 370.38374pt>
+<GA.png, id=508, 398.48875pt x 370.38374pt>
 File: GA.png Graphic file (type png)
 <use GA.png>
-Package pdftex.def Info: GA.png  used on input line 238. on input line 238.
+Package pdftex.def Info: GA.png  used on input line 239. on input line 239.
 Package pdftex.def Info: Requested size: 345.0pt x 320.68271pt on input line 23
-8.
+9.
  [18] [19 <./GA.png>] [20]
-<PBIL.png, id=525, 447.6725pt x 635.37375pt>
+<PBIL.png, id=530, 447.6725pt x 635.37375pt>
 File: PBIL.png Graphic file (type png)
 <use PBIL.png>
-Package pdftex.def Info: PBIL.png  used on input line 253. on input line 253.
+Package pdftex.def Info: PBIL.png  used on input line 254. on input line 254.
 Package pdftex.def Info: Requested size: 310.0pt x 439.98865pt on input line 25
-3.
+4.
 
 [21 <./PBIL.png>]
 
 LaTeX Warning: Hyper reference `sec:judge' on page 22 undefined on input line 2
-58.
+59.
 
 [22]
-Overfull \hbox (12.50081pt too wide) in paragraph at lines 280--281
+Overfull \hbox (12.50081pt too wide) in paragraph at lines 281--282
 \OT1/cmr/m/n/10 Im-pala, Con-cur-rent Lin-gual, Hadapt, In-finiDB, Jethro-Data,
  Mam-mothDB, Apache
  []
 
 [23]
-Overfull \hbox (0.86168pt too wide) in paragraph at lines 295--296
+Overfull \hbox (0.86168pt too wide) in paragraph at lines 296--297
 []\OT1/cmr/m/n/10 Telecommunications com-pa-nies can adapt all the afore-men-ti
 oned use cases.
  []
 
 [24] [25]
 Chapter 4.
-<cluster.png, id=583, 667.49374pt x 491.8375pt>
+<cluster.png, id=588, 667.49374pt x 491.8375pt>
 File: cluster.png Graphic file (type png)
 <use cluster.png>
-Package pdftex.def Info: cluster.png  used on input line 309. on input line 309
+Package pdftex.def Info: cluster.png  used on input line 310. on input line 310
 .
-Package pdftex.def Info: Requested size: 345.0pt x 254.21848pt on input line 30
-9.
-<tech_stack.png, id=585, 765.86125pt x 392.46625pt>
+Package pdftex.def Info: Requested size: 345.0pt x 254.21848pt on input line 31
+0.
+<tech_stack.png, id=590, 765.86125pt x 392.46625pt>
 File: tech_stack.png Graphic file (type png)
 <use tech_stack.png>
-Package pdftex.def Info: tech_stack.png  used on input line 314. on input line 
-314.
+Package pdftex.def Info: tech_stack.png  used on input line 315. on input line 
+315.
 Package pdftex.def Info: Requested size: 345.0pt x 176.79381pt on input line 31
-4.
+5.
 [26
 
  <./cluster.png>]
-<OOP.png, id=593, 242.9075pt x 416.55624pt>
+<OOP.png, id=598, 242.9075pt x 416.55624pt>
 File: OOP.png Graphic file (type png)
 <use OOP.png>
-Package pdftex.def Info: OOP.png  used on input line 320. on input line 320.
+Package pdftex.def Info: OOP.png  used on input line 321. on input line 321.
 Package pdftex.def Info: Requested size: 150.0pt x 257.22615pt on input line 32
-0.
+1.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [27 <./tech_stack.png>] [28 <./OOP.png>]
-<overview.png, id=613, 627.34375pt x 1016.79875pt>
+<memory_insight.png, id=619, 432.61626pt x 574.145pt>
+File: memory_insight.png Graphic file (type png)
+<use memory_insight.png>
+Package pdftex.def Info: memory_insight.png  used on input line 348. on input l
+ine 348.
+Package pdftex.def Info: Requested size: 156.49014pt x 207.682pt on input line 
+348.
+
+Overfull \hbox (1.60251pt too wide) in paragraph at lines 353--354
+[]\OT1/cmr/m/n/10 Parameter op-tions are \OT1/cmr/bx/n/10 [True,False] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--361
+
+ []
+
+[29 <./memory_insight.png>] [30]
+<overview.png, id=637, 627.34375pt x 1016.79875pt>
 File: overview.png Graphic file (type png)
 <use overview.png>
-Package pdftex.def Info: overview.png  used on input line 341. on input line 34
-1.
-Package pdftex.def Info: Requested size: 345.0pt x 559.1945pt on input line 341
+Package pdftex.def Info: overview.png  used on input line 379. on input line 37
+9.
+Package pdftex.def Info: Requested size: 345.0pt x 559.1945pt on input line 379
 .
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<test_workflow.png, id=614, 668.4975pt x 498.86375pt>
-File: test_workflow.png Graphic file (type png)
-<use test_workflow.png>
-Package pdftex.def Info: test_workflow.png  used on input line 346. on input li
-ne 346.
-Package pdftex.def Info: Requested size: 345.0pt x 257.46196pt on input line 34
-6.
+[31
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29] [30 <./overview.png>] [31 <./test_workflow.png>]
+] [32] [33 <./overview.png>]
 Chapter 5.
-[32
-
-]
-Chapter 6.
-[33
-
-]
-Chapter 7.
 [34
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Chapter 6.
+[35
+
+]
+Chapter 7.
+[36
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (Jan-uary 2018)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 \OT1/cmr/m/it/10 https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-
 
  []
 
 
-Overfull \hbox (17.82553pt too wide) in paragraph at lines 376--377
+Overfull \hbox (17.82553pt too wide) in paragraph at lines 410--411
 []\OT1/cmr/m/n/10 Michael Klee-ham-mer (2018, Febru-ary) \OT1/cmr/m/it/10 https
 ://github.com/mkleehammer/pyodbc 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 []\OT1/cmr/m/n/10 Modis (2018, Febru-ary) \OT1/cmr/m/it/10 http://www.modis.com
 /it-
  []
 
-[35
+[37
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--398
+Underfull \hbox (badness 10000) in paragraph at lines 430--432
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--405
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
 []\OT1/cmr/m/n/10 2018 Bet-ter-Cloud Mon-i-tor (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--405
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
 \OT1/cmr/m/it/10 https://www.bettercloud.com/monitor/real-time-enterprise-messa
 ging-
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 406--407
+Underfull \hbox (badness 4805) in paragraph at lines 440--441
 []\OT1/cmr/m/n/10 Stack Ex-change Inc, posted by user: Thoth (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 \OT1/cmr/m/it/10 https://stackoverflow.com/questions/42403229/mysql-database-wi
 th-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 416--417
+Underfull \hbox (badness 1478) in paragraph at lines 450--451
 []\OT1/cmr/m/n/10 Statista, Inc (2018, Febru-ary) \OT1/cmr/m/it/10 https://www.
 statista.com/statistics/ +
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 418--419
+Underfull \hbox (badness 6428) in paragraph at lines 452--453
 []\OT1/cmr/m/n/10 Github user Edlich, cu-rated list (2018, Febru-ary) \OT1/cmr/
 m/it/10 http://nosql-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--426
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, March)
  []
 
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 432--435
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 466--469
 \OT1/cmr/m/it/10 https://www.globalknowledge.com/us-en/content/articles/big-dat
 a-and-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--438
+Underfull \hbox (badness 10000) in paragraph at lines 470--472
 []\OT1/cmr/m/n/10 SiliconANGLE Me-dia, Inc. (2018, March)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--438
+Underfull \hbox (badness 10000) in paragraph at lines 470--472
 \OT1/cmr/m/it/10 https://siliconangle.com/blog/2012/08/01/hadoop-big-data-repor
 ts-future-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
-[37]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+[39]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D4281F460308FE83F68E5190341A6304;4243.
+(rerunfilecheck)             Checksum: 7517B0163968EDC14292F73A9168F315;4339.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
  ) 
 Here is how much of TeX's memory you used:
- 7673 strings out of 494931
- 113213 string characters out of 6180851
- 224077 words of memory out of 5000000
- 10677 multiletter control sequences out of 15000+600000
- 25081 words of font info for 40 fonts, out of 8000000 for 9000
+ 7958 strings out of 494931
+ 116701 string characters out of 6180851
+ 326229 words of memory out of 5000000
+ 10941 multiletter control sequences out of 15000+600000
+ 25700 words of font info for 42 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,42p,1503b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/roger/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600
 pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
-elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (41 pages, 637625 bytes).
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
+c/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (43 pages, 623269 bytes).
 PDF statistics:
- 746 PDF objects out of 1000 (max. 8388607)
- 654 compressed objects within 7 object streams
- 181 named destinations out of 1000 (max. 500000)
- 560 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 776 PDF objects out of 1000 (max. 8388607)
+ 681 compressed objects within 7 object streams
+ 192 named destinations out of 1000 (max. 500000)
+ 568 words of extra memory for PDF output out of 10000 (max. 10000000)
 
