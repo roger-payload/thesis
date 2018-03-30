@@ -49,11 +49,10 @@
 	\chapter{Preface}
 	\section{List of figures}
 	\section{List of tables}
-	\section{Word list \& abbreviations}
+	\section{Abbreviations}
 	\label{word_list}
 	\begin{table}[h]
 		\centering
-		\caption{Technical terms}
 		\begin{tabular}{ll}
 			TTE	& Time to execute \\
 			OOP	& Object Oriented Programming \\
@@ -65,6 +64,7 @@
 			SQL EE & Structured Query Language Execution Engine \\
 			MPP & Massively Parallel Processing \\
 			RPC & Remote Procedure Call \\
+			DSN & Data Source Name \\
 		\end{tabular}
 	\end{table}
 
@@ -251,6 +251,7 @@
 	\pagebreak
 	\section{Population based incremental learning}
 	\begin{figure}[ht]
+		\centering
 		\includegraphics[width=310pt]{PBIL}
 		\caption{Basic concepts of PBIL}
 	\end{figure}
@@ -341,38 +342,50 @@
 		\end{itemize}
 		\subsection{Memory}
 		\label{memory}
+		\begin{figure}[h]
+			\includegraphics[width=\textwidth]{memory_candidate}
+			\caption{The reliance between a candidates' setting object, and the judges' centralized memory.}
+		\end{figure}
 		The memory is the heart of this entire system. It provides a centralized brain that makes decisions based on historic data, and incrementally adapts it's knowledge as new data is being generated. While it can be considered a machine learning technique, the memory has a truly finite usage within each run, as it is meant to reach a state of convergence. More classic incremental learning schemes are continuously adapting, attempting to for instance predict the stock market. In our case however we simply want to reach one final solution and then end the run. For each run the memory starts out fresh, with a uniformly distributed probability vector, ensuring that changes in i.e cluster topology or data skewness will be taken into consideration when optimizing. Thus it can be valuable to execute one full optimization run each time a big data environment changes, or new data sources get added. If the memory were to store historic genetic material, then certain probability vectors would be skewed in favor of previously strong parameters, that may not be beneficial for current or future runs.
+		\clearpage
 		\paragraph{Probability vector algorithm}
 		\begin{wrapfigure}{r}{5.5cm}
 			\caption{How the memory gets altered by the elites}\label{memory_insight}
 			\includegraphics[width=5.5cm]{memory_insight}
 		\end{wrapfigure} 
-		When altering the memory, we iterate over each elite in the elite club, and view their setting parameters. Each option for a given parameter in the candidate is represented as a list, containing any type of data. The list can be as short or long as the user likes, it will automatically get a probability distribution in the memory and be eligible for optimization. For each parameter the candidates' settings object contains, there is a mirrored probability vector in memory. When the alterations take place, we check the candidate parameter value and locate it in the list of options, and then return a binary list of hits. For instance if the parameter is boolean the logic would look like this:
+		When altering the memory, we iterate over each elite in the elite club, and view their setting parameters. Each option for a given parameter in the candidate is represented as a list, containing any type of data. The list can be as short or as long as the user likes - it will automatically get a uniform probability distribution in the memory and be eligible for optimization. For each parameter the candidates' setting object contains, there is a mirrored probability vector in memory. When the alterations take place, we check the candidate parameter value and locate it in the list of options, and then return a binary list of hits. For instance if the parameter is boolean the logic would look like this:
 		\begin{enumerate}
 			\item Parameter value is \textbf{True}
 			\item Parameter options are \textbf{[True,False]}
 			\item Binary representation will be \textbf{[1,0]}
 		\end{enumerate}
-		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in \hyperref[memory_insight]{figure 4.4}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list, denoted as:\\
+		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in \hyperref[memory_insight]{figure 4.5}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list, denoted as:\\
 		\begin{math}
 			\mathbf{p[i] = p[i] + gr * ( h[i] / e - p[i] )}
 		\end{math}\\
 		\textit{p = probability, i = index, gr = growth rate, h = hits, e = amount of elites} \\
 		
+		\paragraph{Extended funcion - progress}
+		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
+		
 		\clearpage
 		\subsection{Candidate}
-		Candidates don't hold much information on their own, as most of it is stored in a settings object, which the candidate holds on to. However the candidate has some crucial functions, like how to run and measure performance.
+		Candidates don't hold much information on their own, as most of it is stored in a setting object, which the candidate holds on to. However the candidate has some crucial functions, like how to run queries with their setting object, how to mutate and how to measure self performance.
 		\paragraph{Run}
+		To get data on whether or not a particular set of settings will be an effective solution in the current environment, we need to run some tests - here simply defined as runs. To complete a run in this system the candidate is dependent on a data source, and information on how many runs to do, in order to measure the TTE. In a cluster where resources are shared among many users, or multiple queries are ran concurrently on the same quorum, the optimal solution need to take this into consideration. Therefore runs are done in to stages, one for concurrency testing, and another for sequential testing. Both the data source and the number of runs to complete are defined by the configuration file. The data source defines here is a ODBC DSN, but for future work this can be easily altered to point to a JDBC DSN or other similar sources. The number of runs defined by the configuration file is actually doubled in runtime, as it defines both the amount of concurrent runs in addition to the amount of sequentual runs. This means that defining this setting to the absolute minimum of one run, results in two runs - one in the concurrent stage and one in the sequential stage. Performing only a single run would leave too much up to circumstance, in regards to the available resources in the cluster and random error, thus a minimum of two runs is needed to measure performance - although any number higher than this is advised. Further technical details on how the runs are performed can be read in the \hyperref[testing]{testing section}
+		
 		\paragraph{Mutation}
-		\subsection{Settings}
-		The settings object is simply a collection of session settings for Apache Drill to apply before running queries. One of the strengths of PBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA usually has. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE.
+		To mitigate the issue of premature convergence a mutation function is in place, to mutate new candidates at a set probability defined by the configuration file. After a candidate is created, it may be chosen for mutation. The value that defines the probability for a candidate to be chosen also decides the probability for individual parameters to mutate within the candidates setting object. There is also a resistance value in place, to avoid too heavy mutations, potentially resulting in a useless candidate at later stages, which simply increases the time cost of the algorithm. The resistance value starts at 0, and increases via the resistance growth value set in the configuration file. Each time a parameter is mutated, the resistance growth gets added to the resistance value. It works by linearly reducing the mutation chance for individually chosen candidates. By default this reduction is 1\% per mutation. Increasing the resistance growth would result in more stable candidates, more purely defined by memory, but gives less variations - so this needs to be balanced. A problem that arises with resistance is the fact that iterating over all the settings will lead to heavy skewness of mutating the settings in the start of the object. As mutations happen, the chance for future mutations gets reduced, thus mutating the first setting is likely, while mutating the final setting is highly unlikely. This is dealt with by ensuring that the algorithm chooses a random subset of settings every time, making it just as likely to mutate the end as the start of the settings, instead of iterating from start to end. The mutation is entirely isolated from the memory, and thus chooses a new option for the parameter randomly - even 
+		\\
+		TODO: Input some math here - like average amount of mutations per candidate, chance of mutating everything, chance of mutating nothing etc - with default settings. \\
+		1/5 candidates get chosen, there are 5 replacements each generation.
+		There are 29 settings. 1/29, 14 chosen as start on average, and 7 chosen as end on average. Mutation chance is 0.2, 7/0,2 = 1,4 settings mutated on average?
+		\\
+		\subsection{Setting}
+		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. One of the strengths of PBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA usually has. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
-		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be.
-		\subsection{This section has garbage text}
-		\paragraph{Core function}
-		The memory is the most defining part of the optimization process, as it defines the generation of each candidate solution. 
-		\paragraph{Extended funcion}
-		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
+		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake.
+
 		\paragraph{Configuration parameters}
 		\subsection{How it all comes together}
 		\begin{figure}[h]
@@ -380,18 +393,18 @@
 			\caption{System overview}
 		\end{figure}
 		\section{Testing}
+		\label{testing}
 			\subsection{Load profiles}
 				It should be infeasible for one configuration to solve all problems. After all, the concept of optimization takes great consideration to its specific context. Expecting to solve all aspects of a complex problem with one remedy leads to a candidate being a jack of all trades but master of none. Hence the solution should be tailored to a specific context, by letting the algorithm aggressively tune the system to work in its current state. To make sure this algorithm performs this way, testing was done on different kinds of data sets, with different kinds of queries.
 			\subsection{Data collection}
 				
 	\chapter{Results}
-
+	
 	
 	\chapter{Discussion}
 	
 	
 	\chapter{Conclusion}
-	
 	
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
@@ -476,4 +489,64 @@
 		MapR Technologies, Inc. (2018, March)
 		\emph{https://mapr.com/blog/apache-drill-architecture-ultimate-guide/}
 	\end{thebibliography}
+
+\appendix
+\chapter{System parameters}
+\label{system_params}
+\begin{table}[ht]
+	\centering
+	\caption{All parameters and options used by PBIL in this thesis}
+	\label{table:added_params}
+	\begin{tabular}{ll}
+		\\
+		\multicolumn{1}{l}{\bfseries Name} & \multicolumn{1}{l}{\bfseries Default value} \\ \hline \\
+		planner.memory.enable\_memory\_estimation & False  \\
+		exec.queue.enable & False  \\
+		planner.broadcast\_factor & 1  \\
+		planner.broadcast\_threshold & 10000000  \\
+		planner.slice\_target & 1000  \\
+		planner.width.max\_per\_query & 1000  \\
+		exec.min\_hash\_table\_size & 65536  \\
+		exec.max\_hash\_table\_size & 1073741824  \\
+		exec.queue.large & 10  \\
+		exec.queue.small & 100  \\
+		exec.queue.threshold & 30000000  \\
+		exec.queue.timeout\_millis & 300000  \\
+		planner.memory.max\_query\_memory\_per\_node &  max\_query\_memory  \\
+		planner.width.max\_per\_node & calculated  \\
+		planner.add\_producer\_consumer & False  \\
+		planner.enable\_hashjoin\_swap & True  \\
+		planner.enable\_mergejoin & True  \\
+		planner.filter.max\_selectivity\_estimate\_factor & 1  \\
+		planner.filter.min\_selectivity\_estimate\_factor & 0  \\
+		planner.join.hash\_join\_swap\_margin\_factor & 10  \\
+		planner.join.row\_count\_estimate\_factor & 1  \\
+		planner.memory.average\_field\_width & 8  \\
+		planner.memory.hash\_agg\_table\_factor & 1.1  \\
+		planner.memory.hash\_join\_table\_factor & 1.1  \\
+		planner.memory.non\_blocking\_operators\_memory & 64  \\
+		planner.partitioner\_sender\_max\_threads & 8  \\
+		planner.nestedloopjoin\_factor & 100  \\
+		planner.producer\_consumer\_queue\_size & 10  \\
+		store.text.estimated\_row\_size\_bytes & 100  \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+	\centering
+	\caption{Parameters and options that was removed during development, but still is considered to have impact on performance of query execution}
+	\label{table:removed_params}
+	\begin{tabular}{ll}
+		\\
+		\multicolumn{1}{l}{\bfseries Name} & \multicolumn{1}{l}{\bfseries Default value} \\ \hline \\
+		planner.enable\_multiphase\_agg & True  \\
+		planner.enable\_broadcast\_join & True  \\
+		planner.enable\_hashagg & True  \\
+		planner.enable\_hashjoin & True  \\
+		exec.queue.memory\_ratio & 10  \\ 
+		exec.queue.memory\_reserve\_ratio & 0.2  \\
+	\end{tabular}
+\end{table}
+
+\chapter{Code}
 \end{document}
