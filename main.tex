@@ -365,6 +365,9 @@
 		\end{math}\\
 		\textit{p = probability, i = index, gr = growth rate, h = hits, e = amount of elites} \\
 		
+		\paragraph{Accelerated convergence}
+		Once the memory convergence value passes 0.8, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
+		
 		\paragraph{Extended funcion - progress}
 		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
 		
@@ -384,11 +387,11 @@
 		\subsection{Setting}
 		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. One of the strengths of PBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA usually has. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
-		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake.
-
-		\paragraph{Configuration parameters}
+		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake. All the parameters can be found in \hyperref[table:conf_params]{appendix B}.
+		
 		\subsection{How it all comes together}
-		\begin{figure}[h]
+		
+		\begin{figure}[ht]
 			\includegraphics[width=\textwidth]{overview}
 			\caption{System overview}
 		\end{figure}
@@ -399,11 +402,25 @@
 			\subsection{Data collection}
 				
 	\chapter{Results}
-	
+	\section{title}
 	
 	\chapter{Discussion}
-	
-	
+	\section{The sequential effect}
+	As mentioned previously, a candidate run consists of two stages - one concurrent stage and one sequential stage. A single run on a single candidate will always perform at least two sequential queries. All candidates in a population are run in sequence, one after the other whilst measuring their fitness. \textbf{Only elites get counted. always 30\% lower than default, default gets run vs optimal, both perform very bad all of a sudden. What up? Keep this part for now, but do more runs with bigger solution assurance testing pool}
+	\section{Parameter agnostic queries}
+		\label{sec:param_agno}
+		\subsection{Tiny queries}
+		Running a very simple query in the cluster environments we set up, on a small json file of a couple thousand lines - took drill around 0.2 seconds. Attempting to optimize for such queries was completely futile, as the only bottleneck for such a simple query is pure hard drive reading speeds. This led to every randomized set of settings to be considered equally good, which again means that the default candidate is equally good. No optimal setting can be discovered, and convergence of the algorithm is simply an act of chance.
+		\subsection{Complex queries}
+		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a 4 node cluster with relatively low resources, there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out. Early proof of concept runs would often see convergence reach around 0.85 - 0.9, before floating back down to around 0.8 and staying there for tens of generations, without ever increasing the fitness value. After introducing accelerated convergence, we give the algorithm an extra push in the higher end of convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters.
+	\section{Error sources}
+		\subsection{Cluster instability}
+		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for. This proved effective in terms of mitigating the variations, but still a range of random cost-ineffective candidate runs where observed, where no spikes were expected. With such variations it is hard to reach a sensible convergence, considering how fitness scores then are products of both settings and circumstance.
+		\subsection{Cluster size}
+		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism.
+		
+	\section{Cut configuration parameters}
+	Time constraints and choice of implemented algorithm caused some relevant parameters to be cut from the optimization process, making them default values in all candidates. There were a total of six cut parameters, viewable in the appendix, \hyperref[table:removed_params]{cut parameters}. The two execution queue memory parameters could not be set in-session, as they were exclusively system settings. This meant that we would need to restart apache for each candidate, to apply their system settings, causing massive overhead and added complexity. The four remaining ones all define what type of aggregation and join functions should be available. Changing these parameters led to segmentation faults while running candidates, and they then had to be cut from the settings list. Given more time, some deeper study and insight could be gained to understand the segmentation faults, and perhaps build systems to handle them.
 	\chapter{Conclusion}
 	
 	\begin{thebibliography}{1}
@@ -545,6 +562,18 @@
 		planner.enable\_hashjoin & True  \\
 		exec.queue.memory\_ratio & 10  \\ 
 		exec.queue.memory\_reserve\_ratio & 0.2  \\
+	\end{tabular}
+\end{table}
+
+\chapter{Configuration parameters}
+\begin{table}[ht]
+	\centering
+	\caption{Configuration parameters that define how the algorithm executes.}
+	\label{table:conf_params}
+	\begin{tabular}{ll}
+		\\
+		\multicolumn{1}{l}{\bfseries Name} & \multicolumn{1}{l}{\bfseries Default value} \\ \hline \\
+		planner.enable\_multiphase\_agg & True  \\
 	\end{tabular}
 \end{table}
 

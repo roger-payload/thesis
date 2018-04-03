@@ -83,19 +83,29 @@
 \contentsline {paragraph}{Population}{28}{section*.31}
 \contentsline {subsection}{\numberline {4.2.2}Memory}{29}{subsection.4.2.2}
 \contentsline {paragraph}{Probability vector algorithm}{30}{figure.4.5}
-\contentsline {paragraph}{Extended funcion - progress}{30}{section*.33}
+\contentsline {paragraph}{Accelerated convergence}{30}{section*.33}
+\contentsline {paragraph}{Extended funcion - progress}{30}{section*.34}
 \contentsline {subsection}{\numberline {4.2.3}Candidate}{31}{subsection.4.2.3}
-\contentsline {paragraph}{Run}{31}{section*.34}
-\contentsline {paragraph}{Mutation}{31}{section*.35}
+\contentsline {paragraph}{Run}{31}{section*.35}
+\contentsline {paragraph}{Mutation}{31}{section*.36}
 \contentsline {subsection}{\numberline {4.2.4}Setting}{32}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Configuration file}{32}{subsection.4.2.5}
-\contentsline {paragraph}{Configuration parameters}{32}{section*.36}
 \contentsline {subsection}{\numberline {4.2.6}How it all comes together}{32}{subsection.4.2.6}
 \contentsline {section}{\numberline {4.3}Testing}{32}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Load profiles}{32}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Data collection}{33}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Results}{35}{chapter.5}
-\contentsline {chapter}{\numberline {6}Discussion}{36}{chapter.6}
+\contentsline {subsection}{\numberline {4.3.2}Data collection}{32}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Results}{34}{chapter.5}
+\contentsline {section}{\numberline {5.1}title}{34}{section.5.1}
+\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}The sequential effect}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{35}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries}{35}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{35}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Error sources}{36}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Cluster instability}{36}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster size}{36}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Cut configuration parameters}{36}{section.6.4}
 \contentsline {chapter}{\numberline {7}Conclusion}{37}{chapter.7}
 \contentsline {chapter}{\numberline {A}System parameters}{41}{appendix.A}
-\contentsline {chapter}{\numberline {B}Code}{43}{appendix.B}
+\contentsline {chapter}{\numberline {B}Configuration parameters}{43}{appendix.B}
+\contentsline {chapter}{\numberline {C}Code}{44}{appendix.C}

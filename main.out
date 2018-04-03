@@ -59,7 +59,17 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Load profiles}{section.4.3}% 59
 \BOOKMARK [2][-]{subsection.4.3.2}{Data collection}{section.4.3}% 60
 \BOOKMARK [0][-]{chapter.5}{Results}{}% 61
-\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 62
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 63
-\BOOKMARK [0][-]{appendix.A}{System parameters}{}% 64
-\BOOKMARK [0][-]{appendix.B}{Code}{}% 65
+\BOOKMARK [1][-]{section.5.1}{title}{chapter.5}% 62
+\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 63
+\BOOKMARK [1][-]{section.6.1}{The sequential effect}{chapter.6}% 64
+\BOOKMARK [1][-]{section.6.2}{Parameter agnostic queries}{chapter.6}% 65
+\BOOKMARK [2][-]{subsection.6.2.1}{Tiny queries}{section.6.2}% 66
+\BOOKMARK [2][-]{subsection.6.2.2}{Complex queries}{section.6.2}% 67
+\BOOKMARK [1][-]{section.6.3}{Error sources}{chapter.6}% 68
+\BOOKMARK [2][-]{subsection.6.3.1}{Cluster instability}{section.6.3}% 69
+\BOOKMARK [2][-]{subsection.6.3.2}{Cluster size}{section.6.3}% 70
+\BOOKMARK [1][-]{section.6.4}{Cut configuration parameters}{chapter.6}% 71
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 72
+\BOOKMARK [0][-]{appendix.A}{System parameters}{}% 73
+\BOOKMARK [0][-]{appendix.B}{Configuration parameters}{}% 74
+\BOOKMARK [0][-]{appendix.C}{Code}{}% 75
