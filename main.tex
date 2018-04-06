@@ -306,7 +306,7 @@
 	\chapter{Method}
 		
 		\section{Infrastructure}
-			To simulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them. All data that Drill uses to read for tests are replicated three times in the cluster, ensuring parallel processing.
+			To simulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The cluster is also listed in the appendix, called the \hyperref[table:cluster_shared]{shared cluster} The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them. All data that Drill uses to read for tests are replicated three times in the cluster, ensuring parallel processing.
 			\begin{figure}[h]
 				\includegraphics[width=\textwidth]{cluster}
 				\caption{Cluster architecture}
@@ -350,7 +350,8 @@
 		\clearpage
 		\paragraph{Probability vector algorithm}
 		\begin{wrapfigure}{r}{5.5cm}
-			\caption{How the memory gets altered by the elites}\label{memory_insight}
+			\caption{How the memory gets altered by the elites}
+			\label{fig:memory_insight}
 			\includegraphics[width=5.5cm]{memory_insight}
 		\end{wrapfigure} 
 		When altering the memory, we iterate over each elite in the elite club, and view their setting parameters. Each option for a given parameter in the candidate is represented as a list, containing any type of data. The list can be as short or as long as the user likes - it will automatically get a uniform probability distribution in the memory and be eligible for optimization. For each parameter the candidates' setting object contains, there is a mirrored probability vector in memory. When the alterations take place, we check the candidate parameter value and locate it in the list of options, and then return a binary list of hits. For instance if the parameter is boolean the logic would look like this:
@@ -359,7 +360,7 @@
 			\item Parameter options are \textbf{[True,False]}
 			\item Binary representation will be \textbf{[1,0]}
 		\end{enumerate}
-		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in \hyperref[memory_insight]{figure 4.5}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list, denoted as:\\
+		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in figure \ref{fig:memory_insight}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list, denoted as:\\
 		\begin{math}
 			\mathbf{p[i] = p[i] + gr * ( h[i] / e - p[i] )}
 		\end{math}\\
@@ -368,7 +369,7 @@
 		\paragraph{Accelerated convergence}
 		Once the memory convergence value passes 0.8, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
 		
-		\paragraph{Extended funcion - progress}
+		\paragraph{Extended function - progress}
 		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
 		
 		\clearpage
@@ -388,21 +389,25 @@
 		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. One of the strengths of PBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA usually has. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
 		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake. All the parameters can be found in \hyperref[table:conf_params]{appendix B}.
-		
+		\clearpage
 		\subsection{How it all comes together}
-		
+		Figure \ref{fig:sys_overview} shows a simplistic flow chart for how the entire system runs, from tart to achieved convergence.
 		\begin{figure}[ht]
-			\includegraphics[width=\textwidth]{overview}
+			\centering
+			\includegraphics[width=270pt]{overview}
 			\caption{System overview}
+			\label{fig:sys_overview}
 		\end{figure}
+		\clearpage
 		\section{Testing}
+		TODO: This part.
 		\label{testing}
 			\subsection{Load profiles}
 				It should be infeasible for one configuration to solve all problems. After all, the concept of optimization takes great consideration to its specific context. Expecting to solve all aspects of a complex problem with one remedy leads to a candidate being a jack of all trades but master of none. Hence the solution should be tailored to a specific context, by letting the algorithm aggressively tune the system to work in its current state. To make sure this algorithm performs this way, testing was done on different kinds of data sets, with different kinds of queries.
 			\subsection{Data collection}
 				
 	\chapter{Results}
-	\section{title}
+	TODO: this part
 	
 	\chapter{Discussion}
 	\section{The sequential effect}
@@ -414,14 +419,27 @@
 		\subsection{Complex queries}
 		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a 4 node cluster with relatively low resources, there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out. Early proof of concept runs would often see convergence reach around 0.85 - 0.9, before floating back down to around 0.8 and staying there for tens of generations, without ever increasing the fitness value. After introducing accelerated convergence, we give the algorithm an extra push in the higher end of convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters.
 	\section{Error sources}
+		\subsection{Drill planner inconsistency}
+		First of all, drill is inherently a bit varied in terms of query times. Performing the same query twice in the same session will heavily leverage a shared cache amongst the drillbits, reducing query times by an average of 15\%. Further more the planning phase contains some fuzzy logic and decision making probabilities, so it may not always result in the same execution stage. The cache issue is mitigated by letting every candidate start a new session, and run the same amount of queries in the session. The planning stage inconsistency is mitigated by running several queries in a single run, to make sure to take the average into consideration. The solutions to both these problems are however parameterized, so setting the amount of queries per run to a low number will lead to increasing impact of these factors as error sources.
 		\subsection{Cluster instability}
-		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for. This proved effective in terms of mitigating the variations, but still a range of random cost-ineffective candidate runs where observed, where no spikes were expected. With such variations it is hard to reach a sensible convergence, considering how fitness scores then are products of both settings and circumstance.
+		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for, hereby called the \hyperref[table:cluster_stable]{stable cluster}. This proved effective in terms of mitigating the variations, but still a range of random cost-ineffective candidate runs where observed. When cluster instability gets added on top of drill planner inconsistency in a single query / run, it leads to an outlier of extremely high TTE, which we cut from our dataset when analyzing the data in posterity. With such variations it is hard to reach a sensible convergence for truly optimal solutions, considering how fitness scores then are products of both settings and circumstance.
 		\subsection{Cluster size}
-		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism.
-		
+		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism. 
+	\section{Proving effect}
+	Considering the error sources at hand, and specifically regarding the cluster instability, it can be difficult to prove that a solution will lead to consistently lower TTE over time - thus saving time and money. Over time a simple solution assurance stage got added to the end of the algorithm, running several runs, 10 by default, where the considered optimal candidate competes against the default candidate. After analyzing this data it is clear that the algorithm works as intended - reducing the overall TTE. Although some error sources will put individual runs from the default candidate ahead of the considered optimal solution in terms of TTE, it is proven across several solution assurance runs that the average cost saving of the suggested optimal solution is worthwhile, averaging out at 20\% for the \hyperref[table:cluster_stable]{stable cluster}, and 5\% for the \hyperref[table:cluster_shared]{shared cluster}. \textbf{TODO: get cost savings right.}
 	\section{Cut configuration parameters}
 	Time constraints and choice of implemented algorithm caused some relevant parameters to be cut from the optimization process, making them default values in all candidates. There were a total of six cut parameters, viewable in the appendix, \hyperref[table:removed_params]{cut parameters}. The two execution queue memory parameters could not be set in-session, as they were exclusively system settings. This meant that we would need to restart apache for each candidate, to apply their system settings, causing massive overhead and added complexity. The four remaining ones all define what type of aggregation and join functions should be available. Changing these parameters led to segmentation faults while running candidates, and they then had to be cut from the settings list. Given more time, some deeper study and insight could be gained to understand the segmentation faults, and perhaps build systems to handle them.
+	
+	\chapter{Further work}
+	\section{Homogeneous clusters}
+	In this thesis both the clusters set up consisted of a homogeneous set of nodes. It is expected that a heterogeneous cluster will have added complexity to the logical and physical planner on the drillbits, further increasing the value of optimization. This is a high priority effort for future work, as it accurately represents a real world use case.
+	\section{Single node setups}
+	It would be interesting to gather data from a single node laptop setup for running queries in drill. The way data sources work in this thesis through pyodbc meant that it would add too much development time to adapt for local hard drive runs, either in the way of configuring a hard drive location as an ODBC DSN, or altering the way we programatically run drill queries. 
+	\section{Support for the cut parameters}
+	As mentioned earlier there are a couple of interesting parameters that was cut from the development process in this thesis, listed in \hyperref[table:removed_params]{the appendix}. To handle the segmentation faults potentially caused by hash- and aggregate join disabling, one could possibly access drill through a different source than pyodbc, to create an appropriate wrapper around the runs and catch the errors. To handle the system settings, a more complex run needs to be set up, to restart the cluster and check for readiness before querying it for each candidate - this may ultimately be infeasible in terms of optimization time.
+	
 	\chapter{Conclusion}
+	TODO: this part
 	
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
@@ -508,6 +526,39 @@
 	\end{thebibliography}
 
 \appendix
+\chapter{Cluster specs}
+\begin{table}[ht]
+	\centering
+	\caption{Specs for the shared cluster}
+	\label{table:cluster_shared}
+	\begin{tabular}{ll}
+		\\
+		\multicolumn{1}{l}{\bfseries Specification} & \multicolumn{1}{l}{\bfseries Value} \\ \hline \\
+		Amount of nodes & 4  \\
+		Heterogeneous & No  \\
+		OS & Ubuntu 17.10  \\
+		VCPUs & 4  \\
+		RAM & 8GB  \\ 
+		HDD & 80GB  \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+	\centering
+	\caption{Specs for the stable cluster}
+	\label{table:cluster_stable}
+	\begin{tabular}{ll}
+		\\
+		\multicolumn{1}{l}{\bfseries Specification} & \multicolumn{1}{l}{\bfseries Value} \\ \hline \\
+		Amount of nodes & 4  \\
+		Heterogeneous & No  \\
+		OS & Ubuntu 16.04  \\
+		VCPUs & 2  \\
+		RAM & 2GB  \\ 
+		HDD & 15GB  \\
+	\end{tabular}
+\end{table}
+
 \chapter{System parameters}
 \label{system_params}
 \begin{table}[ht]
@@ -573,7 +624,7 @@
 	\begin{tabular}{ll}
 		\\
 		\multicolumn{1}{l}{\bfseries Name} & \multicolumn{1}{l}{\bfseries Default value} \\ \hline \\
-		planner.enable\_multiphase\_agg & True  \\
+		Parameter & Value  \\
 	\end{tabular}
 \end{table}
 

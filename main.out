@@ -59,17 +59,23 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Load profiles}{section.4.3}% 59
 \BOOKMARK [2][-]{subsection.4.3.2}{Data collection}{section.4.3}% 60
 \BOOKMARK [0][-]{chapter.5}{Results}{}% 61
-\BOOKMARK [1][-]{section.5.1}{title}{chapter.5}% 62
-\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 63
-\BOOKMARK [1][-]{section.6.1}{The sequential effect}{chapter.6}% 64
-\BOOKMARK [1][-]{section.6.2}{Parameter agnostic queries}{chapter.6}% 65
-\BOOKMARK [2][-]{subsection.6.2.1}{Tiny queries}{section.6.2}% 66
-\BOOKMARK [2][-]{subsection.6.2.2}{Complex queries}{section.6.2}% 67
-\BOOKMARK [1][-]{section.6.3}{Error sources}{chapter.6}% 68
-\BOOKMARK [2][-]{subsection.6.3.1}{Cluster instability}{section.6.3}% 69
-\BOOKMARK [2][-]{subsection.6.3.2}{Cluster size}{section.6.3}% 70
-\BOOKMARK [1][-]{section.6.4}{Cut configuration parameters}{chapter.6}% 71
-\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 72
-\BOOKMARK [0][-]{appendix.A}{System parameters}{}% 73
-\BOOKMARK [0][-]{appendix.B}{Configuration parameters}{}% 74
-\BOOKMARK [0][-]{appendix.C}{Code}{}% 75
+\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 62
+\BOOKMARK [1][-]{section.6.1}{The sequential effect}{chapter.6}% 63
+\BOOKMARK [1][-]{section.6.2}{Parameter agnostic queries}{chapter.6}% 64
+\BOOKMARK [2][-]{subsection.6.2.1}{Tiny queries}{section.6.2}% 65
+\BOOKMARK [2][-]{subsection.6.2.2}{Complex queries}{section.6.2}% 66
+\BOOKMARK [1][-]{section.6.3}{Error sources}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.3.1}{Drill planner inconsistency}{section.6.3}% 68
+\BOOKMARK [2][-]{subsection.6.3.2}{Cluster instability}{section.6.3}% 69
+\BOOKMARK [2][-]{subsection.6.3.3}{Cluster size}{section.6.3}% 70
+\BOOKMARK [1][-]{section.6.4}{Proving effect}{chapter.6}% 71
+\BOOKMARK [1][-]{section.6.5}{Cut configuration parameters}{chapter.6}% 72
+\BOOKMARK [0][-]{chapter.7}{Further work}{}% 73
+\BOOKMARK [1][-]{section.7.1}{Homogeneous clusters}{chapter.7}% 74
+\BOOKMARK [1][-]{section.7.2}{Single node setups}{chapter.7}% 75
+\BOOKMARK [1][-]{section.7.3}{Support for the cut parameters}{chapter.7}% 76
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 77
+\BOOKMARK [0][-]{appendix.A}{Cluster specs}{}% 78
+\BOOKMARK [0][-]{appendix.B}{System parameters}{}% 79
+\BOOKMARK [0][-]{appendix.C}{Configuration parameters}{}% 80
+\BOOKMARK [0][-]{appendix.D}{Code}{}% 81
