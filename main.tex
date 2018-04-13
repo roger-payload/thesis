@@ -1,4 +1,6 @@
 \documentclass[a4paper,english]{report}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage[utf8]{inputenc}
 \usepackage{babel,duomasterforside}
 \usepackage{color}   %May be necessary if you want to color links
@@ -38,7 +40,7 @@
 			\subsubsection{ANSI SQL}
 			There are similar platforms to Apache Drill, like the popular Apache Spark. Spark also provides SQL querying on data, however this is only a subset of SQL. Only Drill has the full suit of SQL programming capabilities as defines by ANSI (American National Standards Institute), which gives more in depth querying.
 			\subsubsection{NoSQL}
-			Previously NoSQL databases where known as "Non-SQL" databases, but this has now changed to be "Not Only SQL" databases as they have begun supporting SQL-like querying. The main point about them is that they are non-relational, distributed, open-source and horizontally scalable\cite{no_sql}.
+			Previously NoSQL databases where known as "Non-SQL" databases, but this has now changed to be "Not Only SQL" databases as they have begun supporting SQL-like querying. The main point about them is that they are non-relational, distributed, open-source and horizontally scalable \cite{no_sql}.
 	
 	\pagebreak
 	\section{Foreword}
@@ -79,7 +81,7 @@
 		
 		\section{Research question - in full}
 		\subsection{Goal, justification and challenges}
-		The goal for this thesis is to optimize a SQL Engine that sits on top of a distributed storage, for more cost-effective big data handling, business intelligence and advanced analytics. Businesses that handle big data will most likely perform plenty of queries every day, or even every hour. If we were to add up the amount of time spent waiting for a query to complete, for a year, and converted the hours into money - we would find it costs a lot of money to convert raw data into information. That's why saving even 10\% in execution time can mean a big difference when it comes to overhead costs. So naturally there is a massive amount of research for improving execution time and other metrics, even more so when it comes to shared computing like cloud services where you pay by the minute. The SQL Engine chosen here is Apache Drill, a fairly new framework inspired by Google Dremel, and currently the only schema-free engine to run on top of HDFS, allowing users to drill into complex data like JSON. Looking to for example Yelp, we can see that their entire database is available as JSON\cite{yelp}, allowing for far more complex  and flexible handling of metrics than conventional ER databases. As with the other data handling engines on distributed storage platforms, there are many parameters to consider if one wants to increase performance - in fact so many that it is considered infeasible without in depth expertise of domain and engine. Considerations are:
+		The goal for this thesis is to optimize a SQL Engine that sits on top of a distributed storage, for more cost-effective big data handling, business intelligence and advanced analytics. Businesses that handle big data will most likely perform plenty of queries every day, or even every hour. If we were to add up the amount of time spent waiting for a query to complete, for a year, and converted the hours into money - we would find it costs a lot of money to convert raw data into information. That's why saving even 10\% in execution time can mean a big difference when it comes to overhead costs. So naturally there is a massive amount of research for improving execution time and other metrics, even more so when it comes to shared computing like cloud services where you pay by the minute. The SQL Engine chosen here is Apache Drill, a fairly new framework inspired by Google Dremel, and currently the only schema-free engine to run on top of HDFS, allowing users to drill into complex data like JSON. Looking to for example Yelp, we can see that their entire database is available as JSON \cite{yelp}, allowing for far more complex  and flexible handling of metrics than conventional ER databases. As with the other data handling engines on distributed storage platforms, there are many parameters to consider if one wants to increase performance - in fact so many that it is considered infeasible without in depth expertise of domain and engine. Considerations are:
 		\begin{itemize}
 			\item Type of storage (distributed or single node)
 			\item Amount of computing nodes (cluster or not)
@@ -97,7 +99,7 @@
 			\subsubsection{Subject}
 			The subject for this master thesis is a natural continuation of our previous work \emph{Hadoop MapReduce Scheduling Paradigms}, published in 2017, in the 2nd IEEE International Conference on Cloud Computing and Big Data Analysis (ISSSBDA 2017). Back then the topic was haphazardly picked from a list of eligible ones, but the more we read into it - the more we understood the incredible use cases for Hadoop within the massive industries that are driving forces for our technological advancements. As is common in IT, levels of abstraction get added on top of proven technologies both to make implementation better, and often to increase performance. Since then Apache Drill has seen plenty of stable builds and proven itself to be potentially industry-changing in the way we handle our data - entering a schema-on-the-fly paradigm.
 			\subsubsection{Apache Drill as a platform}
-			As mentioned previously there is little to no research done on Apache Drill as a platform. Some of the reasoning might be the that some still considers it to be in the early development phase, but as of this writing there has already been one major release, \textbf{1.0} in 2015, and 12 subsequent minor releases up till \textbf{1.12}\cite{drill_releases}. So we would argue the project is past the early development phase, and moving into the early adopter phase. But why choose to use this platform over more established ones, and what other options are there? This is discussed further in a following section: \hyperref[sec:why_drill]{Why is this worthwhile?}
+			As mentioned previously there is little to no research done on Apache Drill as a platform. Some of the reasoning might be the that some still considers it to be in the early development phase, but as of this writing there has already been one major release, \textbf{1.0} in 2015, and 12 subsequent minor releases up till \textbf{1.12} \cite{drill_releases}. So we would argue the project is past the early development phase, and moving into the early adopter phase. But why choose to use this platform over more established ones, and what other options are there? This is discussed further in a following section: \hyperref[sec:why_drill]{Why is this worthwhile?}
 		
 		\section{Research method in brief}
 		Throughout this thesis we will develop an entire suite of tools centered around a genetic algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. As the framework is expected to change, all of the parameters tweaked will be in relation to the current version being used, \textbf{1.12}. The main goal is to achieve a performance increase, measured as TTE (Time to Execute) for single and/or concurrent queries. Examining previous studies on SQL performance will provide a good basis for best practices within SQL query execution optimization, and how to measure it.
@@ -118,11 +120,11 @@
 			\subsection{Ease of use}It is safe to say that information technology as a subject is only getting more popular by demand. According to projections made by renown recruitment company Modis, tech employment will see a 12\% growth by 2024, vs 6,5\% in all other industries\cite{modis}. This means that a lot of new engineers will enter the workforce, and start building and maintaining enterprise applications. Apache Drill serves a very low barrier of entry for newcomers with its' SQL ANSI queries when handling big amounts of data, as opposed to i.e the popular Java Enterprise framework Persistence. Using Apache Drill will therefore require less training, thus increasing productivity and agility in young teams.
 			\subsection{Increasing relevance of Big Data infrastructures}
 			\label{big_data}
-			\textit{"From 2005 to 2020, the digital universe is expected to grow dramatically by a factor of 300, from 130 exabytes to 40 trillion gigabytes, i.e more than 5,200 gigabytes per person in 2020. Moreover, the digital universe is expected to double every two years"}\cite{bigdata}.
+			\textit{"From 2005 to 2020, the digital universe is expected to grow dramatically by a factor of 300, from 130 exabytes to 40 trillion gigabytes, i.e more than 5,200 gigabytes per person in 2020. Moreover, the digital universe is expected to double every two years"} \cite{bigdata}.
 				\subsubsection{Real time data usage}
-				Successful digitalization of businesses often require applications to utilize data in real time, serving customers relevant data instantaneously. \textit{"Now, most applications are generating real-time data, so superfast data capturing and analysis within a fraction of a second are mandatory"}\cite{management_analytics}.
+				Successful digitalization of businesses often require applications to utilize data in real time, serving customers relevant data instantaneously. \textit{"Now, most applications are generating real-time data, so superfast data capturing and analysis within a fraction of a second are mandatory"} \cite{management_analytics}.
 				\\
-				An interesting example of this is chat applications (instant messaging). Users of messaging apps today expect it to store data indefinitely, and deliver instant communication between users, creating an absolutely enormous global data flow. Bettercloud.com performed a study and found that\cite{bettercloud}:
+				An interesting example of this is chat applications (instant messaging). Users of messaging apps today expect it to store data indefinitely, and deliver instant communication between users, creating an absolutely enormous global data flow. Bettercloud.com performed a study and found that \cite{bettercloud}:
 				\begin{itemize}
 					\item The majority of organizations (57\%) use two or more real-time messaging applications.
 					\item 80\% of Skype for Business users, 84\% of Google Hangouts users, and 95\% of Slack users say communication has improved because of real-time messaging.
@@ -131,7 +133,7 @@
 				From these results we see that adoption of applications using real time data is only increasing. This will provide a future need for fast and scalable infrastructure to cope with it. 
 				\subsubsection{Combining real-time and stored data}
 				In reality a lot of current applications that create value combine the usage of analytics on stored data and real-time sensor data. Predictive maintenance is an example of a discipline where you analyze historical data, finding thresholds and patterns for when components in a system break down, and then combining this knowledge with real time sensors to service the components before they fail. This saves money on planned maintenance where healthy parts get serviced, and downtime on systems where they have to be set aside for the service. In a Harvard Business Review on a company called \textbf{Servicemax} that has specialized in services like this they wrote that:
-				\textit{"(...) customers, on average, increase productivity by 31\%, service revenue by 14\% and customer satisfaction by 16\%"}\cite{servicemax}. All of this is empowered by big data, and the utilization of information.
+				\textit{"(...) customers, on average, increase productivity by 31\%, service revenue by 14\% and customer satisfaction by 16\%"} \cite{servicemax}. All of this is empowered by big data, and the utilization of information.
 			
 			\subsection{Application needs}
 			\begin{figure}[h]
@@ -143,29 +145,29 @@
 			those who use it take a particular view of a universe
 			of discourse. Incompatibilities between these views
 			manifest as problems of an object-relational
-			impedance mismatch"}\cite{impedance}.
+			impedance mismatch"} \cite{impedance}.
 			\\
-			Traditional databases contain tables (entities) with relations between them. Sometimes these systems consist of thousands of tables, even going as far as tens of thousand (like this database of the human genome with 20000 tables\cite{humangenome}). Object-oriented programming classes is difficult and oftentimes inefficient to map directly to the raw data. Especially when there are large amounts of data, it can take a while just initializing the objects, and then again when serializing them to store them. Adopting complex storage file types like JSON for raw data would overcome this mismatch, and allow for more agile, and reactive development of enterprise applications utilizing huge data sources. The global IT industry is increasingly transitioning to deliver RESTful APIs to their customers. With Apache Drill, it is extremely easy to perform queries on the results, even joining them against several other data sources or combining results from several APIs at the same time, in real time. For application developers this will eliminate the middleware of a relational database, having to translate the data for different purposes. Instead of having one format for storing, one for interfacing and one for application logic, Apache Drill and the schema-free paradigm will provide one single interface for all dimensions of data.
+			Traditional databases contain tables (entities) with relations between them. Sometimes these systems consist of thousands of tables, even going as far as tens of thousand (like this database of the human genome with 20000 tables \cite{humangenome}). Object-oriented programming classes is difficult and oftentimes inefficient to map directly to the raw data. Especially when there are large amounts of data, it can take a while just initializing the objects, and then again when serializing them to store them. Adopting complex storage file types like JSON for raw data would overcome this mismatch, and allow for more agile, and reactive development of enterprise applications utilizing huge data sources. The global IT industry is increasingly transitioning to deliver RESTful APIs to their customers. With Apache Drill, it is extremely easy to perform queries on the results, even joining them against several other data sources or combining results from several APIs at the same time, in real time. For application developers this will eliminate the middleware of a relational database, having to translate the data for different purposes. Instead of having one format for storing, one for interfacing and one for application logic, Apache Drill and the schema-free paradigm will provide one single interface for all dimensions of data.
 		
 		\section{How far will this advance the field?}
 			\subsubsection{Advances in research}
 			The ambition for this project is to provide a fully functional, open source light weight framework allowing companies to easily deploy Hadoop Clusters with Apache Drill without worrying about tailoring the solution or suboptimal performance. In terms of research, this is the first thesis written about performance tuning of Apache Drill, and as such will lay a foundation for the future of this field.
 			\subsubsection{Advances in industry}
-			As the previous section highlighted (\hyperref[big_data]{Increasing relevance of Big Data infrastructures}), we predict an increase in future global data collection, going as far as doubling the amount of data per person, per year. This data is only collected to add value to a business, and the revenue increase for businesses that embrace big data analytics will not go unnoticed by the industry, leading to wider adoption. Some businesses already make huge profits simply by gathering and selling information, like Google and Facebook, increasing their yearly revenue since 2011 by 289\% and 1095\% respectively\cite{statista}. Data is becoming the world’s new natural resource\cite{future_data}. To be able to more fluidly handle this data in applications, we believe agile teams will want flexible frameworks that empower more cost effective development and big data utilization. When the industry realizes Apache Drill can deliver that, this will lead to a paradigm shift to schema-free querying of data, and on-the-fly data reads without tailoring.
+			As the previous section highlighted (\hyperref[big_data]{Increasing relevance of Big Data infrastructures}), we predict an increase in future global data collection, going as far as doubling the amount of data per person, per year. This data is only collected to add value to a business, and the revenue increase for businesses that embrace big data analytics will not go unnoticed by the industry, leading to wider adoption. Some businesses already make huge profits simply by gathering and selling information, like Google and Facebook, increasing their yearly revenue since 2011 by 289\% and 1095\% respectively \cite{statista}. Data is becoming the world’s new natural resource \cite{future_data}. To be able to more fluidly handle this data in applications, we believe agile teams will want flexible frameworks that empower more cost effective development and big data utilization. When the industry realizes Apache Drill can deliver that, this will lead to a paradigm shift to schema-free querying of data, and on-the-fly data reads without tailoring.
 		
 		\section{Structure of the report}
 		Add comments about every chapter here.
 
 		
 	\chapter{Background}
-	\emph{"Apache Drill is one of the fastest growing open source projects, with the community making rapid progress with monthly releases. The key difference is Drill’s agility and flexibility. Along with meeting the table stakes for SQL-on-Hadoop, which is to achieve low latency performance at scale, Drill allows users to analyze the data without any ETL or up-front schema definitions. The data can be in any file format such as text, JSON, or Parquet. Data can have simple types such as strings, integers, dates, or more complex multi-structured data, such as nested maps and arrays. Data can exist in any file system, local or distributed, such as HDFS or S3. Drill, has a “no schema” approach, which enables you to get value from your data in just a few minutes"}\cite{drill}.
+	\emph{"Apache Drill is one of the fastest growing open source projects, with the community making rapid progress with monthly releases. The key difference is Drill’s agility and flexibility. Along with meeting the table stakes for SQL-on-Hadoop, which is to achieve low latency performance at scale, Drill allows users to analyze the data without any ETL or up-front schema definitions. The data can be in any file format such as text, JSON, or Parquet. Data can have simple types such as strings, integers, dates, or more complex multi-structured data, such as nested maps and arrays. Data can exist in any file system, local or distributed, such as HDFS or S3. Drill, has a “no schema” approach, which enables you to get value from your data in just a few minutes"} \cite{drill}.
 	
 	\section{History}
 		\subsection{Creation and adoption of Hadoop}
-		Google created the Google File System in 2003\cite{gfs}, predicting the paradigm of distributed storage. Then, the MapReduce concept for sorting / counting data was added in 2004\cite{mapredoriginal}. Hadoop was introduced as a platform in 2006\cite{hadoopguide}, and together with MapReduce, it made an impact in the industry, attracting talent and big companies eager to contribute and deploy. Yahoo was a big early adopter, being one of the first companies deploying big clusters as early as 2006\cite{hadoopguide}. Then in 2008, Hadoop got the world record for fastest system to sort a terabyte of data\cite{hadoopguide}. After this, development accelerated with more contributers and interest was at an all time high. Since that point in time Apache Hadoop has become the most widely used platform for Big Data handling, empowering advanced analytics and business intelligence across several industries. The Hadoop stack is now highly scalable, ensures high availability of data, and utilizes parallel processing to deliver high performance data readings.
+		Google created the Google File System in 2003 \cite{gfs}, predicting the paradigm of distributed storage. Then, the MapReduce concept for sorting / counting data was added in 2004 \cite{mapredoriginal}. Hadoop was introduced as a platform in 2006 \cite{hadoopguide}, and together with MapReduce, it made an impact in the industry, attracting talent and big companies eager to contribute and deploy. Yahoo was a big early adopter, being one of the first companies deploying big clusters as early as 2006 \cite{hadoopguide}. Then in 2008, Hadoop got the world record for fastest system to sort a terabyte of data \cite{hadoopguide}. After this, development accelerated with more contributers and interest was at an all time high. Since that point in time Apache Hadoop has become the most widely used platform for Big Data handling, empowering advanced analytics and business intelligence across several industries. The Hadoop stack is now highly scalable, ensures high availability of data, and utilizes parallel processing to deliver high performance data readings.
 		
 		\subsection{Google branching out with Dremel}
-		In 2010 Google did further research on distributed data processing and published their paper on Dremel\cite{dremel}. Dremel is the framework that empowers Google's current platform Google BigQuery, delivered as Infrastructure as a Service (IaaS). Among customers of BigQuery is well recognized brands like Spotiy, Coca Cola, Philips, HTC and Niantic\cite{dremelcustomers}. The success of Google BigQuery (by extension of Dremel), inspired Apache to create Drill, the framework being examined in this thesis.
+		In 2010 Google did further research on distributed data processing and published their paper on Dremel \cite{dremel}. Dremel is the framework that empowers Google's current platform Google BigQuery, delivered as Infrastructure as a Service (IaaS). Among customers of BigQuery is well recognized brands like Spotiy, Coca Cola, Philips, HTC and Niantic \cite{dremelcustomers}. The success of Google BigQuery (by extension of Dremel), inspired Apache to create Drill, the framework being examined in this thesis.
 	
 	\section{Technology}
 	\label{technology}
@@ -189,7 +191,7 @@
 				\item The Scheduler is a pure scheduler in the sense that it only cares about delivering tasks to idle slots, based on free resources on the node. It calculates distributions across multiple nodes / containers, and can prioritize - i.e compute smaller jobs in front of large ones to more effectively complete job queue, even though the large job was submitted first. The Scheduler does not care for monitoring task completions or failures, simply distributing loads on the cluster.
 			\end{itemize}
 		\end{itemize}
-		\textit{The ResourceManager and the NodeManager form the data-computation framework. The per-application ApplicationMaster is, in effect, a framework specific library and is tasked with negotiating resources from the ResourceManager and working with the NodeManager(s) to execute and monitor the tasks}\cite{yarn}.
+		\textit{The ResourceManager and the NodeManager form the data-computation framework. The per-application ApplicationMaster is, in effect, a framework specific library and is tasked with negotiating resources from the ResourceManager and working with the NodeManager(s) to execute and monitor the tasks} \cite{yarn}.
 		
 		\subsubsection{MapReduce}
 		MapReduce is the heart of a traditional Hadoop cluster, for which every other component is built around, to maximize its efficiency. It is a model for distributed processing of big data, to process and consolidate. It is defined by two stages - the mapping phase, and the reduce phase. Both of these phases require resources from the node it is run on, defined by a set amount of map slots and reduce slots. The amount of slots on a node for each task is parameterized and can be set by an administrator / or typically algorithmically. The map phase consists of parallel map tasks, that map a key to a value. All of these map tasks then consolidate into the reduce phase, where they are combined so that one key exists for all accumulated values. So for instance if we're counting cards in several decks across several nodes, they would each map something like "(Queen of Hearts, 1)". In the end the reduce task consolidates all these single queens, so it ends up looking like "(Queen of Hearts", 27)". This is a far more effective approach than for instance looping through all the decks and incrementing a key by one for each matching key we find. Especially when the data that typically gets handled by a Hadoop cluster is diverse and hard to predict.
@@ -217,7 +219,7 @@
 		\end{itemize}
 		\begin{figure}[h]
 			\includegraphics[width=\textwidth]{mapr_drill1}
-			\caption{Drill components\cite{mapr_drill}}
+			\caption{Drill components \cite{mapr_drill}}
 		\end{figure}
 	
 		\paragraph{Drill in a cluster}
@@ -225,14 +227,14 @@
 		
 		\begin{figure}[h]
 			\includegraphics[width=\textwidth]{mapr_drill2}
-			\caption{Drill parallel processing\cite{mapr_drill}}
+			\caption{Drill parallel processing \cite{mapr_drill}}
 		\end{figure}
 		
 		\subsection{Drill ODBC Driver, and unixODBC}
-		To be able to programatically perform queries to the Drill cluster we need an interface to connect to. This is done via a Open DataBase Connectivity (ODBC), that is installed on the NameNode of the Hadoop cluster. unixODBC is the self-proclaimed definitive standard for ODBC on non MS Windows	platforms\cite{unixodbc}. Once unixODBC was set up, the Drill ODBC Driver was installed on a arbitrary drillbit, although we chose the Hadoop NameNode for this as well. This then allows for setting up a Datasource referencing the Zookeeper Quorum which can then be contacted programmatically, interfacing Drill as if it were a standard SQL server / database.
+		To be able to programatically perform queries to the Drill cluster we need an interface to connect to. This is done via a Open DataBase Connectivity (ODBC), that is installed on the NameNode of the Hadoop cluster. unixODBC is the self-proclaimed definitive standard for ODBC on non MS Windows	platforms \cite{unixodbc}. Once unixODBC was set up, the Drill ODBC Driver was installed on a arbitrary drillbit, although we chose the Hadoop NameNode for this as well. This then allows for setting up a Datasource referencing the Zookeeper Quorum which can then be contacted programmatically, interfacing Drill as if it were a standard SQL server / database.
 		
 		\subsection{pyodbc}
-		There are plenty of ways to interface with an ODBC. We chose python as a preferred language because of familiarity. Therefore we chose to use pyodbc\cite{pyodbc} to communicate with the ODBC, allowing a fully functional interface against our Drill configuration. pyodbc is a well established open source module, implementing the DB API 2.0 specification which is an API defined to encourage similarity between the Python modules that are used to access databases. Defining the Drill ODBC Driver as a datasource, which again points to the Zookeeper Quorum, proved effortless and fast.
+		There are plenty of ways to interface with an ODBC. We chose python as a preferred language because of familiarity. Therefore we chose to use pyodbc \cite{pyodbc} to communicate with the ODBC, allowing a fully functional interface against our Drill configuration. pyodbc is a well established open source module, implementing the DB API 2.0 specification which is an API defined to encourage similarity between the Python modules that are used to access databases. Defining the Drill ODBC Driver as a datasource, which again points to the Zookeeper Quorum, proved effortless and fast.
 
 		\section{Genetic algorithms}
 			\begin{figure}[ht]
@@ -241,7 +243,7 @@
 			\end{figure}
 			Genetic algorithms are higher level procedures for generating high-quality configurations / solutions to problems with a wide range of parameters, typically where exhaustive searches are infeasible. The procedure starts out with a population of \textit{n} candidates, each representing a set of pseudo-randomly generated values for the respective parameters (properties) that will yield a result for the given problem. Once each candidate has attempted to solve the problem by applying their properties to it, a fitness score is given and compared amongst them. The fitness score represents how good their solution to the problem was, and lets us pick out the best candidates among our population. After the optimal candidates of a generation is chosen, a new generation is generated, inheriting the properties of the previous best candidates. This process repeats until a stop criterion is reached and the properties of the candidate is considered an optimal solution. The number of generations to be generated, and the number of parent candidates from which the next generation is generated from are tweakable parameters.
 			
-			\subsection{NASA applying genetic algorithms}A very famous application of genetic algorithms is the high-performance antenna NASA made, that actually flew in their Space Technology 5 (ST5) mission\cite{nasa}. In NASAs case, they needed to make a highly receptive antenna with very small physical dimensions. It could have any number of branches, each going in any arbitrary direction. Because of these seemingly infinite possible configurations for the antenna, applying genetic algorithms to gradually evolve a design by testing randomly generated populations and combining the best traits from each candidate, proved to be a great way of solving this. \emph{"(...) the current practice of designing antennas by hand is severely limited because it is both time and labor intensive and requires a significant amount of domain knowledge, evolutionary algorithms can be used to search the design space and automatically find novel antenna designs that are more effective than would otherwise be developed"}\cite{nasa}.
+			\subsection{NASA applying genetic algorithms}A very famous application of genetic algorithms is the high-performance antenna NASA made, that actually flew in their Space Technology 5 (ST5) mission \cite{nasa}. In NASAs case, they needed to make a highly receptive antenna with very small physical dimensions. It could have any number of branches, each going in any arbitrary direction. Because of these seemingly infinite possible configurations for the antenna, applying genetic algorithms to gradually evolve a design by testing randomly generated populations and combining the best traits from each candidate, proved to be a great way of solving this. \emph{"(...) the current practice of designing antennas by hand is severely limited because it is both time and labor intensive and requires a significant amount of domain knowledge, evolutionary algorithms can be used to search the design space and automatically find novel antenna designs that are more effective than would otherwise be developed"} \cite{nasa}.
 			\subsection{Limitations of genetic algorithms}
 			\subsubsection{Fitness function}
 			At first glance it sounds like applying genetic algorithm techniques to any problem would yield an optimal solution, with relative ease. The problem though, is the fitness function for determining the candidate solution. As the complexity of the problem scales in size the search space for the fitness function will end up being too big to complete in a reasonable time. For instance if one single candidate evaluation took days, performed for the whole population, across generations, it could end up taking months completing just one single optimization. In those cases machine learning approaches or simply manual labor through technical and domain specific knowledge would prove to be more efficient.
@@ -255,20 +257,20 @@
 		\includegraphics[width=310pt]{PBIL}
 		\caption{Basic concepts of PBIL}
 	\end{figure}
-	The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm"}\cite{pbil}.
+	The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm"} \cite{pbil}.
 		\subsection{Advantage of PBIL}
-		The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties, and generally faster convergence. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"}\cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more PBIL allows for complex values as genetic material instead of the usual binary representation, making it easier to implement linear parameters. A shared genetic memory for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the \hyperref[sec:judge]{method chapter}.
+		The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties, and generally faster convergence. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"} \cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more PBIL allows for complex values as genetic material instead of the usual binary representation, making it easier to implement linear parameters. A shared genetic memory for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the \hyperref[sec:judge]{method chapter}.
 		\subsection{Limitation of PBIL}
 		The main limitation of PBIL is that each candidate property needs a preset of valid values. Thus finding the optimal solution is still based widely on the amount of options, and the effectiveness of them, defined by the developer of the algorithm. Naturally - in terms of boolean properties there lies no challenge. However when linear parameters need to be set, i.e properties with ranges from zero to infinity, the developer must define a set of valid options existing within that range. In the context of Apache Drill there are default rule of thumb values for each property, so the list of valid options for each property is generated around the default.
 		Another drawback of PBIL lies in the risk of premature convergence. This can however be mitigated by effective mutation functions that ensure diversity.
 	\pagebreak
 	\section{Related literature and theoretical focus}
 		\subsection{Performance tuning MapReduce as a Research Field}
-		There is a ton of research to be read about MapReduce optimization, trying to tune map- and reduce-slots, and improve the inherent job tracker. Looking at a few essential papers within this field shows a general consensus that tuning default performance parameters in a variety of environments will lead to 10-30\% performance increase, which naturally results in considerable cost savings. For instance Min Li et. al. could report that "\textit{Our results using a real implementation on a representative 19-node cluster show that dynamic performance tuning can effectively improve MapReduce application performance by up to 30\% compared to the default configuration used in YARN}"\cite{mronline}. Furthermore, manually tuning these clusters are too demanding for most businesses to even consider, requiring both deep technical and domain-specific insight. These findings further maintain our vision of bringing auto-tuning to the Apache Drill framework, which we believe to be the next natural step forwards, even paradigm-defining, for big data handling.
+		There is a ton of research to be read about MapReduce optimization, trying to tune map- and reduce-slots, and improve the inherent job tracker. Looking at a few essential papers within this field shows a general consensus that tuning default performance parameters in a variety of environments will lead to 10-30\% performance increase, which naturally results in considerable cost savings. For instance Min Li et. al. could report that "\textit{Our results using a real implementation on a representative 19-node cluster show that dynamic performance tuning can effectively improve MapReduce application performance by up to 30\% compared to the default configuration used in YARN}" \cite{mronline}. Furthermore, manually tuning these clusters are too demanding for most businesses to even consider, requiring both deep technical and domain-specific insight. These findings further maintain our vision of bringing auto-tuning to the Apache Drill framework, which we believe to be the next natural step forwards, even paradigm-defining, for big data handling.
 	
 		\subsection{Mapreduce optimization}
 			\subsubsection{Gunther}
-			Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal perfomance of the cluster\cite{gunther}. This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
+			Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal perfomance of the cluster \cite{gunther}. This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
 			
 			\subsubsection{mrOnline}
 			"MapReduce job parameter configuration significantly impacts
@@ -276,32 +278,32 @@
 			den of tuning the parameters on application programmers. This is
 			not ideal, especially because the application developers may not
 			have the system-level expertise and information needed to select
-			the best configuration. Consequently, the system is utilized inefficiently which leads to degraded application performance"\cite{mronline}.
+			the best configuration. Consequently, the system is utilized inefficiently which leads to degraded application performance" \cite{mronline}.
 			
 		\subsection{Other Hadoop SQL engines}
 		There are plenty of SQL-on-hadoop engines available right now, like CitusDB, Impala, Concurrent Lingual, Hadapt, InfiniDB, JethroData, MammothDB, Apache Drill, MemSQL or Pivotal HawQ, and the amount of independently developed engines speaks volumes of the interest in this field. Why Apache Drill was chosen in this thesis is detailed in the \hyperref[sec:why_drill]{Why Drill section}, but the fact that Drill is (at the time of this writing) the only schema-free engine is a major selling point. However Impala and Spark are often considered as alternatives in similar environments.
 			\subsection{Impala}
-			Impala, developed by Apache is an opensource SQL engine that was designed to bring parallel DBMS technology to the Hadoop environment\cite{impala}. The main idea is shared between Drill and Impala where they both set up daemons on each node of a distributed cluster, to perform MPP (Massively Parallel Processing) for data reads, circumventing MapReduce. Impala is made for Big Data Analyics, priding itself in having \textit{"order-of-magnitude faster performance than Hive"}\cite{impalasite}.
+			Impala, developed by Apache is an opensource SQL engine that was designed to bring parallel DBMS technology to the Hadoop environment \cite{impala}. The main idea is shared between Drill and Impala where they both set up daemons on each node of a distributed cluster, to perform MPP (Massively Parallel Processing) for data reads, circumventing MapReduce. Impala is made for Big Data Analyics, priding itself in having \textit{"order-of-magnitude faster performance than Hive"} \cite{impalasite}.
 			\subsection{Spark}
-			Apache also developed Spark, a popular open-source platform for large-scale data processing that is	well-suited for iterative machine learning tasks\cite{spark_ml}. Spark is built with Hive, and runs very similarly to MapReduce but also has extended functionality. The key difference is that Spark keeps things in memory, while MapReduce keeps shuffling data in and out of disk. This allows Spark to facilitate machine learning algorithms on top of big data clusters, reading and processing data in the same workflow.
+			Apache also developed Spark, a popular open-source platform for large-scale data processing that is	well-suited for iterative machine learning tasks \cite{spark_ml}. Spark is built with Hive, and runs very similarly to MapReduce but also has extended functionality. The key difference is that Spark keeps things in memory, while MapReduce keeps shuffling data in and out of disk. This allows Spark to facilitate machine learning algorithms on top of big data clusters, reading and processing data in the same workflow.
 			
 	\section{Presentation of domain where technology is used}
-		The field of big data analytics is now becoming nigh impossible to ignore for enterprises dealing with customer information. Within this field Hadoop is currently the biggest platform. SiliconANGLE wrote a 5 year future broadcast in 2012, stating that \textit{"Hadoop-MapReduce solution [will] be the de-facto industry standard for business intelligence and projects a 58\% compound annual growth rate"}\cite{siliconA}.
+		The field of big data analytics is now becoming nigh impossible to ignore for enterprises dealing with customer information. Within this field Hadoop is currently the biggest platform. SiliconANGLE wrote a 5 year future broadcast in 2012, stating that \textit{"Hadoop-MapReduce solution [will] be the de-facto industry standard for business intelligence and projects a 58\% compound annual growth rate"} \cite{siliconA}.
 		Global Knowledge Training highlights some of the reasons why Hadoop is seeing such success and adoption rate
-		\textit{"It's becoming clear that the open-source Apache Hadoop platform changes the economics and dynamics of large-scale data analytics due to its scalability, cost effectiveness, flexibility, and built-in fault tolerance. It makes possible the massive parallel computing that today's data analysis requires"}\cite{globalknowledge}.
+		\textit{"It's becoming clear that the open-source Apache Hadoop platform changes the economics and dynamics of large-scale data analytics due to its scalability, cost effectiveness, flexibility, and built-in fault tolerance. It makes possible the massive parallel computing that today's data analysis requires"} \cite{globalknowledge}.
 		Further more BMC Software lists industries and sectors where Hadoop is currently being utilized to gain a competitive advantage, increase customer satisfaction or even improve citizen health:
 		\begin{itemize}
-			\item Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications\cite{bmc}.
-			\item Retailers use it to help analyze structured and unstructured data to better understand and serve their customers\cite{bmc}.
-			\item In the asset-intensive energy industry Hadoop-powered analytics are used for predictive maintenance, with input from Internet of Things (IoT) devices feeding data into big data programs\cite{bmc}.
-			\item Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings\cite{bmc}.
-			\item There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats\cite{bmc}.
-			Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities\cite{bmc}.
-			\item Hadoop is a de facto standard in big data\cite{bmc}.
+			\item Financial services companies use analytics to assess risk, build investment models, and create trading algorithms; Hadoop has been used to help build and run those applications \cite{bmc}.
+			\item Retailers use it to help analyze structured and unstructured data to better understand and serve their customers \cite{bmc}.
+			\item In the asset-intensive energy industry Hadoop-powered analytics are used for predictive maintenance, with input from Internet of Things (IoT) devices feeding data into big data programs \cite{bmc}.
+			\item Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings \cite{bmc}.
+			\item There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats \cite{bmc}.
+			Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities \cite{bmc}.
+			\item Hadoop is a de facto standard in big data \cite{bmc}.
 		\end{itemize}
 	
 		Now it may seem like the Hadoop platform is an all-encompassing 
-		technology when businesses wants to deal with big data. There are however some bleaker recent reports stating that Hadoop adoption is going slower than previously predicted. A 2015 Gartner press release stated that \textit{"[the] future demand for Hadoop looks fairly anemic"}\cite{Gartner}. The reasons businesses aren't adopting Hadoop as a big data framework however was fairly coherent, and is also highlighted in this thesis. It is too technically demanding to set up effectively. Companies that were reluctant or hesitant with Hadoop adoption cited skills shortage and user-unfriendliness as reasons for not thinking about Hadoop\cite{Gartner}. This is the exact reason why self optimizing frameworks like the one introduced in this thesis are needed. Making the Hadoop platform more approachable through a "out-of-the-box" mindset could potentially severely lower the threshold for taking a leap into big data. Through the methods presented in this thesis, we try to directly tackle this problem.
+		technology when businesses wants to deal with big data. There are however some bleaker recent reports stating that Hadoop adoption is going slower than previously predicted. A 2015 Gartner press release stated that \textit{"[the] future demand for Hadoop looks fairly anemic"} \cite{Gartner}. The reasons businesses aren't adopting Hadoop as a big data framework however was fairly coherent, and is also highlighted in this thesis. It is too technically demanding to set up effectively. Companies that were reluctant or hesitant with Hadoop adoption cited skills shortage and user-unfriendliness as reasons for not thinking about Hadoop \cite{Gartner}. This is the exact reason why self optimizing frameworks like the one introduced in this thesis are needed. Making the Hadoop platform more approachable through a "out-of-the-box" mindset could potentially severely lower the threshold for taking a leap into big data. Through the methods presented in this thesis, we try to directly tackle this problem.
 	
 	\chapter{Method}
 		
@@ -330,7 +332,7 @@
 		\paragraph{Memory}
 		The first thing the Judge needs to do, apart from declaring various variables to the itself, is generating a memory object. Without the memory the judge can't initialize any candidates, as they are dependent on the memory to define probability vectors for parameter creations. The global genetic material that defines PBIL is stored in the memory, or rather \textbf{is the memory}. The memory is further explained in the \hyperref[memory]{next subsection.} 
 		\paragraph{Default candidate}
-		To define goals for the fitness function a candidate is created, with all default values. This candidate also comes into play at the end of a optimization process, to verify solution. In the beginning, the default candidate is simply run the same way as all future solution candidates will, and metrics for mean, maximum and minimum TTE is stored within. The goal is then set at 50\% reduction from the default candidates mean time, giving a somewhat unrealistic goal to ensure that we strive towards the most cost effective solution. In the end we run a gauntlet between the default candidate and the winner (optimal solution), where we measure the averages of all metrics - to ensure that there's no uncontrolled variance that led to the result.
+		To define goals for the fitness function a candidate is created, with all default values. This candidate also comes into play at the end of a optimization process, to verify solution. In the beginning, the default candidate is simply run the same way as all future solution candidates will, and metrics for mean, maximum and minimum TTE is stored within. The goal is then set at 50\% reduction from the default candidates mean time, giving a somewhat unrealistic goal to ensure that we strive towards the most cost effective solution. In the end we run a gauntlet between the default candidate and the winner (optimal solution), where we measure the averages - to ensure that there's no uncontrolled variance that led to the result.
 		\paragraph{Population}
 		Based on a parameter from the configuration file, the judge generates an entire generation of \textit{n} candidates representing a soluion to the problem. For each generation the judge measures the fitness of all candidates and executes the weakest ones. Then the strongest ones get added to the elite club, which is a set of candidates we call the elites. The elites are the ones that refine the memory, incrementally adapting it and reinforcing good solutions. After the memory has been altered by the newly added elites (and potentially elites that were added earlier), new candidates get added to the population to replace the ones that got executed. The configuration file can drastically alter the way the population behaves, by changing values for operations that are done on each generation:
 		\begin{itemize}
@@ -363,37 +365,86 @@
 			\item Binary representation will be \textbf{[1,0]}
 		\end{enumerate}
 		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in figure \ref{fig:memory_insight}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list, denoted as:\\
+
+		\begin{equation}\label{math:probability_vector}
+		P_{i,j} = P_{i,j}(t)+\lambda\left(\frac{\mu_{i,j(t)}}{|\mu|}-P_{i,j}\right)
+		\end{equation}
+		{\centering
 		\begin{math}
-			\mathbf{p[i] = p[i] + gr * ( h[i] / e - p[i] )}
+		P = probability, i = parameter, j = option, \mu = elite
 		\end{math}\\
-		\textit{p = probability, i = index, gr = growth rate, h = hits, e = amount of elites} \\
-		
+		}
+		\paragraph{Reaching convergence}
+		After each memory alteration the memory object checks itself, and each parameter within the setting object it holds. It then counts each parameter, and whether it has passed the convergence threshold. Once all parameters has passed the threshold convergence is reached. This method of evaluating convergence is however very susceptible to parameter agnosticism, leaving the algorithm running for a long time trying to reach convergence on parameters that the elites do not agree on, due to the nature of those parameters being superfluous. The time cost here led to the development of accelerated convergence.
+				
 		\paragraph{Accelerated convergence}
-		Once the memory convergence value passes 0.8, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
+		Once the total memory convergence value has reached 90\% of the convergence threshold, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
 		
 		\paragraph{Extended function - progress}
 		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
 		
-		\clearpage
 		\subsection{Candidate}
 		Candidates don't hold much information on their own, as most of it is stored in a setting object, which the candidate holds on to. However the candidate has some crucial functions, like how to run queries with their setting object, how to mutate and how to measure self performance.
 		\paragraph{Run}
-		To get data on whether or not a particular set of settings will be an effective solution in the current environment, we need to run some tests - here simply defined as runs. To complete a run in this system the candidate is dependent on a data source, and information on how many runs to do, in order to measure the TTE. In a cluster where resources are shared among many users, or multiple queries are ran concurrently on the same quorum, the optimal solution need to take this into consideration. Therefore runs are done in to stages, one for concurrency testing, and another for sequential testing. Both the data source and the number of runs to complete are defined by the configuration file. The data source defines here is a ODBC DSN, but for future work this can be easily altered to point to a JDBC DSN or other similar sources. The number of runs defined by the configuration file is actually doubled in runtime, as it defines both the amount of concurrent runs in addition to the amount of sequentual runs. This means that defining this setting to the absolute minimum of one run, results in two runs - one in the concurrent stage and one in the sequential stage. Performing only a single run would leave too much up to circumstance, in regards to the available resources in the cluster and random error, thus a minimum of two runs is needed to measure performance - although any number higher than this is advised. Further technical details on how the runs are performed can be read in the \hyperref[testing]{testing section}
+		To get data on whether or not a particular set of settings will be an effective solution in the current environment, we need to run some tests - here simply defined as runs. To complete a run in this system the candidate is dependent on a data source, and information on how many runs to do, in order to measure the TTE. In a cluster where resources are shared among many users, or multiple queries are ran concurrently on the same quorum, the optimal solution need to take this into consideration. Therefore runs are done in two stages, one for concurrency testing, and another for sequential testing. Both the data source and the number of runs to complete are defined by the configuration file. The data source defined here is a ODBC DSN, but for future work this can be easily altered to point to a JDBC DSN or other similar sources. The number of runs defined by the configuration file is actually doubled in runtime, as it defines both the amount of concurrent runs in addition to the amount of sequential runs. This means that defining this setting to the absolute minimum of 1 run, results in two runs - one in the concurrent stage and one in the sequential stage. Performing only a single run would leave too much up to circumstance, in regards to the available resources in the cluster and random error, thus a minimum of two runs is needed to measure performance - although any number higher than this is advised. Further technical details on how the runs are performed can be read in the \hyperref[testing]{testing section}
+		\pagebreak
+		\subsection{Mutation}
+		To mitigate the issue of premature convergence a mutation function is in place, to mutate new candidates at a set probability defined by the configuration file. After a candidate is created, it may be chosen for mutation. The value that defines the probability for a candidate to be chosen also decides the probability for individual parameters to mutate within the candidates setting object. There is also a resistance value in place, to avoid too heavy mutations, potentially resulting in a useless candidate at later stages, which simply increases the time cost of the algorithm. The resistance value starts at 0, and increases via the resistance growth value set in the configuration file. Each time a parameter is mutated within a candidate, the candidate becomes more genetically resistant. It works by linearly reducing the mutation chance for individually chosen candidates. By default this reduction is 1\% per mutation. Increasing the resistance growth would result in more stable candidates, more purely defined by memory, but gives less variations - so this needs to be balanced. 
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=250pt]{Mutation}
+			\caption{Mutation function flowchart}
+			\label{fig:mutation}
+		\end{figure}
+		The mutation is entirely isolated from the memory, and thus chooses a new option for the parameter randomly, within a candidate. If a mutation is specifically advantageous in the given environment the candidate will go on to become an elite, thus altering the memory with its genetic material.
+		\subsubsection{PBIL Mutation vs GAPBIL Mutation}
+		While the original implementation of the PBIL mutation function focused on mutation the collective probability vector, the GAPBIL approach mutates individual candidates.
 		
-		\paragraph{Mutation}
-		To mitigate the issue of premature convergence a mutation function is in place, to mutate new candidates at a set probability defined by the configuration file. After a candidate is created, it may be chosen for mutation. The value that defines the probability for a candidate to be chosen also decides the probability for individual parameters to mutate within the candidates setting object. There is also a resistance value in place, to avoid too heavy mutations, potentially resulting in a useless candidate at later stages, which simply increases the time cost of the algorithm. The resistance value starts at 0, and increases via the resistance growth value set in the configuration file. Each time a parameter is mutated, the resistance growth gets added to the resistance value. It works by linearly reducing the mutation chance for individually chosen candidates. By default this reduction is 1\% per mutation. Increasing the resistance growth would result in more stable candidates, more purely defined by memory, but gives less variations - so this needs to be balanced. A problem that arises with resistance is the fact that iterating over all the settings will lead to heavy skewness of mutating the settings in the start of the object. As mutations happen, the chance for future mutations gets reduced, thus mutating the first setting is likely, while mutating the final setting is highly unlikely. This is dealt with by ensuring that the algorithm chooses a random subset of settings every time, making it just as likely to mutate the end as the start of the settings, instead of iterating from start to end. The mutation is entirely isolated from the memory, and thus chooses a new option for the parameter randomly - even 
-		\\
-		TODO: Input some math here - like average amount of mutations per candidate, chance of mutating everything, chance of mutating nothing etc - with default settings. \\
-		1/5 candidates get chosen, there are 5 replacements each generation.
-		There are 29 settings. 1/29, 14 chosen as start on average, and 7 chosen as end on average. Mutation chance is 0.2, 7/0,2 = 1,4 settings mutated on average?
-		\\
+		\begin{algorithm}
+			\caption{Original PBIL mutation}\label{algo:pbil_mutation}
+		\scriptsize
+			\begin{verbatim}
+			
+			# Mutate Probability Vector
+			for #LENGTH
+			    if (random (0,1) < MUT_PROBABILITY)
+			        Pl <- Pl * (1.0 - MUT_SHIFT) + random (0.0 or 1.0) * (MUT_SHIFT)
+				        
+			USER DEFINED CONSTANTS:
+			LENGTH: length of encoded solution
+			MUT_PROBABILITY: probability of mutation occurring in each position
+			MUT_SHIFT: amount for mutation to affect the probability vector
+
+			\end{verbatim}
+		\end{algorithm}
+		\begin{algorithm}
+		\caption{GAPBIL mutation}\label{algo:pbil_mutation}
+		\scriptsize
+			\begin{verbatim}
+			
+			# Mutate Candidate Parameters
+			if random (0,1) < #GROWTH_CHANCE:
+			resistance = 0
+			while (mutation occurs)
+			    if random < #GROWTH_CHANCE - resistance:
+			        chosen_parameter = random (0, length(parameters)-1)
+			        chosen_parameter.option = random available option 
+			        resistance += #RESISTANCE_GROWTH / 10
+			    else:
+			        stop mutation, end while loop
+			        
+			 USER DEFINED CONSTANTS:
+			 GROWTH_CHANCE: probability of choosing candidate and/or parameter for mutation
+			 RESISTANCE_GROWTH: amount of mutation resistance for candidate, for each mutation occurance
+		\end{verbatim}
+		\end{algorithm}
 		\subsection{Setting}
 		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. One of the strengths of PBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA usually has. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
 		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake. All the parameters can be found in \hyperref[table:conf_params]{appendix B}.
 		\clearpage
 		\subsection{How it all comes together}
-		Figure \ref{fig:sys_overview} shows a simplistic flow chart for how the entire system runs, from tart to achieved convergence.
+		Figure \ref{fig:sys_overview} shows a simplistic flow chart for how the entire system runs, from start to achieved convergence.
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[width=270pt]{overview}
@@ -402,11 +453,31 @@
 		\end{figure}
 		\clearpage
 		\section{Testing}
-		TODO: This part.
-		\label{testing}
-			\subsection{Load profiles}
-				It should be infeasible for one configuration to solve all problems. After all, the concept of optimization takes great consideration to its specific context. Expecting to solve all aspects of a complex problem with one remedy leads to a candidate being a jack of all trades but master of none. Hence the solution should be tailored to a specific context, by letting the algorithm aggressively tune the system to work in its current state. To make sure this algorithm performs this way, testing was done on different kinds of data sets, with different kinds of queries.
+			\subsection{Dataset}
+				The dataset used to test the algorithm on the clusters come from Yelp, specifically from their dataset challenge \cite{yelp}. The data was gathered as JSON files, containing reviews, stores, customer visits and the like.
+			\subsection{Query}
+				A query combining joins, grouping and sub queries was built to increase the complexity the Drill SQL EE had to handle. Further more the Drill specific notation KVGEN and FLATTEN was used for Key Value Generation after Flattening a complex json value to represent it as a table: \\
+				\begin{flushleft}
+				{\scriptsize 	
+				SELECT Business, Days, Total\_Checkins \\
+				FROM (SELECT Business, Days, SUM(tot1.Checkins.`value`) as Total\_Checkins\\
+				FROM (SELECT tot.name as Business, tot.timvals.key as Days,\\ FLATTEN(KVGEN(tot.timvals.`value`)) as Checkins\\
+				FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as timvals, business.name\\
+				FROM (SELECT * FROM `/user/hadoop/drill/yelp\_data/checkin.json` LIMIT 1000) as tbl\\
+				JOIN `/user/hadoop/drill/yelp\_data/business.json` as business\\
+				ON business.business\_id=tbl.business\_id) as tot) as tot1\\
+				GROUP BY Business,Days) WHERE Total\_Checkins$>$150 ORDER BY Business,Total\_Checkins\\
+				}
+				\end{flushleft}
 			\subsection{Data collection}
+				When executing a run from a candidate we preferably do many queries before measuring fitness. The SQL and the data is always the same between all candidates, runs and queries. In addition to this we only take the optimal TTE into consideration when measuring a candidates effectiveness. This counts for all candidates generated from memory as well as the default candidate. This ensures they all compete on even ground, and no noise or variance effects the result.
+				\begin{figure}[ht]
+					\centering
+					\includegraphics[width=180pt]{batch}
+					\caption{Runs only log the optimal TTE, to avoid noise}
+					\label{fig:batch}
+				\end{figure}
+			
 				
 	\chapter{Results}
 	TODO: this part
@@ -419,12 +490,12 @@
 		\subsection{Tiny queries}
 		Running a very simple query in the cluster environments we set up, on a small json file of a couple thousand lines - took drill around 0.2 seconds. Attempting to optimize for such queries was completely futile, as the only bottleneck for such a simple query is pure hard drive reading speeds. This led to every randomized set of settings to be considered equally good, which again means that the default candidate is equally good. No optimal setting can be discovered, and convergence of the algorithm is simply an act of chance.
 		\subsection{Complex queries}
-		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a 4 node cluster with relatively low resources, there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out. Early proof of concept runs would often see convergence reach around 0.85 - 0.9, before floating back down to around 0.8 and staying there for tens of generations, without ever increasing the fitness value. After introducing accelerated convergence, we give the algorithm an extra push in the higher end of convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters.
+		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a 4 node cluster with relatively low resources, there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out. TODO: prove this with new data: Early proof of concept runs would often see convergence reach around 0.85 - 0.9, before decreasing back down to around 0.8 and staying there for tens of generations, without ever increasing the fitness value. After introducing accelerated convergence, we give the algorithm an extra push in the last 10\% of  convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters to the current environment or data source.
 	\section{Error sources}
 		\subsection{Drill planner inconsistency}
 		First of all, drill is inherently a bit varied in terms of query times. Performing the same query twice in the same session will heavily leverage a shared cache amongst the drillbits, reducing query times by an average of 15\%. Further more the planning phase contains some fuzzy logic and decision making probabilities, so it may not always result in the same execution stage. The cache issue is mitigated by letting every candidate start a new session, and run the same amount of queries in the session. The planning stage inconsistency is mitigated by running several queries in a single run, to make sure to take the average into consideration. The solutions to both these problems are however parameterized, so setting the amount of queries per run to a low number will lead to increasing impact of these factors as error sources.
 		\subsection{Cluster instability}
-		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for, hereby called the \hyperref[table:cluster_stable]{stable cluster}. This proved effective in terms of mitigating the variations, but still a range of random cost-ineffective candidate runs where observed. When cluster instability gets added on top of drill planner inconsistency in a single query / run, it leads to an outlier of extremely high TTE, which we cut from our dataset when analyzing the data in posterity. With such variations it is hard to reach a sensible convergence for truly optimal solutions, considering how fitness scores then are products of both settings and circumstance.
+		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, extreme spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. When cluster instability gets added on top of drill planner inconsistency in a single query / run, it leads to an outlier of very high TTE, which we cut from our dataset when analyzing the data in posterity. However with such variations it is hard to reach a sensible convergence for truly optimal solutions, considering how fitness scores then are products of both settings and circumstance. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for, hereby called the \hyperref[table:cluster_stable]{stable cluster}. The stable cluster mitigated the variations and gave good grounds for studying the result of the algorithm. 
 		\subsection{Cluster size}
 		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism. 
 	\section{Proving effect}
@@ -435,6 +506,8 @@
 	\chapter{Further work}
 	\section{Homogeneous clusters}
 	In this thesis both the clusters set up consisted of a homogeneous set of nodes. It is expected that a heterogeneous cluster will have added complexity to the logical and physical planner on the drillbits, further increasing the value of optimization. This is a high priority effort for future work, as it accurately represents a real world use case.
+	\subsection{Load profiles}
+	It should be infeasible for one configuration to solve all problems. After all, the concept of optimization takes great consideration to its specific context. Expecting to solve all aspects of a complex problem with one remedy leads to a candidate being a jack of all trades but master of none. Hence the solution should be tailored to a specific context, by letting the algorithm aggressively tune the system to work in its current state. To make sure this algorithm performs this way, testing needs to be done on different kinds of data sets, with different kinds of queries.
 	\section{Single node setups}
 	It would be interesting to gather data from a single node laptop setup for running queries in drill. The way data sources work in this thesis through pyodbc meant that it would add too much development time to adapt for local hard drive runs, either in the way of configuring a hard drive location as an ODBC DSN, or altering the way we programatically run drill queries. 
 	\section{Support for the cut parameters}
@@ -442,7 +515,8 @@
 	
 	\chapter{Conclusion}
 	TODO: this part
-	
+	\section{Innovations}
+	\section{Goal achieved}
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
 		Li, M., Zeng, L., Meng, S., Tan, J., Zhang, L., Butt, A. R., \& Fuller, N. (2014, June). \emph{Mronline: Mapreduce online performance tuning. In Proceedings of the 23rd international symposium on High-performance parallel and distributed computing (pp. 165-176).} ACM.
@@ -626,7 +700,27 @@
 	\begin{tabular}{ll}
 		\\
 		\multicolumn{1}{l}{\bfseries Name} & \multicolumn{1}{l}{\bfseries Default value} \\ \hline \\
-		Parameter & Value  \\
+			POPULATION\_SIZE& 10 \\
+			GROWTH\_FACTOR & 0.4 \\
+			GROWTH\_CHANCE & 0.2 \\
+			RESISTANCE & 0.1 \\
+			
+			CONVERGENCE\_THRESHOLD & 0.95 \\
+			MAX\_GENERATIONS & 200 \\
+			CONCURRENT\_RUNS & 10 \\
+			
+			REPLACEMENTS\_EACH\_RUN & 5 \\
+			ELITES\_EACH\_RUN & 3 \\
+			ELITE\_CLUB\_SIZE & 7 \\
+			
+			DATA\_SOURCE & drill64 \\
+			NODES & 4 \\
+			CORES & 4 \\
+			NODE\_LEAST\_MEMORY & 2147483648 \\
+			
+			DISPLAY\_OUTPUT & false \\
+			LOGGING\_FOLDER & /home/ubuntu/runlogs/ \\
+			RUN\_NAME & default \\
 	\end{tabular}
 \end{table}
 

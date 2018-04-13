@@ -52,30 +52,33 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Judge}{section.4.2}% 52
 \BOOKMARK [2][-]{subsection.4.2.2}{Memory}{section.4.2}% 53
 \BOOKMARK [2][-]{subsection.4.2.3}{Candidate}{section.4.2}% 54
-\BOOKMARK [2][-]{subsection.4.2.4}{Setting}{section.4.2}% 55
-\BOOKMARK [2][-]{subsection.4.2.5}{Configuration file}{section.4.2}% 56
-\BOOKMARK [2][-]{subsection.4.2.6}{How it all comes together}{section.4.2}% 57
-\BOOKMARK [1][-]{section.4.3}{Testing}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.3.1}{Load profiles}{section.4.3}% 59
-\BOOKMARK [2][-]{subsection.4.3.2}{Data collection}{section.4.3}% 60
-\BOOKMARK [0][-]{chapter.5}{Results}{}% 61
-\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 62
-\BOOKMARK [1][-]{section.6.1}{The sequential effect}{chapter.6}% 63
-\BOOKMARK [1][-]{section.6.2}{Parameter agnostic queries}{chapter.6}% 64
-\BOOKMARK [2][-]{subsection.6.2.1}{Tiny queries}{section.6.2}% 65
-\BOOKMARK [2][-]{subsection.6.2.2}{Complex queries}{section.6.2}% 66
-\BOOKMARK [1][-]{section.6.3}{Error sources}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.3.1}{Drill planner inconsistency}{section.6.3}% 68
-\BOOKMARK [2][-]{subsection.6.3.2}{Cluster instability}{section.6.3}% 69
-\BOOKMARK [2][-]{subsection.6.3.3}{Cluster size}{section.6.3}% 70
-\BOOKMARK [1][-]{section.6.4}{Proving effect}{chapter.6}% 71
-\BOOKMARK [1][-]{section.6.5}{Cut configuration parameters}{chapter.6}% 72
-\BOOKMARK [0][-]{chapter.7}{Further work}{}% 73
-\BOOKMARK [1][-]{section.7.1}{Homogeneous clusters}{chapter.7}% 74
-\BOOKMARK [1][-]{section.7.2}{Single node setups}{chapter.7}% 75
-\BOOKMARK [1][-]{section.7.3}{Support for the cut parameters}{chapter.7}% 76
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 77
-\BOOKMARK [0][-]{appendix.A}{Cluster specs}{}% 78
-\BOOKMARK [0][-]{appendix.B}{System parameters}{}% 79
-\BOOKMARK [0][-]{appendix.C}{Configuration parameters}{}% 80
-\BOOKMARK [0][-]{appendix.D}{Code}{}% 81
+\BOOKMARK [2][-]{subsection.4.2.4}{Mutation}{section.4.2}% 55
+\BOOKMARK [2][-]{subsection.4.2.5}{Setting}{section.4.2}% 56
+\BOOKMARK [2][-]{subsection.4.2.6}{Configuration file}{section.4.2}% 57
+\BOOKMARK [2][-]{subsection.4.2.7}{How it all comes together}{section.4.2}% 58
+\BOOKMARK [1][-]{section.4.3}{Testing}{chapter.4}% 59
+\BOOKMARK [2][-]{subsection.4.3.1}{Dataset}{section.4.3}% 60
+\BOOKMARK [2][-]{subsection.4.3.2}{Query}{section.4.3}% 61
+\BOOKMARK [2][-]{subsection.4.3.3}{Data collection}{section.4.3}% 62
+\BOOKMARK [0][-]{chapter.5}{Results}{}% 63
+\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 64
+\BOOKMARK [1][-]{section.6.1}{The sequential effect}{chapter.6}% 65
+\BOOKMARK [1][-]{section.6.2}{Parameter agnostic queries}{chapter.6}% 66
+\BOOKMARK [2][-]{subsection.6.2.1}{Tiny queries}{section.6.2}% 67
+\BOOKMARK [2][-]{subsection.6.2.2}{Complex queries}{section.6.2}% 68
+\BOOKMARK [1][-]{section.6.3}{Error sources}{chapter.6}% 69
+\BOOKMARK [2][-]{subsection.6.3.1}{Drill planner inconsistency}{section.6.3}% 70
+\BOOKMARK [2][-]{subsection.6.3.2}{Cluster instability}{section.6.3}% 71
+\BOOKMARK [2][-]{subsection.6.3.3}{Cluster size}{section.6.3}% 72
+\BOOKMARK [1][-]{section.6.4}{Proving effect}{chapter.6}% 73
+\BOOKMARK [1][-]{section.6.5}{Cut configuration parameters}{chapter.6}% 74
+\BOOKMARK [0][-]{chapter.7}{Further work}{}% 75
+\BOOKMARK [1][-]{section.7.1}{Homogeneous clusters}{chapter.7}% 76
+\BOOKMARK [2][-]{subsection.7.1.1}{Load profiles}{section.7.1}% 77
+\BOOKMARK [1][-]{section.7.2}{Single node setups}{chapter.7}% 78
+\BOOKMARK [1][-]{section.7.3}{Support for the cut parameters}{chapter.7}% 79
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 80
+\BOOKMARK [0][-]{appendix.A}{Cluster specs}{}% 81
+\BOOKMARK [0][-]{appendix.B}{System parameters}{}% 82
+\BOOKMARK [0][-]{appendix.C}{Configuration parameters}{}% 83
+\BOOKMARK [0][-]{appendix.D}{Code}{}% 84

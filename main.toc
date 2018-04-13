@@ -83,35 +83,39 @@
 \contentsline {paragraph}{Population}{30}{section*.31}
 \contentsline {subsection}{\numberline {4.2.2}Memory}{30}{subsection.4.2.2}
 \contentsline {paragraph}{Probability vector algorithm}{32}{figure.4.5}
-\contentsline {paragraph}{Accelerated convergence}{32}{section*.33}
-\contentsline {paragraph}{Extended function - progress}{32}{section*.34}
+\contentsline {paragraph}{Reaching convergence}{32}{section*.33}
+\contentsline {paragraph}{Accelerated convergence}{32}{section*.34}
+\contentsline {paragraph}{Extended function - progress}{33}{section*.35}
 \contentsline {subsection}{\numberline {4.2.3}Candidate}{33}{subsection.4.2.3}
-\contentsline {paragraph}{Run}{33}{section*.35}
-\contentsline {paragraph}{Mutation}{33}{section*.36}
-\contentsline {subsection}{\numberline {4.2.4}Setting}{34}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Configuration file}{34}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}How it all comes together}{35}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Testing}{36}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Load profiles}{36}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Data collection}{36}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Results}{37}{chapter.5}
-\contentsline {chapter}{\numberline {6}Discussion}{38}{chapter.6}
-\contentsline {section}{\numberline {6.1}The sequential effect}{38}{section.6.1}
-\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{38}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Tiny queries}{38}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Complex queries}{38}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Error sources}{39}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{39}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{39}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Cluster size}{39}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Proving effect}{40}{section.6.4}
-\contentsline {section}{\numberline {6.5}Cut configuration parameters}{40}{section.6.5}
-\contentsline {chapter}{\numberline {7}Further work}{41}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous clusters}{41}{section.7.1}
-\contentsline {section}{\numberline {7.2}Single node setups}{41}{section.7.2}
-\contentsline {section}{\numberline {7.3}Support for the cut parameters}{41}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{42}{chapter.8}
-\contentsline {chapter}{\numberline {A}Cluster specs}{46}{appendix.A}
-\contentsline {chapter}{\numberline {B}System parameters}{47}{appendix.B}
-\contentsline {chapter}{\numberline {C}Configuration parameters}{49}{appendix.C}
-\contentsline {chapter}{\numberline {D}Code}{50}{appendix.D}
+\contentsline {paragraph}{Run}{33}{section*.36}
+\contentsline {subsection}{\numberline {4.2.4}Mutation}{34}{subsection.4.2.4}
+\contentsline {subsubsection}{PBIL Mutation vs GAPBIL Mutation}{35}{section*.37}
+\contentsline {subsection}{\numberline {4.2.5}Setting}{35}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Configuration file}{36}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}How it all comes together}{37}{subsection.4.2.7}
+\contentsline {section}{\numberline {4.3}Testing}{38}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Dataset}{38}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Query}{38}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Data collection}{38}{subsection.4.3.3}
+\contentsline {chapter}{\numberline {5}Results}{39}{chapter.5}
+\contentsline {chapter}{\numberline {6}Discussion}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}The sequential effect}{40}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{40}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries}{40}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{40}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Error sources}{41}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{41}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{41}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Cluster size}{41}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Proving effect}{42}{section.6.4}
+\contentsline {section}{\numberline {6.5}Cut configuration parameters}{42}{section.6.5}
+\contentsline {chapter}{\numberline {7}Further work}{43}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous clusters}{43}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Load profiles}{43}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Single node setups}{43}{section.7.2}
+\contentsline {section}{\numberline {7.3}Support for the cut parameters}{43}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{45}{chapter.8}
+\contentsline {chapter}{\numberline {A}Cluster specs}{49}{appendix.A}
+\contentsline {chapter}{\numberline {B}System parameters}{50}{appendix.B}
+\contentsline {chapter}{\numberline {C}Configuration parameters}{52}{appendix.C}
+\contentsline {chapter}{\numberline {D}Code}{53}{appendix.D}
