@@ -5,6 +5,7 @@
 \usepackage{babel,duomasterforside}
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
+\usepackage{subfig}
 \usepackage{svg}
 \usepackage{graphicx,wrapfig,lipsum}
 \hypersetup{
@@ -67,6 +68,8 @@
 			MPP & Massively Parallel Processing \\
 			RPC & Remote Procedure Call \\
 			DSN & Data Source Name \\
+			ODBC & Open Database Connectivity \\
+			JDBC & Java Database Connectivity \\
 		\end{tabular}
 	\end{table}
 
@@ -244,6 +247,7 @@
 			Genetic algorithms are higher level procedures for generating high-quality configurations / solutions to problems with a wide range of parameters, typically where exhaustive searches are infeasible. The procedure starts out with a population of \textit{n} candidates, each representing a set of pseudo-randomly generated values for the respective parameters (properties) that will yield a result for the given problem. Once each candidate has attempted to solve the problem by applying their properties to it, a fitness score is given and compared amongst them. The fitness score represents how good their solution to the problem was, and lets us pick out the best candidates among our population. After the optimal candidates of a generation is chosen, a new generation is generated, inheriting the properties of the previous best candidates. This process repeats until a stop criterion is reached and the properties of the candidate is considered an optimal solution. The number of generations to be generated, and the number of parent candidates from which the next generation is generated from are tweakable parameters.
 			
 			\subsection{NASA applying genetic algorithms}A very famous application of genetic algorithms is the high-performance antenna NASA made, that actually flew in their Space Technology 5 (ST5) mission \cite{nasa}. In NASAs case, they needed to make a highly receptive antenna with very small physical dimensions. It could have any number of branches, each going in any arbitrary direction. Because of these seemingly infinite possible configurations for the antenna, applying genetic algorithms to gradually evolve a design by testing randomly generated populations and combining the best traits from each candidate, proved to be a great way of solving this. \emph{"(...) the current practice of designing antennas by hand is severely limited because it is both time and labor intensive and requires a significant amount of domain knowledge, evolutionary algorithms can be used to search the design space and automatically find novel antenna designs that are more effective than would otherwise be developed"} \cite{nasa}.
+			\clearpage
 			\subsection{Limitations of genetic algorithms}
 			\subsubsection{Fitness function}
 			At first glance it sounds like applying genetic algorithm techniques to any problem would yield an optimal solution, with relative ease. The problem though, is the fitness function for determining the candidate solution. As the complexity of the problem scales in size the search space for the fitness function will end up being too big to complete in a reasonable time. For instance if one single candidate evaluation took days, performed for the whole population, across generations, it could end up taking months completing just one single optimization. In those cases machine learning approaches or simply manual labor through technical and domain specific knowledge would prove to be more efficient.
@@ -259,7 +263,7 @@
 	\end{figure}
 	The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm"} \cite{pbil}.
 		\subsection{Advantage of PBIL}
-		The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties, and generally faster convergence. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"} \cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more PBIL allows for complex values as genetic material instead of the usual binary representation, making it easier to implement linear parameters. A shared genetic memory for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the \hyperref[sec:judge]{method chapter}.
+		The main advantage PBIL supplies for this problem is the avoidance of unnecessary mutation on key properties, and generally faster convergence. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"} \cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In PBIL this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation run, and in every subsequent run. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more PBIL allows for complex values as genetic material instead of the usual binary representation, making it easier to implement linear parameters. A shared genetic memory for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the \hyperref[sec:judge]{method chapter, judge}.
 		\subsection{Limitation of PBIL}
 		The main limitation of PBIL is that each candidate property needs a preset of valid values. Thus finding the optimal solution is still based widely on the amount of options, and the effectiveness of them, defined by the developer of the algorithm. Naturally - in terms of boolean properties there lies no challenge. However when linear parameters need to be set, i.e properties with ranges from zero to infinity, the developer must define a set of valid options existing within that range. In the context of Apache Drill there are default rule of thumb values for each property, so the list of valid options for each property is generated around the default.
 		Another drawback of PBIL lies in the risk of premature convergence. This can however be mitigated by effective mutation functions that ensure diversity.
@@ -313,7 +317,26 @@
 				\includegraphics[width=\textwidth]{cluster}
 				\caption{Cluster architecture}
 			\end{figure}
-			The infrastructure stack consists of the technologies listed in the \hyperref[technology]{technology section}. All technologies are installed on all machines, except for the ODBC drivers, that are exclusively on the gateway. During a drill exection, any node can act as the orchestrator, named the \textit{foreman}.
+			The infrastructure stack consists of the technologies listed in the \hyperref[technology]{technology section}. All technologies are installed on all machines, except for the ODBC drivers, that are exclusively on the gateway. During a drill exection, any node can act as the orchestrator, named the \textit{foreman}. On each machine there is a user named \textit{hadoop}, that runs all the services needed to keep the cluster operational, like the zookeeper server and the drillbits. The gateway also has a main user simply named \textit{ubuntu}, that runs the tests and the algorithm. The drillbits are made available through a ODBC DSN.
+			The services are as follows:
+			\begin{itemize}
+				\item Gateway
+				\begin{itemize}
+					\item NameNode (hdfs)
+					\item SecondaryNameNode (hdfs)
+					\item QuorumPeerMain (zookeeper)
+					\item Drillbit (drill)
+					\item Jps
+				\end{itemize}
+				\item node-1, node-2, node-3
+				\begin{itemize}
+					\item DataNode (hdfs)
+					\item QuorumPeerMain (zookeeper)
+					\item Drillbit (drill)
+					\item Jps
+				\end{itemize}
+			\end{itemize}
+			The Jps service is simply the Java Virtual Machine Process Status Tool, used to monitor the status of all the other services listed.
 			\begin{figure}[h]
 				\includegraphics[width=\textwidth]{tech_stack}
 				\caption{Technology stack}
@@ -327,6 +350,7 @@
 			\caption{Hierarchy of objects}
 		\end{figure}
 		\subsection{Judge}
+		\label{sec:judge}
 		When initializing a optimization process the first crucial thing to get created is the judge. The judge extracts all of the information contained within the configuration file, to construct itself, the memory object, a default candidate and an initial population.
 		\subsubsection{Judge operations}
 		\paragraph{Memory}
@@ -344,13 +368,15 @@
 				\item To keep the memory alterations based on fresh new solutions, we want to evict older members. Some versions of PBIL does not include evictions - but for achieving convergence, evictions are crucial.
 				\end{itemize}
 		\end{itemize}
+		\clearpage
 		\subsection{Memory}
 		\label{memory}
+
+		The memory is the heart of this entire system. It provides a centralized brain that makes decisions based on historic data, and incrementally adapts it's knowledge as new data is being generated. While it can be considered a machine learning technique, the memory has a truly finite usage within each run, as it is meant to reach a state of convergence. More classic incremental learning schemes are continuously adapting, attempting to for instance predict the stock market. In our case however we simply want to reach one final solution and then end the run. For each run the memory starts out fresh, with a uniformly distributed probability vector, ensuring that changes in i.e cluster topology or data skewness will be taken into consideration when optimizing. Thus it can be valuable to execute one full optimization run each time a big data environment changes, or new data sources get added. If the memory were to store historic genetic material, then certain probability vectors would be skewed in favor of previously strong parameters, that may not be beneficial for current or future runs.
 		\begin{figure}[h]
 			\includegraphics[width=\textwidth]{memory_candidate}
 			\caption{The reliance between a candidates' setting object, and the judges' centralized memory.}
 		\end{figure}
-		The memory is the heart of this entire system. It provides a centralized brain that makes decisions based on historic data, and incrementally adapts it's knowledge as new data is being generated. While it can be considered a machine learning technique, the memory has a truly finite usage within each run, as it is meant to reach a state of convergence. More classic incremental learning schemes are continuously adapting, attempting to for instance predict the stock market. In our case however we simply want to reach one final solution and then end the run. For each run the memory starts out fresh, with a uniformly distributed probability vector, ensuring that changes in i.e cluster topology or data skewness will be taken into consideration when optimizing. Thus it can be valuable to execute one full optimization run each time a big data environment changes, or new data sources get added. If the memory were to store historic genetic material, then certain probability vectors would be skewed in favor of previously strong parameters, that may not be beneficial for current or future runs.
 		\clearpage
 		\paragraph{Probability vector algorithm}
 		\begin{wrapfigure}{r}{5.5cm}
@@ -386,7 +412,7 @@
 		\subsection{Candidate}
 		Candidates don't hold much information on their own, as most of it is stored in a setting object, which the candidate holds on to. However the candidate has some crucial functions, like how to run queries with their setting object, how to mutate and how to measure self performance.
 		\paragraph{Run}
-		To get data on whether or not a particular set of settings will be an effective solution in the current environment, we need to run some tests - here simply defined as runs. To complete a run in this system the candidate is dependent on a data source, and information on how many runs to do, in order to measure the TTE. In a cluster where resources are shared among many users, or multiple queries are ran concurrently on the same quorum, the optimal solution need to take this into consideration. Therefore runs are done in two stages, one for concurrency testing, and another for sequential testing. Both the data source and the number of runs to complete are defined by the configuration file. The data source defined here is a ODBC DSN, but for future work this can be easily altered to point to a JDBC DSN or other similar sources. The number of runs defined by the configuration file is actually doubled in runtime, as it defines both the amount of concurrent runs in addition to the amount of sequential runs. This means that defining this setting to the absolute minimum of 1 run, results in two runs - one in the concurrent stage and one in the sequential stage. Performing only a single run would leave too much up to circumstance, in regards to the available resources in the cluster and random error, thus a minimum of two runs is needed to measure performance - although any number higher than this is advised. Further technical details on how the runs are performed can be read in the \hyperref[testing]{testing section}
+		To get data on whether or not a particular set of settings will be an effective solution in the current environment, we need to run some tests - here simply defined as runs. To complete a run in this system the candidate is dependent on a data source, and information on how many runs to do, in order to measure the TTE. In a cluster where resources are shared among many users, or multiple queries are ran concurrently on the same quorum, the optimal solution need to take this into consideration. Therefore runs are done in two stages, one for concurrency testing, and another for sequential testing. Both the data source and the number of runs to complete are defined by the configuration file. The data source defined here is a ODBC DSN, but for future work this can be easily altered to point to a JDBC DSN or other similar sources. The number of runs defined by the configuration file is actually doubled in runtime, as it defines both the amount of concurrent runs in addition to the amount of sequential runs. This means that defining this setting to the absolute minimum of 1 run, results in two runs - one in the concurrent stage and one in the sequential stage. Performing only a single run would leave too much up to circumstance, in regards to the available resources in the cluster and random error, thus a minimum of two runs is needed to measure performance - although any number higher than this is advised. Further technical details on how the runs are performed can be read in the \hyperref[sec:runs]{testing section}
 		\pagebreak
 		\subsection{Mutation}
 		To mitigate the issue of premature convergence a mutation function is in place, to mutate new candidates at a set probability defined by the configuration file. After a candidate is created, it may be chosen for mutation. The value that defines the probability for a candidate to be chosen also decides the probability for individual parameters to mutate within the candidates setting object. There is also a resistance value in place, to avoid too heavy mutations, potentially resulting in a useless candidate at later stages, which simply increases the time cost of the algorithm. The resistance value starts at 0, and increases via the resistance growth value set in the configuration file. Each time a parameter is mutated within a candidate, the candidate becomes more genetically resistant. It works by linearly reducing the mutation chance for individually chosen candidates. By default this reduction is 1\% per mutation. Increasing the resistance growth would result in more stable candidates, more purely defined by memory, but gives less variations - so this needs to be balanced. 
@@ -398,10 +424,10 @@
 		\end{figure}
 		The mutation is entirely isolated from the memory, and thus chooses a new option for the parameter randomly, within a candidate. If a mutation is specifically advantageous in the given environment the candidate will go on to become an elite, thus altering the memory with its genetic material.
 		\subsubsection{PBIL Mutation vs GAPBIL Mutation}
-		While the original implementation of the PBIL mutation function focused on mutation the collective probability vector, the GAPBIL approach mutates individual candidates.
+		While the original implementation of the PBIL mutation function seen in algorithm \ref{algo:pbil_mutation1} focused on mutation of the collective probability vector, the GAPBIL approach seen in algorithm \ref{algo:pbil_mutation2} mutates individual candidates - hoping to produce a diverse set of elites.
 		
 		\begin{algorithm}
-			\caption{Original PBIL mutation}\label{algo:pbil_mutation}
+			\caption{Original PBIL mutation}\label{algo:pbil_mutation1}
 		\scriptsize
 			\begin{verbatim}
 			
@@ -418,7 +444,7 @@
 			\end{verbatim}
 		\end{algorithm}
 		\begin{algorithm}
-		\caption{GAPBIL mutation}\label{algo:pbil_mutation}
+		\caption{GAPBIL mutation}\label{algo:pbil_mutation2}
 		\scriptsize
 			\begin{verbatim}
 			
@@ -439,19 +465,58 @@
 		\end{verbatim}
 		\end{algorithm}
 		\subsection{Setting}
-		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. One of the strengths of PBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA usually has. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
+		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. An innovation of GAPBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA or PBIL uses. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
-		This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake. All the parameters can be found in \hyperref[table:conf_params]{appendix B}.
-		\clearpage
-		\subsection{How it all comes together}
-		Figure \ref{fig:sys_overview} shows a simplistic flow chart for how the entire system runs, from start to achieved convergence.
-		\begin{figure}[ht]
-			\centering
-			\includegraphics[width=270pt]{overview}
-			\caption{System overview}
-			\label{fig:sys_overview}
-		\end{figure}
-		\clearpage
+			This thesis focuses on removing the barrier for adoption of big data frameworks. As such one might find it ironic that a configuration file is supplied, that severely impact the performance of the optimization algorithm. However it is expected that the supplied default values set for the algorithm is sufficiently effective for any environment where this is run. With the default values there is a fine balance between execution time of the algorithm, and the margin for how fine grained a optimal solution should be. In addition to this there are very simple guide lines provided, regarding how big the cluster is, how many cores each node has, and how much time to be spent for accuracy sake. All the parameters can be found in \hyperref[table:conf_params]{appendix B}.
+			\clearpage
+		\subsection{Algorithm overview}
+			\paragraph{Flowchart}
+			Figure \ref{fig:sys_overview} shows a simplistic flowchart for how the entire system runs, from start to achieved convergence. Algorithm \ref{algo:overview} shows brief pseudo code of the basic concepts of GAPBIL.
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=270pt]{overview}
+				\caption{System overview}
+				\label{fig:sys_overview}
+			\end{figure}
+			\clearpage
+			\begin{algorithm}
+				\caption{Basic GAPBIL algorithm}\label{algo:overview}
+				\scriptsize
+				\begin{verbatim}
+				
+				# Generate default candidate
+				default <- generate solution according to collective genetic memory
+				goal <- defined by performance of default solution
+				
+				# Generate candidate population
+				for #POPULATION
+				    candidate_{i} <- generate solution according to collective genetic memory
+				    evaluation_{i} <- measure solution performance against goal
+				    
+				# Perform generation cycle
+				for #POPULATION
+				    elites_{t} <- add #ELITE candidates from population
+				    if elites_{t} > #ELITE_CLUB
+				        evict oldest suplerflous elites
+					population <- remove #CYCLE weakest
+				execute probability vector algorithm with elites_{t}
+				generate and add #CYCLE candidates according to altered genetic memory to population
+				
+				# Check for convergence
+				for parameters in memory
+				    count all parameters with probability > #CONVERGENCE_THRESHOLD
+				if converged
+				    End algorithm, get fittest candidate and test optimal solution for assurance
+				
+				USER DEFINED CONSTANTS:
+				POPULATION_SIZE: amount of candidates in population
+				ELITE_CYCLE: amount of elites to add each generation cycle
+				ELITE_CLUB_SIZE: amount of elites kept in memory for memory alterations
+				CANDIDATE_CYCLE: amount of candidates to replace each generation cycle
+				CONVERGENCE_THRESHOLD: threshold for considering a parameter converged
+				
+				\end{verbatim}
+			\end{algorithm}
 		\section{Testing}
 			\subsection{Dataset}
 				The dataset used to test the algorithm on the clusters come from Yelp, specifically from their dataset challenge \cite{yelp}. The data was gathered as JSON files, containing reviews, stores, customer visits and the like.
@@ -469,28 +534,54 @@
 				GROUP BY Business,Days) WHERE Total\_Checkins$>$150 ORDER BY Business,Total\_Checkins\\
 				}
 				\end{flushleft}
-			\subsection{Data collection}
-				When executing a run from a candidate we preferably do many queries before measuring fitness. The SQL and the data is always the same between all candidates, runs and queries. In addition to this we only take the optimal TTE into consideration when measuring a candidates effectiveness. This counts for all candidates generated from memory as well as the default candidate. This ensures they all compete on even ground, and no noise or variance effects the result.
+			\clearpage
+			\subsection{Run flowchart}
+				\label{sec:runs}
+				Performing queries on the cluster programatically through python requires many layers of middleware. The Python language uses pyodbc, to speak to ODBC, that has defined a DSN on the Zookeeper Quorum, to access the Drillbits that reside on HDFS, as seen in figure \ref{fig:run_workflow}. Every time a query is run we measure the time it takes, and store it in a global list. This is important in regards to concurrency, as the threads themselves cannot return values to the main function, but rather append their values to a fixed index in the result list.
 				\begin{figure}[ht]
 					\centering
-					\includegraphics[width=180pt]{batch}
-					\caption{Runs only log the optimal TTE, to avoid noise}
-					\label{fig:batch}
+					\includegraphics[width=240pt]{run_workflow}
+					\caption{All the technological layers that we pass during a single query}
+					\label{fig:run_workflow}
 				\end{figure}
-			
+			\clearpage
+			\subsection{Data collection}
+				When executing a run from a candidate we preferably do many queries before measuring fitness. The SQL and the data is always the same between all candidates, runs and queries. In addition to this we only take the optimal TTE into consideration when measuring a candidates effectiveness. This counts for all candidates generated from memory as well as the default candidate, as shown in figure \ref{fig:run_workflow}. This ensures they all compete on even ground, and no noise or variance effects the result.
 				
 	\chapter{Results}
-	TODO: this part
+	\section{} TODO: THIS PART
 	
 	\chapter{Discussion}
-	\section{The sequential effect}
-	As mentioned previously, a candidate run consists of two stages - one concurrent stage and one sequential stage. A single run on a single candidate will always perform at least two sequential queries. All candidates in a population are run in sequence, one after the other whilst measuring their fitness. \textbf{Only elites get counted. always 30\% lower than default, default gets run vs optimal, both perform very bad all of a sudden. What up? Keep this part for now, but do more runs with bigger solution assurance testing pool}
+	\section{The drill cache}
+		As mentioned previously, a candidate run consists of two stages - one concurrent stage and one sequential stage. A single run on a single candidate will always perform at least two sequential queries. All candidates in a population are run in sequence, one after the other whilst measuring their fitness. Still we see that the first run of the optimization process, running the default candidate, is measured to have higher TTE than subsequent runs when performing solution assurance in the end - if the run count is low. This is caused by drill populating a distributed cache, which the default candidate will utilize fully in subsequent runs, but not in the goal defining run. This source of deviance from the true performance of the default candidate is however irrelevant in the grand scheme, as the goal could be an arbitrary value to beat for the generated candidates. After all the algorithm does not end when a goal is reached, rather when convergence is achieved. When performing solution assurance in the end the true performance gets measured against the considered optimal solution, and a fair assessment of both candidates' TTE is made, proving effect - or lack thereof.
 	\section{Parameter agnostic queries}
 		\label{sec:param_agno}
-		\subsection{Tiny queries}
+		\subsection{Tiny queries, non-complex problems}
 		Running a very simple query in the cluster environments we set up, on a small json file of a couple thousand lines - took drill around 0.2 seconds. Attempting to optimize for such queries was completely futile, as the only bottleneck for such a simple query is pure hard drive reading speeds. This led to every randomized set of settings to be considered equally good, which again means that the default candidate is equally good. No optimal setting can be discovered, and convergence of the algorithm is simply an act of chance.
 		\subsection{Complex queries}
-		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a 4 node cluster with relatively low resources, there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out. TODO: prove this with new data: Early proof of concept runs would often see convergence reach around 0.85 - 0.9, before decreasing back down to around 0.8 and staying there for tens of generations, without ever increasing the fitness value. After introducing accelerated convergence, we give the algorithm an extra push in the last 10\% of  convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters to the current environment or data source.
+		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a given environment there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out.
+		\subsection{Examples of agnosticism from stable cluster }
+		Runs often see total convergence reach around 0.8 - 0.9  and staying there for tens of generations, without ever increasing the fitness value. To further inspect the hypothesis of parameter agnosticism a graph of converged parameters over time was created, and a cutoff points of critical vs arbitrary parameters was charted out, as seen in figure \ref{fig:agnos}. After 21 parameters reached convergence, we can see that there is no consensus among the elites on the remaining parameter options, leading total convergence to oscillate instead of steadily increase. In this chart we see one convergence drop down to its lowest of 21 once, 68 generations after first passing that point - before heading for total convergence.
+		\begin{figure}[ht]
+			\centering
+			\subfloat[label 1]{{\includegraphics[width=5cm]{agnosticism} }}
+			\qquad
+			\subfloat[label 2]{{\includegraphics[width=5cm]{agnosfit1} }}
+			\caption{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drop after steep growth (x88,y21).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain.}
+			\label{fig:agnos}
+		\end{figure}
+		\clearpage
+		In another example shown in figure \ref{fig:agnos2} there are two low drops to 22 converged parameters. In both graphs there is a overwhelming consensus among elites of what parameters result in the best solution, up until 21-22 parameters are converged. In both cases this initial elite consensus takes around 20 generations. From that point on around 100 generations are spent trying to reach consensus on the remaining 7-8 parameters. Keep in mind that one generation cycle can easily take around 15 min. Given 10 candidates in the population, times 10 queries per candidate, times 10 seconds per query results in 16.6 minutes per generation.
+		\begin{figure}[ht]
+			\centering
+			\subfloat[label 1]{{\includegraphics[width=5cm]{agnosticism2} }}
+			\qquad
+			\subfloat[label 2]{{\includegraphics[width=5cm]{agnosfit2} }}
+			\caption{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drops after steep growth (x22,y25 and x22,y48).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.}
+			\label{fig:agnos2}
+		\end{figure}
+		After introducing accelerated convergence, we give the algorithm an extra push in the last 10\% towards convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters to the current environment and / or data source. Convergence still takes a lot of time in event of heavy parameter agnosticism, but cutting the algorithm off prematurely to force default options on the respective arbitrary parameters could lead to faulty configurations in edge cases, so we settled for speeding it up instead - with accelerated convergence.
+		\clearpage
 	\section{Error sources}
 		\subsection{Drill planner inconsistency}
 		First of all, drill is inherently a bit varied in terms of query times. Performing the same query twice in the same session will heavily leverage a shared cache amongst the drillbits, reducing query times by an average of 15\%. Further more the planning phase contains some fuzzy logic and decision making probabilities, so it may not always result in the same execution stage. The cache issue is mitigated by letting every candidate start a new session, and run the same amount of queries in the session. The planning stage inconsistency is mitigated by running several queries in a single run, to make sure to take the average into consideration. The solutions to both these problems are however parameterized, so setting the amount of queries per run to a low number will lead to increasing impact of these factors as error sources.
@@ -499,7 +590,7 @@
 		\subsection{Cluster size}
 		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism. 
 	\section{Proving effect}
-	Considering the error sources at hand, and specifically regarding the cluster instability, it can be difficult to prove that a solution will lead to consistently lower TTE over time - thus saving time and money. Over time a simple solution assurance stage got added to the end of the algorithm, running several runs, 10 by default, where the considered optimal candidate competes against the default candidate. After analyzing this data it is clear that the algorithm works as intended - reducing the overall TTE. Although some error sources will put individual runs from the default candidate ahead of the considered optimal solution in terms of TTE, it is proven across several solution assurance runs that the average cost saving of the suggested optimal solution is worthwhile, averaging out at 20\% for the \hyperref[table:cluster_stable]{stable cluster}, and 5\% for the \hyperref[table:cluster_shared]{shared cluster}. \textbf{TODO: get cost savings right.}
+	Considering the error sources at hand, and specifically regarding the cluster instability, it can be difficult to prove that a solution will lead to consistently lower TTE over time - thus saving time and money. Over time a simple solution assurance stage got added to the end of the algorithm, running several runs, 10 by default, where the considered optimal candidate competes against the default candidate. After analyzing this data it is clear that the algorithm works as intended - reducing the overall TTE. Although some error sources will put individual runs from the default candidate ahead of the considered optimal solution in terms of TTE, it is proven across several solution assurance runs that the average cost saving of the suggested optimal solution is worthwhile, averaging out at 3\% for the \hyperref[table:cluster_stable]{stable cluster}. For the \hyperref[table:cluster_shared]{shared cluster} cost saving is inconclusive, because of the heavy variance in TTE caused by the shared resources, leading to faulty results.
 	\section{Cut configuration parameters}
 	Time constraints and choice of implemented algorithm caused some relevant parameters to be cut from the optimization process, making them default values in all candidates. There were a total of six cut parameters, viewable in the appendix, \hyperref[table:removed_params]{cut parameters}. The two execution queue memory parameters could not be set in-session, as they were exclusively system settings. This meant that we would need to restart apache for each candidate, to apply their system settings, causing massive overhead and added complexity. The four remaining ones all define what type of aggregation and join functions should be available. Changing these parameters led to segmentation faults while running candidates, and they then had to be cut from the settings list. Given more time, some deeper study and insight could be gained to understand the segmentation faults, and perhaps build systems to handle them.
 	
@@ -514,9 +605,20 @@
 	As mentioned earlier there are a couple of interesting parameters that was cut from the development process in this thesis, listed in \hyperref[table:removed_params]{the appendix}. To handle the segmentation faults potentially caused by hash- and aggregate join disabling, one could possibly access drill through a different source than pyodbc, to create an appropriate wrapper around the runs and catch the errors. To handle the system settings, a more complex run needs to be set up, to restart the cluster and check for readiness before querying it for each candidate - this may ultimately be infeasible in terms of optimization time.
 	
 	\chapter{Conclusion}
-	TODO: this part
-	\section{Innovations}
-	\section{Goal achieved}
+	\section{Innovation - GAPBIL}
+		\subsection{Inspiration}
+		This thesis started out using a simple Genetic Algorithm for the candidate solutions. Further in the development process PBIL was implemented, as a better fit for the object oriented authority based system made, with the judge at the top. Even still some alterations to the algorithm had to be made to reach the intended goal, and thus PBIL was not satisfactory. This led to the creation of a new novel algorithm named GAPBIL.
+		\subsection{Genetic flexibility}
+		GAPBIL accepts any type of genetic material a user would want, from numbers and strings to complex values like lists and matrices. The parameters can even be objects themselves. This is all handled by using memory object held by the judge, that mirrors the parameters held by the candidates. The flexibility in genetic material is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic values.
+		\subsection{Mutation}
+		Genetic algorithms mutate candidates. PBIL mutates the collective probability vectors. GAPBIL mutates on candidate level, potentially allowing an advantageous mutated candidate to reach elite status, thus altering the collective probability vector. In such a way GAPBIL combines the methods presented in both GA and PBIL, hence the name.
+	\section{Goal}
+		\subsection{Self optimizing system}
+		GAPBIL is by every definition a self optimizing system. A user of the algorithm simply need to define how many parameters a setting object should have, and what options they should contain, to solve a given problem. The rest is up to the judge.
+		\subsection{Apache drill performance tuning}
+		No set value for how major the impact of performance tuning a drill cluster needed to be to be considered a success. With an average of 3\% cost saving in the testbed environment on a static query upon a large JSON dataset, we consider it a success. If the optimizer were to be run in more complex environment on more diverse datasets we are confident that the cost saving will be at least as much. Due to time constraints however, we need to conclude on the results at hand.
+	\section{Most valuable contribution}
+	The most valuable contribution of this thesis lies in the algorithm GAPBIL, which can be used to solve any complex problem, improving upon traditional genetic and evolutionary algorithms with a major increase in genetic material flexibility.
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
 		Li, M., Zeng, L., Meng, S., Tan, J., Zhang, L., Butt, A. R., \& Fuller, N. (2014, June). \emph{Mronline: Mapreduce online performance tuning. In Proceedings of the 23rd international symposium on High-performance parallel and distributed computing (pp. 165-176).} ACM.
@@ -702,7 +804,7 @@
 		\multicolumn{1}{l}{\bfseries Name} & \multicolumn{1}{l}{\bfseries Default value} \\ \hline \\
 			POPULATION\_SIZE& 10 \\
 			GROWTH\_FACTOR & 0.4 \\
-			GROWTH\_CHANCE & 0.2 \\
+			GROWTH\_CHANCE & 0.3 \\
 			RESISTANCE & 0.1 \\
 			
 			CONVERGENCE\_THRESHOLD & 0.95 \\
