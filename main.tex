@@ -310,6 +310,7 @@
 		technology when businesses wants to deal with big data. There are however some bleaker recent reports stating that Hadoop adoption is going slower than previously predicted. A 2015 Gartner press release stated that \textit{"[the] future demand for Hadoop looks fairly anemic"} \cite{Gartner}. The reasons businesses aren't adopting Hadoop as a big data framework however was fairly coherent, and is also highlighted in this thesis. It is too technically demanding to set up effectively. Companies that were reluctant or hesitant with Hadoop adoption cited skills shortage and user-unfriendliness as reasons for not thinking about Hadoop \cite{Gartner}. This is the exact reason why self optimizing frameworks like the one introduced in this thesis are needed. Making the Hadoop platform more approachable through a "out-of-the-box" mindset could potentially severely lower the threshold for taking a leap into big data. Through the methods presented in this thesis, we try to directly tackle this problem.
 	
 	\chapter{Method}
+	\label{chap:method}
 		
 		\section{Infrastructure}
 			To simulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The cluster is also listed in the appendix, called the \hyperref[table:cluster_shared]{shared cluster} The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them. All data that Drill uses to read for tests are replicated three times in the cluster, ensuring parallel processing.
@@ -549,8 +550,73 @@
 				When executing a run from a candidate we preferably do many queries before measuring fitness. The SQL and the data is always the same between all candidates, runs and queries. In addition to this we only take the optimal TTE into consideration when measuring a candidates effectiveness. This counts for all candidates generated from memory as well as the default candidate, as shown in figure \ref{fig:run_workflow}. This ensures they all compete on even ground, and no noise or variance effects the result.
 				
 	\chapter{Results}
-	\section{} TODO: THIS PART
+	Following the reasoning laid out in the \hyperref[chap:method]{method chapter}, we've ran several experiments. As the experiments were carried out, the data collected was slowly refined until we reached a final version where every source of noise was gone, and the graphical output to the user was meaningful and easy to read. The main metric we measure to decide upon algorithm effectiveness is the \textit{Minimum query} value - which shows both the default candidate and the optimal solution under optimal conditions. In this chapter metrics for TTE, convergence and fitness for experiments are shown. In addition to this a graph for the solution assurance stage is included for each experiment, to clearly visualize the default candidate performance vs the optimal solution from GAPBIL.
+	Configurations used were the same for all experiments, namely:
+	\begin{verbatim}
+		{
+		"POPULATION_SIZE": 10,
+		"GROWTH_FACTOR" : 0.4,
+		"GROWTH_CHANCE" : 0.2,
+		"RESISTANCE" : 0.1,
+		
+		"CONVERGENCE_THRESHOLD" : 0.95,
+		"MAX_GENERATIONS" : 200,
+		"CONCURRENT_RUNS" : 10,
+		
+		"REPLACEMENTS_EACH_RUN" : 5,
+		"ELITES_EACH_RUN" : 3,
+		"ELITE_CLUB_SIZE" : 7,
+		
+		"DATA_SOURCE" : "drill64",
+		"NODES" : 4,
+		"CORES" : 4,
+		"NODE_LEAST_MEMORY" : 2147483648,
+		
+		"DISPLAY_OUTPUT" : false,
+		"LOGGING_FOLDER" : "/home/ubuntu/runlogs/",
+		"RUN_NAME" : "default"
+		}
+	\end{verbatim}
+	\clearpage
+	\subsection{Experiment 1}
+	\begin{verbatim}
 	
+	Convergence threshold reached at generation 128
+	
+	
+	Results:
+	Metric           Optimal solution    Default  Overhead saved
+	-------------  ------------------  ---------  ----------------
+	Optimal query             9.19285    9.49949  3.23%
+		
+	\end{verbatim}
+	Experiment 1 achieved 3.23\% reduction in optimal query times, in 128 generations before converging. The real cost saving is however expected to be a bit lower, as data from the first default run is included in the calculations - and as you can see from figure \ref{fig:final14}, it is a high outlier. This is one of the runs discussed in the section about \hyperref[sec:agnosstable]{accelerated convergence}, because of the long time it took for elites to reach consensus on parameter options, as shown in figure \ref{fig:final11}. It initially rises tremendously in total convergence up until generation 20, before spending over 100 generations to settle for the remaining parameters. The cost saving measured in figure \ref{fig:final12} is also compared to the default outlier, as that was the run defining the goal benchmark. In relation to the convergence graph \ref{fig:final11} we can see why convergence after generation 20 is hard to reach, as the cost saving flatlines. Figure \ref{fig:final13} shows the optimal query times for each elite gathered from each generation. It curves downwards nicely, but it is clear the first few elites generated were bad solutions, with TTE of around 9.40. Each generation had 3 elites added, meaning that according to the fitness and convergence charts, the elites TTE should balance out at around generation 20, which here will be seen as elite \#60. This is confirmed by looking at the spread.
+	\clearpage
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=145pt]{runlogs/final1/1}
+		\caption{Experiment 1: Total convergence values over time}
+		\label{fig:final11}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=145pt]{runlogs/final1/2}
+		\caption{All the technological layers that we pass during a single query}
+		\label{fig:final12}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=145pt]{runlogs/final1/3}
+		\caption{All the technological layers that we pass during a single query}
+		\label{fig:final13}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=145pt]{runlogs/final1/4}
+		\caption{All the technological layers that we pass during a single query}
+		\label{fig:final14}
+	\end{figure}
+	\clearpage
 	\chapter{Discussion}
 	\section{The drill cache}
 		As mentioned previously, a candidate run consists of two stages - one concurrent stage and one sequential stage. A single run on a single candidate will always perform at least two sequential queries. All candidates in a population are run in sequence, one after the other whilst measuring their fitness. Still we see that the first run of the optimization process, running the default candidate, is measured to have higher TTE than subsequent runs when performing solution assurance in the end - if the run count is low. This is caused by drill populating a distributed cache, which the default candidate will utilize fully in subsequent runs, but not in the goal defining run. This source of deviance from the true performance of the default candidate is however irrelevant in the grand scheme, as the goal could be an arbitrary value to beat for the generated candidates. After all the algorithm does not end when a goal is reached, rather when convergence is achieved. When performing solution assurance in the end the true performance gets measured against the considered optimal solution, and a fair assessment of both candidates' TTE is made, proving effect - or lack thereof.
@@ -561,6 +627,7 @@
 		\subsection{Complex queries}
 		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a given environment there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out.
 		\subsection{Examples of agnosticism from stable cluster }
+		\label{sec:agnosstable}
 		Runs often see total convergence reach around 0.8 - 0.9  and staying there for tens of generations, without ever increasing the fitness value. To further inspect the hypothesis of parameter agnosticism a graph of converged parameters over time was created, and a cutoff points of critical vs arbitrary parameters was charted out, as seen in figure \ref{fig:agnos}. After 21 parameters reached convergence, we can see that there is no consensus among the elites on the remaining parameter options, leading total convergence to oscillate instead of steadily increase. In this chart we see one convergence drop down to its lowest of 21 once, 68 generations after first passing that point - before heading for total convergence.
 		\begin{figure}[ht]
 			\centering

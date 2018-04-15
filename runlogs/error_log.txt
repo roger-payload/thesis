@@ -1,0 +1,7 @@
+
+#### ERROR WITH THIS RUN: 2018.04.02.11.28.07eighth
+list.remove(x): x not in list
+#### ERROR WITH THIS RUN: 2018.04.02.11.28.07eighth
+local variable 'weak_link' referenced before assignment
+#### ERROR WITH THIS RUN: 2018.04.02.11.28.07eighth
+local variable 'weak_link' referenced before assignment
