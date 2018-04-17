@@ -5,3 +5,93 @@ list.remove(x): x not in list
 local variable 'weak_link' referenced before assignment
 #### ERROR WITH THIS RUN: 2018.04.02.11.28.07eighth
 local variable 'weak_link' referenced before assignment
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('HYT00', '[HYT00] [MapR][Drill] (1050) Query timed out (QueryTimeout=180): [30033]Timed out waiting for server to respond. (1050) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.15.22.13.29final4
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
+<built-in function connect> returned a result with an error set
