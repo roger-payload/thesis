@@ -408,6 +408,7 @@
 		Once the total memory convergence value has reached 90\% of the convergence threshold, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
 		
 		\paragraph{Extended function - progress}
+		TODO: observe one run with new bars, and write about it.
 		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
 		
 		\subsection{Candidate}
@@ -547,15 +548,68 @@
 				\end{figure}
 			\clearpage
 			\subsection{Data collection}
-				When executing a run from a candidate we preferably do many queries before measuring fitness. The SQL and the data is always the same between all candidates, runs and queries. In addition to this we only take the optimal TTE into consideration when measuring a candidates effectiveness. This counts for all candidates generated from memory as well as the default candidate, as shown in figure \ref{fig:run_workflow}. This ensures they all compete on even ground, and no noise or variance effects the result.
-			\subsection{Solution assurance stage}
-			As mentioned earlier we only use optimal TTE to measure default candidate and solutions, to reduce noise. However another layer of noise reduction was added at the end of the algorithm process, to ensure that no individual variance or noise caused the solution to be picked, even with purely optimal TTEs. This is named the solution assurance stage, running several runs, 10 by default, where the considered optimal candidate competes against the default candidate.
+				When executing a run from a candidate we preferably do many queries before measuring fitness. The SQL and the data is always the same between all candidates, runs and queries. In addition to this we only take the optimal TTE into consideration when measuring a candidates effectiveness. This counts for all candidates generated from memory as well as the default candidate, as shown in figure \ref{fig:run_workflow}. This ensures they all compete on even ground, and no noise or variance effects the result. When performing a optimization, a user can either input a custom name for the run, or simply execute it without arguments, causing the name to be \textit{default}. After the scores are settled, all the collected data is stored in the logging folder under the chosen name, stored as a JSON file named as current timestamp. Data collected is:
+				\begin{itemize}
+					\item how many generations the optimization took
+					\item average, mean and optimal query times for all elites
+					\item average, mean and optimal query times for default candidate
+					\item average, mean and optimal query times for default candidate and optimal solution during assurance runs
+					\item Cost saving for all candidate solutions vs default benchmark run
+					\item Total convergence values for all generations
+				\end{itemize}
+				All graphs presented in the results chapter \ref{chap:results} are genereated based on this JSON file. In addition to the JSON file, a file named log.txt is generated for each successful optimization, containing the optimal solution parameters in relation to the default solution- looking like:
+				\scriptsize
+				\begin{verbatim}
+					#### RUN: 2018.04.16.19.44.55
+					Setting                                            Default value     Optimal value  Confidence
+					----------------------------------------------  ----------------  ----------------  ------------
+					planner.memory.enable_memory_estimation              0                 1            100.00%
+					exec.queue.enable                                    0                 0            100.00%
+					planner.broadcast_factor                             1                 0.75         100.00%
+					planner.broadcast_threshold                          1e+07             5e+06        100.00%
+					planner.slice_target                              1000              5000            100.00%
+					planner.width.max_per_query                       1000               100            100.00%
+					exec.min_hash_table_size                         65536             32768            100.00%
+					exec.max_hash_table_size                             1.07374e+09       1.07374e+09  100.00%
+					exec.queue.large                                    10                 2.5          100.00%
+					exec.queue.small                                   100                50            99.98%
+					exec.queue.threshold                                 3e+07             4.5e+07      100.00%
+					exec.queue.timeout_millis                       300000            450000            100.00%
+					planner.memory.max_query_memory_per_node             2.14748e+09       2.14748e+09  100.00%
+					planner.width.max_per_node                          11                 9            100.00%
+					planner.add_producer_consumer                        0                 0            100.00%
+					planner.enable_hashjoin_swap                         1                 0            100.00%
+					planner.enable_mergejoin                             1                 0            100.00%
+					planner.filter.max_selectivity_estimate_factor       1                 1            100.00%
+					planner.filter.min_selectivity_estimate_factor       0                 0.4          100.00%
+					planner.join.hash_join_swap_margin_factor           10                12.5          100.00%
+					planner.join.row_count_estimate_factor               1                 0.75         100.00%
+					planner.memory.average_field_width                   8                14            100.00%
+					planner.memory.hash_agg_table_factor                 1.1               1.5          100.00%
+					planner.memory.hash_join_table_factor                1.1               1.1          100.00%
+					planner.memory.non_blocking_operators_memory        64               128            100.00%
+					planner.partitioner_sender_max_threads               8                 4            100.00%
+					planner.nestedloopjoin_factor                      100               125            100.00%
+					planner.producer_consumer_queue_size                10                50            97.58%
+					store.text.estimated_row_size_bytes                100               400            99.99%
+					store.json.all_text_mode                             0                 0            100%
+					store.json.read_numbers_as_double                    0                 0            100%
+				\end{verbatim}
+				\normalsize
+			\subsection{Solution assurance}
+			As mentioned earlier we only use optimal TTE to measure default candidate and solutions, to reduce noise. However another layer of noise reduction was added at the end of the algorithm process, to ensure that no individual variance or noise caused the solution to be picked, even with purely optimal TTEs. This is named the solution assurance stage, running several runs, 10 by default, where the considered optimal candidate competes against the default candidate. Furthermore to make sure no cluster instability skews the assurance in any candidates favor, the default candidate and optimal candidate take turns doing runs - meaning the default solution is applied every nth run.
+			\subsection{Adapting data collection}
+			Because of the object oriented approach of this algorithm, where the judge owns all the data, and gets passed along as an object for storing the data, it is really simple to adapt what to store. Every kind of metric belongs to the judge, and the judge is last object that we interact with before writing to disk. Therefore future work, or other use cases for GAPBIL should have no problem with metric analysis, even on complex structures like nested objects or lists.
+			
 	\chapter{Results}
+	\label{chap:results}
 	\section{What we display}
-	\paragraph{Graphs}
+	\paragraph{Graphs overview}
 	Following the reasoning laid out in the \hyperref[chap:method]{method chapter}, we've ran several experiments. As the experiments were carried out, the data collected was slowly refined until we reached a final version where every source of noise was gone, and the graphical output to the user was meaningful and easy to read. Naturally then, all data showed in this chapter is collected from experiments performed on the \hyperref[table:cluster_stable]{stable cluster}. The main metric we measure to decide upon algorithm effectiveness is the \textit{Minimum query} value - which tests both the default candidate and the optimal solution under optimal conditions. Metrics for TTE, convergence and fitness for experiments are shown. In addition to this a graph for the solution assurance stage is included for each experiment, to clearly visualize the default candidate performance vs the optimal solution from GAPBIL.
-	\paragraph{Mean calculations}
-	There are averages plotted in the elite run graphs, that are smoothed considerably for better visualizing the results. The averages are calculated by first collecting all elite runs for a generation (by default 3), and averaging their results so we get a generation TTE. Then we add this generation TTE to a list, times the amount of elites we measured \ref{code:list_mean}. Finally we perform gaussian smoothing on the generated list twice \ref{code:gaussian_smoothing}.
+	\paragraph{Cost saving graphs}
+	Data collection for the cost saving graphs, are gathered as the run evolves. It is based on each elite from its respective generation, vs the default candidates first run, which sets the benchmark goal. This first default run often turns out to be a high TTE outlier in Drill, which means the cost saving looks to be a lot higher than the solution assurance stage proves. This is further discussed in the discussion chapter, \hyperref[sec:cache]{drill cache}.
+	\paragraph{Mean calculations for elite runs}
+	There are averages plotted in the elite run graphs, that are smoothed considerably for better visualizing the results. The averages are calculated by first collecting all elite runs for a generation (by default 3), and averaging their results so we get a generation TTE. Then we add this generation TTE to a list, times the amount of elites we measured \ref{code:list_mean}. Finally we perform gaussian smoothing on the generated list twice \ref{code:gaussian_smoothing}. This makes the mean line smooth and easy to read.
 	\clearpage
 	\section{Run configurations}
 	Configurations used were the same for all experiments, namely:
@@ -591,6 +645,7 @@
 	Because of the very low memory specifications in the \hyperref[table:cluster_stable]{stable cluster}, we had to settle for a concurrency value of 2, meaning 4 queries per candidate run. This is in actuality lower than advised for the algorithm to run effectively and produce certain solutions. Even so we could see an improvement in all experiments done during the solution assurance stage, proving that the algorithm performs well even under less than optimal settings, in low end environments.
 	\clearpage
 	\section{Highlighted experiments}
+	TODO: display graphs properly
 	\subsection{Experiment 1}
 	\begin{verbatim}
 	
@@ -600,37 +655,36 @@
 	Results:
 	Metric           Optimal solution    Default  Overhead saved
 	-------------  ------------------  ---------  ----------------
-	Optimal query             9.19285    9.49949  3.23%
+	Optimal query             9.20229     9.3086  1.14%
 		
 	\end{verbatim}
-	Experiment 1 achieved 3.23\% reduction in optimal query times, in 128 generations before converging. The real cost saving is however expected to be a bit lower, as data from the first default run is included in the calculations - and as you can see from figure \ref{fig:final14}, it is a high outlier. This is one of the runs discussed in the section about \hyperref[sec:agnosstable]{accelerated convergence}, because of the long time it took for elites to reach consensus on parameter options, as shown in figure \ref{fig:final11}. It initially rises tremendously in total convergence up until generation 20, before spending over 100 generations to settle for the remaining parameters. The cost saving measured in figure \ref{fig:final12} is also compared to the default outlier, as that was the run defining the goal benchmark. In relation to the convergence graph \ref{fig:final11} we can see why convergence after generation 20 is hard to reach, as the cost saving flatlines. Figure \ref{fig:final13} shows the optimal query times for each elite gathered from each generation. It curves downwards nicely, but it is clear the first few elites generated were bad solutions, with TTE of around 9.40. Each generation had 3 elites added, meaning that according to the fitness and convergence charts, the elites TTE should balance out at around generation 20, which here will be seen as elite \#60. This is confirmed by looking at the spread, which keeps repeating results between 9.10 and 9.20 from around elite 60\# onward. Finally figure \ref{fig:final14} shows the solution assurance runs. Even though run 1 for the default candidate has a major spike in TTE, our optimal solution repeatedly performs better in the 10 subsequent runs performed during the solution assurance stage.
+	Experiment 1 achieved 1.14\% reduction in optimal query times, in 128 generations before converging. This is one of the runs discussed in the section about \hyperref[sec:agnosstable]{accelerated convergence}, because of the long time it took for elites to reach consensus on parameter options, as shown in figure \ref{fig:final11}. It initially rises tremendously in total convergence up until generation 20, before spending over 100 generations to settle for the remaining parameters. Viewing the cost saving in graph \ref{fig:final12} in relation to the convergence graph \ref{fig:final11} we can see why convergence after generation 20 is hard to reach, as the cost saving flatlines. Figure \ref{fig:final13} shows the optimal query times for each elite gathered from each generation. It curves downwards nicely, but it is clear the first few elites generated were bad solutions, with TTE as high as 9.8. Each generation had 3 elites added, meaning that according to the fitness and convergence charts, the elites TTE should balance out at around generation 20, which here will be seen as elite \#60. This is confirmed by looking at the spread, in which the mean line revolves around 9.15 from around elite 60\# onward. Finally figure \ref{fig:final14} shows the solution assurance runs. Our optimal solution repeatedly performs better in the 10 subsequent runs performed during the solution assurance stage.
 	\clearpage
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final1/1}
-		\caption{Experiment 1: Total convergence values over time}
+		\includegraphics[width=130pt]{runlogs/final1/1}
+		\caption{Experiment 1: Total probability convergence over generations}
 		\label{fig:final11}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final1/2}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final1/2}
+		\caption{Experiment 1: Cost saving of optimal elite run vs default benchmark}
 		\label{fig:final12}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final1/3}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final1/3}
+		\caption{Experiment 1: Elite run graph, showing elites optimal TTE over generations}
 		\label{fig:final13}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final1/4}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final1/4}
+		\caption{Experiment 1: Solution assurance stage, showing optimal solution vs default candidate}
 		\label{fig:final14}
 	\end{figure}
 	\clearpage
-		\clearpage
 	\subsection{Experiment 2}
 	\begin{verbatim}
 	
@@ -640,79 +694,79 @@
 	Results:
 	Metric           Optimal solution    Default  Overhead saved
 	-------------  ------------------  ---------  ----------------
-	Optimal query             9.15607     9.3482  2.06%
+	Optimal query             9.15923    9.32121  1.74%
 	
 	\end{verbatim}
-
+	Experiment 2 achieved 1.74\% reduction in optimal query times, in 138 generations before converging, being the experiment that took the longest to converge. In this experiment the first goal defining default run did not spike as high as in the other experiments, leading to a cost saving graph \ref{fig:final22} that shortly dips below 0\%. Furthermore there is a tremendous dip in cost saving at elite \#77, which coincides with the elite run graph \ref{fig:final23} around the same time. This drop happens after the cost saving flatline, so it is regarded as a random error, possibly due to network latency. The elite run graph shows a couple of high TTEs within the span of the first 10 generations but drops sharply, getting one major outlier spike, before oscillating around 9.1. Viewing the solution assurance graph \ref{fig:final24} shows that the optimal solution repeatedly beats the default candidate, even when experiencing variations and oscillations.
 	\clearpage
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final2/1}
-		\caption{Experiment 1: Total convergence values over time}
+		\includegraphics[width=130pt]{runlogs/final2/1}
+		\caption{Experiment 2: Total probability convergence over generations}
 		\label{fig:final21}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final2/2}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final2/2}
+		\caption{Experiment 2: Cost saving of optimal elite run vs default benchmark}
 		\label{fig:final22}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final2/3}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final2/3}
+		\caption{Experiment 2: Elite run graph, showing elites optimal TTE over generations}
 		\label{fig:final23}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final2/4}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final2/4}
+		\caption{Experiment 2: Solution assurance stage, showing optimal solution vs default candidate}
 		\label{fig:final24}
 	\end{figure}
 	\clearpage
-		\clearpage
 	\subsection{Experiment 3}
 	\begin{verbatim}
 	
-	Convergence threshold reached at generation 136
+	Convergence threshold reached at generation 90
 	
 	
 	Results:
 	Metric           Optimal solution    Default  Overhead saved
 	-------------  ------------------  ---------  ----------------
-	Optimal query             9.14703    9.35349  2.21%
+	Optimal query             9.45051    9.61736  1.73%
 	
 	\end{verbatim}
-
-	\clearpage
+	Experiment 3 achieved 1.73\% reduction in optimal query times in just 90 generations, before converging, being the fastest optimization measured. The convergence graph \ref{fig:final31} never flattens out or oscillates as badly as the previous runs, rather continuing on a upward trend until reaching total convergence. The cost saving graph \ref{fig:final32} also shows a small jump in the end of the run, that can be read in relation to the elite run graph \ref{fig:final33} as a drop in mean. During the solution assurance stage shown in graph \ref{fig:final34} There was a sharp drop in the default candidates TTE at run 8, possibly being an overall outlier - meaning that the total cost saving for this candidate solution could average out a bit higher given a higher run count for solution assurance.
+	\clearpage 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final3/1}
-		\caption{Experiment 1: Total convergence values over time}
+		\includegraphics[width=130pt]{runlogs/final4/1}
+		\caption{Experiment 3: Total probability convergence over generations}
 		\label{fig:final31}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final3/2}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final4/2}
+		\caption{Experiment 3: Cost saving of optimal elite run vs default benchmark}
 		\label{fig:final32}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final3/3}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final4/3}
+		\caption{Experiment 3: Elite run graph, showing elites optimal TTE over generations}
 		\label{fig:final33}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=145pt]{runlogs/final3/4}
-		\caption{All the technological layers that we pass during a single query}
+		\includegraphics[width=130pt]{runlogs/final4/4}
+		\caption{Experiment 3: Solution assurance stage, showing optimal solution vs default candidate}
 		\label{fig:final34}
 	\end{figure}
 	\clearpage
 	\section{Aggregated results}
 	\chapter{Discussion}
 	\section{The drill cache}
+	\label{sec:cache}
 		As mentioned previously, a candidate run consists of two stages - one concurrent stage and one sequential stage. A single run on a single candidate will always perform at least two sequential queries. All candidates in a population are run in sequence, one after the other whilst measuring their fitness. Still we see that the first run of the optimization process, running the default candidate, is measured to have higher TTE than subsequent runs when performing solution assurance in the end - if the run count is low. This is caused by drill populating a distributed cache, which the default candidate will utilize fully in subsequent runs, but not in the goal defining run. This source of deviance from the true performance of the default candidate is however irrelevant in the grand scheme, as the goal could be an arbitrary value to beat for the generated candidates. After all the algorithm does not end when a goal is reached, rather when convergence is achieved. When performing solution assurance in the end the true performance gets measured against the considered optimal solution, and a fair assessment of both candidates' TTE is made, proving effect - or lack thereof.
 	\section{Parameter agnostic queries}
 		\label{sec:param_agno}
@@ -747,11 +801,11 @@
 		\subsection{Drill planner inconsistency}
 		First of all, drill is inherently a bit varied in terms of query times. Performing the same query twice in the same session will heavily leverage a shared cache amongst the drillbits, reducing query times by an average of 15\%. Further more the planning phase contains some fuzzy logic and decision making probabilities, so it may not always result in the same execution stage. The cache issue is mitigated by letting every candidate start a new session, and run the same amount of queries in the session. The planning stage inconsistency is mitigated by running several queries in a single run, to make sure to take the average into consideration. The solutions to both these problems are however parameterized, so setting the amount of queries per run to a low number will lead to increasing impact of these factors as error sources.
 		\subsection{Cluster instability}
-		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, extreme spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. When cluster instability gets added on top of drill planner inconsistency in a single query / run, it leads to an outlier of very high TTE, which we cut from our dataset when analyzing the data in posterity. However with such variations it is hard to reach a sensible convergence for truly optimal solutions, considering how fitness scores then are products of both settings and circumstance. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for, hereby called the \hyperref[table:cluster_stable]{stable cluster}. The stable cluster mitigated the variations and gave good grounds for studying the result of the algorithm. 
+		In the initial testing phase, results from runs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, extreme spikes in TTE as high as 30\% were seen, randomly distributed amongst the runs. When cluster instability gets added on top of drill planner inconsistency in a single query / run, it leads to an outlier of very high TTE. However with such variations it is hard to reach a sensible convergence for truly optimal solutions, considering how fitness scores then are products of both settings and circumstance. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for, hereby called the \hyperref[table:cluster_stable]{stable cluster}. The stable cluster mitigated the variations and gave good grounds for studying the result of the algorithm. 
 		\subsection{Cluster size}
 		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism. 
 	\section{Proving effect}
-	 After analyzing our data it is clear that the algorithm works as intended - reducing the overall TTE. Although some error sources will put individual runs from the default candidate ahead of the considered optimal solution in terms of TTE, it is proven across several solution assurance runs that the average cost saving of the suggested optimal solution is worthwhile, averaging out at 3\% for the \hyperref[table:cluster_stable]{stable cluster}. For the \hyperref[table:cluster_shared]{shared cluster} cost saving is inconclusive, because of the heavy variance in TTE caused by the shared resources, leading to faulty results.
+	 After analyzing our data it is clear that the algorithm works as intended - reducing the overall TTE. It is proven across several solution assurance runs that the average cost saving of the suggested optimal solution is worthwhile, averaging out at 1,53\% for the \hyperref[table:cluster_stable]{stable cluster}, for the highlighted experiments. For the \hyperref[table:cluster_shared]{shared cluster} cost saving is inconclusive, because of the heavy variance in TTE caused by the shared resources, leading to faulty results.
 	\section{Cut configuration parameters}
 	Time constraints and choice of implemented algorithm caused some relevant parameters to be cut from the optimization process, making them default values in all candidates. There were a total of six cut parameters, viewable in the appendix, \hyperref[table:removed_params]{cut parameters}. The two execution queue memory parameters could not be set in-session, as they were exclusively system settings. This meant that we would need to restart apache for each candidate, to apply their system settings, causing massive overhead and added complexity. The four remaining ones all define what type of aggregation and join functions should be available. Changing these parameters led to segmentation faults while running candidates, and they then had to be cut from the settings list. Given more time, some deeper study and insight could be gained to understand the segmentation faults, and perhaps build systems to handle them.
 	
@@ -773,13 +827,14 @@
 		GAPBIL accepts any type of genetic material a user would want, from numbers and strings to complex values like lists and matrices. The parameters can even be objects themselves. This is all handled by using memory object held by the judge, that mirrors the parameters held by the candidates. The flexibility in genetic material is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic values.
 		\subsection{Mutation}
 		Genetic algorithms mutate candidates. PBIL mutates the collective probability vectors. GAPBIL mutates on candidate level, potentially allowing an advantageous mutated candidate to reach elite status, thus altering the collective probability vector. In such a way GAPBIL combines the methods presented in both GA and PBIL, hence the name.
-	\section{Goal}
+		\clearpage
+		\section{Goal}
 		\subsection{Self optimizing system}
 		GAPBIL is by every definition a self optimizing system. A user of the algorithm simply need to define how many parameters a setting object should have, and what options they should contain, to solve a given problem. The rest is up to the judge.
 		\subsection{Apache drill performance tuning}
 		No set value for how major the impact of performance tuning a drill cluster needed to be to be considered a success. With an average of 3\% cost saving in the testbed environment on a static query upon a large JSON dataset, we consider it a success. If the optimizer were to be run in more complex environment on more diverse datasets we are confident that the cost saving will be at least as much. Due to time constraints however, we need to conclude on the results at hand.
-	\section{Most valuable contribution}
-	The most valuable contribution of this thesis lies in the algorithm GAPBIL, which can be used to solve any complex problem, improving upon traditional genetic and evolutionary algorithms with a major increase in genetic material flexibility.
+		\section{Most valuable contribution}
+		The most valuable contribution of this thesis lies in the algorithm GAPBIL, which can be used to solve any complex problem, improving upon traditional genetic and evolutionary algorithms with a major increase in genetic material flexibility.
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
 		Li, M., Zeng, L., Meng, S., Tan, J., Zhang, L., Butt, A. R., \& Fuller, N. (2014, June). \emph{Mronline: Mapreduce online performance tuning. In Proceedings of the 23rd international symposium on High-performance parallel and distributed computing (pp. 165-176).} ACM.
