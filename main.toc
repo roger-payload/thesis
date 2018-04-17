@@ -99,46 +99,46 @@
 \contentsline {subsection}{\numberline {4.3.2}Query}{38}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Run flowchart}{39}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Data collection}{40}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{40}{subsection.4.3.5}
-\contentsline {chapter}{\numberline {5}Results}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}What we display}{41}{section.5.1}
-\contentsline {paragraph}{Graphs overview}{41}{section*.53}
-\contentsline {paragraph}{Cost saving graphs}{41}{section*.54}
-\contentsline {paragraph}{Removal of outliers}{41}{section*.55}
-\contentsline {paragraph}{Mean calculations for elite runs}{41}{section*.56}
-\contentsline {section}{\numberline {5.2}Run configurations}{42}{section.5.2}
-\contentsline {section}{\numberline {5.3}Highlighted experiments}{43}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Experiment 1}{43}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experiment 2}{45}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{41}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{41}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Results}{42}{chapter.5}
+\contentsline {section}{\numberline {5.1}What we display}{42}{section.5.1}
+\contentsline {paragraph}{Graphs overview}{42}{section*.53}
+\contentsline {paragraph}{Cost saving graphs}{42}{section*.54}
+\contentsline {paragraph}{Mean calculations for elite runs}{42}{section*.55}
+\contentsline {section}{\numberline {5.2}Run configurations}{43}{section.5.2}
+\contentsline {section}{\numberline {5.3}Highlighted experiments}{44}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experiment 1}{44}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Experiment 2}{46}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Experiment 3}{48}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Aggregated results}{51}{section.5.4}
-\contentsline {chapter}{\numberline {6}Discussion}{52}{chapter.6}
-\contentsline {section}{\numberline {6.1}The drill cache}{52}{section.6.1}
-\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{52}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{52}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Complex queries}{52}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{53}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Error sources}{55}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{55}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{55}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Cluster size}{55}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Proving effect}{55}{section.6.4}
-\contentsline {section}{\numberline {6.5}Cut configuration parameters}{56}{section.6.5}
-\contentsline {chapter}{\numberline {7}Further work}{57}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous clusters}{57}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Load profiles}{57}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Single node setups}{57}{section.7.2}
-\contentsline {section}{\numberline {7.3}Support for the cut parameters}{57}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{59}{chapter.8}
-\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{59}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Inspiration}{59}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{59}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Mutation}{59}{subsection.8.1.3}
+\contentsline {section}{\numberline {5.4}Aggregated results}{50}{section.5.4}
+\contentsline {chapter}{\numberline {6}Discussion}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}The drill cache}{51}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{51}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{51}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{51}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{52}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Error sources}{54}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{54}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{54}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Cluster size}{54}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Proving effect}{54}{section.6.4}
+\contentsline {section}{\numberline {6.5}Cut configuration parameters}{55}{section.6.5}
+\contentsline {chapter}{\numberline {7}Further work}{56}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous clusters}{56}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Load profiles}{56}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Single node setups}{56}{section.7.2}
+\contentsline {section}{\numberline {7.3}Support for the cut parameters}{56}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{58}{chapter.8}
+\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{58}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Inspiration}{58}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{58}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Mutation}{58}{subsection.8.1.3}
 \contentsline {section}{\numberline {8.2}Goal}{59}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{59}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{60}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Most valuable contribution}{60}{section.8.3}
-\contentsline {chapter}{\numberline {A}Cluster specs}{64}{appendix.A}
-\contentsline {chapter}{\numberline {B}System parameters}{65}{appendix.B}
-\contentsline {chapter}{\numberline {C}Configuration parameters}{67}{appendix.C}
-\contentsline {chapter}{\numberline {D}Code}{68}{appendix.D}
+\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{59}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Most valuable contribution}{59}{section.8.3}
+\contentsline {chapter}{\numberline {A}Cluster specs}{63}{appendix.A}
+\contentsline {chapter}{\numberline {B}System parameters}{64}{appendix.B}
+\contentsline {chapter}{\numberline {C}Configuration parameters}{66}{appendix.C}
+\contentsline {chapter}{\numberline {D}Code}{67}{appendix.D}
