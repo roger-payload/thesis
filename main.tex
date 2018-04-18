@@ -240,7 +240,7 @@
 		There are plenty of ways to interface with an ODBC. We chose python as a preferred language because of familiarity. Therefore we chose to use pyodbc \cite{pyodbc} to communicate with the ODBC, allowing a fully functional interface against our Drill configuration. pyodbc is a well established open source module, implementing the DB API 2.0 specification which is an API defined to encourage similarity between the Python modules that are used to access databases. Defining the Drill ODBC Driver as a datasource, which again points to the Zookeeper Quorum, proved effortless and fast.
 
 		\section{Genetic algorithms}
-			\begin{figure}[ht]
+			\begin{figure}[H]
 				\includegraphics[width=\textwidth]{GA}
 				\caption{Basic concepts of GA}
 			\end{figure}
@@ -256,7 +256,7 @@
 
 	\pagebreak
 	\section{Population based incremental learning}
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=310pt]{PBIL}
 		\caption{Basic concepts of PBIL}
@@ -407,10 +407,68 @@
 		\paragraph{Accelerated convergence}
 		Once the total memory convergence value has reached 90\% of the convergence threshold, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
 		
-		\paragraph{Extended function - progress}
-		TODO: observe one run with new bars, and write about it.
-		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. By tracking convergence values over time, and using a linear regression model to predict when the convergence threshold hits, a suggested progress bar is generated.
+		\subsection{Extended memory function - progress estimation}
+		The memory object is also responsible for a novel approach to timing genetic algorithm process times. The single biggest drawback of using genetic algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. Still we are able to create two individual progress bars, to give users some idea of the time optimization should take.
+		\scriptsize
+		\begin{verbatim}
+		###############################
+		########## Optimizing #########
+		###############################
 		
+		
+		|###########                                     |29.09 % of critical parameters converged
+		
+		|###################################             |74.90 % total convergence
+		
+		
+		############ Testing generation 54 ############
+		Accelerated convergency active
+		Running Candidate 50.0
+		Running Candidate 51.1
+		Running Candidate 52.1
+		Running Candidate 52.4
+		Running Candidate 53.3
+		Running Candidate 54.0
+		Running Candidate 54.1
+		Running Candidate 54.2
+		Running Candidate 54.3
+		Running Candidate 54.4
+
+		\end{verbatim}
+		\normalsize
+		The first bar estimates when critical parameters are converged. This is done by tracking convergence values over time, and using a linear regression model to predict when the convergence threshold should hit. The linear regression model fails at one point, because the prediction starts to inverse - i.e it predicts that total convergence value should pass convergence threshold on generation \#60, while we're already at generation \#65. This then indicates strongly that elite consensus is missing, and the remaining values put forth begins to flatline, meaning only arbitrary parameters remain to be settled. The second bar represents total convergence and is a simple function of current convergence * 100 - considering how current convergence is a number between 0-1.
+		\begin{algorithm}
+			\caption{Critical convergence estimation}\label{algo:critical_convergence}
+			\scriptsize
+			\begin{verbatim}
+			
+			# Estimate when convergence of critical parameters are done
+			cl = list of all convergence values for generations passed
+			il = list of cl indexes
+			model = linear regression model
+			fit model(cl,il)
+			convergence = model.predict(#CONVERGENCE_THRESHOLD)
+			diff = convergence - il[-1]
+			
+			target = max(diff)
+			percentage = ((diff*(-1) + target) / target) * 100
+			
+			# Construct progress bar based on percentage
+			
+			USER DEFINED CONSTANTS:
+			CONVERGENCE_THRESHOLD: Threshold for when a parameter is considered to be converged
+			
+			\end{verbatim}
+		\end{algorithm}
+		\clearpage
+		Algorithm \ref{algo:critical_convergence} has been tested thoroughly and proven to be an effective estimation for critical convergence, with one such test graph displayed in graph \ref{fig:estimation}. Further details on elite consensus, critical vs arbitrary parameters and parameter agnostic queries can be read in the discussion chapter, \hyperref[sec:agnosstable]{Examples of agnosticism from stable cluster}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=250pt]{estimate_graph}
+			\caption{Data taken from a demo run where model estimated that critical parameters were converged at generation \#43, shown here as the orange cross section. This can also be observed as the point in time where convergence first flatlined, even slightly dipping, meaning elite consensus was missing going forward. Since this is from a demo run, the run count was set to the lowest possible setting, thus converging at a very early stage at just above generation \#50.}
+			\label{fig:estimation}
+		\end{figure}
+		\clearpage
 		\subsection{Candidate}
 		Candidates don't hold much information on their own, as most of it is stored in a setting object, which the candidate holds on to. However the candidate has some crucial functions, like how to run queries with their setting object, how to mutate and how to measure self performance.
 		\paragraph{Run}
@@ -418,7 +476,7 @@
 		\pagebreak
 		\subsection{Mutation}
 		To mitigate the issue of premature convergence a mutation function is in place, to mutate new candidates at a set probability defined by the configuration file. After a candidate is created, it may be chosen for mutation. The value that defines the probability for a candidate to be chosen also decides the probability for individual parameters to mutate within the candidates setting object. There is also a resistance value in place, to avoid too heavy mutations, potentially resulting in a useless candidate at later stages, which simply increases the time cost of the algorithm. The resistance value starts at 0, and increases via the resistance growth value set in the configuration file. Each time a parameter is mutated within a candidate, the candidate becomes more genetically resistant. It works by linearly reducing the mutation chance for individually chosen candidates. By default this reduction is 1\% per mutation. Increasing the resistance growth would result in more stable candidates, more purely defined by memory, but gives less variations - so this needs to be balanced. 
-		\begin{figure}[ht]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=250pt]{Mutation}
 			\caption{Mutation function flowchart}
@@ -474,7 +532,7 @@
 		\subsection{Algorithm overview}
 			\paragraph{Flowchart}
 			Figure \ref{fig:sys_overview} shows a simplistic flowchart for how the entire system runs, from start to achieved convergence. Algorithm \ref{algo:overview} shows brief pseudo code of the basic concepts of GAPBIL.
-			\begin{figure}[ht]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=270pt]{overview}
 				\caption{System overview}
@@ -540,7 +598,7 @@
 			\subsection{Run flowchart}
 				\label{sec:runs}
 				Performing queries on the cluster programatically through python requires many layers of middleware. The Python language uses pyodbc, to speak to ODBC, that has defined a DSN on the Zookeeper Quorum, to access the Drillbits that reside on HDFS, as seen in figure \ref{fig:run_workflow}. Every time a query is run we measure the time it takes, and store it in a global list. This is important in regards to concurrency, as the threads themselves cannot return values to the main function, but rather append their values to a fixed index in the result list.
-				\begin{figure}[ht]
+				\begin{figure}[H]
 					\centering
 					\includegraphics[width=240pt]{run_workflow}
 					\caption{All the technological layers that we pass during a single query}
@@ -776,8 +834,8 @@
 		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a given environment there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out.
 		\subsection{Examples of agnosticism from stable cluster }
 		\label{sec:agnosstable}
-		Runs often see total convergence reach around 0.8 - 0.9  and staying there for tens of generations, without ever increasing the fitness value. To further inspect the hypothesis of parameter agnosticism a graph of converged parameters over time was created, and a cutoff points of critical vs arbitrary parameters was charted out, as seen in figure \ref{fig:agnos}. After 21 parameters reached convergence, we can see that there is no consensus among the elites on the remaining parameter options, leading total convergence to oscillate instead of steadily increase. In this chart we see one convergence drop down to its lowest of 21 once, 68 generations after first passing that point - before heading for total convergence.
-		\begin{figure}[ht]
+		Runs often see total convergence reach around 0.8 - 0.9  and staying there for tens of generations, without ever increasing the fitness value. To further inspect the hypothesis of parameter agnosticism a graph of converged parameters over time was created, and a cutoff points of critical vs arbitrary parameters was charted out, as seen in figure \ref{fig:agnos}. (\textit{Keep in mind that this metric is different than the one used by the critical parameter estimation model seen in algorithm \ref{algo:critical_convergence} which uses total average convergence values}) After 21 parameters reached convergence, we can see that there is no consensus among the elites on the remaining parameter options, leading total convergence to oscillate instead of steadily increase. In this chart we see one convergence drop down to its lowest of 21 once, 68 generations after first passing that point - before heading for total convergence.
+		\begin{figure}[H]
 			\centering
 			\subfloat[label 1]{{\includegraphics[width=5cm]{agnosticism} }}
 			\qquad
@@ -787,7 +845,7 @@
 		\end{figure}
 		\clearpage
 		In another example shown in figure \ref{fig:agnos2} there are two low drops to 22 converged parameters. In both graphs there is a overwhelming consensus among elites of what parameters result in the best solution, up until 21-22 parameters are converged. In both cases this initial elite consensus takes around 20 generations. From that point on around 100 generations are spent trying to reach consensus on the remaining 7-8 parameters. Keep in mind that one generation cycle can easily take around 15 min. Given 10 candidates in the population, times 10 queries per candidate, times 10 seconds per query results in 16.6 minutes per generation.
-		\begin{figure}[ht]
+		\begin{figure}[H]
 			\centering
 			\subfloat[label 1]{{\includegraphics[width=5cm]{agnosticism2} }}
 			\qquad
@@ -921,7 +979,7 @@
 
 \appendix
 \chapter{Cluster specs}
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{Specs for the shared cluster}
 	\label{table:cluster_shared}
@@ -937,7 +995,7 @@
 	\end{tabular}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{Specs for the stable cluster}
 	\label{table:cluster_stable}
@@ -955,7 +1013,7 @@
 
 \chapter{System parameters}
 \label{system_params}
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{All parameters and options used by PBIL in this thesis}
 	\label{table:added_params}
@@ -994,7 +1052,7 @@
 	\end{tabular}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{Parameters and options that was removed during development, but still is considered to have impact on performance of query execution}
 	\label{table:removed_params}
@@ -1011,7 +1069,7 @@
 \end{table}
 
 \chapter{Configuration parameters}
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{Configuration parameters that define how the algorithm executes.}
 	\label{table:conf_params}
