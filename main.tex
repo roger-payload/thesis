@@ -7,6 +7,34 @@
 \usepackage{hyperref}
 \usepackage{subfig}
 \usepackage{svg}
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
 \usepackage{graphicx,wrapfig,lipsum}
 \hypersetup{
 	colorlinks=true, %set true if you want colored links
@@ -402,7 +430,10 @@
 		\end{math}\\
 		}
 		\paragraph{Reaching convergence}
-		After each memory alteration the memory object checks itself, and each parameter within the setting object it holds. It then counts each parameter, and whether it has passed the convergence threshold. Once all parameters has passed the threshold convergence is reached. This method of evaluating convergence is however very susceptible to parameter agnosticism, leaving the algorithm running for a long time trying to reach convergence on parameters that the elites do not agree on, due to the nature of those parameters being superfluous. The time cost here led to the development of accelerated convergence.
+		After each memory alteration the memory object checks itself, and each parameter within the setting object it holds. It then counts each parameter, and whether it has passed the convergence threshold. Once all parameters has passed the threshold convergence is reached.
+		
+		\paragraph{Elite consensus and critical convergence}
+		In the beginning of a optimization process it is typical that all the elites that are added to the elite club contain mostly the same options for essential parameters. This means that we have \textbf{elite consensus} on what parameters produce the best results, which leads to a steady increase in those option probabilities for their respective parameters. Once all those parameters have reached convergence (meaning that they have passed the convergence threshold), there may be more parameters left to converge, where the elites that get added don't share the same options. This means that we have lost elite consensus, and is also noted here as having reached \textbf{critical convergence}. Once the point of critical convergence is reached and elite consensus is lost, the remaining generations until full convergence are spent to converge arbitrary parameters, which may be a waste of time and resources. This is the reason for implementing accelerated convergence.
 				
 		\paragraph{Accelerated convergence}
 		Once the total memory convergence value has reached 90\% of the convergence threshold, the memory enters a state of accelerated convergence. In this state the growth factor of the genetic algorithm increases by 0.2. This is due to parameter agnosticism in many queries, and especially in less complex queries or environments. This is further detailed in the discussion section, \hyperref[sec:param_agno]{parameter agnostic queries}.
@@ -436,11 +467,13 @@
 
 		\end{verbatim}
 		\normalsize
-		The first bar estimates when critical parameters are converged. This is done by tracking convergence values over time, and using a linear regression model to predict when the convergence threshold should hit. The linear regression model fails at one point, because the prediction starts to inverse - i.e it predicts that total convergence value should pass convergence threshold on generation \#60, while we're already at generation \#65. This then indicates strongly that elite consensus is missing, and the remaining values put forth begins to flatline, meaning only arbitrary parameters remain to be settled. The second bar represents total convergence and is a simple function of current convergence * 100 - considering how current convergence is a number between 0-1.
+		The first bar estimates when critical parameters are converged. This is done by tracking convergence values over time, and using a linear regression model to predict when the convergence threshold should hit. The linear regression model fails at one point, because the prediction starts to inverse - i.e it predicts that total convergence value should pass convergence threshold on generation \#60, while we're already at generation \#65. This then indicates strongly that elite consensus is missing, and the remaining values put forth begins to flatline, meaning only arbitrary parameters remain to be settled, meaning the system is estimated to have reached critical convergence. The second bar represents total convergence and is a simple function of current convergence * 100 - considering how current convergence is a number between 0-1.
 		\begin{algorithm}
 			\caption{Critical convergence estimation}\label{algo:critical_convergence}
 			\scriptsize
 			\begin{verbatim}
+			
+			TODO: Fix this, or maybe just add the code?
 			
 			# Estimate when convergence of critical parameters are done
 			cl = list of all convergence values for generations passed
@@ -461,13 +494,22 @@
 			\end{verbatim}
 		\end{algorithm}
 		\clearpage
-		Algorithm \ref{algo:critical_convergence} has been tested thoroughly and proven to be an effective estimation for critical convergence, with one such test graph displayed in graph \ref{fig:estimation}. Further details on elite consensus, critical vs arbitrary parameters and parameter agnostic queries can be read in the discussion chapter, \hyperref[sec:agnosstable]{Examples of agnosticism from stable cluster}
+		Algorithm \ref{algo:critical_convergence} has been tested thoroughly and proven to be an effective estimation for critical convergence, with two such tests graph displayed in graph \ref{fig:estimation1} and \ref{fig:estimation2}. Further details on elite consensus, critical vs arbitrary parameters and parameter agnostic queries can be read in the discussion chapter, \hyperref[sec:agnosstable]{Examples of agnosticism from stable cluster}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=250pt]{estimate_graph}
-			\caption{Data taken from a demo run where model estimated that critical parameters were converged at generation \#43, shown here as the orange cross section. This can also be observed as the point in time where convergence first flatlined, even slightly dipping, meaning elite consensus was missing going forward. Since this is from a demo run, the run count was set to the lowest possible setting, thus converging at a very early stage at just above generation \#50.}
-			\label{fig:estimation}
+			\includegraphics[width=260pt]{est11}
+			\includegraphics[width=260pt]{est12}
+			\caption{Data from a completed optimization, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same run. Estimated point of critical convergence can be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 22 parameters was converged, indicating that the remaining 7 parameters are arbitrary for current workload in current environment.}
+			\label{fig:estimation1}
 		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=260pt]{est21}
+			\includegraphics[width=260pt]{est22}
+			\caption{Data from a completed optimization, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same run. Estimated point of critical convergence can also here be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 19 parameters was converged, indicating that the remaining 10 parameters are arbitrary for current workload in current environment.}
+			\label{fig:estimation2}
+		\end{figure}
+		More information about how many parameters that are critical, and how many that are arbitrary is detailed in the results chapter, \hyperref[sec:aggres]{aggregated results}.
 		\clearpage
 		\subsection{Candidate}
 		Candidates don't hold much information on their own, as most of it is stored in a setting object, which the candidate holds on to. However the candidate has some crucial functions, like how to run queries with their setting object, how to mutate and how to measure self performance.
@@ -524,6 +566,14 @@
 			 RESISTANCE_GROWTH: amount of mutation resistance for candidate, for each mutation occurance
 		\end{verbatim}
 		\end{algorithm}
+			\begin{equation}\label{math:mutation_chance}
+			P_{mut}(\eta_{mut}) = (P_{mut}-0 E) * (P_{mut}-1 E) \ldots * (P_{mut}-(\eta-1) E)
+			\end{equation}
+			{\centering
+				\begin{math}
+				P = probability, \eta = amount, mut = mutation, E = resistance
+				\end{math}\\
+			}
 		\subsection{Setting}
 		The setting object is simply a collection of session setting for Apache Drill to apply before running queries. An innovation of GAPBIL is the ability to easily implement linear parameters as opposed to the binary representation of genetic material that GA or PBIL uses. As such, each setting is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
@@ -601,7 +651,7 @@
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=240pt]{run_workflow}
-					\caption{All the technological layers that we pass during a single query}
+					\caption{All the technological layers and steps that we pass during a single candidate run.}
 					\label{fig:run_workflow}
 				\end{figure}
 			\clearpage
@@ -703,7 +753,7 @@
 	Because of the very low memory specifications in the \hyperref[table:cluster_stable]{stable cluster}, we had to settle for a concurrency value of 2, meaning 4 queries per candidate run. This is in actuality lower than advised for the algorithm to run effectively and produce certain solutions. Even so we could see an improvement in all experiments done during the solution assurance stage, proving that the algorithm performs well even under less than optimal settings, in low end environments.
 	\clearpage
 	\section{Highlighted experiments}
-	TODO: display graphs properly
+	\label{sec:highlighted}
 	\subsection{Experiment 1}
 	\begin{verbatim}
 	
@@ -755,7 +805,7 @@
 	Optimal query             9.15923    9.32121  1.74%
 	
 	\end{verbatim}
-	Experiment 2 achieved 1.74\% reduction in optimal query times, in 138 generations before converging, being the experiment that took the longest to converge. In this experiment the first goal defining default run did not spike as high as in the other experiments, leading to a cost saving graph \ref{fig:final22} that shortly dips below 0\%. Furthermore there is a tremendous dip in cost saving at elite \#77, which coincides with the elite run graph \ref{fig:final23} around the same time. This drop happens after the cost saving flatline, so it is regarded as a random error, possibly due to network latency. The elite run graph shows a couple of high TTEs within the span of the first 10 generations but drops sharply, getting one major outlier spike, before oscillating around 9.1. Viewing the solution assurance graph \ref{fig:final24} shows that the optimal solution repeatedly beats the default candidate, even when experiencing variations and oscillations.
+	Experiment 2 achieved 1.74\% reduction in optimal query times, in 138 generations before converging, being the experiment that took the longest to converge, whilst still utilizing accelerated convergence. In this experiment the first goal defining default run did not spike as high as in the other experiments, leading to a cost saving graph \ref{fig:final22} that shortly dips below 0\%. Furthermore there is a tremendous dip in cost saving at elite \#77, which coincides with the elite run graph \ref{fig:final23} around the same time. This drop happens after the cost saving flatline, so it is regarded as a random error, and it was due to a network backup snapshot done by Zookeeper - claiming some resources. The elite run graph shows a couple of high TTEs within the span of the first 10 generations but drops sharply, getting one major outlier spike, before oscillating around 9.1. Viewing the solution assurance graph \ref{fig:final24} shows that the optimal solution repeatedly beats the default candidate, even when experiencing variations and oscillations.
 	\clearpage
 	\begin{figure}[H]
 		\centering
@@ -822,6 +872,42 @@
 	\end{figure}
 	\clearpage
 	\section{Aggregated results}
+	\paragraph{Experiments} A total of eight experiments will be aggregated in this chapter. Five of those were done with accelerated convergence active \textbf{(noted as E)}, and the remaining three were done without it \textbf{(noted as N)}. The experiments aggregated here are isolated from the three highlighted experiments in the previous section \ref{sec:highlighted}. This is due to extra data being collected, namely point of critical convergence and amount of parameters converged. This change was made at a late stage in development to prove effect of accerelated convergence and analyze the concept of critical convergence. To maintain coherence in the results discussed in this chapter, the data is kept the same between all aggregations, even if the extended data isn't used in all sections.
+	
+	\subsection{Critical convergence and critical parameters}
+	\paragraph{Critical convergence} The first thing to note is when critical convergence usually happens, and this can be observed in graph \ref{fig:criticalconv}. Drawing conclusions from table \ref{table:criticalconv} we can estimate based on the mean that it takes around 37 generations (37.375) for critical convergence, no matter how long total convergence takes. With a sample standard deviation of 3.35, we get a confidence level of 68,3\% for results within 36.1 - 38.6 and 90\% within 35.3 - 39.4.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=310pt]{criticalcon1}
+		\caption{Graph showing how many generations it took before reaching critical convergence (in blue), and how many generations there were before total convergence (in green).}
+		\label{fig:criticalconv}
+	\end{figure}
+	\begin{table}[H]
+		\centering
+		\caption{Raw data for graph \ref{fig:criticalconv}}
+		\label{table:criticalconv}
+		\begin{tabular}{llllllll|r}
+			\\
+			\textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{E4} & \textbf{E5} & \textbf{N1} & \textbf{N2} & \textbf{N3} & \textbf{Average} \\ \hline \\
+			35 & 36 & 41 & 33 & 40 & 43 & 34 & 37 & 37.375 \\
+		\end{tabular}
+	\end{table}
+
+	\subsection{Critical parameters}
+	Regarding to how many generations it takes to reach critical convergence we could observe that it is completely independent on how many total generations a optimization takes. The same can also be observed for how many parameters that are converged when reaching critical convergence, as seen in table \ref{table:criticalparams}. For the experiments with accelerated convergence (E) and those without (N) - there does not seem to be any significant disparity. With a sample standard deviation of 2.17, we get a confidence level of 68,3\% for results within 19.5 - 21.2 and 90\% within 19 - 21.7.
+	\begin{table}[H]
+		\centering
+		\caption{How many parameters converged to reach estimated critical convergence.}
+		\label{table:criticalparams}
+		\begin{tabular}{llllllll|r}
+			\\
+			\textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{E4} & \textbf{E5} & \textbf{N1} & \textbf{N2} & \textbf{N3} & \textbf{Average} \\ \hline \\
+			23 & 22 & 19 & 20 & 19 & 22 & 16 & 22 & 20.375 \\
+		\end{tabular}
+	\end{table}
+	\subsection{Accelerated convergence}
+	Because of time constraints there is data from only three experiments without accelerated convergence active. This means that the data is somewhat lacking, especially due to a high variance in experiments without accelerated convergence, but a conclusion is still able to be drawn based on the data at hand.
+	\subsection{Cost saving}
 	\chapter{Discussion}
 	\section{The drill cache}
 	\label{sec:cache}
@@ -834,26 +920,26 @@
 		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a given environment there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the memory object, to increase probability vector growth once the critical parameters have been sorted out.
 		\subsection{Examples of agnosticism from stable cluster }
 		\label{sec:agnosstable}
-		Runs often see total convergence reach around 0.8 - 0.9  and staying there for tens of generations, without ever increasing the fitness value. To further inspect the hypothesis of parameter agnosticism a graph of converged parameters over time was created, and a cutoff points of critical vs arbitrary parameters was charted out, as seen in figure \ref{fig:agnos}. (\textit{Keep in mind that this metric is different than the one used by the critical parameter estimation model seen in algorithm \ref{algo:critical_convergence} which uses total average convergence values}) After 21 parameters reached convergence, we can see that there is no consensus among the elites on the remaining parameter options, leading total convergence to oscillate instead of steadily increase. In this chart we see one convergence drop down to its lowest of 21 once, 68 generations after first passing that point - before heading for total convergence.
+		Runs often see total convergence value reach around 0.8 - 0.9  and staying there for tens of generations, without ever increasing the fitness value. In graph \ref{fig:agnos} we can observe that after 21 parameters reached convergence, there is no consensus among the elites on the remaining parameter options, leading total convergence to oscillate instead of steadily increase. In this chart we see one convergence drop down to its lowest of 21 once, 68 generations after first passing that point - before heading for total convergence.
 		\begin{figure}[H]
 			\centering
-			\subfloat[label 1]{{\includegraphics[width=5cm]{agnosticism} }}
+			\subfloat[Parameters converged]{{\includegraphics[width=5cm]{agnosticism} }}
 			\qquad
-			\subfloat[label 2]{{\includegraphics[width=5cm]{agnosfit1} }}
-			\caption{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drop after steep growth (x88,y21).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain.}
+			\subfloat[Fitness]{{\includegraphics[width=5cm]{agnosfit1} }}
+			\caption{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange cross section showing lowest convergence point drop after steep growth (x88,y21).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters is lost.}
 			\label{fig:agnos}
 		\end{figure}
 		\clearpage
-		In another example shown in figure \ref{fig:agnos2} there are two low drops to 22 converged parameters. In both graphs there is a overwhelming consensus among elites of what parameters result in the best solution, up until 21-22 parameters are converged. In both cases this initial elite consensus takes around 20 generations. From that point on around 100 generations are spent trying to reach consensus on the remaining 7-8 parameters. Keep in mind that one generation cycle can easily take around 15 min. Given 10 candidates in the population, times 10 queries per candidate, times 10 seconds per query results in 16.6 minutes per generation.
+		In another example shown in figure \ref{fig:agnos2} there are two low drops to 22 converged parameters. In both graphs there is a overwhelming consensus among elites of what parameters result in the best solution, up until 21-22 parameters are converged. In both cases this initial elite consensus takes around 20 generations. From that point on around 100 generations are spent trying to converge the remaining 7-8 parameters. Keep in mind that one generation cycle can easily take around 15 min. Given 10 candidates in the population, times 10 queries per candidate, times 10 seconds per query results means 16.6 minutes spent per generation.
 		\begin{figure}[H]
 			\centering
-			\subfloat[label 1]{{\includegraphics[width=5cm]{agnosticism2} }}
+			\subfloat[Paramaters converged]{{\includegraphics[width=5cm]{agnosticism2} }}
 			\qquad
-			\subfloat[label 2]{{\includegraphics[width=5cm]{agnosfit2} }}
-			\caption{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drops after steep growth (x22,y25 and x22,y48).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.}
+			\subfloat[Fitness]{{\includegraphics[width=5cm]{agnosfit2} }}
+			\caption{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange cross sections showing lowest convergence point drops after steep growth (x22,y25 and x22,y48).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.}
 			\label{fig:agnos2}
 		\end{figure}
-		After introducing accelerated convergence, we give the algorithm an extra push in the last 10\% towards convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters to the current environment and / or data source. Convergence still takes a lot of time in event of heavy parameter agnosticism, but cutting the algorithm off prematurely to force default options on the respective arbitrary parameters could lead to faulty configurations in edge cases, so we settled for speeding it up instead - with accelerated convergence.
+		After introducing accelerated convergence, we give the algorithm an extra push in the last 10\% towards convergence, to make sure we don't waste time and resources on a random gamble of irrelevant parameters to the current environment and / or data source. Convergence still takes a lot of time in case of heavy parameter agnosticism, but aborting the algorithm prematurely to force default options on the respective arbitrary parameters could lead to faulty configurations in edge cases, so we settled for speeding it up instead - with accelerated convergence.
 		\clearpage
 	\section{Error sources}
 		\subsection{Drill planner inconsistency}

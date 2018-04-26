@@ -95,3 +95,621 @@ local variable 'weak_link' referenced before assignment
 <built-in function connect> returned a result with an error set
 #### ERROR WITH THIS RUN: 2018.04.16.12.03.37final4
 <built-in function connect> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.17.16.44.23demo
+non-empty format string passed to object.__format__
+#### ERROR WITH THIS RUN: 2018.04.17.17.43.52demo
+non-empty format string passed to object.__format__
+#### ERROR WITH THIS RUN: 2018.04.17.19.37.15demo
+non-empty format string passed to object.__format__
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.16.57.10final5
+('08S01', '[08S01] [MapR][Drill] (2020) Connection no longer valid: [30027]Communication error. Connection reset by peer  (2020) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('HYT00', '[HYT00] [MapR][Drill] (1050) Query timed out (QueryTimeout=180): [30033]Timed out waiting for server to respond. (1050) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.19.23.43.06final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('HYT00', '[HYT00] [MapR][Drill] (1050) Query timed out (QueryTimeout=180): [30033]Timed out waiting for server to respond. (1050) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+<class 'pyodbc.Error'> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+<class 'pyodbc.Error'> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+('08S01', '[08S01] [unixODBC][MapR][Drill] (10) Failure occurred while trying to connect to zk=gatewayG1:2181,node1:2181,node2:2181,node3:2181/drill/iota (10) (SQLDriverConnect)')
+#### ERROR WITH THIS RUN: 2018.04.20.07.06.41final5
+<class 'pyodbc.Error'> returned a result with an error set
+#### ERROR WITH THIS RUN: 2018.04.22.22.23.59flipped
+('HY000', '[HY000] [MapR][Drill] (1040) Drill failed to execute the query: ALTER SESSION SET `exec.min_hash_table_size` = 131072\n[30034]Query execution error. Details:[ \nRESOURCE ERROR: One or more nodes ran out of memory while executing the query.\n\nFailure allocating buffer.\nFragment 0:0\n\n[Error Id: 8853e3fa-79ed-4121-b653-731f0b3c37fd on node2:31010]\n] (1040) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.22.22.23.59flipped
+('HY000', '[HY000] [MapR][Drill] (1040) Drill failed to execute the query: ALTER SESSION SET `exec.min_hash_table_size` = 32768\n[30034]Query execution error. Details:[ \nRESOURCE ERROR: One or more nodes ran out of memory while executing the query.\n\nFailure allocating buffer.\nFragment 0:0\n\n[Error Id: 306c7370-2869-44cf-91fd-ee40f4a2deab on node2:31010]\n] (1040) (SQLExecDirectW)')
+#### ERROR WITH THIS RUN: 2018.04.22.22.23.59flipped
+('HY000', '[HY000] [MapR][Drill] (1040) Drill failed to execute the query: ALTER SESSION SET `planner.memory.enable_memory_estimation` = False\n[30034]Query execution error. Details:[ \nRESOURCE ERROR: One or more nodes ran out of memory while executing the query.\n\nFailure allocating buffer.\nFragment 0:0\n\n[Error Id: 14dc73f9-fa98-4d7a-9e24-5091e280e180 on node2:31010]\n] (1040) (SQLExecDirectW)')

@@ -183,122 +183,139 @@
 \@writefile{toc}{\contentsline {paragraph}{Probability vector algorithm}{33}{figure.caption.43}}
 \newlabel{math:probability_vector}{{4.1}{33}{Probability vector algorithm}{equation.4.2.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{Reaching convergence}{33}{section*.44}}
-\@writefile{toc}{\contentsline {paragraph}{Accelerated convergence}{33}{section*.45}}
+\@writefile{toc}{\contentsline {paragraph}{Elite consensus and critical convergence}{33}{section*.45}}
+\@writefile{toc}{\contentsline {paragraph}{Accelerated convergence}{34}{section*.46}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Extended memory function - progress estimation}{34}{subsection.4.2.3}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Critical convergence estimation\relax }}{34}{algorithm.1}}
-\newlabel{algo:critical_convergence}{{1}{34}{Critical convergence estimation\relax }{algorithm.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Data taken from a demo run where model estimated that critical parameters were converged at generation \#43, shown here as the orange cross section. This can also be observed as the point in time where convergence first flatlined, even slightly dipping, meaning elite consensus was missing going forward. Since this is from a demo run, the run count was set to the lowest possible setting, thus converging at a very early stage at just above generation \#50.\relax }}{35}{figure.caption.46}}
-\newlabel{fig:estimation}{{4.6}{35}{Data taken from a demo run where model estimated that critical parameters were converged at generation \#43, shown here as the orange cross section. This can also be observed as the point in time where convergence first flatlined, even slightly dipping, meaning elite consensus was missing going forward. Since this is from a demo run, the run count was set to the lowest possible setting, thus converging at a very early stage at just above generation \#50.\relax }{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Candidate}{36}{subsection.4.2.4}}
-\@writefile{toc}{\contentsline {paragraph}{Run}{36}{section*.47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Mutation}{37}{subsection.4.2.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Mutation function flowchart\relax }}{37}{figure.caption.48}}
-\newlabel{fig:mutation}{{4.7}{37}{Mutation function flowchart\relax }{figure.caption.48}{}}
-\@writefile{toc}{\contentsline {subsubsection}{PBIL Mutation vs GAPBIL Mutation}{38}{section*.49}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Original PBIL mutation\relax }}{38}{algorithm.2}}
-\newlabel{algo:pbil_mutation1}{{2}{38}{Original PBIL mutation\relax }{algorithm.2}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces GAPBIL mutation\relax }}{38}{algorithm.3}}
-\newlabel{algo:pbil_mutation2}{{3}{38}{GAPBIL mutation\relax }{algorithm.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Setting}{38}{subsection.4.2.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}Configuration file}{39}{subsection.4.2.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.8}Algorithm overview}{40}{subsection.4.2.8}}
-\@writefile{toc}{\contentsline {paragraph}{Flowchart}{40}{section*.50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces System overview\relax }}{40}{figure.caption.51}}
-\newlabel{fig:sys_overview}{{4.8}{40}{System overview\relax }{figure.caption.51}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Critical convergence estimation\relax }}{35}{algorithm.1}}
+\newlabel{algo:critical_convergence}{{1}{35}{Critical convergence estimation\relax }{algorithm.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Data from a completed optimization, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same run. Estimated point of critical convergence can be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 22 parameters was converged, indicating that the remaining 7 parameters are arbitrary for current workload in current environment.\relax }}{36}{figure.caption.47}}
+\newlabel{fig:estimation1}{{4.6}{36}{Data from a completed optimization, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same run. Estimated point of critical convergence can be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 22 parameters was converged, indicating that the remaining 7 parameters are arbitrary for current workload in current environment.\relax }{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Data from a completed optimization, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same run. Estimated point of critical convergence can also here be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 19 parameters was converged, indicating that the remaining 10 parameters are arbitrary for current workload in current environment.\relax }}{37}{figure.caption.48}}
+\newlabel{fig:estimation2}{{4.7}{37}{Data from a completed optimization, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same run. Estimated point of critical convergence can also here be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 19 parameters was converged, indicating that the remaining 10 parameters are arbitrary for current workload in current environment.\relax }{figure.caption.48}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Candidate}{38}{subsection.4.2.4}}
+\@writefile{toc}{\contentsline {paragraph}{Run}{38}{section*.49}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Mutation}{39}{subsection.4.2.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Mutation function flowchart\relax }}{39}{figure.caption.50}}
+\newlabel{fig:mutation}{{4.8}{39}{Mutation function flowchart\relax }{figure.caption.50}{}}
+\@writefile{toc}{\contentsline {subsubsection}{PBIL Mutation vs GAPBIL Mutation}{40}{section*.51}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Original PBIL mutation\relax }}{40}{algorithm.2}}
+\newlabel{algo:pbil_mutation1}{{2}{40}{Original PBIL mutation\relax }{algorithm.2}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces GAPBIL mutation\relax }}{40}{algorithm.3}}
+\newlabel{algo:pbil_mutation2}{{3}{40}{GAPBIL mutation\relax }{algorithm.3}{}}
+\newlabel{math:mutation_chance}{{4.2}{40}{PBIL Mutation vs GAPBIL Mutation}{equation.4.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Setting}{40}{subsection.4.2.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}Configuration file}{41}{subsection.4.2.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.8}Algorithm overview}{42}{subsection.4.2.8}}
+\@writefile{toc}{\contentsline {paragraph}{Flowchart}{42}{section*.52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces System overview\relax }}{42}{figure.caption.53}}
+\newlabel{fig:sys_overview}{{4.9}{42}{System overview\relax }{figure.caption.53}{}}
 \citation{yelp}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Basic GAPBIL algorithm\relax }}{41}{algorithm.4}}
-\newlabel{algo:overview}{{4}{41}{Basic GAPBIL algorithm\relax }{algorithm.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Testing}{41}{section.4.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Dataset}{41}{subsection.4.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Query}{41}{subsection.4.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Run flowchart}{42}{subsection.4.3.3}}
-\newlabel{sec:runs}{{4.3.3}{42}{Run flowchart}{subsection.4.3.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces All the technological layers that we pass during a single query\relax }}{42}{figure.caption.52}}
-\newlabel{fig:run_workflow}{{4.9}{42}{All the technological layers that we pass during a single query\relax }{figure.caption.52}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Data collection}{43}{subsection.4.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{44}{subsection.4.3.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{44}{subsection.4.3.6}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{45}{chapter.5}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Basic GAPBIL algorithm\relax }}{43}{algorithm.4}}
+\newlabel{algo:overview}{{4}{43}{Basic GAPBIL algorithm\relax }{algorithm.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Testing}{43}{section.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Dataset}{43}{subsection.4.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Query}{43}{subsection.4.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Run flowchart}{44}{subsection.4.3.3}}
+\newlabel{sec:runs}{{4.3.3}{44}{Run flowchart}{subsection.4.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces All the technological layers and steps that we pass during a single candidate run.\relax }}{44}{figure.caption.54}}
+\newlabel{fig:run_workflow}{{4.10}{44}{All the technological layers and steps that we pass during a single candidate run.\relax }{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Data collection}{45}{subsection.4.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{46}{subsection.4.3.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{46}{subsection.4.3.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{47}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:results}{{5}{45}{Results}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}What we display}{45}{section.5.1}}
-\@writefile{toc}{\contentsline {paragraph}{Graphs overview}{45}{section*.53}}
-\@writefile{toc}{\contentsline {paragraph}{Cost saving graphs}{45}{section*.54}}
-\@writefile{toc}{\contentsline {paragraph}{Mean calculations for elite runs}{45}{section*.55}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Run configurations}{46}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Highlighted experiments}{47}{section.5.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Experiment 1}{47}{subsection.5.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Experiment 1: Total probability convergence over generations\relax }}{48}{figure.caption.56}}
-\newlabel{fig:final11}{{5.1}{48}{Experiment 1: Total probability convergence over generations\relax }{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Experiment 1: Cost saving of optimal elite run vs default benchmark\relax }}{48}{figure.caption.57}}
-\newlabel{fig:final12}{{5.2}{48}{Experiment 1: Cost saving of optimal elite run vs default benchmark\relax }{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Experiment 1: Elite run graph, showing elites optimal TTE over generations\relax }}{48}{figure.caption.58}}
-\newlabel{fig:final13}{{5.3}{48}{Experiment 1: Elite run graph, showing elites optimal TTE over generations\relax }{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Experiment 1: Solution assurance stage, showing optimal solution vs default candidate\relax }}{48}{figure.caption.59}}
-\newlabel{fig:final14}{{5.4}{48}{Experiment 1: Solution assurance stage, showing optimal solution vs default candidate\relax }{figure.caption.59}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Experiment 2}{49}{subsection.5.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Experiment 2: Total probability convergence over generations\relax }}{50}{figure.caption.60}}
-\newlabel{fig:final21}{{5.5}{50}{Experiment 2: Total probability convergence over generations\relax }{figure.caption.60}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Experiment 2: Cost saving of optimal elite run vs default benchmark\relax }}{50}{figure.caption.61}}
-\newlabel{fig:final22}{{5.6}{50}{Experiment 2: Cost saving of optimal elite run vs default benchmark\relax }{figure.caption.61}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Experiment 2: Elite run graph, showing elites optimal TTE over generations\relax }}{50}{figure.caption.62}}
-\newlabel{fig:final23}{{5.7}{50}{Experiment 2: Elite run graph, showing elites optimal TTE over generations\relax }{figure.caption.62}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Experiment 2: Solution assurance stage, showing optimal solution vs default candidate\relax }}{50}{figure.caption.63}}
-\newlabel{fig:final24}{{5.8}{50}{Experiment 2: Solution assurance stage, showing optimal solution vs default candidate\relax }{figure.caption.63}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Experiment 3}{51}{subsection.5.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Experiment 3: Total probability convergence over generations\relax }}{52}{figure.caption.64}}
-\newlabel{fig:final31}{{5.9}{52}{Experiment 3: Total probability convergence over generations\relax }{figure.caption.64}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Experiment 3: Cost saving of optimal elite run vs default benchmark\relax }}{52}{figure.caption.65}}
-\newlabel{fig:final32}{{5.10}{52}{Experiment 3: Cost saving of optimal elite run vs default benchmark\relax }{figure.caption.65}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Experiment 3: Elite run graph, showing elites optimal TTE over generations\relax }}{52}{figure.caption.66}}
-\newlabel{fig:final33}{{5.11}{52}{Experiment 3: Elite run graph, showing elites optimal TTE over generations\relax }{figure.caption.66}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Experiment 3: Solution assurance stage, showing optimal solution vs default candidate\relax }}{52}{figure.caption.67}}
-\newlabel{fig:final34}{{5.12}{52}{Experiment 3: Solution assurance stage, showing optimal solution vs default candidate\relax }{figure.caption.67}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Aggregated results}{53}{section.5.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{54}{chapter.6}}
+\newlabel{chap:results}{{5}{47}{Results}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}What we display}{47}{section.5.1}}
+\@writefile{toc}{\contentsline {paragraph}{Graphs overview}{47}{section*.55}}
+\@writefile{toc}{\contentsline {paragraph}{Cost saving graphs}{47}{section*.56}}
+\@writefile{toc}{\contentsline {paragraph}{Mean calculations for elite runs}{47}{section*.57}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Run configurations}{48}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Highlighted experiments}{49}{section.5.3}}
+\newlabel{sec:highlighted}{{5.3}{49}{Highlighted experiments}{section.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Experiment 1}{49}{subsection.5.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Experiment 1: Total probability convergence over generations\relax }}{50}{figure.caption.58}}
+\newlabel{fig:final11}{{5.1}{50}{Experiment 1: Total probability convergence over generations\relax }{figure.caption.58}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Experiment 1: Cost saving of optimal elite run vs default benchmark\relax }}{50}{figure.caption.59}}
+\newlabel{fig:final12}{{5.2}{50}{Experiment 1: Cost saving of optimal elite run vs default benchmark\relax }{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Experiment 1: Elite run graph, showing elites optimal TTE over generations\relax }}{50}{figure.caption.60}}
+\newlabel{fig:final13}{{5.3}{50}{Experiment 1: Elite run graph, showing elites optimal TTE over generations\relax }{figure.caption.60}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Experiment 1: Solution assurance stage, showing optimal solution vs default candidate\relax }}{50}{figure.caption.61}}
+\newlabel{fig:final14}{{5.4}{50}{Experiment 1: Solution assurance stage, showing optimal solution vs default candidate\relax }{figure.caption.61}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Experiment 2}{51}{subsection.5.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Experiment 2: Total probability convergence over generations\relax }}{52}{figure.caption.62}}
+\newlabel{fig:final21}{{5.5}{52}{Experiment 2: Total probability convergence over generations\relax }{figure.caption.62}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Experiment 2: Cost saving of optimal elite run vs default benchmark\relax }}{52}{figure.caption.63}}
+\newlabel{fig:final22}{{5.6}{52}{Experiment 2: Cost saving of optimal elite run vs default benchmark\relax }{figure.caption.63}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Experiment 2: Elite run graph, showing elites optimal TTE over generations\relax }}{52}{figure.caption.64}}
+\newlabel{fig:final23}{{5.7}{52}{Experiment 2: Elite run graph, showing elites optimal TTE over generations\relax }{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Experiment 2: Solution assurance stage, showing optimal solution vs default candidate\relax }}{52}{figure.caption.65}}
+\newlabel{fig:final24}{{5.8}{52}{Experiment 2: Solution assurance stage, showing optimal solution vs default candidate\relax }{figure.caption.65}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Experiment 3}{53}{subsection.5.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Experiment 3: Total probability convergence over generations\relax }}{54}{figure.caption.66}}
+\newlabel{fig:final31}{{5.9}{54}{Experiment 3: Total probability convergence over generations\relax }{figure.caption.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Experiment 3: Cost saving of optimal elite run vs default benchmark\relax }}{54}{figure.caption.67}}
+\newlabel{fig:final32}{{5.10}{54}{Experiment 3: Cost saving of optimal elite run vs default benchmark\relax }{figure.caption.67}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Experiment 3: Elite run graph, showing elites optimal TTE over generations\relax }}{54}{figure.caption.68}}
+\newlabel{fig:final33}{{5.11}{54}{Experiment 3: Elite run graph, showing elites optimal TTE over generations\relax }{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Experiment 3: Solution assurance stage, showing optimal solution vs default candidate\relax }}{54}{figure.caption.69}}
+\newlabel{fig:final34}{{5.12}{54}{Experiment 3: Solution assurance stage, showing optimal solution vs default candidate\relax }{figure.caption.69}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Aggregated results}{55}{section.5.4}}
+\@writefile{toc}{\contentsline {paragraph}{Experiments}{55}{section*.70}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{55}{subsection.5.4.1}}
+\@writefile{toc}{\contentsline {paragraph}{Critical convergence}{55}{section*.71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Graph showing how many generations it took before reaching critical convergence (in blue), and how many generations there were before total convergence (in green).\relax }}{55}{figure.caption.72}}
+\newlabel{fig:criticalconv}{{5.13}{55}{Graph showing how many generations it took before reaching critical convergence (in blue), and how many generations there were before total convergence (in green).\relax }{figure.caption.72}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Raw data for graph \ref  {fig:criticalconv}\relax }}{56}{table.caption.73}}
+\newlabel{table:criticalconv}{{5.1}{56}{Raw data for graph \ref {fig:criticalconv}\relax }{table.caption.73}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{56}{subsection.5.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces How many parameters converged to reach estimated critical convergence.\relax }}{56}{table.caption.74}}
+\newlabel{table:criticalparams}{{5.2}{56}{How many parameters converged to reach estimated critical convergence.\relax }{table.caption.74}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{56}{subsection.5.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.4}Cost saving}{56}{subsection.5.4.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{57}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}The drill cache}{54}{section.6.1}}
-\newlabel{sec:cache}{{6.1}{54}{The drill cache}{section.6.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{54}{section.6.2}}
-\newlabel{sec:param_agno}{{6.2}{54}{Parameter agnostic queries}{section.6.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{54}{subsection.6.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Complex queries}{54}{subsection.6.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{55}{subsection.6.2.3}}
-\newlabel{sec:agnosstable}{{6.2.3}{55}{Examples of agnosticism from stable cluster}{subsection.6.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces  a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drop after steep growth (x88,y21). b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain.\relax }}{55}{figure.caption.68}}
-\newlabel{fig:agnos}{{6.1}{55}{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drop after steep growth (x88,y21).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain.\relax }{figure.caption.68}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {label 1}}}{55}{subfigure.1.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {label 2}}}{55}{subfigure.1.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces  a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drops after steep growth (x22,y25 and x22,y48). b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.\relax }}{56}{figure.caption.69}}
-\newlabel{fig:agnos2}{{6.2}{56}{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange lines showing lowest convergence point drops after steep growth (x22,y25 and x22,y48).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.\relax }{figure.caption.69}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {label 1}}}{56}{subfigure.2.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {label 2}}}{56}{subfigure.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Error sources}{57}{section.6.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{57}{subsection.6.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{57}{subsection.6.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Cluster size}{57}{subsection.6.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Proving effect}{57}{section.6.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Cut configuration parameters}{58}{section.6.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Further work}{59}{chapter.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}The drill cache}{57}{section.6.1}}
+\newlabel{sec:cache}{{6.1}{57}{The drill cache}{section.6.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{57}{section.6.2}}
+\newlabel{sec:param_agno}{{6.2}{57}{Parameter agnostic queries}{section.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{57}{subsection.6.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Complex queries}{57}{subsection.6.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{58}{subsection.6.2.3}}
+\newlabel{sec:agnosstable}{{6.2.3}{58}{Examples of agnosticism from stable cluster}{subsection.6.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces  a$)$ Blue line showing amount of parameters converged over time for a run. Orange cross section showing lowest convergence point drop after steep growth (x88,y21). b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters is lost.\relax }}{58}{figure.caption.75}}
+\newlabel{fig:agnos}{{6.1}{58}{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange cross section showing lowest convergence point drop after steep growth (x88,y21).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters is lost.\relax }{figure.caption.75}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Parameters converged}}}{58}{subfigure.1.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Fitness}}}{58}{subfigure.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces  a$)$ Blue line showing amount of parameters converged over time for a run. Orange cross sections showing lowest convergence point drops after steep growth (x22,y25 and x22,y48). b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.\relax }}{59}{figure.caption.76}}
+\newlabel{fig:agnos2}{{6.2}{59}{\\a$)$ Blue line showing amount of parameters converged over time for a run. Orange cross sections showing lowest convergence point drops after steep growth (x22,y25 and x22,y48).\\b$)$ Graph over elite fitness in the same run, clearly flatlining at the same time as elite consensus for remaining parameters becomes uncertain, except for one outlier which we disregard as random error.\relax }{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Paramaters converged}}}{59}{subfigure.2.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Fitness}}}{59}{subfigure.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Error sources}{60}{section.6.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{60}{subsection.6.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{60}{subsection.6.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Cluster size}{60}{subsection.6.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Proving effect}{60}{section.6.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Cut configuration parameters}{61}{section.6.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Further work}{62}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Homogeneous clusters}{59}{section.7.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Load profiles}{59}{subsection.7.1.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Single node setups}{59}{section.7.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Support for the cut parameters}{59}{section.7.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion}{61}{chapter.8}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Homogeneous clusters}{62}{section.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Load profiles}{62}{subsection.7.1.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Single node setups}{62}{section.7.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Support for the cut parameters}{62}{section.7.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion}{64}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{61}{section.8.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Inspiration}{61}{subsection.8.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{61}{subsection.8.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Mutation}{61}{subsection.8.1.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Goal}{62}{section.8.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{62}{subsection.8.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{62}{subsection.8.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}Most valuable contribution}{62}{section.8.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{64}{section.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Inspiration}{64}{subsection.8.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{64}{subsection.8.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Mutation}{64}{subsection.8.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Goal}{65}{section.8.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{65}{subsection.8.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{65}{subsection.8.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Most valuable contribution}{65}{section.8.3}}
 \bibcite{mronline}{1}
 \bibcite{gunther}{2}
 \bibcite{bmc}{3}
@@ -335,26 +352,26 @@
 \bibcite{siliconA}{34}
 \bibcite{Gartner}{35}
 \bibcite{mapr_drill}{36}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Cluster specs}{66}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Cluster specs}{69}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Specs for the shared cluster\relax }}{66}{table.caption.71}}
-\newlabel{table:cluster_shared}{{A.1}{66}{Specs for the shared cluster\relax }{table.caption.71}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Specs for the stable cluster\relax }}{66}{table.caption.72}}
-\newlabel{table:cluster_stable}{{A.2}{66}{Specs for the stable cluster\relax }{table.caption.72}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}System parameters}{67}{appendix.B}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Specs for the shared cluster\relax }}{69}{table.caption.78}}
+\newlabel{table:cluster_shared}{{A.1}{69}{Specs for the shared cluster\relax }{table.caption.78}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Specs for the stable cluster\relax }}{69}{table.caption.79}}
+\newlabel{table:cluster_stable}{{A.2}{69}{Specs for the stable cluster\relax }{table.caption.79}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}System parameters}{70}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{system_params}{{B}{67}{System parameters}{appendix.B}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {B.1}{\ignorespaces All parameters and options used by PBIL in this thesis\relax }}{67}{table.caption.73}}
-\newlabel{table:added_params}{{B.1}{67}{All parameters and options used by PBIL in this thesis\relax }{table.caption.73}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {B.2}{\ignorespaces Parameters and options that was removed during development, but still is considered to have impact on performance of query execution\relax }}{68}{table.caption.74}}
-\newlabel{table:removed_params}{{B.2}{68}{Parameters and options that was removed during development, but still is considered to have impact on performance of query execution\relax }{table.caption.74}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Configuration parameters}{69}{appendix.C}}
+\newlabel{system_params}{{B}{70}{System parameters}{appendix.B}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.1}{\ignorespaces All parameters and options used by PBIL in this thesis\relax }}{70}{table.caption.80}}
+\newlabel{table:added_params}{{B.1}{70}{All parameters and options used by PBIL in this thesis\relax }{table.caption.80}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.2}{\ignorespaces Parameters and options that was removed during development, but still is considered to have impact on performance of query execution\relax }}{71}{table.caption.81}}
+\newlabel{table:removed_params}{{B.2}{71}{Parameters and options that was removed during development, but still is considered to have impact on performance of query execution\relax }{table.caption.81}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Configuration parameters}{72}{appendix.C}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces Configuration parameters that define how the algorithm executes.\relax }}{69}{table.caption.75}}
-\newlabel{table:conf_params}{{C.1}{69}{Configuration parameters that define how the algorithm executes.\relax }{table.caption.75}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {D}Code}{70}{appendix.D}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces Configuration parameters that define how the algorithm executes.\relax }}{72}{table.caption.82}}
+\newlabel{table:conf_params}{{C.1}{72}{Configuration parameters that define how the algorithm executes.\relax }{table.caption.82}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {D}Code}{73}{appendix.D}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
