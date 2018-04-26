@@ -117,35 +117,36 @@
 \contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{55}{subsection.5.4.1}
 \contentsline {paragraph}{Critical convergence}{55}{section*.71}
 \contentsline {subsection}{\numberline {5.4.2}Critical parameters}{56}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{56}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Cost saving}{56}{subsection.5.4.4}
-\contentsline {chapter}{\numberline {6}Discussion}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}The drill cache}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{57}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{57}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Complex queries}{57}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{58}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Error sources}{60}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{60}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{60}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Cluster size}{60}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Proving effect}{60}{section.6.4}
-\contentsline {section}{\numberline {6.5}Cut configuration parameters}{61}{section.6.5}
-\contentsline {chapter}{\numberline {7}Further work}{62}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous clusters}{62}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Load profiles}{62}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Single node setups}{62}{section.7.2}
-\contentsline {section}{\numberline {7.3}Support for the cut parameters}{62}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{64}{chapter.8}
-\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{64}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Inspiration}{64}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{64}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Mutation}{64}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Goal}{65}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{65}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{65}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Most valuable contribution}{65}{section.8.3}
-\contentsline {chapter}{\numberline {A}Cluster specs}{69}{appendix.A}
-\contentsline {chapter}{\numberline {B}System parameters}{70}{appendix.B}
-\contentsline {chapter}{\numberline {C}Configuration parameters}{72}{appendix.C}
-\contentsline {chapter}{\numberline {D}Code}{73}{appendix.D}
+\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{57}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Cost saving}{58}{subsection.5.4.4}
+\contentsline {paragraph}{TTE for solution assurance}{58}{section*.77}
+\contentsline {chapter}{\numberline {6}Discussion}{60}{chapter.6}
+\contentsline {section}{\numberline {6.1}The drill cache}{60}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{60}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{60}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{60}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{61}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Error sources}{63}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{63}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{63}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Cluster size}{63}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Proving effect}{63}{section.6.4}
+\contentsline {section}{\numberline {6.5}Cut configuration parameters}{64}{section.6.5}
+\contentsline {chapter}{\numberline {7}Further work}{65}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous clusters}{65}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Load profiles}{65}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Single node setups}{65}{section.7.2}
+\contentsline {section}{\numberline {7.3}Support for the cut parameters}{65}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{67}{chapter.8}
+\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{67}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Inspiration}{67}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{67}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Mutation}{67}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Goal}{68}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{68}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{68}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Most valuable contribution}{68}{section.8.3}
+\contentsline {chapter}{\numberline {A}Cluster specs}{72}{appendix.A}
+\contentsline {chapter}{\numberline {B}System parameters}{73}{appendix.B}
+\contentsline {chapter}{\numberline {C}Configuration parameters}{75}{appendix.C}
+\contentsline {chapter}{\numberline {D}Code}{76}{appendix.D}

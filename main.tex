@@ -757,8 +757,6 @@
 	\subsection{Experiment 1}
 	\begin{verbatim}
 	
-	Convergence threshold reached at generation 128
-	
 	
 	Results:
 	Metric           Optimal solution    Default  Overhead saved
@@ -796,8 +794,6 @@
 	\subsection{Experiment 2}
 	\begin{verbatim}
 	
-	Convergence threshold reached at generation 138
-	
 	
 	Results:
 	Metric           Optimal solution    Default  Overhead saved
@@ -834,8 +830,6 @@
 	\clearpage
 	\subsection{Experiment 3}
 	\begin{verbatim}
-	
-	Convergence threshold reached at generation 90
 	
 	
 	Results:
@@ -905,9 +899,59 @@
 			23 & 22 & 19 & 20 & 19 & 22 & 16 & 22 & 20.375 \\
 		\end{tabular}
 	\end{table}
+	\clearpage
 	\subsection{Accelerated convergence}
-	Because of time constraints there is data from only three experiments without accelerated convergence active. This means that the data is somewhat lacking, especially due to a high variance in experiments without accelerated convergence, but a conclusion is still able to be drawn based on the data at hand.
+	Because of time constraints there is data from only three experiments without accelerated convergence active. This means that the data is somewhat lacking, especially due to a high variance in experiments without accelerated convergence, but a conclusion is still able to be drawn based on the data at hand, seen in figure \ref{fig:accon} and table \ref{table:accon}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=310pt]{accon}
+		\caption{Graph showing how many generations it took before reaching critical convergence (in blue), and how many generations there were before total convergence (in green).}
+		\label{fig:accon}
+	\end{figure}
+	\begin{table}[H]
+		\centering
+		\caption{How many generations it took until convergence, with accelerated convergence (E) and without (N).}
+		\label{table:accon}
+		\begin{tabular}{lllll|r}
+			\\
+			\textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{E4} & \textbf{E5} & \textbf{Average} \\ \hline \\
+			66 & 66 & 115 & 83 & 82 & 82.4 \\
+		\end{tabular}
+	\\[0.5\in]
+	
+		\begin{tabular}{lll|r}
+		\\
+		 \textbf{N1} & \textbf{N2} & \textbf{N3} & \textbf{Average} \\ \hline \\
+		101 & 202 & 90 & 131 \\
+		\end{tabular}
+	\end{table}
+	Average amount of generations with accelerated convergence was 82.4, and without it was 131. For accelerated runs there's a sample standard deviation of 20, we get a confidence level of 68,3\% for results within 73.5 - 91.3 and 90\% within 67.7 - 97.1. For non accelerated tuns there's a sample standard deviation of 61.7, we get a confidence level of 68,3\% for results within 95.4 - 166.6 and 90\% within 72.4 - 189.6. Even though the amount of data is low, a considerable difference can be seen, at least indicating that accelerated convergence works.
 	\subsection{Cost saving}
+	\paragraph{TTE for solution assurance} For this section data from the total number of solution assurance runs for all eight experiments will be visualized. This ensures a large set of data for accurate analysis.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{costsaving}
+		\caption{All runs from all solution assurance stages for each experiment.}
+		\label{fig:costsaving}
+	\end{figure}
+	Figure \ref{fig:costsaving} shows that across almost all runs, there is a cost saving, except for some data points where the default candidate is better. However this graph is hard to read, so figure \ref{fig:costsaving2} shows the same data sorted.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{costsaving2}
+		\caption{All runs from all solution assurance stages for each experiment - sorted.}
+		\label{fig:costsaving2}
+	\end{figure}
+	In figure \ref{fig:costsaving2} we can clearly see that the default candidate at its best, is better than the suggested optimal solution at its worst. However there is a very symmetrical and steady disparity in the results, where the default candidate has 0.15s higher TTE across the board, confirmed by the calculated averages shown in table \ref{table:costsaving}.
+	\begin{table}[H]
+	\centering
+	\caption{Summary of results for cost saving.}
+	\label{table:costsaving}
+	\begin{tabular}{ll|r}
+		\\
+		\textbf{Average default TTE} & \textbf{Average solution TTE} & \textbf{Cost saving} \\ \hline \\
+		9.16 & 9.01 & 1,63\% \\
+	\end{tabular}
+\end{table}
 	\chapter{Discussion}
 	\section{The drill cache}
 	\label{sec:cache}
