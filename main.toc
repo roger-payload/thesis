@@ -4,8 +4,8 @@
 \contentsline {subsection}{\numberline {0.1.2}Overview}{1}{subsection.0.1.2}
 \contentsline {subsection}{\numberline {0.1.3}Details}{1}{subsection.0.1.3}
 \contentsline {subsubsection}{Self optimizing}{1}{section*.1}
-\contentsline {subsubsection}{Genetic Algorithms}{1}{section*.2}
-\contentsline {subsubsection}{Distributed file systems / cluster environments}{1}{section*.3}
+\contentsline {subsubsection}{SIILCK}{1}{section*.2}
+\contentsline {subsubsection}{Distributed file systems / cluster environments}{2}{section*.3}
 \contentsline {subsubsection}{ANSI SQL}{2}{section*.4}
 \contentsline {subsubsection}{NoSQL}{2}{section*.5}
 \contentsline {section}{\numberline {0.2}Foreword}{3}{section.0.2}
@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {2.7.1}Ease of use}{11}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}Increasing relevance of Big Data infrastructures}{11}{subsection.2.7.2}
 \contentsline {subsubsection}{Real time data usage}{11}{section*.10}
-\contentsline {subsubsection}{Combining real-time and stored data}{11}{section*.11}
+\contentsline {subsubsection}{Combining real-time and stored data}{12}{section*.11}
 \contentsline {subsection}{\numberline {2.7.3}Application needs}{12}{subsection.2.7.3}
 \contentsline {section}{\numberline {2.8}How far will this advance the field?}{13}{section.2.8}
 \contentsline {subsubsection}{Advances in research}{13}{section*.13}
@@ -62,91 +62,93 @@
 \contentsline {subsubsection}{Fitness function}{22}{section*.29}
 \contentsline {subsubsection}{Reaching the optimal solution}{22}{section*.30}
 \contentsline {section}{\numberline {3.4}Population based incremental learning}{23}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Advantage of PBIL}{24}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Limitation of PBIL}{24}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Related literature and theoretical focus}{25}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Performance tuning MapReduce as a Research Field}{25}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Mapreduce optimization}{25}{subsection.3.5.2}
-\contentsline {subsubsection}{Gunther}{25}{section*.32}
-\contentsline {subsubsection}{mrOnline}{25}{section*.33}
-\contentsline {subsection}{\numberline {3.5.3}Other Hadoop SQL engines}{25}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Impala}{26}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Spark}{26}{subsection.3.5.5}
-\contentsline {section}{\numberline {3.6}Presentation of domain where technology is used}{26}{section.3.6}
-\contentsline {chapter}{\numberline {4}Method}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}Infrastructure}{28}{section.4.1}
-\contentsline {section}{\numberline {4.2}Optimization system overview}{30}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Judge}{30}{subsection.4.2.1}
-\contentsline {subsubsection}{Judge operations}{30}{section*.37}
-\contentsline {paragraph}{Memory}{30}{section*.38}
-\contentsline {paragraph}{Default candidate}{31}{section*.39}
-\contentsline {paragraph}{Population}{31}{section*.40}
-\contentsline {subsection}{\numberline {4.2.2}Memory}{32}{subsection.4.2.2}
-\contentsline {paragraph}{Probability vector algorithm}{33}{figure.caption.43}
-\contentsline {paragraph}{Reaching convergence}{33}{section*.44}
-\contentsline {paragraph}{Elite consensus and critical convergence}{33}{section*.45}
-\contentsline {paragraph}{Accelerated convergence}{34}{section*.46}
-\contentsline {subsection}{\numberline {4.2.3}Extended memory function - progress estimation}{34}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Candidate}{38}{subsection.4.2.4}
-\contentsline {paragraph}{Run}{38}{section*.49}
-\contentsline {subsection}{\numberline {4.2.5}Mutation}{39}{subsection.4.2.5}
-\contentsline {subsubsection}{PBIL Mutation vs GAPBIL Mutation}{40}{section*.51}
-\contentsline {subsection}{\numberline {4.2.6}Setting}{40}{subsection.4.2.6}
-\contentsline {subsection}{\numberline {4.2.7}Configuration file}{41}{subsection.4.2.7}
-\contentsline {subsection}{\numberline {4.2.8}Algorithm overview}{42}{subsection.4.2.8}
-\contentsline {paragraph}{Flowchart}{42}{section*.52}
-\contentsline {section}{\numberline {4.3}Testing}{43}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Dataset}{43}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Query}{43}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Run flowchart}{44}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Data collection}{45}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{46}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{46}{subsection.4.3.6}
-\contentsline {chapter}{\numberline {5}Results}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}What we display}{47}{section.5.1}
-\contentsline {paragraph}{Graphs overview}{47}{section*.55}
-\contentsline {paragraph}{Cost saving graphs}{47}{section*.56}
-\contentsline {paragraph}{Mean calculations for elite runs}{47}{section*.57}
-\contentsline {section}{\numberline {5.2}Run configurations}{48}{section.5.2}
-\contentsline {section}{\numberline {5.3}Highlighted experiments}{49}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Experiment 1}{49}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experiment 2}{51}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Experiment 3}{53}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Aggregated results}{55}{section.5.4}
-\contentsline {paragraph}{Experiments}{55}{section*.70}
-\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{55}{subsection.5.4.1}
-\contentsline {paragraph}{Critical convergence}{55}{section*.71}
-\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{56}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{57}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Cost saving}{58}{subsection.5.4.4}
-\contentsline {paragraph}{TTE for solution assurance}{58}{section*.77}
-\contentsline {chapter}{\numberline {6}Discussion}{60}{chapter.6}
-\contentsline {section}{\numberline {6.1}The drill cache}{60}{section.6.1}
-\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{60}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{60}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Complex queries}{60}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Examples of agnosticism from stable cluster }{61}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Error sources}{63}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{63}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{63}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Cluster size}{63}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Proving effect}{63}{section.6.4}
-\contentsline {section}{\numberline {6.5}Cut configuration parameters}{64}{section.6.5}
-\contentsline {chapter}{\numberline {7}Further work}{65}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous clusters}{65}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Load profiles}{65}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Single node setups}{65}{section.7.2}
-\contentsline {section}{\numberline {7.3}Support for the cut parameters}{65}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{67}{chapter.8}
-\contentsline {section}{\numberline {8.1}Innovation - GAPBIL}{67}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Inspiration}{67}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{67}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Mutation}{67}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Goal}{68}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{68}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{68}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Most valuable contribution}{68}{section.8.3}
-\contentsline {chapter}{\numberline {A}Cluster specs}{72}{appendix.A}
-\contentsline {chapter}{\numberline {B}System parameters}{73}{appendix.B}
-\contentsline {chapter}{\numberline {C}Configuration parameters}{75}{appendix.C}
-\contentsline {chapter}{\numberline {D}Code}{76}{appendix.D}
+\contentsline {section}{\numberline {3.5}Society Inspired Incremental Learning through Collective Knowledge}{24}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Based on PBIL, built for speed}{24}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Limitation of SIILCK}{24}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Related literature and theoretical focus}{26}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Performance tuning MapReduce as a Research Field}{26}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Mapreduce optimization}{26}{subsection.3.6.2}
+\contentsline {subsubsection}{Gunther}{26}{section*.32}
+\contentsline {subsubsection}{mrOnline}{26}{section*.33}
+\contentsline {subsection}{\numberline {3.6.3}Other Hadoop SQL engines}{26}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Impala}{27}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Spark}{27}{subsection.3.6.5}
+\contentsline {section}{\numberline {3.7}Presentation of domain where technology is used}{27}{section.3.7}
+\contentsline {chapter}{\numberline {4}Method}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Infrastructure}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}SIILCK}{31}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Naming conventions}{31}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Society}{32}{subsection.4.2.2}
+\contentsline {subsubsection}{Society operations}{32}{section*.37}
+\contentsline {paragraph}{Knowledge}{32}{section*.38}
+\contentsline {paragraph}{Default candidate}{32}{section*.39}
+\contentsline {paragraph}{Population}{32}{section*.40}
+\contentsline {subsection}{\numberline {4.2.3}Knowledge}{34}{subsection.4.2.3}
+\contentsline {paragraph}{Probability vector algorithm}{35}{figure.caption.43}
+\contentsline {paragraph}{Reaching convergence}{35}{section*.44}
+\contentsline {paragraph}{Academic consensus and critical convergence}{35}{section*.45}
+\contentsline {paragraph}{Accelerated convergence}{36}{section*.46}
+\contentsline {subsection}{\numberline {4.2.4}Extended knowledge function - progress estimation}{36}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Candidate}{40}{subsection.4.2.5}
+\contentsline {paragraph}{Jobs}{40}{section*.49}
+\contentsline {subsection}{\numberline {4.2.6}Mutation}{41}{subsection.4.2.6}
+\contentsline {subsubsection}{PBIL Mutation vs SIILCK Mutation}{42}{section*.51}
+\contentsline {subsection}{\numberline {4.2.7}Solution}{42}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}Configuration file}{43}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}Algorithm overview}{44}{subsection.4.2.9}
+\contentsline {paragraph}{Flowchart}{44}{section*.52}
+\contentsline {section}{\numberline {4.3}Testing}{45}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Dataset}{45}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Query}{45}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Job flowchart}{46}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Data collection}{47}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{48}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{48}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Results}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}What we display}{49}{section.5.1}
+\contentsline {paragraph}{Graphs overview}{49}{section*.55}
+\contentsline {paragraph}{Cost saving graphs}{49}{section*.56}
+\contentsline {paragraph}{Mean calculations for academic jobs}{49}{section*.57}
+\contentsline {section}{\numberline {5.2}Run configurations}{50}{section.5.2}
+\contentsline {section}{\numberline {5.3}Highlighted experiments}{51}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}What experiment we highlight}{51}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Experiment E1}{51}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Experiment E3}{53}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Experiment E5}{55}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Aggregated results}{57}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{57}{subsection.5.4.1}
+\contentsline {paragraph}{Critical convergence}{57}{section*.70}
+\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{57}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{59}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Cost saving}{60}{subsection.5.4.4}
+\contentsline {paragraph}{TTE for solution assurance}{60}{section*.76}
+\contentsline {chapter}{\numberline {6}Discussion}{62}{chapter.6}
+\contentsline {section}{\numberline {6.1}The drill cache}{62}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{62}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{62}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{62}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Solution}{63}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Error sources}{64}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{64}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{64}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Cluster size}{64}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Proving effect}{64}{section.6.4}
+\contentsline {section}{\numberline {6.5}Cut configuration parameters}{65}{section.6.5}
+\contentsline {chapter}{\numberline {7}Further work}{66}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous clusters}{66}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Load profiles}{66}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Single node setups}{66}{section.7.2}
+\contentsline {section}{\numberline {7.3}Support for the cut parameters}{66}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{68}{chapter.8}
+\contentsline {section}{\numberline {8.1}Innovation - SIILCK}{68}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Inspiration}{68}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{68}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Mutation}{68}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Goal}{69}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{69}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{69}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Most valuable contribution}{69}{section.8.3}
+\contentsline {chapter}{\numberline {A}Cluster specs}{73}{appendix.A}
+\contentsline {chapter}{\numberline {B}System parameters}{74}{appendix.B}
+\contentsline {chapter}{\numberline {C}Configuration parameters}{76}{appendix.C}
+\contentsline {chapter}{\numberline {D}Code}{77}{appendix.D}
