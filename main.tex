@@ -102,6 +102,25 @@
 			JDBC & Java Database Connectivity \\
 		\end{tabular}
 	\end{table}
+	\section{Mathematical annotations}
+	\label{table:annotations}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{ll}
+			$P$	& Probability \\
+			$P_{mut}$	& Probability for mutation \\
+			$P_{i,j}$	& Probability for option \textit{j} in parameter \textit{i} \\
+			$i$  & Parameter in a solution \\
+			$j$ & Option in a parameter \\
+			$i_{j}$ & Active option in parameter \\
+			M & Learning rate (amount for mutation to affect the probability vector) \\
+			$\mu$ & Academic \\
+			$P_{i,j(t)}$ & Probability for option \textit{j} in parameter \textit{i} at time \textit{t} \\
+			$\mu_{i,j(t)}$ & Active option \textit{j} in parameter \textit{i} at time \textit{t} for academic $\mu$ \\
+			$\beta_{i}$ & Parameters in PBIL collective genetic material
+			
+		\end{tabular}
+	\end{table}
 
 	
 	\chapter{Introduction}
@@ -484,10 +503,11 @@
 			# Estimate when convergence of critical parameters are done
 			cl = list of all convergence values for generations passed
 			il = list of cl indexes
+			diff = list of all convergence differences for generations passed
 			model = linear regression model
 			fit model(cl,il)
 			convergence = model.predict(#CONVERGENCE_THRESHOLD)
-			diff = convergence - il[-1]
+			diff.append(convergence - il[-1])
 			
 			target = max(diff)
 			percentage = ((diff*(-1) + target) / target) * 100
@@ -532,52 +552,46 @@
 		\end{figure}
 		The mutation is entirely isolated from the knowledge, and thus chooses a new option for the parameter randomly, within a candidate. If a mutation is specifically advantageous in the given environment the candidate will go on to become an academic, thus altering the knowledge with its newfound solution.
 		\subsubsection{PBIL Mutation vs SIILCK Mutation}
-		While the original implementation of the PBIL mutation function seen in algorithm \ref{algo:pbil_mutation1} focused on mutation of the collective probability vector, the SIILCK approach seen in algorithm \ref{algo:pbil_mutation2} mutates individual candidates - hoping to produce a diverse set of academics.
-		
+		The original implementation of the PBIL mutation function seen in algorithm \ref{algo:pbil_mutation1} focused on mutation of the collective probability vector. 
 		\begin{algorithm}
-			\caption{Original PBIL mutation}\label{algo:pbil_mutation1}
-		\scriptsize
-			\begin{verbatim}
-			
-			# Mutate Probability Vector
-			for #LENGTH
-			    if (random (0,1) < MUT_PROBABILITY)
-			        Pl <- Pl * (1.0 - MUT_SHIFT) + random (0.0 or 1.0) * (MUT_SHIFT)
-				        
-			USER DEFINED CONSTANTS:
-			LENGTH: length of encoded solution
-			MUT_PROBABILITY: probability of mutation occurring in each position
-			MUT_SHIFT: amount for mutation to affect the probability vector
-
-			\end{verbatim}
+			\caption{Original PBIL mutation \cite{pbil}, with annotations changed to be consistent with thesis annotations. In PBIL the collective probability vector is directly mutated.}\label{algo:pbil_mutation1}
+			\scriptsize
+			\begin{algorithmic}
+				
+				\FOR{$length(\beta_{i})$}
+					\IF{$rand(0,1) > P_{mut}$}
+						\STATE $P_{i,j} = P_{i,j} * (1.0 - M) + rand(0,1) * M$
+					\ENDIF
+				\ENDFOR
+			\end{algorithmic}
 		\end{algorithm}
+	The SIILCK approach seen in algorithm \ref{algo:pbil_mutation2} mutates individual candidates - hoping to produce a diverse set of academics. For the two algorithms \ref{algo:pbil_mutation1} and \ref{algo:pbil_mutation2}, mathematical annotations can be seen in annotation table \ref{table:annotations}.
 		\begin{algorithm}
-		\caption{SIILCK mutation}\label{algo:pbil_mutation2}
+		\caption{SIILCK mutation. In SIILCK the candidate solution is mutated.}\label{algo:pbil_mutation2}
 		\scriptsize
-			\begin{verbatim}
+			\begin{algorithmic}
+			\REQUIRE C = new candidates in population
+			\ENSURE $\varepsilon_{growth} = x \in (0 \leq x \leq 1) $
+			\FOR{c in C}
+			\IF{$rand(0,1) < P_{mut}$}
+				\STATE $\varepsilon = 0$
+				\WHILE{$ rand(0,1) < P_{mut} - \varepsilon $}
+					\STATE $i_{n} = rand(0, length(c_{i})-1)$
+					\STATE $c_{i_{n},j}  = rand(0,length(c_{i_{n},j})$
+					\STATE $\varepsilon = \varepsilon + \varepsilon_{growth} / 10$
+				\ENDWHILE
+			\ENDIF
+			\ENDFOR
 			
-			# Mutate Candidate Parameters
-			if random (0,1) < #MUTATION_PROBABILITY:
-			resistance = 0
-			while (mutation occurs)
-			    if random < #MUTATION_PROBABILITY - resistance:
-			        chosen_parameter = random (0, length(parameters)-1)
-			        chosen_parameter.option = random available option 
-			        resistance += #RESISTANCE_GROWTH / 10
-			    else:
-			        stop mutation, end while loop
-			        
-			 USER DEFINED CONSTANTS:
-			 MUTATION_PROBABILITY: probability of choosing candidate and/or parameter for mutation
-			 RESISTANCE_GROWTH: amount of mutation resistance for candidate, for each mutation occurance
-		\end{verbatim}
+			\end{algorithmic}
 		\end{algorithm}
+	
 			\begin{equation}\label{math:mutation_chance}
-			P_{mut}(\eta_{mut}) = (P_{mut}-0 E) * (P_{mut}-1 E) \ldots * (P_{mut}-(\eta-1) E)
+			P_{mut}(\eta_{mut}) = (P_{mut}-0 \varepsilon) * (P_{mut}-1 \varepsilon) \ldots * (P_{mut}-(\eta-1) \varepsilon)
 			\end{equation}
 			{\centering
 				\begin{math}
-				P = probability, \eta = amount, mut = mutation, E = resistance
+				P = probability, \eta = amount, mut = mutation, \varepsilon = resistance
 				\end{math}\\
 			}
 		\subsection{Solution}
@@ -822,7 +836,7 @@
 
 	
 	\end{verbatim}
-	Experiment E3 achieved 1.74\% reduction in optimal query times, in 115 generations before converging, being the experiment that took the longest to converge, whilst still utilizing accelerated convergence. This can be seen in the convergence value graph \ref{fig:final21}, where it dips at around generation 60. After dipping, and without academic consensus it takes a long while to reestablish convergency growth. The cost saving graph \ref{fig:final22} and the academic job graph \ref{fig:final23} both quickly stabilize and oscillate at around academic 50, meaning generation 17, so it was quick to reach a suitable solution. Viewing the solution assurance graph \ref{fig:final24} shows that the converged candidate solution repeatedly beats the default candidate.
+	Experiment E3 achieved 1.74\% reduction in optimal query times, in 115 generations before converging, being the highlighted experiment that took the longest to converge, whilst still utilizing accelerated convergence. This can be seen in the convergence value graph \ref{fig:final21}, where it dips at around generation 60. After dipping, and without academic consensus it takes a long while to reestablish convergency growth. The cost saving graph \ref{fig:final22} and the academic job graph \ref{fig:final23} both quickly stabilize and oscillate at around academic 50, meaning generation 17, so it was quick to reach a suitable solution. Viewing the solution assurance graph \ref{fig:final24} shows that the converged candidate solution repeatedly beats the default candidate.
 	\clearpage
 	\begin{figure}[H]
 		\centering
@@ -863,7 +877,7 @@
 
 	
 	\end{verbatim}
-	Experiment E5 achieved 1.64\% reduction in optimal query times in just 82 generations. As with experiment E1 the convergence graph \ref{fig:final31} never really flatlines, rather continuing on a upward trend until reaching total convergence. Very similarly to experiment E3 The cost saving graph \ref{fig:final32} and the academic job graph \ref{fig:final33} quickly finds a baseline to oscillate around, here being around 9 seconds. During the solution assurance stage shown in graph \ref{fig:final34} the converged candidate solution shows a great stability around 9 seconds, consequently beating the default candidate in every job counted.
+	Experiment E5 achieved 1.64\% reduction in optimal query times in 82 generations. As with experiment E1 the convergence graph \ref{fig:final31} never really flatlines, rather continuing on a upward trend until reaching total convergence. Very similarly to experiment E3 The cost saving graph \ref{fig:final32} and the academic job graph \ref{fig:final33} quickly finds a baseline to oscillate around, here being around 9 seconds. During the solution assurance stage shown in graph \ref{fig:final34} the converged candidate solution consistently beats the default candidate in every job counted.
 	\clearpage 
 	\begin{figure}[H]
 		\centering

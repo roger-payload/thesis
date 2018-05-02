@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  30 APR 2018 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  2 MAY 2018 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -770,7 +770,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 52.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<DUO_UiO_segl.png, id=450, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=454, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
 Package pdftex.def Info: DUO_UiO_segl.png  used on input line 52. on input line
@@ -810,125 +810,133 @@ Overfull \hbox (17.22289pt too wide) in paragraph at lines 88--104
  [][] 
  []
 
-[7
 
-]
-Chapter 2.
-[8
-
-] [9] [10] [11]
-<drill_advantages.png, id=667, 737.75626pt x 409.53pt>
-File: drill_advantages.png Graphic file (type png)
-<use drill_advantages.png>
-Package pdftex.def Info: drill_advantages.png  used on input line 175. on input
- line 175.
-Package pdftex.def Info: Requested size: 345.0pt x 191.51054pt on input line 17
-5.
-
-Overfull \hbox (0.39029pt too wide) in paragraph at lines 183--186
-[]\OT1/cmr/m/it/10 "Object and re-la-tional tech-nolo-gies are grounded in dif-
-fer-ent paradigms. Each
+Overfull \hbox (3.27618pt too wide) in paragraph at lines 109--123
+ [][] 
  []
-
-[12 <./drill_advantages.png>] [13]
-Chapter 3.
-[14
-
-] [15] [16]
-<mapr_drill1.png, id=726, 602.25pt x 286.06876pt>
-File: mapr_drill1.png Graphic file (type png)
-<use mapr_drill1.png>
-Package pdftex.def Info: mapr_drill1.png  used on input line 256. on input line
- 256.
-Package pdftex.def Info: Requested size: 345.0pt x 163.88152pt on input line 25
-6.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17]
-<mapr_drill2.png, id=738, 602.25pt x 277.035pt>
+[7
+
+] [8]
+Chapter 2.
+[9
+
+] [10] [11] [12]
+<drill_advantages.png, id=680, 737.75626pt x 409.53pt>
+File: drill_advantages.png Graphic file (type png)
+<use drill_advantages.png>
+Package pdftex.def Info: drill_advantages.png  used on input line 194. on input
+ line 194.
+Package pdftex.def Info: Requested size: 345.0pt x 191.51054pt on input line 19
+4.
+
+Overfull \hbox (0.39029pt too wide) in paragraph at lines 202--205
+[]\OT1/cmr/m/it/10 "Object and re-la-tional tech-nolo-gies are grounded in dif-
+fer-ent paradigms. Each
+ []
+
+[13 <./drill_advantages.png>] [14]
+Chapter 3.
+[15
+
+] [16] [17]
+<mapr_drill1.png, id=739, 602.25pt x 286.06876pt>
+File: mapr_drill1.png Graphic file (type png)
+<use mapr_drill1.png>
+Package pdftex.def Info: mapr_drill1.png  used on input line 275. on input line
+ 275.
+Package pdftex.def Info: Requested size: 345.0pt x 163.88152pt on input line 27
+5.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18]
+<mapr_drill2.png, id=751, 602.25pt x 277.035pt>
 File: mapr_drill2.png Graphic file (type png)
 <use mapr_drill2.png>
-Package pdftex.def Info: mapr_drill2.png  used on input line 264. on input line
- 264.
-Package pdftex.def Info: Requested size: 345.0pt x 158.7063pt on input line 264
+Package pdftex.def Info: mapr_drill2.png  used on input line 283. on input line
+ 283.
+Package pdftex.def Info: Requested size: 345.0pt x 158.7063pt on input line 283
 .
- [18 <./mapr_drill1.png> <./mapr_drill2.png>]
-<GA.png, id=753, 398.48875pt x 370.38374pt>
+ [19 <./mapr_drill1.png> <./mapr_drill2.png>]
+<GA.png, id=766, 398.48875pt x 370.38374pt>
 File: GA.png Graphic file (type png)
 <use GA.png>
-Package pdftex.def Info: GA.png  used on input line 276. on input line 276.
-Package pdftex.def Info: Requested size: 345.0pt x 320.68271pt on input line 27
-6.
- [19] [20 <./GA.png>] [21]
-[22
+Package pdftex.def Info: GA.png  used on input line 295. on input line 295.
+Package pdftex.def Info: Requested size: 345.0pt x 320.68271pt on input line 29
+5.
+ [20] [21 <./GA.png>] [22]
+[23
 
 ]
-<PBIL.png, id=781, 447.6725pt x 635.37375pt>
+<PBIL.png, id=794, 447.6725pt x 635.37375pt>
 File: PBIL.png Graphic file (type png)
 <use PBIL.png>
-Package pdftex.def Info: PBIL.png  used on input line 293. on input line 293.
-Package pdftex.def Info: Requested size: 310.0pt x 439.98865pt on input line 29
-3.
- [23 <./PBIL.png>]
-Overfull \hbox (17.96458pt too wide) in paragraph at lines 297--297
+Package pdftex.def Info: PBIL.png  used on input line 312. on input line 312.
+Package pdftex.def Info: Requested size: 310.0pt x 439.98865pt on input line 31
+2.
+ [24 <./PBIL.png>]
+Overfull \hbox (17.96458pt too wide) in paragraph at lines 316--316
 []\OT1/cmr/bx/n/14.4 Society In-spired In-cre-men-tal Learn-ing through
  []
 
-[24] [25]
-Overfull \hbox (12.50081pt too wide) in paragraph at lines 320--321
+[25] [26]
+Overfull \hbox (12.50081pt too wide) in paragraph at lines 339--340
 \OT1/cmr/m/n/10 Im-pala, Con-cur-rent Lin-gual, Hadapt, In-finiDB, Jethro-Data,
  Mam-mothDB, Apache
  []
 
-[26]
-Overfull \hbox (0.86168pt too wide) in paragraph at lines 335--336
+[27]
+Overfull \hbox (0.86168pt too wide) in paragraph at lines 354--355
 []\OT1/cmr/m/n/10 Telecommunications com-pa-nies can adapt all the afore-men-ti
 oned use cases.
  []
 
-[27] [28]
+[28] [29]
 Chapter 4.
-<cluster.png, id=843, 667.49374pt x 491.8375pt>
+<cluster.png, id=856, 667.49374pt x 491.8375pt>
 File: cluster.png Graphic file (type png)
 <use cluster.png>
-Package pdftex.def Info: cluster.png  used on input line 350. on input line 350
+Package pdftex.def Info: cluster.png  used on input line 369. on input line 369
 .
-Package pdftex.def Info: Requested size: 345.0pt x 254.21848pt on input line 35
-0.
-[29
+Package pdftex.def Info: Requested size: 345.0pt x 254.21848pt on input line 36
+9.
+[30
 
  <./cluster.png>]
-<tech_stack.png, id=852, 765.86125pt x 392.46625pt>
+<tech_stack.png, id=865, 765.86125pt x 392.46625pt>
 File: tech_stack.png Graphic file (type png)
 <use tech_stack.png>
-Package pdftex.def Info: tech_stack.png  used on input line 374. on input line 
-374.
-Package pdftex.def Info: Requested size: 345.0pt x 176.79381pt on input line 37
-4.
- [30 <./tech_stack.png>]
-<OOP.pdf, id=859, pagebox=cropbox, 210.7875pt x 343.2825pt>
+Package pdftex.def Info: tech_stack.png  used on input line 393. on input line 
+393.
+Package pdftex.def Info: Requested size: 345.0pt x 176.79381pt on input line 39
+3.
+ [31 <./tech_stack.png>]
+<OOP.pdf, id=872, pagebox=cropbox, 210.7875pt x 343.2825pt>
 File: OOP.pdf Graphic file (type pdf)
 <use OOP.pdf>
-Package pdftex.def Info: OOP.pdf  used on input line 384. on input line 384.
-Package pdftex.def Info: Requested size: 200.0pt x 325.71841pt on input line 38
-4.
- [31
+Package pdftex.def Info: OOP.pdf  used on input line 403. on input line 403.
+Package pdftex.def Info: Requested size: 200.0pt x 325.71841pt on input line 40
+3.
+ [32
 
  <./OOP.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./OOP.pdf): PDF inclusion: invalid othe
 r resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [32] [33]
-<memory_candidate.pdf, id=897, pagebox=cropbox, 715.67375pt x 468.75125pt>
+>] [33] [34]
+<memory_candidate.pdf, id=910, pagebox=cropbox, 715.67375pt x 468.75125pt>
 File: memory_candidate.pdf Graphic file (type pdf)
 <use memory_candidate.pdf>
-Package pdftex.def Info: memory_candidate.pdf  used on input line 411. on input
- line 411.
-Package pdftex.def Info: Requested size: 345.0pt x 225.97078pt on input line 41
-1.
- [34
+Package pdftex.def Info: memory_candidate.pdf  used on input line 430. on input
+ line 430.
+Package pdftex.def Info: Requested size: 345.0pt x 225.97078pt on input line 43
+0.
+ [35
 
  <./memory_candidate.pdf
 
@@ -936,24 +944,24 @@ pdfTeX warning: /usr/bin/pdflatex (file ./memory_candidate.pdf): PDF inclusion:
  invalid other resource which is no dict (key 'ProcSets', type <array>); ignore
 d.
 >]
-<memory_insight.pdf, id=938, pagebox=cropbox, 311.1625pt x 413.545pt>
+<memory_insight.pdf, id=951, pagebox=cropbox, 311.1625pt x 413.545pt>
 File: memory_insight.pdf Graphic file (type pdf)
 <use memory_insight.pdf>
-Package pdftex.def Info: memory_insight.pdf  used on input line 419. on input l
-ine 419.
+Package pdftex.def Info: memory_insight.pdf  used on input line 438. on input l
+ine 438.
 Package pdftex.def Info: Requested size: 156.49014pt x 207.98354pt on input lin
-e 419.
+e 438.
 
-Overfull \hbox (1.60251pt too wide) in paragraph at lines 424--425
+Overfull \hbox (1.60251pt too wide) in paragraph at lines 443--444
 []\OT1/cmr/m/n/10 Parameter op-tions are \OT1/cmr/bx/n/10 [True,False] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 
  []
 
-[35
+[36
 
  <./memory_insight.pdf
 
@@ -962,155 +970,155 @@ nvalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 
 >]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 478.
- [36] [37]
+put line 497.
+ [37] [38]
 
-LaTeX Warning: Hyper reference `sec:agnosstable' on page 38 undefined on input 
-line 503.
+LaTeX Warning: Hyper reference `sec:agnosstable' on page 39 undefined on input 
+line 523.
 
-<est11.pdf, id=1011, pagebox=cropbox, 553.02545pt x 435.41924pt>
+<est11.pdf, id=1021, pagebox=cropbox, 553.02545pt x 435.41924pt>
 File: est11.pdf Graphic file (type pdf)
 <use est11.pdf>
-Package pdftex.def Info: est11.pdf  used on input line 506. on input line 506.
-Package pdftex.def Info: Requested size: 260.0pt x 204.7135pt on input line 506
+Package pdftex.def Info: est11.pdf  used on input line 526. on input line 526.
+Package pdftex.def Info: Requested size: 260.0pt x 204.7135pt on input line 526
 .
-<est12.pdf, id=1012, pagebox=cropbox, 556.2249pt x 435.41924pt>
+<est12.pdf, id=1022, pagebox=cropbox, 556.2249pt x 435.41924pt>
 File: est12.pdf Graphic file (type pdf)
 <use est12.pdf>
-Package pdftex.def Info: est12.pdf  used on input line 507. on input line 507.
-Package pdftex.def Info: Requested size: 260.0pt x 203.53088pt on input line 50
+Package pdftex.def Info: est12.pdf  used on input line 527. on input line 527.
+Package pdftex.def Info: Requested size: 260.0pt x 203.53088pt on input line 52
 7.
-<est21.pdf, id=1013, pagebox=cropbox, 553.02545pt x 435.41924pt>
+<est21.pdf, id=1023, pagebox=cropbox, 553.02545pt x 435.41924pt>
 File: est21.pdf Graphic file (type pdf)
 <use est21.pdf>
-Package pdftex.def Info: est21.pdf  used on input line 513. on input line 513.
-Package pdftex.def Info: Requested size: 260.0pt x 204.7135pt on input line 513
+Package pdftex.def Info: est21.pdf  used on input line 533. on input line 533.
+Package pdftex.def Info: Requested size: 260.0pt x 204.7135pt on input line 533
 .
-<est22.pdf, id=1014, pagebox=cropbox, 556.2249pt x 435.41924pt>
+<est22.pdf, id=1024, pagebox=cropbox, 556.2249pt x 435.41924pt>
 File: est22.pdf Graphic file (type pdf)
 <use est22.pdf>
-Package pdftex.def Info: est22.pdf  used on input line 514. on input line 514.
-Package pdftex.def Info: Requested size: 260.0pt x 203.53088pt on input line 51
+Package pdftex.def Info: est22.pdf  used on input line 534. on input line 534.
+Package pdftex.def Info: Requested size: 260.0pt x 203.53088pt on input line 53
 4.
-[38
+[39
 
  <./est11.pdf> <./est12.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./est12.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
->] [39 <./est21.pdf> <./est22.pdf
+>] [40 <./est21.pdf> <./est22.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./est22.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
->] [40
+>] [41
 
 ]
-<Mutation.pdf, id=1177, pagebox=cropbox, 350.30875pt x 513.92pt>
+<Mutation.pdf, id=1187, pagebox=cropbox, 350.30875pt x 513.92pt>
 File: Mutation.pdf Graphic file (type pdf)
 <use Mutation.pdf>
-Package pdftex.def Info: Mutation.pdf  used on input line 529. on input line 52
+Package pdftex.def Info: Mutation.pdf  used on input line 549. on input line 54
 9.
-Package pdftex.def Info: Requested size: 250.0pt x 366.76776pt on input line 52
+Package pdftex.def Info: Requested size: 250.0pt x 366.76776pt on input line 54
 9.
- [41 <./Mutation.pdf
+ [42 <./Mutation.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./Mutation.pdf): PDF inclusion: invalid
  other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [42] [43]
-<overview.pdf, id=1221, pagebox=cropbox, 477.785pt x 731.73375pt>
+>] [43] [44]
+<overview.pdf, id=1254, pagebox=cropbox, 477.785pt x 731.73375pt>
 File: overview.pdf Graphic file (type pdf)
 <use overview.pdf>
-Package pdftex.def Info: overview.pdf  used on input line 593. on input line 59
-3.
-Package pdftex.def Info: Requested size: 330.0pt x 505.39928pt on input line 59
-3.
- [44
+Package pdftex.def Info: overview.pdf  used on input line 607. on input line 60
+7.
+Package pdftex.def Info: Requested size: 330.0pt x 505.39928pt on input line 60
+7.
+ [45
 
  <./overview.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./overview.pdf): PDF inclusion: invalid
  other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
 
  []
 
-[45
+[46
 
 ]
-<run_workflow.pdf, id=1254, pagebox=cropbox, 334.24875pt x 604.2575pt>
+<run_workflow.pdf, id=1288, pagebox=cropbox, 334.24875pt x 604.2575pt>
 File: run_workflow.pdf Graphic file (type pdf)
 <use run_workflow.pdf>
-Package pdftex.def Info: run_workflow.pdf  used on input line 659. on input lin
-e 659.
-Package pdftex.def Info: Requested size: 240.0pt x 433.88489pt on input line 65
-9.
- [46
+Package pdftex.def Info: run_workflow.pdf  used on input line 673. on input lin
+e 673.
+Package pdftex.def Info: Requested size: 240.0pt x 433.88489pt on input line 67
+3.
+ [47
 
  <./run_workflow.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./run_workflow.pdf): PDF inclusion: inv
 alid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Overfull \hbox (4.5668pt too wide) in paragraph at lines 711--711
+Overfull \hbox (4.5668pt too wide) in paragraph at lines 725--725
 []\OT1/cmtt/m/n/7 Setting                                            Default va
 lue     Optimal value  Confidence[] 
  []
 
 
-Overfull \hbox (12.0044pt too wide) in paragraph at lines 711--711
+Overfull \hbox (12.0044pt too wide) in paragraph at lines 725--725
 []\OT1/cmtt/m/n/7 ----------------------------------------------  -------------
 ---  ----------------  ------------[] 
  []
 
-[47
+[48
 
-] [48]
+] [49]
 Chapter 5.
 
-LaTeX Warning: Reference `code:list_mean' on page 49 undefined on input line 72
-6.
+LaTeX Warning: Reference `code:list_mean' on page 50 undefined on input line 74
+0.
 
 
-LaTeX Warning: Reference `code:gaussian_smoothing' on page 49 undefined on inpu
-t line 726.
+LaTeX Warning: Reference `code:gaussian_smoothing' on page 50 undefined on inpu
+t line 740.
 
-[49
-
-] [50
+[50
 
 ] [51
 
+] [52
+
 ]
-<runlogs/final5/1.pdf, id=1311, pagebox=cropbox, 410.60086pt x 312.99384pt>
+<runlogs/final5/1.pdf, id=1344, pagebox=cropbox, 410.60086pt x 312.99384pt>
 File: runlogs/final5/1.pdf Graphic file (type pdf)
 <use runlogs/final5/1.pdf>
-Package pdftex.def Info: runlogs/final5/1.pdf  used on input line 788. on input
- line 788.
-Package pdftex.def Info: Requested size: 130.0pt x 99.09503pt on input line 788
+Package pdftex.def Info: runlogs/final5/1.pdf  used on input line 802. on input
+ line 802.
+Package pdftex.def Info: Requested size: 130.0pt x 99.09503pt on input line 802
 .
-<runlogs/final5/2.pdf, id=1312, pagebox=cropbox, 410.76117pt x 312.99384pt>
+<runlogs/final5/2.pdf, id=1345, pagebox=cropbox, 410.76117pt x 312.99384pt>
 File: runlogs/final5/2.pdf Graphic file (type pdf)
 <use runlogs/final5/2.pdf>
-Package pdftex.def Info: runlogs/final5/2.pdf  used on input line 794. on input
- line 794.
-Package pdftex.def Info: Requested size: 130.0pt x 99.05684pt on input line 794
+Package pdftex.def Info: runlogs/final5/2.pdf  used on input line 808. on input
+ line 808.
+Package pdftex.def Info: Requested size: 130.0pt x 99.05684pt on input line 808
 .
-<runlogs/final5/3.pdf, id=1313, pagebox=cropbox, 413.96062pt x 312.99384pt>
+<runlogs/final5/3.pdf, id=1346, pagebox=cropbox, 413.96062pt x 312.99384pt>
 File: runlogs/final5/3.pdf Graphic file (type pdf)
 <use runlogs/final5/3.pdf>
-Package pdftex.def Info: runlogs/final5/3.pdf  used on input line 800. on input
- line 800.
-Package pdftex.def Info: Requested size: 130.0pt x 98.2927pt on input line 800.
+Package pdftex.def Info: runlogs/final5/3.pdf  used on input line 814. on input
+ line 814.
+Package pdftex.def Info: Requested size: 130.0pt x 98.2927pt on input line 814.
 
-<runlogs/final5/4.pdf, id=1314, pagebox=cropbox, 410.60086pt x 296.25945pt>
+<runlogs/final5/4.pdf, id=1347, pagebox=cropbox, 410.60086pt x 296.25945pt>
 File: runlogs/final5/4.pdf Graphic file (type pdf)
 <use runlogs/final5/4.pdf>
-Package pdftex.def Info: runlogs/final5/4.pdf  used on input line 806. on input
- line 806.
-Package pdftex.def Info: Requested size: 130.0pt x 93.79688pt on input line 806
+Package pdftex.def Info: runlogs/final5/4.pdf  used on input line 820. on input
+ line 820.
+Package pdftex.def Info: Requested size: 130.0pt x 93.79688pt on input line 820
 .
- [52
+ [53
 
  <./runlogs/final5/1.pdf> <./runlogs/final5/2.pdf
 
@@ -1124,38 +1132,38 @@ pdfTeX warning: /usr/bin/pdflatex (file ./runlogs/final5/3.pdf): PDF inclusion:
 
 pdfTeX warning: /usr/bin/pdflatex (file ./runlogs/final5/4.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
->] [53
+>] [54
 
 ]
-<runlogs/final7/1.pdf, id=1471, pagebox=cropbox, 410.60086pt x 312.99384pt>
+<runlogs/final7/1.pdf, id=1504, pagebox=cropbox, 410.60086pt x 312.99384pt>
 File: runlogs/final7/1.pdf Graphic file (type pdf)
 <use runlogs/final7/1.pdf>
-Package pdftex.def Info: runlogs/final7/1.pdf  used on input line 829. on input
- line 829.
-Package pdftex.def Info: Requested size: 130.0pt x 99.09503pt on input line 829
+Package pdftex.def Info: runlogs/final7/1.pdf  used on input line 843. on input
+ line 843.
+Package pdftex.def Info: Requested size: 130.0pt x 99.09503pt on input line 843
 .
-<runlogs/final7/2.pdf, id=1472, pagebox=cropbox, 420.88924pt x 312.99384pt>
+<runlogs/final7/2.pdf, id=1505, pagebox=cropbox, 420.88924pt x 312.99384pt>
 File: runlogs/final7/2.pdf Graphic file (type pdf)
 <use runlogs/final7/2.pdf>
-Package pdftex.def Info: runlogs/final7/2.pdf  used on input line 835. on input
- line 835.
-Package pdftex.def Info: Requested size: 130.0pt x 96.67366pt on input line 835
+Package pdftex.def Info: runlogs/final7/2.pdf  used on input line 849. on input
+ line 849.
+Package pdftex.def Info: Requested size: 130.0pt x 96.67366pt on input line 849
 .
-<runlogs/final7/3.pdf, id=1473, pagebox=cropbox, 418.86606pt x 312.99384pt>
+<runlogs/final7/3.pdf, id=1506, pagebox=cropbox, 418.86606pt x 312.99384pt>
 File: runlogs/final7/3.pdf Graphic file (type pdf)
 <use runlogs/final7/3.pdf>
-Package pdftex.def Info: runlogs/final7/3.pdf  used on input line 841. on input
- line 841.
-Package pdftex.def Info: Requested size: 130.0pt x 97.1417pt on input line 841.
+Package pdftex.def Info: runlogs/final7/3.pdf  used on input line 855. on input
+ line 855.
+Package pdftex.def Info: Requested size: 130.0pt x 97.1417pt on input line 855.
 
-<runlogs/final7/4.pdf, id=1474, pagebox=cropbox, 410.60086pt x 296.25945pt>
+<runlogs/final7/4.pdf, id=1507, pagebox=cropbox, 410.60086pt x 296.25945pt>
 File: runlogs/final7/4.pdf Graphic file (type pdf)
 <use runlogs/final7/4.pdf>
-Package pdftex.def Info: runlogs/final7/4.pdf  used on input line 847. on input
- line 847.
-Package pdftex.def Info: Requested size: 130.0pt x 93.79688pt on input line 847
+Package pdftex.def Info: runlogs/final7/4.pdf  used on input line 861. on input
+ line 861.
+Package pdftex.def Info: Requested size: 130.0pt x 93.79688pt on input line 861
 .
- [54
+ [55
 
  <./runlogs/final7/1.pdf> <./runlogs/final7/2.pdf
 
@@ -1169,38 +1177,38 @@ pdfTeX warning: /usr/bin/pdflatex (file ./runlogs/final7/3.pdf): PDF inclusion:
 
 pdfTeX warning: /usr/bin/pdflatex (file ./runlogs/final7/4.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
->] [55
+>] [56
 
 ]
-<runlogs/final9/1.pdf, id=1629, pagebox=cropbox, 410.60086pt x 312.99384pt>
+<runlogs/final9/1.pdf, id=1662, pagebox=cropbox, 410.60086pt x 312.99384pt>
 File: runlogs/final9/1.pdf Graphic file (type pdf)
 <use runlogs/final9/1.pdf>
-Package pdftex.def Info: runlogs/final9/1.pdf  used on input line 870. on input
- line 870.
-Package pdftex.def Info: Requested size: 130.0pt x 99.09503pt on input line 870
+Package pdftex.def Info: runlogs/final9/1.pdf  used on input line 884. on input
+ line 884.
+Package pdftex.def Info: Requested size: 130.0pt x 99.09503pt on input line 884
 .
-<runlogs/final9/2.pdf, id=1630, pagebox=cropbox, 414.65474pt x 312.99384pt>
+<runlogs/final9/2.pdf, id=1663, pagebox=cropbox, 414.65474pt x 312.99384pt>
 File: runlogs/final9/2.pdf Graphic file (type pdf)
 <use runlogs/final9/2.pdf>
-Package pdftex.def Info: runlogs/final9/2.pdf  used on input line 876. on input
- line 876.
-Package pdftex.def Info: Requested size: 130.0pt x 98.13031pt on input line 876
+Package pdftex.def Info: runlogs/final9/2.pdf  used on input line 890. on input
+ line 890.
+Package pdftex.def Info: Requested size: 130.0pt x 98.13031pt on input line 890
 .
-<runlogs/final9/3.pdf, id=1631, pagebox=cropbox, 421.03796pt x 312.99384pt>
+<runlogs/final9/3.pdf, id=1664, pagebox=cropbox, 421.03796pt x 312.99384pt>
 File: runlogs/final9/3.pdf Graphic file (type pdf)
 <use runlogs/final9/3.pdf>
-Package pdftex.def Info: runlogs/final9/3.pdf  used on input line 882. on input
- line 882.
-Package pdftex.def Info: Requested size: 130.0pt x 96.64023pt on input line 882
+Package pdftex.def Info: runlogs/final9/3.pdf  used on input line 896. on input
+ line 896.
+Package pdftex.def Info: Requested size: 130.0pt x 96.64023pt on input line 896
 .
-<runlogs/final9/4.pdf, id=1632, pagebox=cropbox, 416.98409pt x 296.25945pt>
+<runlogs/final9/4.pdf, id=1665, pagebox=cropbox, 416.98409pt x 296.25945pt>
 File: runlogs/final9/4.pdf Graphic file (type pdf)
 <use runlogs/final9/4.pdf>
-Package pdftex.def Info: runlogs/final9/4.pdf  used on input line 888. on input
- line 888.
-Package pdftex.def Info: Requested size: 130.0pt x 92.36386pt on input line 888
+Package pdftex.def Info: runlogs/final9/4.pdf  used on input line 902. on input
+ line 902.
+Package pdftex.def Info: Requested size: 130.0pt x 92.36386pt on input line 902
 .
- [56
+ [57
 
  <./runlogs/final9/1.pdf> <./runlogs/final9/2.pdf
 
@@ -1215,216 +1223,213 @@ pdfTeX warning: /usr/bin/pdflatex (file ./runlogs/final9/3.pdf): PDF inclusion:
 pdfTeX warning: /usr/bin/pdflatex (file ./runlogs/final9/4.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
 >]
-<criticalcon1.pdf, id=1775, pagebox=cropbox, 692.3466pt x 491.436pt>
+<criticalcon1.pdf, id=1809, pagebox=cropbox, 692.3466pt x 491.436pt>
 File: criticalcon1.pdf Graphic file (type pdf)
 <use criticalcon1.pdf>
-Package pdftex.def Info: criticalcon1.pdf  used on input line 899. on input lin
-e 899.
-Package pdftex.def Info: Requested size: 310.0pt x 220.04184pt on input line 89
-9.
- [57
+Package pdftex.def Info: criticalcon1.pdf  used on input line 913. on input lin
+e 913.
+Package pdftex.def Info: Requested size: 310.0pt x 220.04184pt on input line 91
+3.
+ [58
 
- <./criticalcon1.pdf>] [58]
-<accon.pdf, id=1830, pagebox=cropbox, 589.00049pt x 480.59549pt>
+ <./criticalcon1.pdf>] [59]
+<accon.pdf, id=1863, pagebox=cropbox, 589.00049pt x 480.59549pt>
 File: accon.pdf Graphic file (type pdf)
 <use accon.pdf>
-Package pdftex.def Info: accon.pdf  used on input line 931. on input line 931.
-Package pdftex.def Info: Requested size: 310.0pt x 252.9544pt on input line 931
+Package pdftex.def Info: accon.pdf  used on input line 945. on input line 945.
+Package pdftex.def Info: Requested size: 310.0pt x 252.9544pt on input line 945
 .
- [59
+ [60
 
  <./accon.pdf>]
-<costsaving.png, id=1870, 559.3698pt x 419.8887pt>
+<costsaving.png, id=1903, 559.3698pt x 419.8887pt>
 File: costsaving.png Graphic file (type png)
 <use costsaving.png>
-Package pdftex.def Info: costsaving.png  used on input line 957. on input line 
-957.
-Package pdftex.def Info: Requested size: 345.0pt x 258.98283pt on input line 95
-7.
-<costsaving2.pdf, id=1873, pagebox=cropbox, 586.10968pt x 438.67891pt>
+Package pdftex.def Info: costsaving.png  used on input line 971. on input line 
+971.
+Package pdftex.def Info: Requested size: 345.0pt x 258.98283pt on input line 97
+1.
+<costsaving2.pdf, id=1906, pagebox=cropbox, 586.10968pt x 438.67891pt>
 File: costsaving2.pdf Graphic file (type pdf)
 <use costsaving2.pdf>
-Package pdftex.def Info: costsaving2.pdf  used on input line 964. on input line
- 964.
-Package pdftex.def Info: Requested size: 345.0pt x 258.22256pt on input line 96
-4.
- [60 <./costsaving.png>]
-[61 <./costsaving2.pdf>]
+Package pdftex.def Info: costsaving2.pdf  used on input line 978. on input line
+ 978.
+Package pdftex.def Info: Requested size: 345.0pt x 258.22256pt on input line 97
+8.
+ [61 <./costsaving.png>]
+[62 <./costsaving2.pdf>]
 Chapter 6.
-[62
+[63
 
-] [63] [64
+] [64] [65
 
-] [65]
+] [66]
 Chapter 7.
-[66
+[67
 
-] [67]
+] [68]
 Chapter 8.
-[68
+[69
 
-] [69
+] [70
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1053
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (Jan-uary 2018)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1053
 \OT1/cmr/m/it/10 https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-
 
  []
 
 
-Overfull \hbox (17.82553pt too wide) in paragraph at lines 1044--1045
+Overfull \hbox (17.82553pt too wide) in paragraph at lines 1058--1059
 []\OT1/cmr/m/n/10 Michael Klee-ham-mer (2018, Febru-ary) \OT1/cmr/m/it/10 https
 ://github.com/mkleehammer/pyodbc 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
 []\OT1/cmr/m/n/10 Modis (2018, Febru-ary) \OT1/cmr/m/it/10 http://www.modis.com
 /it-
  []
 
-[70
+[71
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1062--1063
+Underfull \hbox (badness 10000) in paragraph at lines 1076--1077
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1080
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Jan-uary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1067--1068
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1071--1073
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1087
 []\OT1/cmr/m/n/10 2018 Bet-ter-Cloud Mon-i-tor (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1071--1073
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1087
 \OT1/cmr/m/it/10 https://www.bettercloud.com/monitor/real-time-enterprise-messa
 ging-
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 1074--1075
+Underfull \hbox (badness 4805) in paragraph at lines 1088--1089
 []\OT1/cmr/m/n/10 Stack Ex-change Inc, posted by user: Thoth (2018, Febru-ary)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
+Underfull \hbox (badness 10000) in paragraph at lines 1088--1089
 \OT1/cmr/m/it/10 https://stackoverflow.com/questions/42403229/mysql-database-wi
 th-
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 1084--1085
+Underfull \hbox (badness 1478) in paragraph at lines 1098--1099
 []\OT1/cmr/m/n/10 Statista, Inc (2018, Febru-ary) \OT1/cmr/m/it/10 https://www.
 statista.com/statistics/ +
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 1086--1087
+Underfull \hbox (badness 6428) in paragraph at lines 1100--1101
 []\OT1/cmr/m/n/10 Github user Edlich, cu-rated list (2018, Febru-ary) \OT1/cmr/
 m/it/10 http://nosql-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1108
 []\OT1/cmr/m/n/10 Apache Soft-ware Foun-da-tion (2018, March)
  []
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 1100--1103
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1117
 \OT1/cmr/m/it/10 https://www.globalknowledge.com/us-en/content/articles/big-dat
 a-and-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1104--1106
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1120
 []\OT1/cmr/m/n/10 SiliconANGLE Me-dia, Inc. (2018, March)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1104--1106
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1120
 \OT1/cmr/m/it/10 https://siliconangle.com/blog/2012/08/01/hadoop-big-data-repor
 ts-future-
  []
 
-[72]
+[73]
 Appendix A.
-[73
+[74
 
 ]
 Appendix B.
-[74
+[75
 
-] [75]
+] [76]
 Appendix C.
-[76
-
-]
-Appendix D.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1238.
 [77
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1238.
+Appendix D.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1252.
+[78
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1252.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1238.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1238.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1252.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1252.
 
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 5D9F3A0698A54C1CC61EA2C1A368795E;7645.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 96C7D42CF7075634B7DF6BC29C1237A5;7571
-(rerunfilecheck)             After:  D7B95C0D83E2147B2DBB1D3D4CA44F73;7573.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1238.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1252.
  ) 
 Here is how much of TeX's memory you used:
- 11022 strings out of 492990
- 168801 string characters out of 6135005
- 393337 words of memory out of 5000000
- 14072 multiletter control sequences out of 15000+600000
- 25417 words of font info for 42 fonts, out of 8000000 for 9000
+ 11077 strings out of 492990
+ 169354 string characters out of 6135005
+ 393573 words of memory out of 5000000
+ 14108 multiletter control sequences out of 15000+600000
+ 25727 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,9n,45p,1929b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,45p,1929b,793s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
-vetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (81 pages, 1228922 bytes).
+amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1
+000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (82 pages, 1263329 bytes).
 PDF statistics:
- 2128 PDF objects out of 2487 (max. 8388607)
- 1360 compressed objects within 14 object streams
- 319 named destinations out of 1000 (max. 500000)
- 1059 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2175 PDF objects out of 2487 (max. 8388607)
+ 1401 compressed objects within 15 object streams
+ 337 named destinations out of 1000 (max. 500000)
+ 1067 words of extra memory for PDF output out of 10000 (max. 10000000)
 

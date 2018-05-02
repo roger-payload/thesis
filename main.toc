@@ -13,142 +13,143 @@
 \contentsline {section}{\numberline {1.1}List of figures}{7}{section.1.1}
 \contentsline {section}{\numberline {1.2}List of tables}{7}{section.1.2}
 \contentsline {section}{\numberline {1.3}Abbreviations}{7}{section.1.3}
-\contentsline {chapter}{\numberline {2}Introduction}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Target group}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Area of research}{8}{section.2.2}
-\contentsline {section}{\numberline {2.3}Research question - in full}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Goal, justification and challenges}{8}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Resarch question}{9}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Personal motivation}{9}{section.2.4}
-\contentsline {subsubsection}{Subject}{9}{section*.8}
-\contentsline {subsubsection}{Apache Drill as a platform}{10}{section*.9}
-\contentsline {section}{\numberline {2.5}Research method in brief}{10}{section.2.5}
-\contentsline {section}{\numberline {2.6}Most relevant previous findings}{10}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Starfish}{10}{subsection.2.6.1}
-\contentsline {section}{\numberline {2.7}Why is this worthwhile, why Drill?}{11}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Ease of use}{11}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Increasing relevance of Big Data infrastructures}{11}{subsection.2.7.2}
-\contentsline {subsubsection}{Real time data usage}{11}{section*.10}
-\contentsline {subsubsection}{Combining real-time and stored data}{12}{section*.11}
-\contentsline {subsection}{\numberline {2.7.3}Application needs}{12}{subsection.2.7.3}
-\contentsline {section}{\numberline {2.8}How far will this advance the field?}{13}{section.2.8}
-\contentsline {subsubsection}{Advances in research}{13}{section*.13}
-\contentsline {subsubsection}{Advances in industry}{13}{section*.14}
-\contentsline {section}{\numberline {2.9}Structure of the report}{13}{section.2.9}
-\contentsline {chapter}{\numberline {3}Background}{14}{chapter.3}
-\contentsline {section}{\numberline {3.1}History}{14}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Creation and adoption of Hadoop}{14}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Google branching out with Dremel}{14}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Technology}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Hadoop stack}{15}{subsection.3.2.1}
-\contentsline {subsubsection}{Hadoop common}{15}{section*.15}
-\contentsline {subsubsection}{HDFS}{15}{section*.16}
-\contentsline {subsubsection}{YARN}{15}{section*.17}
-\contentsline {subsubsection}{MapReduce}{16}{section*.18}
-\contentsline {subsection}{\numberline {3.2.2}Zookeeper}{16}{subsection.3.2.2}
-\contentsline {subsubsection}{Zookeeper Quorum}{16}{section*.19}
-\contentsline {subsection}{\numberline {3.2.3}Apache Drill}{17}{subsection.3.2.3}
-\contentsline {subsubsection}{What is it}{17}{section*.20}
-\contentsline {subsubsection}{How does it do it}{17}{section*.21}
-\contentsline {paragraph}{The drillbit}{17}{section*.22}
-\contentsline {paragraph}{Querying drill}{17}{section*.23}
-\contentsline {paragraph}{Key components}{17}{section*.24}
-\contentsline {paragraph}{Drill in a cluster}{18}{section*.26}
-\contentsline {subsection}{\numberline {3.2.4}Drill ODBC Driver, and unixODBC}{19}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}pyodbc}{19}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}Genetic algorithms}{20}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}NASA applying genetic algorithms}{21}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Limitations of genetic algorithms}{22}{subsection.3.3.2}
-\contentsline {subsubsection}{Fitness function}{22}{section*.29}
-\contentsline {subsubsection}{Reaching the optimal solution}{22}{section*.30}
-\contentsline {section}{\numberline {3.4}Population based incremental learning}{23}{section.3.4}
-\contentsline {section}{\numberline {3.5}Society Inspired Incremental Learning through Collective Knowledge}{24}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Based on PBIL, built for speed}{24}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Limitation of SIILCK}{24}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Related literature and theoretical focus}{26}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Performance tuning MapReduce as a Research Field}{26}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Mapreduce optimization}{26}{subsection.3.6.2}
-\contentsline {subsubsection}{Gunther}{26}{section*.32}
-\contentsline {subsubsection}{mrOnline}{26}{section*.33}
-\contentsline {subsection}{\numberline {3.6.3}Other Hadoop SQL engines}{26}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Impala}{27}{subsection.3.6.4}
-\contentsline {subsection}{\numberline {3.6.5}Spark}{27}{subsection.3.6.5}
-\contentsline {section}{\numberline {3.7}Presentation of domain where technology is used}{27}{section.3.7}
-\contentsline {chapter}{\numberline {4}Method}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Infrastructure}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}SIILCK}{31}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Naming conventions}{31}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Society}{32}{subsection.4.2.2}
-\contentsline {subsubsection}{Society operations}{32}{section*.37}
-\contentsline {paragraph}{Knowledge}{32}{section*.38}
-\contentsline {paragraph}{Default candidate}{32}{section*.39}
-\contentsline {paragraph}{Population}{32}{section*.40}
-\contentsline {subsection}{\numberline {4.2.3}Knowledge}{34}{subsection.4.2.3}
-\contentsline {paragraph}{Probability vector algorithm}{35}{figure.caption.43}
-\contentsline {paragraph}{Reaching convergence}{35}{section*.44}
-\contentsline {paragraph}{Academic consensus and critical convergence}{35}{section*.45}
-\contentsline {paragraph}{Accelerated convergence}{36}{section*.46}
-\contentsline {subsection}{\numberline {4.2.4}Extended knowledge function - progress estimation}{36}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Candidate}{40}{subsection.4.2.5}
-\contentsline {paragraph}{Jobs}{40}{section*.49}
-\contentsline {subsection}{\numberline {4.2.6}Mutation}{41}{subsection.4.2.6}
-\contentsline {subsubsection}{PBIL Mutation vs SIILCK Mutation}{42}{section*.51}
-\contentsline {subsection}{\numberline {4.2.7}Solution}{42}{subsection.4.2.7}
-\contentsline {subsection}{\numberline {4.2.8}Configuration file}{43}{subsection.4.2.8}
-\contentsline {subsection}{\numberline {4.2.9}Algorithm overview}{44}{subsection.4.2.9}
-\contentsline {paragraph}{Flowchart}{44}{section*.52}
-\contentsline {section}{\numberline {4.3}Testing}{45}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Dataset}{45}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Query}{45}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Job flowchart}{46}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Data collection}{47}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{48}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{48}{subsection.4.3.6}
-\contentsline {chapter}{\numberline {5}Results}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}What we display}{49}{section.5.1}
-\contentsline {paragraph}{Graphs overview}{49}{section*.55}
-\contentsline {paragraph}{Cost saving graphs}{49}{section*.56}
-\contentsline {paragraph}{Mean calculations for academic jobs}{49}{section*.57}
-\contentsline {section}{\numberline {5.2}Run configurations}{50}{section.5.2}
-\contentsline {section}{\numberline {5.3}Highlighted experiments}{51}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}What experiment we highlight}{51}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experiment E1}{51}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Experiment E3}{53}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Experiment E5}{55}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Aggregated results}{57}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{57}{subsection.5.4.1}
-\contentsline {paragraph}{Critical convergence}{57}{section*.70}
-\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{57}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{59}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Cost saving}{60}{subsection.5.4.4}
-\contentsline {paragraph}{TTE for solution assurance}{60}{section*.76}
-\contentsline {chapter}{\numberline {6}Discussion}{62}{chapter.6}
-\contentsline {section}{\numberline {6.1}The drill cache}{62}{section.6.1}
-\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{62}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{62}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Complex queries}{62}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Solution}{63}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Error sources}{64}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{64}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{64}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Cluster size}{64}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Proving effect}{64}{section.6.4}
-\contentsline {section}{\numberline {6.5}Cut configuration parameters}{65}{section.6.5}
-\contentsline {chapter}{\numberline {7}Further work}{66}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous clusters}{66}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Load profiles}{66}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Single node setups}{66}{section.7.2}
-\contentsline {section}{\numberline {7.3}Support for the cut parameters}{66}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{68}{chapter.8}
-\contentsline {section}{\numberline {8.1}Innovation - SIILCK}{68}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Inspiration}{68}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{68}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Mutation}{68}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Goal}{69}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{69}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{69}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Most valuable contribution}{69}{section.8.3}
-\contentsline {chapter}{\numberline {A}Cluster specs}{73}{appendix.A}
-\contentsline {chapter}{\numberline {B}System parameters}{74}{appendix.B}
-\contentsline {chapter}{\numberline {C}Configuration parameters}{76}{appendix.C}
-\contentsline {chapter}{\numberline {D}Code}{77}{appendix.D}
+\contentsline {section}{\numberline {1.4}Mathematical annotations}{7}{section.1.4}
+\contentsline {chapter}{\numberline {2}Introduction}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Target group}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Area of research}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}Research question - in full}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Goal, justification and challenges}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Resarch question}{10}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Personal motivation}{10}{section.2.4}
+\contentsline {subsubsection}{Subject}{10}{section*.9}
+\contentsline {subsubsection}{Apache Drill as a platform}{11}{section*.10}
+\contentsline {section}{\numberline {2.5}Research method in brief}{11}{section.2.5}
+\contentsline {section}{\numberline {2.6}Most relevant previous findings}{11}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Starfish}{11}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Why is this worthwhile, why Drill?}{12}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Ease of use}{12}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Increasing relevance of Big Data infrastructures}{12}{subsection.2.7.2}
+\contentsline {subsubsection}{Real time data usage}{12}{section*.11}
+\contentsline {subsubsection}{Combining real-time and stored data}{13}{section*.12}
+\contentsline {subsection}{\numberline {2.7.3}Application needs}{13}{subsection.2.7.3}
+\contentsline {section}{\numberline {2.8}How far will this advance the field?}{14}{section.2.8}
+\contentsline {subsubsection}{Advances in research}{14}{section*.14}
+\contentsline {subsubsection}{Advances in industry}{14}{section*.15}
+\contentsline {section}{\numberline {2.9}Structure of the report}{14}{section.2.9}
+\contentsline {chapter}{\numberline {3}Background}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}History}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Creation and adoption of Hadoop}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Google branching out with Dremel}{15}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Technology}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Hadoop stack}{16}{subsection.3.2.1}
+\contentsline {subsubsection}{Hadoop common}{16}{section*.16}
+\contentsline {subsubsection}{HDFS}{16}{section*.17}
+\contentsline {subsubsection}{YARN}{16}{section*.18}
+\contentsline {subsubsection}{MapReduce}{17}{section*.19}
+\contentsline {subsection}{\numberline {3.2.2}Zookeeper}{17}{subsection.3.2.2}
+\contentsline {subsubsection}{Zookeeper Quorum}{17}{section*.20}
+\contentsline {subsection}{\numberline {3.2.3}Apache Drill}{18}{subsection.3.2.3}
+\contentsline {subsubsection}{What is it}{18}{section*.21}
+\contentsline {subsubsection}{How does it do it}{18}{section*.22}
+\contentsline {paragraph}{The drillbit}{18}{section*.23}
+\contentsline {paragraph}{Querying drill}{18}{section*.24}
+\contentsline {paragraph}{Key components}{18}{section*.25}
+\contentsline {paragraph}{Drill in a cluster}{19}{section*.27}
+\contentsline {subsection}{\numberline {3.2.4}Drill ODBC Driver, and unixODBC}{20}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}pyodbc}{20}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Genetic algorithms}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}NASA applying genetic algorithms}{22}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Limitations of genetic algorithms}{23}{subsection.3.3.2}
+\contentsline {subsubsection}{Fitness function}{23}{section*.30}
+\contentsline {subsubsection}{Reaching the optimal solution}{23}{section*.31}
+\contentsline {section}{\numberline {3.4}Population based incremental learning}{24}{section.3.4}
+\contentsline {section}{\numberline {3.5}Society Inspired Incremental Learning through Collective Knowledge}{25}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Based on PBIL, built for speed}{25}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Limitation of SIILCK}{25}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Related literature and theoretical focus}{27}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Performance tuning MapReduce as a Research Field}{27}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Mapreduce optimization}{27}{subsection.3.6.2}
+\contentsline {subsubsection}{Gunther}{27}{section*.33}
+\contentsline {subsubsection}{mrOnline}{27}{section*.34}
+\contentsline {subsection}{\numberline {3.6.3}Other Hadoop SQL engines}{27}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Impala}{28}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Spark}{28}{subsection.3.6.5}
+\contentsline {section}{\numberline {3.7}Presentation of domain where technology is used}{28}{section.3.7}
+\contentsline {chapter}{\numberline {4}Method}{30}{chapter.4}
+\contentsline {section}{\numberline {4.1}Infrastructure}{30}{section.4.1}
+\contentsline {section}{\numberline {4.2}SIILCK}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Naming conventions}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Society}{33}{subsection.4.2.2}
+\contentsline {subsubsection}{Society operations}{33}{section*.38}
+\contentsline {paragraph}{Knowledge}{33}{section*.39}
+\contentsline {paragraph}{Default candidate}{33}{section*.40}
+\contentsline {paragraph}{Population}{33}{section*.41}
+\contentsline {subsection}{\numberline {4.2.3}Knowledge}{35}{subsection.4.2.3}
+\contentsline {paragraph}{Probability vector algorithm}{36}{figure.caption.44}
+\contentsline {paragraph}{Reaching convergence}{36}{section*.45}
+\contentsline {paragraph}{Academic consensus and critical convergence}{36}{section*.46}
+\contentsline {paragraph}{Accelerated convergence}{37}{section*.47}
+\contentsline {subsection}{\numberline {4.2.4}Extended knowledge function - progress estimation}{37}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Candidate}{41}{subsection.4.2.5}
+\contentsline {paragraph}{Jobs}{41}{section*.50}
+\contentsline {subsection}{\numberline {4.2.6}Mutation}{42}{subsection.4.2.6}
+\contentsline {subsubsection}{PBIL Mutation vs SIILCK Mutation}{43}{section*.52}
+\contentsline {subsection}{\numberline {4.2.7}Solution}{43}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}Configuration file}{44}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}Algorithm overview}{45}{subsection.4.2.9}
+\contentsline {paragraph}{Flowchart}{45}{section*.53}
+\contentsline {section}{\numberline {4.3}Testing}{46}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Dataset}{46}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Query}{46}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Job flowchart}{47}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Data collection}{48}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Solution assurance}{49}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{49}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Results}{50}{chapter.5}
+\contentsline {section}{\numberline {5.1}What we display}{50}{section.5.1}
+\contentsline {paragraph}{Graphs overview}{50}{section*.56}
+\contentsline {paragraph}{Cost saving graphs}{50}{section*.57}
+\contentsline {paragraph}{Mean calculations for academic jobs}{50}{section*.58}
+\contentsline {section}{\numberline {5.2}Run configurations}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Highlighted experiments}{52}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}What experiment we highlight}{52}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Experiment E1}{52}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Experiment E3}{54}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Experiment E5}{56}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Aggregated results}{58}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{58}{subsection.5.4.1}
+\contentsline {paragraph}{Critical convergence}{58}{section*.71}
+\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{58}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{60}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Cost saving}{61}{subsection.5.4.4}
+\contentsline {paragraph}{TTE for solution assurance}{61}{section*.77}
+\contentsline {chapter}{\numberline {6}Discussion}{63}{chapter.6}
+\contentsline {section}{\numberline {6.1}The drill cache}{63}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{63}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{63}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{63}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Solution}{64}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Error sources}{65}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{65}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{65}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Cluster size}{65}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Proving effect}{65}{section.6.4}
+\contentsline {section}{\numberline {6.5}Cut configuration parameters}{66}{section.6.5}
+\contentsline {chapter}{\numberline {7}Further work}{67}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous clusters}{67}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Load profiles}{67}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Single node setups}{67}{section.7.2}
+\contentsline {section}{\numberline {7.3}Support for the cut parameters}{67}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{69}{chapter.8}
+\contentsline {section}{\numberline {8.1}Innovation - SIILCK}{69}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Inspiration}{69}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{69}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Mutation}{69}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Goal}{70}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{70}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{70}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Most valuable contribution}{70}{section.8.3}
+\contentsline {chapter}{\numberline {A}Cluster specs}{74}{appendix.A}
+\contentsline {chapter}{\numberline {B}System parameters}{75}{appendix.B}
+\contentsline {chapter}{\numberline {C}Configuration parameters}{77}{appendix.C}
+\contentsline {chapter}{\numberline {D}Code}{78}{appendix.D}
