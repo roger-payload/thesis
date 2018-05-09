@@ -42,8 +42,8 @@
 	linkcolor=blue,  %choose some color if you want links to stand out
 }
 
-\title{Performance tuning Apache Drill on Hadoop Clusters with Genetic Algorithms}
-\subtitle{Improving industry standards for advanced analytics and business intelligence}
+\title{Performance tuning Apache Drill on Hadoop Clusters with Evolutionary Algorithms}
+\subtitle{Proposing the algorithm SIILCK (Society Inspired Incremental Learning through Collective Knowledge)}
 \author{Roger Bløtekjær}
 
 \begin{document}
@@ -74,32 +74,36 @@
 	
 	\pagebreak
 	\section{Foreword}
-	Can be omitted if I want, keeping it for now.
+	
+	I would like to thank my wife Ingrid-Alice Bløtekjær for allowing me to complete this thesis by singlehandedly taking care of our two children, giving me space to perform.
+	\\
+	\\
+	Also a big thank you to my supportive supervisor Anis Yazidi, for inspiring me to pursue algorithms as a solution to my proposed problem, and Amir Ahmed for lending me a cloud environment (the stable one) and acting as a voice of reason.
 	
 	\tableofcontents
 	
 	\chapter{Preface}
-	\section{List of figures}
-	\section{List of tables}
 	\section{Abbreviations}
 	\label{word_list}
 	\begin{table}[h]
 		\centering
 		\begin{tabular}{ll}
-			TTE	& Time To Execute \\
-			OOP	& Object Oriented Programming \\
-			HDFS & Hadoop Distributed File System \\
-			PBIL & Population Based Incremental Learning \\
-			SIILCK & Society Inspired Incremental Learning through Collective Knowledge \\
-			GA & Genetic Algorithms \\
+			
+			DSN & Data Source Name \\
 			ER & Entity Relation \\
+			GA & Genetic Algorithms \\
+			HDFS & Hadoop Distributed File System \\
+			JDBC & Java Database Connectivity \\
+			MPP & Massively Parallel Processing \\
+			ODBC & Open Database Connectivity \\
+			OOP	& Object Oriented Programming \\
+			PBIL & Population Based Incremental Learning \\
+			RPC & Remote Procedure Call \\
+			SIILCK & Society Inspired Incremental Learning through Collective Knowledge \\
 			SMB & Small / Medium Business \\
 			SQL EE & Structured Query Language Execution Engine \\
-			MPP & Massively Parallel Processing \\
-			RPC & Remote Procedure Call \\
-			DSN & Data Source Name \\
-			ODBC & Open Database Connectivity \\
-			JDBC & Java Database Connectivity \\
+			TTE	& Time To Execute \\
+			
 		\end{tabular}
 	\end{table}
 	\section{Mathematical annotations}
@@ -115,9 +119,10 @@
 			$i_{j}$ & Active option in parameter \\
 			M & Learning rate (amount for mutation to affect the probability vector) \\
 			$\mu$ & Academic \\
-			$P_{i,j(t)}$ & Probability for option \textit{j} in parameter \textit{i} at time \textit{t} \\
-			$\mu_{i,j(t)}$ & Active option \textit{j} in parameter \textit{i} at time \textit{t} for academic $\mu$ \\
-			$\beta_{i}$ & Parameters in PBIL collective genetic material
+			$P_{i,j}(t)$ & Probability for option \textit{j} in parameter \textit{i} at time \textit{t} \\
+			$\mu_{i,j}(t)$ & Active option \textit{j} in parameter \textit{i} at time \textit{t} for academic $\mu$ \\
+			$\beta_{i}$ & Parameters in PBIL collective genetic material \\
+			$\varepsilon$ & Resistance
 			
 		\end{tabular}
 	\end{table}
@@ -208,9 +213,6 @@
 			The ambition for this project is to provide a fully functional, open source light weight framework allowing companies to easily deploy Hadoop Clusters with Apache Drill without worrying about tailoring the solution or suboptimal performance. In terms of research, this is the first thesis written about performance tuning of Apache Drill, and as such will lay a foundation for the future of this field.
 			\subsubsection{Advances in industry}
 			As the previous section highlighted (\hyperref[big_data]{Increasing relevance of Big Data infrastructures}), we predict an increase in future global data collection, going as far as doubling the amount of data per person, per year. This data is only collected to add value to a business, and the revenue increase for businesses that embrace big data analytics will not go unnoticed by the industry, leading to wider adoption. Some businesses already make huge profits simply by gathering and selling information, like Google and Facebook, increasing their yearly revenue since 2011 by 289\% and 1095\% respectively \cite{statista}. Data is becoming the world’s new natural resource \cite{future_data}. To be able to more fluidly handle this data in applications, we believe agile teams will want flexible frameworks that empower more cost effective development and big data utilization. When the industry realizes Apache Drill can deliver that, this will lead to a paradigm shift to schema-free querying of data, and on-the-fly data reads without tailoring.
-		
-		\section{Structure of the report}
-		Add comments about every chapter here.
 
 		
 	\chapter{Background}
@@ -313,7 +315,7 @@
 		\caption{Basic concepts of PBIL}
 	\end{figure}
 	The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm"} \cite{pbil}.
-	\section{Society Inspired Incremental Learning through Collective Knowledge}
+	\section{Society Inspired Incremental Learning \\through Collective Knowledge}
 		\subsection{Based on PBIL, built for speed}
 		While PBIL directly mutates the collective probability vector without testing the mutation, SIILCK avoids unnecessary mutation on key properties by only altering the collective probability vector in the case of a beneficial mutation. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"} \cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In SIILCK this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation has ran its jobs, and in every subsequent generation. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more SIILCK allows for complex values as genetic material instead of the usual binary representation of GA and PBIL, making it easier to implement linear parameters. A shared genetic memory that PBIL first introduced, (here called the collective knowledge), for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the method chapter, \hyperref[sec:society]{society}.
 		\subsection{Limitation of SIILCK}
@@ -325,7 +327,7 @@
 	
 		\subsection{Mapreduce optimization}
 			\subsubsection{Gunther}
-			Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal perfomance of the cluster \cite{gunther}. This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
+			Gunther evaluated methods for optimizing Hadoop configurations using machine learning and cost-based models, but found them inadequate for automatic tuning. Thus they introduced a search-based approach with genetic algorithms, designed to identify crucial parameters to reach near-optimal performance of the cluster \cite{gunther}. This paper tells us that genetic algorithms as an approach to performance tune big data clusters already is a proven method. However, the scope is set to Hadoop as an out-of-the-box enterprise solution, whereas we take the next step within the schema-on-the-fly paradigm of Apache Drill.
 			
 			\subsubsection{mrOnline}
 			"MapReduce job parameter configuration significantly impacts
@@ -338,9 +340,9 @@
 		\subsection{Other Hadoop SQL engines}
 		There are plenty of SQL-on-hadoop engines available right now, like CitusDB, Impala, Concurrent Lingual, Hadapt, InfiniDB, JethroData, MammothDB, Apache Drill, MemSQL or Pivotal HawQ, and the amount of independently developed engines speaks volumes of the interest in this field. Why Apache Drill was chosen in this thesis is detailed in the \hyperref[sec:why_drill]{Why Drill section}, but the fact that Drill is (at the time of this writing) the only schema-free engine is a major selling point. However Impala and Spark are often considered as alternatives in similar environments.
 			\subsection{Impala}
-			Impala, developed by Apache is an opensource SQL engine that was designed to bring parallel DBMS technology to the Hadoop environment \cite{impala}. The main idea is shared between Drill and Impala where they both set up daemons on each node of a distributed cluster, to perform MPP (Massively Parallel Processing) for data reads, circumventing MapReduce. Impala is made for Big Data Analyics, priding itself in having \textit{"order-of-magnitude faster performance than Hive"} \cite{impalasite}.
+			Impala, developed by Apache is an open-source SQL engine that was designed to bring parallel DBMS technology to the Hadoop environment \cite{impala}. The main idea is shared between Drill and Impala where they both set up daemons on each node of a distributed cluster, to perform MPP (Massively Parallel Processing) for data reads, circumventing MapReduce. Impala is made for Big Data Analytics, priding itself in having \textit{"order-of-magnitude faster performance than Hive"} \cite{impalasite}.
 			\subsection{Spark}
-			Apache also developed Spark, a popular open-source platform for large-scale data processing that is	well-suited for iterative machine learning tasks \cite{spark_ml}. Spark is built with Hive, and runs very similarly to MapReduce but also has extended functionality. The key difference is that Spark keeps things in memory, while MapReduce keeps shuffling data in and out of disk. This allows Spark to facilitate machine learning algorithms on top of big data clusters, reading and processing data in the same workflow.
+			Apache also developed Spark, a popular open-source platform for large-scale data processing that is	well-suited for iterative machine learning tasks \cite{spark_ml}. Spark is built with Hive, and runs very similarly to MapReduce but also has extended functionality. The key difference is that Spark keeps things in memory, while MapReduce keeps shuffling data in and out of disk. This allows Spark to facilitate machine learning algorithms on top of big data clusters, reading and processing data in the same work flow
 			
 	\section{Presentation of domain where technology is used}
 		The field of big data analytics is now becoming nigh impossible to ignore for enterprises dealing with customer information. Within this field Hadoop is currently the biggest platform. SiliconANGLE wrote a 5 year future broadcast in 2012, stating that \textit{"Hadoop-MapReduce solution [will] be the de-facto industry standard for business intelligence and projects a 58\% compound annual growth rate"} \cite{siliconA}.
@@ -354,7 +356,7 @@
 			\item Telecommunications companies can adapt all the aforementioned use cases. For example, they can use Hadoop-powered analytics to execute predictive maintenance on their infrastructure. Big data analytics can also plan efficient network paths and recommend optimal locations for new cell towers or other network expansion. To support customer-facing operations telcos can analyze customer behavior and billing statements to inform new service offerings \cite{bmc}.
 			\item There are numerous public sector programs, ranging from anticipating and preventing disease outbreaks to crunching numbers to catch tax cheats \cite{bmc}.
 			Hadoop is used in these and other big data programs because it is effective, scalable, and is well supported by large vendor and user communities \cite{bmc}.
-			\item Hadoop is a de facto standard in big data \cite{bmc}.
+			\item Hadoop is a de-facto standard in big data \cite{bmc}.
 		\end{itemize}
 	
 		Now it may seem like the Hadoop platform is an all-encompassing 
@@ -369,7 +371,7 @@
 				\includegraphics[width=\textwidth]{cluster}
 				\caption{Cluster architecture}
 			\end{figure}
-			The infrastructure stack consists of the technologies listed in the \hyperref[technology]{technology section}. All technologies are installed on all machines, except for the ODBC drivers, that are exclusively on the gateway. During a drill exection, any node can act as the orchestrator, named the \textit{foreman}. On each machine there is a user named \textit{hadoop}, that runs all the services needed to keep the cluster operational, like the zookeeper server and the drillbits. The gateway also has a main user simply named \textit{ubuntu}, that runs the tests and the algorithm. The drillbits are made available through a ODBC DSN.
+			The infrastructure stack consists of the technologies listed in the \hyperref[technology]{technology section}. All technologies are installed on all machines, except for the ODBC drivers, that are exclusively on the gateway. During a drill execution, any node can act as the orchestrator, named the \textit{foreman}. On each machine there is a user named \textit{hadoop}, that runs all the services needed to keep the cluster operational, like the zookeeper server and the drillbits. The gateway also has a main user simply named \textit{ubuntu}, that runs the tests and the algorithm. The drillbits are made available through a ODBC DSN.
 			The services are as follows:
 			\begin{itemize}
 				\item Gateway
@@ -411,6 +413,7 @@
 		The first thing the society needs to do, apart from declaring various variables to itself, is generating a knowledge object. Without the knowledge the society can't initialize any candidates, as they are dependent on the knowledge to define probability vectors for what options each parameter should initialize to within the solutions. The global genetic material that defines candidate creation within SIILCK is stored in the collective knowledge, or rather \textbf{is the collective knowledge}. The knowledge is further explained in the \hyperref[knowledge]{next subsection.} 
 		\paragraph{Default candidate}
 		To define goals for the fitness function a candidate is created, with all default values. This candidate also comes into play at the end of a optimization process, to verify that the converged candidate solution is effective. In the beginning, the default candidate simply performs a job the same way as all future candidates will, and metrics for mean, maximum and minimum TTE is stored within. The goal is then set at 50\% reduction from the default candidates min time, giving a somewhat unrealistic goal to ensure that we strive towards the most cost effective solution. In the end we run a gauntlet of jobs between the default candidate solution and the converged candidate solution, called the \textbf{solution assurance stage}, where we measure the averages - to ensure that there's no uncontrolled variance that led to the result. In SIILCK generally though, the fitness function can be anything the developer wants it to be.
+		\pagebreak
 		\paragraph{Population}
 		Based on a parameter from the configuration file, the society generates an entire generation of \textit{n} candidates carrying solutions to the respective problem. For each generation the society measures the fitness of all candidates and removes the weakest ones. Then the strongest / fittest ones get added to the academia, which is a set of candidates we call the \textbf{academics}. The academics are the ones that refine the knowledge, incrementally adapting it and reinforcing good solutions. After the knowledge has been altered by the newly added academics (and potentially academics from earlier generations), new candidates get added to the population to replace the ones that got removed. The configuration file can drastically alter the way the population behaves, by changing values for operations that are done on each generation:
 		\begin{itemize}
@@ -443,7 +446,7 @@
 			\item Parameter options are \textbf{[True,False]}
 			\item Binary representation will be \textbf{[1,0]}
 		\end{enumerate}
-		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in figure \ref{fig:memory_insight}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list, denoted as:\\
+		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in figure \ref{fig:memory_insight}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list- as shown in equation \ref{math:probability_vector}.\\
 
 		\begin{equation}\label{math:probability_vector}
 		P_{i,j}(t) = P_{i,j}(t)+\lambda\left(\frac{\mu_{i,j(t)}}{|\mu|}-P_{i,j}(t)\right)
@@ -465,6 +468,7 @@
 		
 		\subsection{Extended knowledge function - progress estimation}
 		The knowledge object is also responsible for a novel approach to estimating the progress of a process. The single biggest drawback of using evolutionary algorithm techniques for complex problems is execution time, and especially as it's commonly impossible to predict. Still we are able to create two individual progress bars, to give users some idea of the time optimization should take.
+		\linebreak
 		\scriptsize
 		\begin{verbatim}
 		###############################
@@ -492,6 +496,7 @@
 
 		\end{verbatim}
 		\normalsize
+		\pagebreak
 		The first bar estimates when critical parameters are converged. This is done by tracking convergence values over time, and using a linear regression model to predict when the convergence threshold should hit. The linear regression model fails at one point, because the prediction starts to inverse - i.e it predicts that total convergence value should pass convergence threshold on generation \#60, while we're already at generation \#65. This then indicates strongly that academic consensus is missing, and the remaining values put forth begins to flatline, meaning only arbitrary parameters remain to be settled, meaning the system is estimated to have reached critical convergence. The second bar represents total convergence and is a simple and accurate function of current convergence * 100 - considering how current convergence is a number between 0-1.
 		\begin{algorithm}
 			\caption{Critical convergence estimation}\label{algo:critical_convergence}
@@ -552,7 +557,7 @@
 		\end{figure}
 		The mutation is entirely isolated from the knowledge, and thus chooses a new option for the parameter randomly, within a candidate. If a mutation is specifically advantageous in the given environment the candidate will go on to become an academic, thus altering the knowledge with its newfound solution.
 		\subsubsection{PBIL Mutation vs SIILCK Mutation}
-		The original implementation of the PBIL mutation function seen in algorithm \ref{algo:pbil_mutation1} focused on mutation of the collective probability vector. 
+		The original implementation of the PBIL mutation function seen in algorithm \ref{algo:pbil_mutation1} focused on mutation of the collective probability vector. The SIILCK approach seen in algorithm \ref{algo:pbil_mutation2} mutates individual candidates - hoping to produce a diverse set of academics. For the two algorithms \ref{algo:pbil_mutation1} and \ref{algo:pbil_mutation2}, mathematical annotations can be seen in annotation table \ref{table:annotations}. Furthermore the mathematical formula showing the probability for \textit{$\eta$} mutations in each candidate is shown in equation \ref{math:mutation_chance}.
 		\begin{algorithm}
 			\caption{Original PBIL mutation \cite{pbil}, with annotations changed to be consistent with thesis annotations. In PBIL the collective probability vector is directly mutated.}\label{algo:pbil_mutation1}
 			\scriptsize
@@ -565,7 +570,6 @@
 				\ENDFOR
 			\end{algorithmic}
 		\end{algorithm}
-	The SIILCK approach seen in algorithm \ref{algo:pbil_mutation2} mutates individual candidates - hoping to produce a diverse set of academics. For the two algorithms \ref{algo:pbil_mutation1} and \ref{algo:pbil_mutation2}, mathematical annotations can be seen in annotation table \ref{table:annotations}.
 		\begin{algorithm}
 		\caption{SIILCK mutation. In SIILCK the candidate solution is mutated.}\label{algo:pbil_mutation2}
 		\scriptsize
@@ -587,13 +591,14 @@
 		\end{algorithm}
 	
 			\begin{equation}\label{math:mutation_chance}
-			P_{mut}(\eta_{mut}) = (P_{mut}-0 \varepsilon) * (P_{mut}-1 \varepsilon) \ldots * (P_{mut}-(\eta-1) \varepsilon)
+			P_{mut}(\eta) = (P_{mut}-0 \varepsilon) * (P_{mut}-1 \varepsilon) \ldots * (P_{mut}-(\eta-1) \varepsilon)
 			\end{equation}
 			{\centering
 				\begin{math}
 				P = probability, \eta = amount, mut = mutation, \varepsilon = resistance
 				\end{math}\\
 			}
+		\pagebreak
 		\subsection{Solution}
 		The solution object is simply a collection of parameters with available options, in this case session settings for Apache Drill to apply before running queries. An innovation of SIILCK is the ability to easily implement complex options in parameters as opposed to the binary representation of genetic material that GA or PBIL uses. As such, each parameter, representing a setting, is gathered from the documentation from the Apache team, and experimented on to see which ones affect TTE. The full list of parameters can be viewed in \hyperref[system_params]{appendix A}. \\ \hyperref[table:added_params]{Table A.1} shows what parameters where used, that where able to be altered in session. \hyperref[table:removed_params]{Table A.2} shows what parameters had to be cut, due to them only being able to be changed out of session, or them causing segmentation faults. 
 		\subsection{Configuration file}
@@ -601,7 +606,7 @@
 			\clearpage
 		\subsection{Algorithm overview}
 			\paragraph{Flowchart}
-			Figure \ref{fig:sys_overview} shows a simplistic flowchart for an entire process, from start to achieved convergence. Algorithm \ref{algo:overview} shows brief pseudo code of the basic concepts of SIILCK.
+			Figure \ref{fig:sys_overview} shows a simplistic flowchart for an entire process, from start to achieved convergence.
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=330pt]{overview}
@@ -609,45 +614,8 @@
 				\label{fig:sys_overview}
 			\end{figure}
 			\clearpage
-			\begin{algorithm}
-				\caption{Basic SIILCK algorithm}\label{algo:overview}
-				\scriptsize
-				\begin{verbatim}
-				
-				# Generate default candidate
-				default <- generate solution according to collective knowledge
-				goal <- defined by performance of default solution
-				
-				# Generate candidate population
-				for #POPULATION
-				    candidate_{i} <- generate solution according to collective knowledge
-				    evaluation_{i} <- measure solution performance against goal
-				    
-				# Perform generation cycle
-				for #POPULATION
-				    academics_{t} <- add top #ACADEMIC candidates from population
-				    if academics_{t} > #ACADEMIA_SIZE
-				        retire (|academics_{t}| - #ACADEMIA_SIZE) oldest academics
-					population <- remove #CYCLE weakest
-				execute probability vector algorithm with academics_{t}
-				generate and add #CYCLE candidates according to altered collective knowledge to population
-				
-				# Check for convergence
-				for parameters in knowledge
-				    count all parameters with probability > #CONVERGENCE_THRESHOLD
-				if converged
-				    End algorithm, get fittest converged candidate and test optimal solution for assurance
-				
-				USER DEFINED CONSTANTS:
-				POPULATION_SIZE: amount of candidates in population
-				ACADEMIC: amount of academics to add each generation cycle
-				ACADEMIA_SIZE: amount of academics kept in ACADEMIA for knowledge alterations
-				CYCLE: amount of candidates to replace each generation cycle
-				CONVERGENCE_THRESHOLD: threshold for considering a parameter converged
-				
-				\end{verbatim}
-			\end{algorithm}
-		\section{Testing}
+			
+		\section{Experimental setup}
 			\subsection{Dataset}
 				The dataset used to test the algorithm on the clusters come from Yelp, specifically from their dataset challenge \cite{yelp}. The data was gathered as JSON files, containing reviews, stores, customer visits and the like.
 			\subsection{Query}
@@ -685,7 +653,7 @@
 					\item Cost saving for all candidate solutions vs default benchmark solution
 					\item Total convergence values for all generations
 				\end{itemize}
-				All graphs presented in the results chapter \ref{chap:results} are genereated based on this JSON file. In addition to the JSON file, a file named log.txt is generated for each successful optimization, containing the optimal solution parameters in relation to the default solution- looking like:
+				All graphs presented in the results chapter \ref{chap:results} are generated based on this JSON file. In addition to the JSON file, a file named log.txt is generated for each successful optimization, containing the optimal solution parameters in relation to the default solution- looking like:
 				\scriptsize
 				\begin{verbatim}
 					#### RUN: 2018.04.16.19.44.55
@@ -737,7 +705,7 @@
 	\paragraph{Cost saving graphs}
 	Data collection for the cost saving graphs, are gathered as the generations pass. It is based on each academic from its respective generation, vs the default candidates first job, which sets the benchmark goal. This first default job often turns out to be a high TTE outlier in Drill, which means the cost saving looks to be a lot higher than the solution assurance stage proves. This is further discussed in the discussion chapter, \hyperref[sec:cache]{drill cache}.
 	\paragraph{Mean calculations for academic jobs}
-	There are averages plotted in the academic job graphs, that are smoothed considerably for visualizing the results better. The averages are calculated by first collecting all academic jobs for a generation (by default 3), and averaging their results so we get a generation TTE. Then we add this generation TTE to a list, times the amount of academics we measured \ref{code:list_mean}. Finally we perform gaussian smoothing on the generated list twice \ref{code:gaussian_smoothing}. This makes the mean line smooth and easy to read.
+	There are averages plotted in the academic job graphs, that are smoothed considerably for visualizing the results better. The averages are calculated by first collecting all academic jobs for a generation (by default 3), and averaging their results so we get a generation TTE. Then we add this generation TTE to a list, times the amount of academics we measured \ref{code:list_mean}. Finally we perform Gaussian smoothing on the generated list twice \ref{code:gaussian_smoothing}. This makes the mean line smooth and easy to read.
 	\clearpage
 	\section{Run configurations}
 	Configurations used were the same for all experiments, namely:
@@ -924,7 +892,7 @@
 			35 & 36 & 41 & 33 & 40 & 43 & 34 & 37 & 37.375 \\
 		\end{tabular}
 	\end{table}
-
+	\pagebreak
 	\subsection{Critical parameters}
 	Regarding to how many generations it takes to reach critical convergence we could observe that it is completely independent on how many total generations a optimization takes. The same can also be observed for how many parameters that are converged when reaching critical convergence, as seen in table \ref{table:criticalparams}. For the experiments with accelerated convergence (E) and those without (N) - there does not seem to be any significant disparity. With a sample standard deviation of 2.17, we get a confidence level of 68,3\% for results within 19.5 - 21.2 and 90\% within 19 - 21.7.
 	\begin{table}[H]
@@ -998,6 +966,7 @@
 		\label{sec:param_agno}
 		\subsection{Tiny queries, non-complex problems}
 		Running a very simple query in the cluster environments we set up, on a small json file of a couple thousand lines - took drill around 0.2 seconds. Attempting to optimize for such queries was completely futile, as the only bottleneck for such a simple query is pure hard drive reading speeds. This led to every randomized set of settings to be considered equally good, which again means that the default candidate is equally good. No optimal solution can be discovered, and convergence of the algorithm is simply an act of chance.
+		\pagebreak
 		\subsection{Complex queries}
 		As queries get more difficult to plan, the data set gets bigger, the cluster gets more heterogeneous and the data source more complex - the impact of performance tuning increases. As discussed previously drill has different phases when executing a query, like the logical and the physical planning phases. The planning phases heavily depend on the configuration settings and performance tuning parameters to calculate how to carry on execution of a query. We discovered early on that in a given environment there were some parameters that heavily impacted the execution time, and some others that were completely arbitrary, or even ignored by drill in runtime. This led to the creation of the accelerated convergence state in the knowledge object, to increase probability vector growth once the critical parameters have been sorted out.
 		\subsection{Solution}
@@ -1010,6 +979,7 @@
 		In the initial testing phase, results from jobs varied widely in execution time. The cluster however, was a shared resource where many projects were competing for computing power. Even running only the default candidate for 50 generations, extreme spikes in TTE as high as 30\% were seen, randomly distributed amongst the jobs. When cluster instability gets added on top of drill planner inconsistency in a single query / job, it leads to an outlier of very high TTE. However with such variations it is hard to reach a sensible convergence for truly optimal solutions, considering how fitness scores then are products of both settings and circumstance. This led to a migration to a similar sized cluster of 4 nodes, but with a lower spec, where the resources where allocated and could not be competed for, hereby called the \hyperref[table:cluster_stable]{stable cluster}. The stable cluster mitigated the variations and gave good grounds for studying the result of the algorithm. 
 		\subsection{Cluster size}
 		Enterprise environments where optimization techniques like this would be most beneficial, are also the hardest ones to simulate. Increasing the amount of nodes and the amount of resources would add to the complexity, mitigating the optimization problem of parameter agnosticism. 
+	\pagebreak
 	\section{Proving effect}
 	 After analyzing our data it is clear that the algorithm works as intended - reducing the overall TTE. It is proven across several solution assurance jobs that the average cost saving of the converged candidate solution is worthwhile, averaging out at 1,53\% for the \hyperref[table:cluster_stable]{stable cluster}, for the highlighted experiments. For the \hyperref[table:cluster_shared]{shared cluster} cost saving is inconclusive, because of the heavy variance in TTE caused by the shared resources, leading to faulty results.
 	\section{Cut configuration parameters}
@@ -1022,6 +992,7 @@
 	It should be infeasible for one configuration to solve all problems. After all, the concept of optimization takes great consideration to its specific context. Expecting to solve all aspects of a complex problem with one remedy leads to a candidate being a jack of all trades but master of none. Hence the solution should be tailored to a specific context, by letting the algorithm aggressively tune the system to work in its current state. To make sure this algorithm performs this way, testing needs to be done on different kinds of data sets, with different kinds of queries.
 	\section{Single node setups}
 	It would be interesting to gather data from a single node laptop setup for running queries in drill. The way data sources work in this thesis through pyodbc meant that it would add too much development time to adapt for local hard drive jobs, either in the way of configuring a hard drive location as an ODBC DSN, or altering the way we programatically perform drill queries. 
+	\pagebreak
 	\section{Support for the cut parameters}
 	As mentioned earlier there are a couple of interesting parameters that was cut from the development process in this thesis, listed in \hyperref[table:removed_params]{the appendix}. To handle the segmentation faults potentially caused by hash- and aggregate join disabling, one could possibly access drill through a different source than pyodbc, to create an appropriate wrapper around the jobs and catch the errors. To handle the system settings, a more complex process needs to be set up, to restart the cluster and check for readiness before querying it for each candidate - this may ultimately be infeasible in terms of optimization time.
 	
@@ -1030,7 +1001,7 @@
 		\subsection{Inspiration}
 		This thesis started out using a simple Genetic Algorithm for the candidate solutions. Further in the development process PBIL was implemented, as a better fit for the object oriented authority based system made, with the society at the top. Even still some alterations to the algorithm had to be made to reach the intended goal, and thus PBIL was not satisfactory. This led to the creation of a new novel algorithm named SIILCK.
 		\subsection{Genetic flexibility}
-		SIILCK accepts any type of structure as a solution, from numbers and strings to complex values like lists and matries. The parameter options can even be objects themselves. This is all handled by using the knowledge object held by the society, that mirrors the parameters held by the candidates. The flexibility in parameter options is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic material.
+		SIILCK accepts any type of structure as a solution, from numbers and strings to complex values like lists and matrices The parameter options can even be objects themselves. This is all handled by using the knowledge object held by the society, that mirrors the parameters held by the candidates. The flexibility in parameter options is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic material.
 		\subsection{Mutation}
 		Genetic algorithms mutate candidates. PBIL mutates the collective probability vectors. SIILCK mutates on candidate level, potentially allowing an advantageous mutated candidate to reach academic status, thus altering the collective probability vector. In such a way SIILCK combines the methods presented in both GA and PBIL, hence the name.
 		\clearpage
