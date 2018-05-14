@@ -75,10 +75,10 @@
 	\pagebreak
 	\section{Foreword}
 	
-	I would like to thank my wife Ingrid-Alice Bløtekjær for allowing me to complete this thesis by singlehandedly taking care of our two children, giving me space to perform.
+	I would like to thank my amazing wife Ingrid-Alice Bløtekjær for allowing me to complete this thesis by singlehandedly taking care of our two children - giving me space to perform.
 	\\
 	\\
-	Also a big thank you to my supportive supervisor Anis Yazidi, for inspiring me to pursue algorithms as a solution to my proposed problem, and Amir Ahmed for lending me a cloud environment (the stable one) and acting as a voice of reason.
+	Also a big thank you to my supportive supervisor Anis Yazidi for inspiring me to pursue big data infrastructure, optimization algorithms and autonomy as fields of study - creating the foundation for my career.
 	
 	\tableofcontents
 	
@@ -106,7 +106,7 @@
 			
 		\end{tabular}
 	\end{table}
-	\section{Mathematical annotations}
+	\section{Mathematical \& algorithmic annotations}
 	\label{table:annotations}
 	\begin{table}[h]
 		\centering
@@ -318,6 +318,7 @@
 	\section{Society Inspired Incremental Learning \\through Collective Knowledge}
 		\subsection{Based on PBIL, built for speed}
 		While PBIL directly mutates the collective probability vector without testing the mutation, SIILCK avoids unnecessary mutation on key properties by only altering the collective probability vector in the case of a beneficial mutation. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"} \cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In SIILCK this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation has ran its jobs, and in every subsequent generation. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more SIILCK allows for complex values as genetic material instead of the usual binary representation of GA and PBIL, making it easier to implement linear parameters. A shared genetic memory that PBIL first introduced, (here called the collective knowledge), for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the method chapter, \hyperref[sec:society]{society}.
+		\pagebreak
 		\subsection{Limitation of SIILCK}
 		The main advantage of SIILCK is also its main limitation, that each candidate property needs a preset of developer defined values. Thus finding the optimal solution is still based widely on the amount of options, and the effectiveness of them, defined by the developer of the algorithm. Naturally - in terms of boolean properties there lies no challenge. However when linear parameters need to be set, i.e properties with ranges from zero to infinity, the developer must define a set of valid options existing within that range. In the context of Apache Drill there are default rule of thumb values for each property, so the list of valid options for each property is generated around the default. Another drawback of SIILCK, as with many evolutionary algorithms, lies in the risk of premature convergence. This can however be mitigated by effective mutation functions that ensure diversity.
 	\pagebreak
@@ -422,7 +423,7 @@
 			\item The number of removals / replacements each generation
 			\item The size of the academia
 			   \begin{itemize}
-				\item To keep the knowledge alterations based on fresh new solutions, we want to retire older academics. This is generally a lower number than the population itself, but there are no restrictions. Retiring academics help convergence, since all academics will think alike the higher the generations. If there were no retirees there would be a lot of old academics altering the collective knowledge at a later stage, even though their solutions potentially might no longer hold merit.
+				\item To keep the knowledge alterations based on fresh new solutions, we want to retire older academics, restricting Academia to a predefined amount of academics. This is generally a lower number than the population itself, but there are no restrictions. Retiring academics help convergence, since all academics then eventually will think alike the higher the generations. If there were no retirees there would be a lot of old academics altering the collective knowledge at a later stage, even though their solutions might no longer hold merit.
 				\end{itemize}
 		\end{itemize}
 		\clearpage
@@ -767,25 +768,25 @@
 	\clearpage
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final5/1}
+		\includegraphics[width=300pt]{runlogs/final5/1}
 		\caption{Experiment 1: Total probability convergence over generations}
 		\label{fig:final11}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final5/2}
+		\includegraphics[width=300pt]{runlogs/final5/2}
 		\caption{Experiment 1: Cost saving of optimal academic job vs default benchmark}
 		\label{fig:final12}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final5/3}
+		\includegraphics[width=300pt]{runlogs/final5/3}
 		\caption{Experiment 1: Academic job graph, showing academics optimal TTE over generations}
 		\label{fig:final13}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final5/4}
+		\includegraphics[width=300pt]{runlogs/final5/4}
 		\caption{Experiment 1: Solution assurance stage, showing optimal solution vs default candidate}
 		\label{fig:final14}
 	\end{figure}
@@ -808,25 +809,25 @@
 	\clearpage
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final7/1}
+		\includegraphics[width=300pt]{runlogs/final7/1}
 		\caption{Experiment 2: Total probability convergence over generations}
 		\label{fig:final21}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final7/2}
+		\includegraphics[width=300pt]{runlogs/final7/2}
 		\caption{Experiment 2: Cost saving of optimal academic job vs default benchmark}
 		\label{fig:final22}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final7/3}
+		\includegraphics[width=300pt]{runlogs/final7/3}
 		\caption{Experiment 2: Academic job graph, showing academics optimal TTE over generations}
 		\label{fig:final23}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final7/4}
+		\includegraphics[width=300pt]{runlogs/final7/4}
 		\caption{Experiment 2: Solution assurance stage, showing optimal solution vs default candidate}
 		\label{fig:final24}
 	\end{figure}
@@ -849,25 +850,25 @@
 	\clearpage 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final9/1}
+		\includegraphics[width=300pt]{runlogs/final9/1}
 		\caption{Experiment 3: Total probability convergence over generations}
 		\label{fig:final31}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final9/2}
+		\includegraphics[width=300pt]{runlogs/final9/2}
 		\caption{Experiment 3: Cost saving of optimal academic job vs default benchmark}
 		\label{fig:final32}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final9/3}
+		\includegraphics[width=300pt]{runlogs/final9/3}
 		\caption{Experiment 3: Academic job graph, showing academics optimal TTE over generations}
 		\label{fig:final33}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=130pt]{runlogs/final9/4}
+		\includegraphics[width=300pt]{runlogs/final9/4}
 		\caption{Experiment 3: Solution assurance stage, showing optimal solution vs default candidate}
 		\label{fig:final34}
 	\end{figure}
@@ -999,19 +1000,19 @@
 	\chapter{Conclusion}
 	\section{Innovation - SIILCK}
 		\subsection{Inspiration}
-		This thesis started out using a simple Genetic Algorithm for the candidate solutions. Further in the development process PBIL was implemented, as a better fit for the object oriented authority based system made, with the society at the top. Even still some alterations to the algorithm had to be made to reach the intended goal, and thus PBIL was not satisfactory. This led to the creation of a new novel algorithm named SIILCK.
+		This thesis started out using a simple Genetic Algorithm for the candidate solutions. Further in the development process PBIL was implemented, as a better fit for the object oriented authority based system made, with the society at the top. Even still some alterations to the algorithm had to be made to reach the intended goal, and thus PBIL was not satisfactory. This led to the creation of a new algorithm named SIILCK.
 		\subsection{Genetic flexibility}
 		SIILCK accepts any type of structure as a solution, from numbers and strings to complex values like lists and matrices The parameter options can even be objects themselves. This is all handled by using the knowledge object held by the society, that mirrors the parameters held by the candidates. The flexibility in parameter options is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic material.
 		\subsection{Mutation}
-		Genetic algorithms mutate candidates. PBIL mutates the collective probability vectors. SIILCK mutates on candidate level, potentially allowing an advantageous mutated candidate to reach academic status, thus altering the collective probability vector. In such a way SIILCK combines the methods presented in both GA and PBIL, hence the name.
+		Genetic algorithms mutate candidates. PBIL mutates the collective probability vectors. SIILCK mutates on candidate level, potentially allowing an advantageous mutated candidate to reach academic status, thus altering the collective probability vector. In such a way SIILCK combines the methods presented in both GA and PBIL.
 		\clearpage
 		\section{Goal}
 		\subsection{Self optimizing system}
-		SIILCK is by every definition a self optimizing system. A user of the algorithm simply need to define how many parameters a solution object should have, and what options they should contain, to solve a given problem. The rest is up to the society.
+		SIILCK is by every definition a self optimizing system. A user of the algorithm simply need to define a goal, how many parameters a solution object should have, and what options they should contain, to solve a given problem. The rest is up to the Society.
 		\subsection{Apache drill performance tuning}
-		No set value for how major the impact of performance tuning a drill cluster needed to be to be considered a success. With an average of 3\% cost saving in the testbed environment on a static query upon a large JSON dataset, we consider it a success. If the optimizer were to be run in more complex environment on more diverse datasets we are confident that the cost saving will be at least as much. Due to time constraints however, we need to conclude on the results at hand.
+		No set value for how major the impact of performance tuning a drill cluster needed to be to be considered a success. With an average of 1.63\% cost saving in the testbed environment on a static query upon a large JSON dataset, we consider it a success. If the optimizer were to be run in more complex environment on more diverse datasets we are confident that the cost saving will be at least as much. Due to time constraints however, we need to conclude on the results at hand.
 		\section{Most valuable contribution}
-		The most valuable contribution of this thesis lies in the algorithm SIILCK, which can be used to solve any complex problem, improving upon traditional genetic and evolutionary algorithms with a major increase in genetic material flexibility.
+		The most valuable contribution of this thesis lies in the algorithm SIILCK, which can be used to solve several complex problems, improving upon traditional genetic and evolutionary algorithms with a major increase in genetic material flexibility.
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
 		Li, M., Zeng, L., Meng, S., Tan, J., Zhang, L., Butt, A. R., \& Fuller, N. (2014, June). \emph{Mronline: Mapreduce online performance tuning. In Proceedings of the 23rd international symposium on High-performance parallel and distributed computing (pp. 165-176).} ACM.
@@ -1220,4 +1221,1007 @@
 \end{table}
 
 \chapter{Code}
+This thesis code directory contains 6 subdirectories with a total of 51 files within. A lot of files are scripts to help set up the cluster, many of them are configuration files that define the cluster, and some are code directly related to SIILCK and the optimization process. The code directly related to SIILCK and the optimization process is the code we chose to display in this chapter. Please view the attached code mostly as a contingency in case the public repo goes down, as it is hard to read in this format. To view the full extent and complexity of the project, nicely formatted, please visit the public GitLab page on this address:
+\\
+\\
+\href{https://gitlab.com/blawtekjar/master-thesis-code/tree/pbil}{https://gitlab.com/blawtekjar/master-thesis-code/tree/pbil}
+\\
+\\
+Specifically the directory named \textbf{pydrill}, which contains all the code from this chapter.
+\\
+\\
+Furthermore the code displayed does not follow the naming convention of the main thesis, as the high level abstractions and metaphors were refined as development carried on. For those that want to study the code the translated names are:
+\begin{table}[H]
+	\centering
+	\caption{Differences in naming from SIILCK as covered in thesis and objects in attached code.}
+	\label{table:code_names}
+	\begin{tabular}{ll}
+		\\
+		\multicolumn{1}{l}{\bfseries SIILCK name} & \multicolumn{1}{l}{\bfseries Code name} \\ \hline \\
+		Society& Judge \\
+		Knowledge & Memory \\
+		Setting & Solution \\
+		Candidate & Candidate \\
+		Job & Run \\
+		Academia & Elite\_club \\
+		Academic & Elite \\
+	\end{tabular}
+\end{table}
+\pagebreak
+\section{config.py}
+This is the script that starts a process. It can be run with flags:
+\begin{table}[H]
+	\centering
+	\caption{config.py execution flags.}
+	\label{table:config_flags}
+	\begin{tabular}{p{4cm}p{7cm}}
+		\\
+		\multicolumn{1}{l}{\bfseries flag} & \multicolumn{1}{l}{\bfseries effect} \\ \hline \\
+		-name:\$NAME& Choose name for process. Data will then be logged to logging folder specified in config.json, in a directory of the chosen \$NAME. If no name is chosen it default name is 'default' \\
+		\\
+		-display & Shows all output of queries ran, this is usually hidden as the act of displaying the results wastes time. \\
+		\\
+		-concurrent:\$NUM & Overrides the CONCURRENT\_RUNS setting from config.json to manually choose \$NUM amount of queries to perform. Can for instance be set to 1 to perform a quicker test run without altering the config file.  \\
+	\end{tabular}
+\end{table}
+\begin{lstlisting}[language=Python, caption=config.py. The file we run to start a process]
+#!/usr/bin/python3
+
+import sys
+import os
+import class_definition
+import json
+from plotting import store_run
+from datetime import datetime
+
+# Get config
+with open('config.json') as json_data:
+data = json.load(json_data)
+
+# Can be overwritten by cli args
+CONCURRENT_RUNS = data["CONCURRENT_RUNS"]
+DISPLAY_OUTPUT = data["DISPLAY_OUTPUT"]
+RUN_NAME = data["RUN_NAME"]
+
+# Check CLI args
+for arg in sys.argv:
+if arg == "-display":
+DISPLAY_OUTPUT = True
+if arg.startswith("-concurrent"):
+mylist = arg.split(":")
+CONCURRENT_RUNS = int(mylist[1])
+if arg.startswith("-name"):
+mylist = arg.split(":")
+RUN_NAME = mylist[1]
+
+
+timestamp = datetime.now().strftime('%Y.%m.%d.%H.%M.%S')
+path = data["LOGGING_FOLDER"]+RUN_NAME
+count = 0
+converged = False
+
+judge = class_definition.Judge(data["POPULATION_SIZE"],
+data["NODES"],
+data["CORES"],
+data["DATA_SOURCE"],
+CONCURRENT_RUNS,
+DISPLAY_OUTPUT,
+data["GROWTH_FACTOR"],
+data["GROWTH_CHANCE"],
+data["RESISTANCE"],
+data["CONVERGENCE_THRESHOLD"],
+data["ELITE_CLUB_SIZE"],
+data["ELITES_EACH_RUN"],
+data["NODE_LEAST_MEMORY"])
+
+while not converged:
+try:
+judge.run_candidates()
+converged = judge.evolve_population(data["REPLACEMENTS_EACH_RUN"])
+
+except Exception as e:
+judge.log_error(e,data["LOGGING_FOLDER"],timestamp+RUN_NAME,judge.current_candidate)
+
+finally:
+count += 1
+if count > data["MAX_GENERATIONS"]:
+converged = True
+print("MAX GENERATIONS REACHED")
+
+if converged:
+if not os.path.exists(path):
+os.makedirs(path)
+judge.settle_scores(path,timestamp)
+store_run(judge,path,timestamp)
+print("\n###############################")
+print("############ Done! ############")
+print("###############################\n\n")
+else:
+print("ERROR!! Check errorlog in "+data["LOGGING_FOLDER"])
+\end{lstlisting}
+
+\section{class\_definition.py}
+In this file all SIILCK components are declared and used, and all functions defined. As mentioned previously some naming conventions are different than explained during the method chapter, and can be viewed in table \ref{table:code_names}.
+\begin{lstlisting}[language=Python, caption=class\_definition.py\, the file defining all the algorithmic operations done during a optimization process.]
+
+import random, sys
+from threading import Thread
+from statistics import mean
+from connection import connect_z, execute_q, execute_query_sequence
+from color import Color
+from tabulate import tabulate
+import numpy as np
+import sklearn.linear_model as skl
+from math import ceil
+import os
+from decimal import Decimal
+
+class Judge:
+
+elite_club = []
+
+def settle_scores(self,log_location,timestamp):
+self.run_candidates()
+self.winner = self.get_fittest()
+tab = []
+for x in range(len(self.winner.settings.core_settings)):
+tab.append([self.winner.settings.core_settings[x]["name"],
+self.default_candidate.settings.core_settings[x]["query_value"],
+self.winner.settings.core_settings[x]["query_value"],
+self.memory.get_confidence(x)])
+for x in range(len(self.winner.settings.extended_settings)):
+tab.append([self.winner.settings.extended_settings[x]["name"],
+self.default_candidate.settings.extended_settings[x]["query_value"],
+self.winner.settings.extended_settings[x]["query_value"],"100%"])
+formatted_string = tabulate(tab,headers=["Setting",
+"Default value",
+"Optimal value",
+"Confidence"])
+print(formatted_string)
+self.confirm_solution()
+with open(log_location+"/log.txt", "a") as myfile:
+myfile.write("\n#### RUN: "+timestamp+"\n"+formatted_string+"\n")
+
+
+def __init__(self,pop_size,nodes,cores,dsn,conc,disp,growth_factor,growth_chance,resistance,convergence_threshold,elite_club_size,elites_each_run,least_mem):
+# Everything is kept within the judge as the judges own variables.
+# This makes it easier to adapt the logging / plotting stage for future work.
+self.dsn = dsn
+self.conc = conc
+self.disp = disp
+self.nodes = nodes
+self.cores = cores
+self.least_mem = least_mem
+self.accelerated = False
+self.convergence_threshold = convergence_threshold 
+
+self.resistance = resistance
+self.growth_chance = growth_chance
+self.growth_factor = growth_factor
+self.population_size = pop_size
+self.elite_club_size = elite_club_size
+self.elites_each_run = elites_each_run
+
+self.generation = 0
+self.generations = {}
+self.generations["upper"] = []
+self.generations["lower"] = []
+self.generations["mean"] = []
+self.generations["fitness"] = []
+
+self.memory = Memory(self.nodes,self.cores,self.least_mem)
+self.default_candidate = Candidate(self.nodes,self.cores,self.least_mem,self.memory,name="Default candidate",default=True) 
+self.current_candidate = self.default_candidate
+
+self.define_goal(self.default_candidate)
+self.generate_population()
+
+
+def define_goal(self,candidate):
+candidate.run(self.conc,self.disp,self.dsn)
+self.goal = candidate.min_query * 0.5 # Quite arbitrary, but set for testing purposes?
+self.benchmark = candidate.min_query
+
+# TODO: Make fitness evaluation more sophisticated
+def evaluate_fitness(self,candidate):
+candidate.fitness = self.goal / candidate.min_query
+candidate.cost_saving = format((1-(candidate.min_query/self.benchmark))*100,'.2f')
+
+def generate_population(self):
+print("Generating original population")
+candidate_cage = []
+for x in range(self.population_size):
+candidate_cage.append(Candidate(self.nodes,self.cores,self.least_mem,self.memory,name="Candidate "+str(self.generation)+"."+str(x))) 
+self.candidate_cage = candidate_cage
+
+def run_candidates(self):
+c = Color()
+print(c.OKGREEN+"############ Testing generation "+str(self.generation)+" ############"+c.ENDC)
+if self.accelerated:
+print("Accelerated convergency active")
+self.generation += 1
+for c in self.candidate_cage:
+self.current_candidate = c
+c.run(self.conc,self.disp,self.dsn)
+self.evaluate_fitness(c)
+
+def execute_weakest(self,executions):
+for x in range(executions):
+lowest_fitness = 1
+for c in self.candidate_cage:
+if c.fitness < lowest_fitness:
+lowest_fitness = c.fitness
+weak_link = c
+print("Killing off "+weak_link.name)
+self.candidate_cage.remove(weak_link)
+
+def let_strongest_into_the_club(self,births):
+elites = []
+for x in range(self.elites_each_run):
+elites.append(self.get_fittest(exclusion=elites))
+for elite in elites:
+self.elite_club.append(elite)
+self.generations["upper"].append(elite.max_query)
+self.generations["lower"].append(elite.min_query)
+self.generations["mean"].append(elite.mean_query)
+self.generations["fitness"].append(elite.cost_saving)
+if len(self.elite_club) > self.elite_club_size:
+self.elite_club = self.elite_club[-self.elite_club_size:] # Keep the elite club at predefined size
+self.memory.refine_memory(self.elite_club,self.growth_factor)
+for x in range(births):
+print("Adding new Candidate: "+str(self.generation)+"."+str(x))
+c = Candidate(self.nodes,self.cores,self.least_mem,self.memory,name="Candidate "+str(self.generation)+"."+str(x)) 
+c.mutate_settings(self.growth_factor,self.growth_chance,self.resistance)
+self.candidate_cage.append(c)
+
+def evolve_population(self,replacements):
+self.execute_weakest(replacements)
+self.let_strongest_into_the_club(replacements)
+converged, con = self.memory.check_for_convergence(self.convergence_threshold)
+if con > self.convergence_threshold*0.9 and not self.accelerated:
+self.accelerated = True
+self.growth_factor += 0.2
+self.memory.estimate_time(self.convergence_threshold)
+return converged
+
+def log_error(self,error,log_location,timestamp,c):
+self.candidate_cage.remove(c)
+print("Error caught in candidate "+c.name+", replaced")
+self.candidate_cage.append(Candidate(self.nodes,self.cores,self.least_mem,self.memory,name="Candidate "+str(self.generation)+".replacement")) 
+with open(log_location+"error_log.txt", "a") as myfile:
+myfile.write("\n#### ERROR WITH THIS RUN: "+timestamp+"\n")
+myfile.write(str(error))
+
+def get_fittest(self,exclusion=[]):
+highest_fitness = 0
+for c in self.candidate_cage:
+if c not in exclusion:
+if c.fitness > highest_fitness:
+highest_fitness = c.fitness
+fittest = c
+return fittest
+
+def confirm_solution(self):
+c = Color()
+os.system('clear')
+print("\n###############################")
+print("########## Optimizing #########")
+print("###############################\n\n")
+print(c.OKGREEN+"\nOptimal settings has been chosen, confirming solution."+c.ENDC)
+winner_mean = [self.winner.mean_query]
+winner_max = [self.winner.max_query]
+winner_min = [self.winner.min_query]
+
+default_mean = [self.default_candidate.mean_query]
+default_max = [self.default_candidate.max_query]
+default_min = [self.default_candidate.min_query]
+
+for x in range(10):
+self.default_candidate.run(self.conc,self.disp,self.dsn)
+self.winner.run(self.conc,self.disp,self.dsn)
+
+winner_mean.append(self.winner.mean_query)
+winner_max.append(self.winner.max_query)
+winner_min.append(self.winner.min_query)
+
+default_mean.append(self.default_candidate.mean_query)
+default_max.append(self.default_candidate.max_query)
+default_min.append(self.default_candidate.min_query)
+
+self.confirmation_runs = {"winner":{"mean":winner_mean,"min":winner_min,"max":winner_max},
+"default":{"mean":default_mean,"min":default_min,"max":default_max}}
+
+class Candidate:
+
+def __init__(self,nodes,cores,least_mem,memory,name="Candidate",default=False): 
+self.name = name
+if not default:
+self.settings = memory.setting_factory(nodes,cores,least_mem) 
+else:
+self.settings = Setting(nodes,cores,least_mem) 
+
+def mutate_settings(self,growth_factor,growth_chance,resistance_growth): 
+if random.random() < growth_chance:
+print(self.name + " chosen for mutation")
+core = self.settings.core_settings
+resistance = 0
+hit = True
+while hit:
+if random.random() < growth_chance - resistance:
+n = random.randint(0, len(core)-1)
+core[n]["query_value"] = core[n]["options"][random.randint(0, len(core[n]["options"])-1)]
+resistance += resistance_growth / 10
+else:
+hit = False
+
+def apply_settings(self,settings,dsn,scope="SESSION"):
+c = Color()
+connect_time, cursor = connect_z(c,dsn)
+sequence = []
+for setting in settings.core_settings:
+if setting["type"] == "double":
+sequence.append("ALTER "+scope+" SET `"+setting["name"]+"` = "+str(float(setting["query_value"])))
+elif setting["type"] == "integer":
+sequence.append("ALTER "+scope+" SET `"+setting["name"]+"` = "+str(int(setting["query_value"])))
+else:
+sequence.append("ALTER "+scope+" SET `"+setting["name"]+"` = "+str(setting["query_value"]))
+execute_query_sequence(sequence,cursor,c)
+return connect_time,cursor, c
+
+def run(self,conc,disp,dsn):
+print("Running "+self.name)
+self.result = [None] * (conc * 2)
+self.threads = []
+for x in range(conc):
+self.connect_time,self.cursor,self.c = self.apply_settings(self.settings,dsn)
+process = Thread(target=execute_q, args=[self.connect_time,self.cursor,dsn,self.c,disp,x,self.result])
+process.start()
+self.threads.append(process)
+for process in self.threads:
+process.join()
+
+for x in range(conc,conc*2):
+execute_q(self.connect_time,self.cursor,dsn,self.c,disp,x,self.result)
+
+self.cursor.close()
+
+self.max_query = max(self.result)
+self.min_query = min(self.result)
+self.mean_query = mean(self.result)
+
+class Memory:
+
+def setting_factory(self,nodes,cores,least_mem):
+all_settings = Setting(nodes,cores,least_mem)
+count = 0
+for setting in all_settings.core_settings:
+setting["query_value"] = np.random.choice(setting["options"],p=self.core_memory[count])
+count += 1
+return all_settings
+
+def refine_memory(self,elite_club,gr):
+for setting in range(len(self.core_memory)):
+probability = {}
+for index in range(len(self.core_memory[setting])):
+probability[str(index)] = 0
+for member in elite_club:
+probability[str(member.settings.core_settings[setting]["options"].index(member.settings.core_settings[setting]["query_value"]))] += 1
+self.core_memory[setting] = self.adjust_probability(self.core_memory[setting],probability,gr,len(elite_club))
+
+def adjust_probability(self,setting,prob,gr,club_members):
+for x in range(len(setting)):
+setting[x] = setting[x] + gr*(prob[str(x)]/club_members-setting[x])
+return setting
+
+def get_option_probabilites(self,setting):
+array = []
+l = len(setting["options"])
+for x in range(l):
+array.append(1/l)
+return array
+
+def awaken(self,nodes,cores,least_mem):
+all_settings = Setting(nodes,cores,least_mem)
+for setting in all_settings.core_settings:
+self.core_memory.append(self.get_option_probabilites(setting))
+
+def __init__(self,nodes,cores,least_mem):
+self.decline_start = False
+self.critical_reached = False
+self.diff_list = []
+self.core_memory = []
+self.convergency_list = []
+self.c_param_list = []
+
+self.awaken(nodes,cores,least_mem)
+
+def check_for_convergence(self,convergence_threshold,append=True):
+avg_max = []
+counted = 0
+total = 0
+for mem in self.core_memory:
+total += 1
+avg_max.append(max(mem))
+if max(mem) > convergence_threshold:
+counted += 1
+con = round(Decimal(sum(avg_max)/len(avg_max)),3)
+#print(str(counted)+" / "+str(total)+" parameters has reached convergence") # Will never print because of os.system("clear") in estimate_time()
+self.c_param_list.append(counted)
+if append:
+self.convergency_list.append(float(con))
+if counted >= len(self.core_memory):
+return True, con
+return False, con
+
+def get_confidence(self,setting):
+return format((max(self.core_memory[setting])*100),'.2f')+"%"
+
+def declare_decline(self,diff_list):
+declines = 0
+last_n = 0
+current_n = 0
+for x in diff_list:
+current_n = x
+if last_n > current_n:
+count += 1
+else:
+count = 0
+last_n = current_n
+if count > 2:
+return True
+return False
+
+def estimate_time(self,convergence_threshold):
+
+# TODO: Inspect whether the prediction error is caused by extended settings.
+
+os.system('clear')
+print("\n###############################")
+print("########## Optimizing #########")
+print("###############################\n\n")
+cl = sorted([x for x in self.convergency_list],key=float)
+value_list = np.array(cl).reshape(-1,1)
+index_list = [x for x in range(len(cl))]
+if len(value_list) > 2:
+model = skl.LinearRegression()
+model.fit(value_list,index_list)
+con = model.predict(1)
+diff = con - index_list[-1]
+self.diff_list.append(diff)
+target = max(self.diff_list)
+if not self.decline_start and self.declare_decline(self.diff_list): # Check decline_start first, to avoid always running declare_decline()
+self.decline_start = True
+
+if self.decline_start:
+percent = ((diff*(-1) + target) / target) * 100
+percent = percent[0]
+progress_bar = "|"
+length = 60
+if percent > 100:
+if not self.critical_reached:
+self.c_param_estimate = index_list[-1]
+self.critical_reached = True
+percent = 100
+count = int((percent/100)*length)
+for x in range(count):
+progress_bar += "#"
+progress_bar = progress_bar.ljust(length)+"|"
+progress_bar += format(percent,'.2f')
+progress_bar +=" % of critical parameters converged\n" 
+print(progress_bar) 
+
+progress_bar2 = "|"
+current_cl = value_list[-1]
+true_progress = (current_cl[0]/1) * 100
+count = int((true_progress/100)*length)
+for x in range(count):
+progress_bar2 += "#"
+progress_bar2 = progress_bar2.ljust(length)+"|"
+progress_bar2 += format(true_progress,'.2f')
+progress_bar2 +=" % total convergence\n\n"
+print(progress_bar2)
+
+else:
+print("Trying to predict progress...")
+else:
+print("Initializing...")
+
+
+class Setting:
+
+def gen_memory_array(self,least_mem):
+# Returns an array of 4 memory values
+mem_array = []
+
+start = least_mem/4
+for x in range(1,5): # 4 steps
+mem_array.append(start*x)
+return mem_array
+
+def __init__(self,nodes,cores,least_mem):
+
+#For core_setting21
+#number of active drillbits (nodes) * number of cores per node * 0.7
+
+# SOME EXPERIMENTS WITH THESE VALUES - Currently in testing 
+calculated = int(nodes*cores*0.7)
+max_query_memory = least_mem
+
+#Mentioned in Performance Tuning Section of official documentation
+#Core options here:
+
+# Getting segmentation faults, should be caused by errors in relation to memory.
+# It was caused by disabling any of the aggregation / hash params 1-4. Options diabled.
+
+#		setting2 = {name":"planner.enable_broadcast_join","query_value":True,"type":"boolean","options":[True,False]} #Range: False/True
+#		setting1 = {"name":"planner.enable_multiphase_agg","query_value":True,"type":"boolean","options":[True,False]} #Range: False/True
+#		setting3 = {"name":"planner.enable_hashagg","query_value":True,"type":"boolean","options":[True,False]} #Range: False/True
+#		setting4 = {"name":"planner.enable_hashjoin","query_value":True,"type":"boolean","options":[True,False]}	#Range: False/True
+
+setting5 = {"name":"planner.memory.enable_memory_estimation","query_value":False,"type":"boolean",
+"options":[True,False]} #Range: False/True
+setting6 = {"name":"exec.queue.enable","query_value":False,"type":"boolean",
+"options":[True,False]} #Range: False/True
+
+setting7 = {"name":"planner.broadcast_factor","query_value":1,"type":"double",
+"options":[0.1,0.2,0.3,0.4,0.5,0.75,1,1.25,1.5,2,2.5,3,4,5]} #Range: 0-17976931348623157e+308
+setting8 = {"name":"planner.broadcast_threshold","query_value":10000000,"type":"integer",
+"options":[100000,2500000,5000000,7500000,10000000,12500000,15000000]} #Range: 0-2147483647
+setting9 = {"name":"planner.slice_target","query_value":1000,"type":"integer",
+"options":[100,250,500,750,1000,1250,1500,1750,2000,3000,5000]} #Range: integer
+setting10 = {"name":"planner.width.max_per_query","query_value":1000,"type":"integer",
+"options":[100,250,500,750,1000,1250,1500,1750,2000,3000,5000]} #Range: integer. note, only on big clusters
+setting11 = {"name":"exec.min_hash_table_size","query_value":65536,"type":"integer",
+"options":[16384,32768,65536,131072,262144]} #Range: 0 to 1073741824.
+setting12 = {"name":"exec.max_hash_table_size","query_value":1073741824,"type":"integer",
+"options":[536870912,1073741824]} #Range: 0 to 1073741824.
+setting13 = {"name":"exec.queue.large","query_value":10,"type":"integer",
+"options":[2.5,5,7.5,10,12.5,15,17.5,20,30,40]} #Range: 0-1000
+setting14 = {"name":"exec.queue.small","query_value":100,"type":"integer",
+"options":[25,50,75,100,125,150,175,200,300,400]} #Range: 0 to 1073741824.
+setting15 = {"name":"exec.queue.threshold","query_value":30000000,"type":"integer",
+"options":[5000000,10000000,15000000,22500000,30000000,37500000]} #Range: 0-9223372036854775807
+setting16 = {"name":"exec.queue.timeout_millis","query_value":300000,"type":"integer",
+"options":[300000,375000,450000,600000]} #Range: 0-92233720368547758, making this lower is a liability in this pyodbc setup.
+
+# CANT BE CHANGED IN SESSION
+#setting17 = {name":"exec.queue.memory_ratio","default":10,"type":"integer","options":[True,False]} #Range: integer 
+#setting18 = {name":"exec.queue.memory_reserve_ratio","default":0.2,"type":"double","options":[True,False]} #Range: 0-1
+
+setting19 = {"name":"planner.memory.max_query_memory_per_node","query_value": max_query_memory,"type":"integer",
+"options":self.gen_memory_array(max_query_memory)}
+setting20 = {"name":"planner.width.max_per_node","query_value":calculated,"type":"integer",
+"options":[int(nodes*cores*0.4),int(nodes*cores*0.5),int(nodes*cores*0.6),int(nodes*cores*0.7),int(nodes*cores*0.8)]}
+
+# There are PLENTY of other options not mentioned as performance tuning variables here
+#https://drill.apache.org/docs/configuration-options-introduction/
+#Extended options here:
+setting21 = {"name":"planner.add_producer_consumer","query_value":False,"type":"boolean",
+"options":[True,False]} #Range: False/True
+setting22 = {"name":"planner.enable_hashjoin_swap","query_value":True,"type":"boolean",
+"options":[True,False]} #Range: False/True
+setting23 = {"name":"planner.enable_mergejoin","query_value":True,"type":"boolean",
+"options":[True,False]} #Range: False/True
+
+setting24 = {"name":"planner.filter.max_selectivity_estimate_factor","query_value":1,"type":"double",
+"options":[0.5,0.6,0.7,0.8,0.9,1]} #Range: 0-1
+setting25 = {"name":"planner.filter.min_selectivity_estimate_factor","query_value":0,"type":"double",
+"options":[0,0.1,0.2,0.3,0.4,0.5]} #Range: 0-1 (but less than or equal to max)
+setting26 = {"name":"planner.join.hash_join_swap_margin_factor","query_value":10,"type":"double",
+"options":[2,5,5,7.5,10,12.5,15,17.5,20,25,50]} #Range: Integer
+setting27 = {"name":"planner.join.row_count_estimate_factor","query_value":1,"type":"double",
+"options":[0.25,0.5,0.75,1,1.25,1.5,1.75,2,3,4]} #Range: Integer
+setting28 = {"name":"planner.memory.average_field_width","query_value":8,"type":"integer",
+"options":[2,4,6,8,10,12,14,16,18,20,25,50]} #Range: Integer
+setting29 = {"name":"planner.memory.hash_agg_table_factor","query_value":1.1,"type":"double",
+"options":[1,1.05,1.1,1.2,1.3,1.4,1.5]} #Range: Double?
+setting30 = {"name":"planner.memory.hash_join_table_factor","query_value":1.1,"type":"double",
+"options":[1,1.05,1.1,1.2,1.3,1.4,1.5]} #Range: Double
+setting31 = {"name":"planner.memory.non_blocking_operators_memory","query_value":64,"type":"integer",
+"options":[8,16,32,64,128,256,512,1024,2048]} #Range: 0-2048, SPECIAL CASE, NEEDS TO BE A POWER OF 2
+setting32 = {"name":"planner.partitioner_sender_max_threads","query_value":8,"type":"integer",
+"options":[2,4,6,8,10,12,14,16,18,20]} #Range: Integer
+setting33 = {"name":"planner.nestedloopjoin_factor","query_value":100,"type":"double",
+"options":[25,50,75,100,125,150,175,200,300]} #Range: Integer
+setting34 = {"name":"planner.producer_consumer_queue_size","query_value":10,"type":"integer",
+"options":[1,2,3,4,5,7.5,10,12.5,15,17.5,20,30,50]} #Range: Integer
+setting35 = {"name":"store.text.estimated_row_size_bytes","query_value":100,"type":"double",
+"options":[10,20,30,40,50,75,100,125,150,175,200,300,400,500,600]} #Range: Integer
+
+# If there are errors it may come from schema confusion for the engine, solution are usually these
+#Noted as exception options here:
+extended_setting1 = {"name":"store.json.all_text_mode","query_value":False,"type":"boolean",
+"options":[True,False]} #Range: False/True
+extended_setting2 = {"name":"store.json.read_numbers_as_double","query_value":False,"type":"boolean",
+"options":[True,False]} #Range: False/True
+
+core_settings = [
+#						setting1,
+#						setting2,
+#						setting3,
+#						setting4,
+setting5,
+setting6,
+setting7,
+setting8,
+setting9,
+setting10,
+setting11,
+setting12,
+setting13,
+setting14,
+setting15,
+setting16,
+#setting17,
+#setting18,
+setting19,
+setting20,
+setting21,
+setting22,
+setting23,
+setting24,
+setting25,
+setting26,
+setting27,
+setting28,
+setting29,
+setting30,
+setting31,
+setting32,
+setting33,
+setting34,
+setting35]
+
+extended_settings = [extended_setting1,
+extended_setting2]
+
+self.core_settings = core_settings
+self.extended_settings = extended_settings
+\end{lstlisting}
+\section{plotting.py}
+This file is responsible for all the data needed for visualization after a process is done. Further more it can be directly run to show aggregated visual results, or store individual visual results, by using some flags:
+\begin{table}[H]
+	\centering
+	\caption{plotting.py execution flags.}
+	\label{table:config_flags2}
+	\begin{tabular}{p{4cm}p{7cm}}
+		\\
+		\multicolumn{1}{l}{\bfseries flag} & \multicolumn{1}{l}{\bfseries effect} \\ \hline \\
+		-name:\$NAME& Must be supplied, corresponds to the name used when running config.py. Automatically finds latest run within the logging folder to visualize, if there are more than one run with the same name stored. \\
+		\\
+		-file:\$FILE & If the stored json data is moved or manually downloaded elsewhere than the logging folder, directly specify filepath with this flag and \$FILE as full path. \\
+		\\
+		-showall & Displays a window with four graphs: fitness, convergence, academic jobs and solution assurance.  \\
+		\\
+		-thesis & Stores all four graphs shown when using 'showall' as individual larger graphs within the logging folder in PDF format. As the name suggests this was used to get graphs for this thesis, but is also very useful for using results in power points or similar cases. \\
+	\end{tabular}
+
+\end{table}
+\begin{lstlisting}[language=Python, caption=plotting.py\, easily allows for visualization of results.]
+#!/usr/bin/python3
+
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+from math import floor, ceil
+import json
+import sys, os, glob
+from tabulate import tabulate
+import numpy as np
+from matplotlib import ticker
+import seaborn as sns; sns.set(color_codes=True)
+import pandas as pd
+from math import ceil
+
+def store_run(judge,log_location,timestamp):
+
+data = {"data":judge.generations,
+"gen":judge.generation,
+"conv":judge.memory.convergency_list,
+"converged_params":judge.memory.c_param_list,
+"critical_gen":judge.memory.c_param_estimate,
+"confirmation":judge.confirmation_runs}
+
+with open(log_location+"/"+timestamp+".json", 'w') as outfile:
+json.dump(data, outfile)
+
+def plot_run():
+
+
+with open('config.json') as json_data:
+data = json.load(json_data)
+
+file = ""
+
+showall = False
+thesis = False
+plot = 0
+snsplot = False
+thesisdir = ""
+
+for arg in sys.argv:
+if arg.startswith("-file"):
+mylist = arg.split(":")
+file = mylist[1]
+if arg.startswith("-showall"):
+showall = True
+if arg.startswith("-thesis"):
+thesis = True
+if arg.startswith("-name"):
+mylist = arg.split(":")
+thesisdir = data["LOGGING_FOLDER"]+mylist[1]+"/"
+list_of_files = glob.glob(data["LOGGING_FOLDER"]+mylist[1]+"/*.json")
+latest_file = max(list_of_files, key=os.path.getctime)
+file = latest_file
+
+if not file:
+print("Need a filename")
+sys.exit()
+
+with open(file) as json_data:
+d = json.load(json_data)
+
+print("\nConvergence threshold reached at generation "+str(d["gen"])+"\n")
+print("\nResults:")
+tab = []
+
+min_w = d["confirmation"]["winner"]["min"][1:] # Remove first default run from calculations
+max_w = d["confirmation"]["winner"]["max"]
+mean_w = d["confirmation"]["winner"]["mean"]
+
+min_d = d["confirmation"]["default"]["min"][1:] # Remove first default run from calculations
+max_d = d["confirmation"]["default"]["max"]
+mean_d = d["confirmation"]["default"]["mean"]
+
+min_wm = np.mean(d["confirmation"]["winner"]["min"][1:])
+max_wm = np.mean(d["confirmation"]["winner"]["max"])
+mean_wm = np.mean(d["confirmation"]["winner"]["mean"])
+
+min_dm = np.mean(d["confirmation"]["default"]["min"][1:])
+max_dm = np.mean(d["confirmation"]["default"]["max"])
+mean_dm = np.mean(d["confirmation"]["default"]["mean"])
+
+tab.append(["Optimal query",min_wm,min_dm,get_percent_value(min_wm,min_dm)])
+#tab.append(["Maximum query",max_wm,max_dm,get_percent_value(max_wm,max_dm)])
+#tab.append(["Average query",mean_wm,mean_dm,get_percent_value(mean_wm,mean_dm)])
+formatted_string = tabulate(tab,headers=["Metric","Optimal solution","Default","Overhead saved"])
+print(formatted_string)
+
+if showall:
+#Remove outliers from dataset:
+#upper,mean,lower = reject_outliers(d["data"]["upper"],d["data"]["mean"],d["data"]["lower"])
+lower = d["data"]["lower"]
+lower_mean0 = create_query_mean(lower,data["ELITES_EACH_RUN"])
+lower_mean1 = smoothListGaussian(lower_mean0)
+lower_mean2 = smoothListGaussian(lower_mean1)
+ticktuple = tuple(count for count, item in enumerate(min_d, start=1))
+
+# Create 2x2 sub plots
+gs = gridspec.GridSpec(2, 2)
+
+plt.figure()
+ax1 = plt.subplot(gs[0, 0]) # row 0, col 0
+plt.plot(d["conv"],label='Convergence value')
+plt.xlabel('Generation')
+plt.ylabel('Convergence')
+plt.legend()
+
+ax2 = plt.subplot(gs[0, 1]) # row 0, col 1
+cost_saving = [float(i) for i in d["data"]["fitness"]]
+plt.plot(cost_saving,label='Cost saving',color="tab:orange")
+plt.xlabel('Academic')
+plt.ylabel('Percentage, time saved')
+plt.ylim([min(cost_saving)-1, max(cost_saving)+1])
+plt.legend()
+
+ax3 = plt.subplot(gs[1, 0]) # row 1, span all columns
+#plt.plot(mean, 'b-',label='Mean')
+#plt.plot(upper, 'r.',label='Max')
+plt.plot(lower, 'g.',label='Academic query times')
+plt.plot(lower_mean2, 'b',label='Mean')
+plt.xlabel('Academic')
+plt.ylabel('Time to execute (seconds)')
+plt.ylim([min(lower)-0.1, max(lower)+0.1])
+plt.legend()
+
+ax4 = plt.subplot(gs[1, 1]) # row 1, span all columns
+#plt.plot(max_d, color='r', label="Max query, default")
+#plt.plot(mean_d, color='b', label="Mean query, default")
+ax4.bar([1,2,3,4,5,6,7,8,9,10],min_d, color='r', label="Query time, default",align="center")
+#plt.plot(max_w, color='r', linestyle=":", label="Max query, optimal")
+#plt.plot(mean_w, color='b', linestyle=":", label="Mean query, optimal")
+ax4.bar([1,2,3,4,5,6,7,8,9,10],min_w, color='g', linestyle=":", label="Query time, optimal",align="center")
+plt.xticks([])
+plt.ylim([min(min_w)-0.1, max(min_d)+0.1])
+#plt.xticks(np.arange(0, len(max_d), step=1),ticktuple)
+plt.ylabel('Time to execute (seconds)')
+plt.xlabel('Converged candidate vs Default (jobs)')
+plt.legend()
+
+plt.show()
+
+if thesis:
+#upper,mean,lower = reject_outliers(d["data"]["upper"],d["data"]["mean"],d["data"]["lower"])
+lower = d["data"]["lower"]
+lower_mean0 = create_query_mean(lower,data["ELITES_EACH_RUN"])
+lower_mean1 = smoothListGaussian(lower_mean0)
+lower_mean2 = smoothListGaussian(lower_mean1)
+ticktuple = tuple(count for count, item in enumerate(min_d, start=1))
+
+plt.figure()
+plt.plot(d["conv"],label='Convergence value')
+plt.xlabel('Generation')
+plt.ylabel('Convergence')
+plt.legend()
+plt.savefig(thesisdir+"1.pdf", bbox_inches='tight')
+plt.cla()
+
+plt.figure()
+cost_saving = [float(i) for i in d["data"]["fitness"]]
+plt.plot(cost_saving,label='Cost saving',color="tab:orange")
+plt.xlabel('Academic')
+plt.ylabel('Percentage, time saved')
+plt.ylim([min(cost_saving)-1, max(cost_saving)+1])
+plt.legend()
+plt.savefig(thesisdir+"2.pdf", bbox_inches='tight')
+plt.cla()
+
+plt.figure()
+plt.plot(lower, 'g.',label='Academic query times')
+plt.plot(lower_mean2, 'b',label='Mean')
+plt.xlabel('Academic')
+plt.ylabel('Time to execute (seconds)')
+plt.ylim([min(lower)-0.11, max(lower)+0.11])
+plt.legend()
+plt.savefig(thesisdir+"3.pdf", bbox_inches='tight')
+plt.cla()
+
+plt.figure()
+plt.bar([1,2,3,4,5,6,7,8,9,10],min_d, color='r', label="Query time, default",align="center")
+plt.bar([1,2,3,4,5,6,7,8,9,10],min_w, color='g', linestyle=":", label="Query time, converged",align="center")
+plt.xticks([])
+plt.ylim([min(min_w)-0.1, max(min_d)+0.1])
+plt.ylabel('Time to execute (seconds)')
+plt.xlabel('Converged candidate vs Default (jobs)')
+plt.legend()
+plt.savefig(thesisdir+"4.pdf", bbox_inches='tight')
+plt.cla()
+
+def get_percent_value(x,y):
+return format((((x/y)*(-1))+1)*100,'.2f')+"%"
+
+def create_query_mean(x,elites_measured):
+count = 0
+current_mean = 0
+retlist = []
+indexlist = []
+totalcount = 0
+for y in x:
+totalcount += 1
+indexlist.append(totalcount)
+if not count == elites_measured:
+current_mean += y
+count += 1
+else:
+current_mean = current_mean/count
+for n in range(count+1):
+retlist.append(current_mean)
+count = 0
+current_mean = 0
+
+return retlist
+
+### function source: https://www.swharden.com/wp/2008-11-17-linear-data-smoothing-in-python/
+def smoothListGaussian(list,degree=5):  
+window=degree*2-1  
+weight=np.array([1.0]*window)  
+weightGauss=[]  
+for i in range(window):  
+i=i-degree+1  
+frac=i/float(window)  
+gauss=1/(np.exp((4*(frac))**2))  
+weightGauss.append(gauss)  
+weight=np.array(weightGauss)*weight  
+smoothed=[0.0]*(len(list)-window)  
+for i in range(len(smoothed)):  
+smoothed[i]=sum(np.array(list[i:i+window])*weight)/sum(weight)  
+return smoothed  
+
+def reject_outliers(x,y,z):
+# x needs to be max, since that's the one getting huge outliers
+mean_duration  = np.mean(x)
+std_dev_one_test = np.std(x)
+x2 = []
+y2 = []
+z2 = []
+for n in range(len(x)):
+if (x[n] - mean_duration) <= std_dev_one_test:
+x2.append(x[n])
+y2.append(y[n])
+z2.append(z[n])
+print("\nOutliers removed from plot")
+return x2,y2,z2
+
+if __name__ == "__main__":
+plot_run()
+\end{lstlisting}
+
+\section{connection.py}
+This file describes the tailor made application that works with the Apache Drill cluster, to connect to and query the cluster / drillbits.
+\begin{lstlisting}[language=Python, caption=connection.py\, the file defining how to communicate with the cluster and run queries against it]
+
+import pyodbc
+import timeit
+from random import randint
+
+# Start timed snippet
+def connect_z(color,dsn):
+start_connect = timeit.default_timer()
+conn = pyodbc.connect("DSN="+dsn, autocommit=True)
+cursor = conn.cursor()
+# End timed snippet
+connect_time = timeit.default_timer() - start_connect
+output = color.OKGREEN+"\n### RESULT ###"
+output = output+"\nODBC connection drill64 Zookeper quorum: "+ str(connect_time)+" s\n"
+#print(output)
+return connect_time,cursor
+
+def execute_q(connect_time,cursor,dsn,color,display_settings,index,avg_times):
+display_time = 0
+start_query = timeit.default_timer()
+# setup the query and run it
+
+s = '''SELECT Business, Days, Total_Checkins
+FROM (SELECT Business, Days, SUM(tot1.Checkins.`value`) as Total_Checkins
+FROM (SELECT tot.name as Business, tot.timvals.key as Days, FLATTEN(KVGEN(tot.timvals.`value`)) as Checkins
+FROM (SELECT FLATTEN(KVGEN(tbl.`time`)) as timvals, business.name
+FROM (SELECT * FROM `/user/hadoop/drill/yelp_data/checkin.json` LIMIT 1000) as tbl
+JOIN `/user/hadoop/drill/yelp_data/business.json` as business
+ON business.business_id=tbl.business_id) as tot) as tot1
+GROUP BY Business,Days) WHERE Total_Checkins>150 ORDER BY Business,Total_Checkins'''
+
+cursor.execute("USE hdfs")
+cursor.execute("ALTER SESSION SET `drill.exec.functions.cast_empty_string_to_null` = true")
+cursor.execute(s)
+
+# End timed snippet
+query_time = timeit.default_timer() - start_query
+output = color.ENDC+"\nQuery execution: "+color.WARNING+ str(query_time)+" s"+color.OKGREEN
+
+### Display the results
+if display_settings:
+# Start timed snippet
+start_display = timeit.default_timer()
+rows = cursor.fetchall()
+for row in rows:
+print(row)
+# End timed snippet
+display_time = timeit.default_timer() - start_display
+output = output+"\nDisplaying results: "+ str(display_time)+" s"
+
+
+total_time = connect_time+query_time+display_time
+output = output+"\nTotal test time: "+ str(total_time)+" s\n"+color.ENDC
+#pnumberrint(output)
+avg_times[index] = query_time
+
+def execute_query_sequence(sequence,cursor,color):
+# Used to set session values
+for query in sequence:
+cursor.execute(query)
+
+\end{lstlisting}
+
+\section{color.py}
+\begin{lstlisting}[language=Python, caption=color.py\, just a tiny class that colors the output]
+class Color:
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
+\end{lstlisting}
+
 \end{document}

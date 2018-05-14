@@ -5,7 +5,7 @@
 \BOOKMARK [1][-]{section.0.2}{Foreword}{}% 5
 \BOOKMARK [0][-]{chapter.1}{Preface}{}% 6
 \BOOKMARK [1][-]{section.1.1}{Abbreviations}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.2}{Mathematical annotations}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Mathematical \046 algorithmic annotations}{chapter.1}% 8
 \BOOKMARK [0][-]{chapter.2}{Introduction}{}% 9
 \BOOKMARK [1][-]{section.2.1}{Target group}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{Area of research}{chapter.2}% 11
@@ -107,3 +107,8 @@
 \BOOKMARK [0][-]{appendix.B}{System parameters}{}% 107
 \BOOKMARK [0][-]{appendix.C}{Configuration parameters}{}% 108
 \BOOKMARK [0][-]{appendix.D}{Code}{}% 109
+\BOOKMARK [1][-]{section.D.1}{config.py}{appendix.D}% 110
+\BOOKMARK [1][-]{section.D.2}{class\137definition.py}{appendix.D}% 111
+\BOOKMARK [1][-]{section.D.3}{plotting.py}{appendix.D}% 112
+\BOOKMARK [1][-]{section.D.4}{connection.py}{appendix.D}% 113
+\BOOKMARK [1][-]{section.D.5}{color.py}{appendix.D}% 114
