@@ -526,7 +526,7 @@
 			\end{verbatim}
 		\end{algorithm}
 		\clearpage
-		Algorithm \ref{algo:critical_convergence} has been tested thoroughly and proven to be an effective estimation for critical convergence, with two such tests graph displayed in graph \ref{fig:estimation1} and \ref{fig:estimation2}. Further details on academic consensus, critical vs arbitrary parameters and parameter agnostic queries can be read in the discussion chapter, \hyperref[sec:agnosstable]{Examples of agnosticism from stable cluster}
+		Algorithm \ref{algo:critical_convergence} has been tested thoroughly and proven to be an effective estimation for critical convergence, with two such tests graph displayed in graph \ref{fig:estimation1} and \ref{fig:estimation2}. Further details on academic consensus, critical vs arbitrary parameters and parameter agnostic queries can be read in the discussion chapter, \hyperref[sec:param_agno]{Examples of agnosticism from stable cluster}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=260pt]{est11}
@@ -706,7 +706,7 @@
 	\paragraph{Cost saving graphs}
 	Data collection for the cost saving graphs, are gathered as the generations pass. It is based on each academic from its respective generation, vs the default candidates first job, which sets the benchmark goal. This first default job often turns out to be a high TTE outlier in Drill, which means the cost saving looks to be a lot higher than the solution assurance stage proves. This is further discussed in the discussion chapter, \hyperref[sec:cache]{drill cache}.
 	\paragraph{Mean calculations for academic jobs}
-	There are averages plotted in the academic job graphs, that are smoothed considerably for visualizing the results better. The averages are calculated by first collecting all academic jobs for a generation (by default 3), and averaging their results so we get a generation TTE. Then we add this generation TTE to a list, times the amount of academics we measured \ref{code:list_mean}. Finally we perform Gaussian smoothing on the generated list twice \ref{code:gaussian_smoothing}. This makes the mean line smooth and easy to read.
+	There are averages plotted in the academic job graphs, that are smoothed considerably for visualizing the results better. The averages are calculated by first collecting all academic jobs for a generation (by default 3), and averaging their results so we get a generation TTE. Then we add this generation TTE to a list, times the amount of academics we measured. Finally we perform Gaussian smoothing on the generated list twice. This makes the mean line smooth and easy to read. The functions can be viewed in appendix \ref{sec:plotting}, or in the GitLab repo: pydrill/plotting.py (functions \textit{smoothListGaussian} and \textit{create\_query\_mean})
 	\clearpage
 	\section{Run configurations}
 	Configurations used were the same for all experiments, namely:
@@ -1879,6 +1879,7 @@ self.core_settings = core_settings
 self.extended_settings = extended_settings
 \end{lstlisting}
 \section{plotting.py}
+\label{sec:plotting}
 This file is responsible for all the data needed for visualization after a process is done. Further more it can be directly run to show aggregated visual results, or store individual visual results, by using some flags:
 \begin{table}[H]
 	\centering
