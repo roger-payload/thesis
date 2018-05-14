@@ -85,7 +85,7 @@
 	\chapter{Preface}
 	\section{Abbreviations}
 	\label{word_list}
-	\begin{table}[h]
+	\begin{table}[H]
 		\centering
 		\begin{tabular}{ll}
 			
@@ -108,7 +108,7 @@
 	\end{table}
 	\section{Mathematical \& algorithmic annotations}
 	\label{table:annotations}
-	\begin{table}[h]
+	\begin{table}[H]
 		\centering
 		\begin{tabular}{ll}
 			$P$	& Probability \\
@@ -195,7 +195,7 @@
 				\textit{"(...) customers, on average, increase productivity by 31\%, service revenue by 14\% and customer satisfaction by 16\%"} \cite{servicemax}. All of this is empowered by big data, and the utilization of information.
 			
 			\subsection{Application needs}
-			\begin{figure}[h]
+			\begin{figure}[H]
 					\includegraphics[width=\textwidth]{drill_advantages}
 					\caption{Advantages of schema-free querying}
 			\end{figure}
@@ -273,7 +273,7 @@
 			\item An optimizer that takes the logical plan and translates it to a physical plan based on data locality and node resources
 			\item A storage engine interface that has the ability to mount any type of storage, from a local hard drive to a distributed storage like HDFS
 		\end{itemize}
-		\begin{figure}[h]
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth]{mapr_drill1}
 			\caption{Drill components \cite{mapr_drill}}
 		\end{figure}
@@ -281,7 +281,7 @@
 		\paragraph{Drill in a cluster}
 		When using Drill as an SQL EE in a distributed storage, it is highly recommended to install a drillbit on all nodes. When set to perform MPP drill is dependent on Zookeeper to keep track of all the drillbits.  When a query is submitted, the first node to respond to the initial request from Zookeeper becomes the \textit{Foreman}. In Drill there is no master or slave hierarchy, and for every query submitted a new foreman is selected. Every drillbit contains all services and capabilities of Drill, which makes it highly scalable - just add another node and install Drill and you're done (after adding it to the Zookeeper Quorum). The foreman gets a list of available Drillbit nodes in the cluster from ZooKeeper, and determines the appropriate nodes to execute various query plan fragments to maximize data locality. This means that Apache Drill both performs the planning, distribution and execution of queries, only depending on Zookeeper to keep track of available nodes. Once a foreman has decided on the distribution of the query, the workload gets split downwards into fragments to the nodes, and the results get consolidated upwards until reaching the foreman, which then returns the results to the client.
 		
-		\begin{figure}[h]
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth]{mapr_drill2}
 			\caption{Drill parallel processing \cite{mapr_drill}}
 		\end{figure}
@@ -315,7 +315,7 @@
 		\caption{Basic concepts of PBIL}
 	\end{figure}
 	The distinction between PBIL and the general GA lies in where the evolution happens. GA generally focus on evolving individual candidates, and crossing fit parents to produce extra fit children, each of them with a chance of mutation. Across several generations convergence is expected. PBIL on the other hand evolves the whole population on a higher level, where the probability vector for parameter generation is shifted towards a considered favorable state. So instead of generating new candidates defined as a crossover function of two parents, the fittest candidates affect a shared genotype that each candidate is generated from. This allows for a much clearer convergence of properties, where you end up in a state where every parameter has a (close to) 100\% chance to be generated. This approach was first proposed back in 1994 by Baluja, where he found that \textit{"The results achieved by PBIL are more accurate and are attained faster than a standard genetic algorithm, both in terms of the number of evaluations performed and the clock speed. The gains in clock speed were achieved because of the simplicity of the algorithm"} \cite{pbil}.
-	\section{Society Inspired Incremental Learning \\through Collective Knowledge}
+	\section{SIILCK}
 		\subsection{Based on PBIL, built for speed}
 		While PBIL directly mutates the collective probability vector without testing the mutation, SIILCK avoids unnecessary mutation on key properties by only altering the collective probability vector in the case of a beneficial mutation. In the case of Apache Drill there are a number of boolean properties that have big impacts on performance, i.e "planner broadcast join" that based on setting can result in a query that is \textit{"(...) substantially cheaper"} \cite{joinplanning}. The impact of flipping this boolean property is based on the type of query being done, the skewness of data locality and cluster size, but for a specific type of query in a set environment the property will always have a strictly optimal value. In SIILCK this will become apparent early, and the chance of this value being anything else than the optimal one is likely decreased instantly after first generation has ran its jobs, and in every subsequent generation. Typically this will result in a snowballing effect, where crucial parameters quickly get favored, further increasing the chance of them being selected, accelerating the selection process. Further more SIILCK allows for complex values as genetic material instead of the usual binary representation of GA and PBIL, making it easier to implement linear parameters. A shared genetic memory that PBIL first introduced, (here called the collective knowledge), for the population also matches well with the method presented in this thesis - of measuring performance of the candidate parameters on the SQL EE with an authority object. This is further detailed in the method chapter, \hyperref[sec:society]{society}.
 		\pagebreak
@@ -368,7 +368,7 @@
 		
 		\section{Infrastructure}
 			To simulate a enterprise environment we set up a cluster consisting of four nodes, each with the same spec - 4 VCPUs and 8GB RAM. These were all VMs in OpenStack, each running Ubuntu 17.10. The cluster is also listed in the appendix, called the \hyperref[table:cluster_shared]{shared cluster} The gateway has a outward-facing network interface for SSH access, and from there each of the other nodes can be managed. They all had Apache Drill installed, and were set up as a Hadoop cluster running HDFS between them. All data that Drill uses to read for tests are replicated three times in the cluster, ensuring parallel processing.
-			\begin{figure}[h]
+			\begin{figure}[H]
 				\includegraphics[width=\textwidth]{cluster}
 				\caption{Cluster architecture}
 			\end{figure}
@@ -392,7 +392,7 @@
 				\end{itemize}
 			\end{itemize}
 			The Jps service is simply the Java Virtual Machine Process Status Tool, used to monitor the status of all the other services listed.
-			\begin{figure}[h]
+			\begin{figure}[H]
 				\includegraphics[width=\textwidth]{tech_stack}
 				\caption{Technology stack}
 			\end{figure}
@@ -401,7 +401,7 @@
 		\label{sec:siilck}
 		\subsection{Naming conventions}
 		The overall design of SIILCK is object oriented, with a object named  \textbf{society} as the the overarching authority. The society holds the \textbf{knowledge} and all \textbf{candidates}, and the candidates hold the \textbf{solutions}. The top candidates carrying the best solutions are called \textbf{academics} and get added to a separate population called the \textbf{academia}, where they get to alter the collective knowledge, thus aiding in the generation of future candidates. When using SIILCK, one execution of the algorithm from start to end is called a \textbf{optimization process}, or simply a \textbf{process}. When a candidate applies its solution to a problem to test efficiency it is doing a \textbf{job}. A job can be a single task, a number of steps - or as in this thesis, a batch of queries. Once all candidates have performed jobs, academics are chosen and knowledge is altered that means one \textbf{generation} has passed, also called one \textbf{SIILCK cycle}. A SIILCK process runs until the collective knowledge has converged, and the best candidate from the latest generation is chosen, called the \textbf{converged candidate}. SIILCK then considers the solution object of the converged candidate to be the optimal for the respective problem. 
-		\begin{figure}[h]
+		\begin{figure}[H]
 			\centering
 			\includegraphics[width=200pt]{OOP}
 			\caption{Hierarchy of objects}
@@ -430,7 +430,7 @@
 		\subsection{Knowledge}
 		\label{knowledge}
 		The knowledge is the heart of SIILCK. It provides a centralized body of collective knowledge that helps construct solutions based on historic data, and incrementally adapts as new academics are being added. While SIILCK can be considered a machine learning technique, the knowledge has a truly finite usage within each process, as it is meant to reach a state of convergence. More classical incremental learning schemes are continuously adapting, attempting to for instance predict the stock market. In our case however we simply want to reach one final solution and then end the process. For each optimization process the knowledge starts out fresh, with a uniformly distributed probability vector, ensuring that changes in i.e cluster topology or data skewness will be taken into consideration when optimizing. Thus it can be valuable to execute one full optimization process each time a big data environment changes, or new data sources get added. If the knowledge were to store historic data, then certain probability vectors would be skewed in favor of previously strong solutions, that may not be beneficial for current or future processes. The knowledge object works by mirroring the solutions as a probability vector, thus allowing a solution to be any kind of complex value, as long as it in a list structure. For each parameter in the solution, there is a list of potential options. Those options can be anything from numbers to complex objects. For each parameter in the knowledge, there is a probability vector representing the chance to choose any of the options in the solution parameter when generating a candidate.
-		\begin{figure}[h]
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth]{memory_candidate}
 			\caption{The reliance between a candidates' solution object, and the collective knowledge.}
 		\end{figure}

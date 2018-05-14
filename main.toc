@@ -60,7 +60,7 @@
 \contentsline {subsubsection}{Fitness function}{22}{section*.30}
 \contentsline {subsubsection}{Reaching the optimal solution}{22}{section*.31}
 \contentsline {section}{\numberline {3.4}Population based incremental learning}{23}{section.3.4}
-\contentsline {section}{\numberline {3.5}Society Inspired Incremental Learning \\through Collective Knowledge}{24}{section.3.5}
+\contentsline {section}{\numberline {3.5}SIILCK}{24}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Based on PBIL, built for speed}{24}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Limitation of SIILCK}{25}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}Related literature and theoretical focus}{26}{section.3.6}
