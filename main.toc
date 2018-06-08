@@ -77,24 +77,23 @@
 \contentsline {section}{\numberline {4.2}SIILCK}{31}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Naming conventions}{31}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Society}{32}{subsection.4.2.2}
-\contentsline {subsubsection}{Society operations}{32}{section*.38}
-\contentsline {paragraph}{Knowledge}{32}{section*.39}
-\contentsline {paragraph}{Default candidate}{32}{section*.40}
-\contentsline {paragraph}{Population}{33}{section*.41}
+\contentsline {paragraph}{Knowledge}{32}{section*.38}
+\contentsline {paragraph}{Default candidate}{32}{section*.39}
+\contentsline {paragraph}{Population}{33}{section*.40}
 \contentsline {subsection}{\numberline {4.2.3}Knowledge}{34}{subsection.4.2.3}
-\contentsline {paragraph}{Probability vector algorithm}{35}{figure.caption.44}
-\contentsline {paragraph}{Reaching convergence}{35}{section*.45}
-\contentsline {paragraph}{Academic consensus and critical convergence}{35}{section*.46}
-\contentsline {paragraph}{Accelerated convergence}{36}{section*.47}
+\contentsline {paragraph}{Probability vector algorithm}{35}{figure.caption.43}
+\contentsline {paragraph}{Reaching convergence}{35}{section*.44}
+\contentsline {paragraph}{Academic consensus and critical convergence}{35}{section*.45}
+\contentsline {paragraph}{Accelerated convergence}{36}{section*.46}
 \contentsline {subsection}{\numberline {4.2.4}Extended knowledge function - progress estimation}{36}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Candidate}{40}{subsection.4.2.5}
-\contentsline {paragraph}{Jobs}{40}{section*.50}
+\contentsline {paragraph}{Jobs}{40}{section*.49}
 \contentsline {subsection}{\numberline {4.2.6}Mutation}{41}{subsection.4.2.6}
-\contentsline {subsubsection}{PBIL Mutation vs SIILCK Mutation}{42}{section*.52}
+\contentsline {subsubsection}{PBIL Mutation vs SIILCK Mutation}{42}{section*.51}
 \contentsline {subsection}{\numberline {4.2.7}Solution}{43}{subsection.4.2.7}
 \contentsline {subsection}{\numberline {4.2.8}Configuration file}{43}{subsection.4.2.8}
 \contentsline {subsection}{\numberline {4.2.9}Algorithm overview}{44}{subsection.4.2.9}
-\contentsline {paragraph}{Flowchart}{44}{section*.53}
+\contentsline {paragraph}{Flowchart}{44}{section*.52}
 \contentsline {section}{\numberline {4.3}Experimental setup}{45}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Dataset}{45}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Query}{45}{subsection.4.3.2}
@@ -104,54 +103,57 @@
 \contentsline {subsection}{\numberline {4.3.6}Adapting data collection}{48}{subsection.4.3.6}
 \contentsline {chapter}{\numberline {5}Results}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}What we display}{49}{section.5.1}
-\contentsline {paragraph}{Graphs overview}{49}{section*.56}
-\contentsline {paragraph}{Cost saving graphs}{49}{section*.57}
-\contentsline {paragraph}{Mean calculations for academic jobs}{49}{section*.58}
+\contentsline {paragraph}{Graphs overview}{49}{section*.55}
+\contentsline {paragraph}{Cost saving graphs}{49}{section*.56}
+\contentsline {paragraph}{Mean calculations for academic jobs}{49}{section*.57}
 \contentsline {section}{\numberline {5.2}Run configurations}{50}{section.5.2}
 \contentsline {section}{\numberline {5.3}Highlighted experiments}{51}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}What experiment we highlight}{51}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Experiment E1}{51}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Experiment E3}{54}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Experiment E5}{57}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Aggregated results}{60}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{60}{subsection.5.4.1}
-\contentsline {paragraph}{Critical convergence}{60}{section*.71}
-\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{61}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{62}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Cost saving}{63}{subsection.5.4.4}
-\contentsline {paragraph}{TTE for solution assurance}{63}{section*.77}
-\contentsline {chapter}{\numberline {6}Discussion}{65}{chapter.6}
-\contentsline {section}{\numberline {6.1}The drill cache}{65}{section.6.1}
-\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{65}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{65}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Complex queries}{66}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Solution}{66}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Error sources}{67}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{67}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{67}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Cluster size}{67}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Proving effect}{68}{section.6.4}
-\contentsline {section}{\numberline {6.5}Cut configuration parameters}{68}{section.6.5}
-\contentsline {chapter}{\numberline {7}Further work}{69}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous clusters}{69}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Load profiles}{69}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Single node setups}{69}{section.7.2}
-\contentsline {section}{\numberline {7.3}Support for the cut parameters}{70}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{71}{chapter.8}
-\contentsline {section}{\numberline {8.1}Innovation - SIILCK}{71}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Inspiration}{71}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{71}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Mutation}{71}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Goal}{72}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{72}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{72}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Most valuable contribution}{72}{section.8.3}
-\contentsline {chapter}{\numberline {A}Cluster specs}{76}{appendix.A}
-\contentsline {chapter}{\numberline {B}System parameters}{77}{appendix.B}
-\contentsline {chapter}{\numberline {C}Configuration parameters}{79}{appendix.C}
-\contentsline {chapter}{\numberline {D}Code}{80}{appendix.D}
-\contentsline {section}{\numberline {D.1}config.py}{81}{section.D.1}
-\contentsline {section}{\numberline {D.2}class\_definition.py}{82}{section.D.2}
-\contentsline {section}{\numberline {D.3}plotting.py}{93}{section.D.3}
-\contentsline {section}{\numberline {D.4}connection.py}{98}{section.D.4}
-\contentsline {section}{\numberline {D.5}color.py}{99}{section.D.5}
+\contentsline {subsection}{\numberline {5.3.1}Experiments done}{51}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Which experiments we highlight}{51}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Experiment E1}{52}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Experiment E3}{55}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Experiment E5}{58}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Aggregated results}{61}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Critical convergence and critical parameters}{61}{subsection.5.4.1}
+\contentsline {paragraph}{Critical convergence}{61}{section*.70}
+\contentsline {subsection}{\numberline {5.4.2}Critical parameters}{62}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Accelerated convergence}{63}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Cost saving}{64}{subsection.5.4.4}
+\contentsline {paragraph}{TTE for solution assurance}{64}{section*.76}
+\contentsline {chapter}{\numberline {6}Discussion}{66}{chapter.6}
+\contentsline {section}{\numberline {6.1}The drill cache}{66}{section.6.1}
+\contentsline {section}{\numberline {6.2}Parameter agnostic queries}{66}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Tiny queries, non-complex problems}{66}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Complex queries}{67}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Solution}{67}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Error sources}{68}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Drill planner inconsistency}{68}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Cluster instability}{68}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Cluster size}{68}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Proving effect}{69}{section.6.4}
+\contentsline {section}{\numberline {6.5}Cut configuration parameters}{69}{section.6.5}
+\contentsline {chapter}{\numberline {7}Further work}{70}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous clusters}{70}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Load profiles}{70}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Single node setups}{70}{section.7.2}
+\contentsline {section}{\numberline {7.3}Support for the cut parameters}{71}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{72}{chapter.8}
+\contentsline {section}{\numberline {8.1}Innovation - SIILCK}{72}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Inspiration}{72}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Genetic flexibility}{72}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Mutation}{72}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Goal}{73}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Self optimizing system}{73}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Apache drill performance tuning}{73}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Valuable contribution}{73}{section.8.3}
+\contentsline {chapter}{\numberline {A}Cluster specs}{77}{appendix.A}
+\contentsline {chapter}{\numberline {B}System parameters}{78}{appendix.B}
+\contentsline {chapter}{\numberline {C}Configuration parameters}{80}{appendix.C}
+\contentsline {chapter}{\numberline {D}Code}{81}{appendix.D}
+\contentsline {section}{\numberline {D.1}Introduction}{81}{section.D.1}
+\contentsline {section}{\numberline {D.2}Repository file overview}{82}{section.D.2}
+\contentsline {section}{\numberline {D.3}config.py}{83}{section.D.3}
+\contentsline {section}{\numberline {D.4}class\_definition.py}{84}{section.D.4}
+\contentsline {section}{\numberline {D.5}plotting.py}{95}{section.D.5}
+\contentsline {section}{\numberline {D.6}connection.py}{100}{section.D.6}
+\contentsline {section}{\numberline {D.7}color.py}{101}{section.D.7}

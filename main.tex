@@ -54,9 +54,9 @@
 		\subsection{Research question}
 		How can we make a self optimizing distributed Apache Drill cluster, for high performance data readings across several file formats and database architectures?
 		\subsection{Overview}
-		Apache has introduced a new building block that's best suited on top of the Hadoop Stack called Apache Drill. Drill enables the user to perform schema-free querying of distributed data, and ANSI SQL programming on top of NoSQL datatypes like JSON or XML. As it is with the core Hadoop stack, Drill is also highly customizable, with plenty of performance tuning parameters to ensure optimal efficiency. Tweaking these parameters however, requires deep domain knowledge and technical insight, and even then the optimal configuration may not be evident. Businesses will want to use Apache Drill in a Hadoop cluster, without the hassle of configuring it, for the most cost-effective implementation. This can be done by solving the following problems:
+		Apache Drill enables the user to perform schema-free querying of distributed data, and ANSI SQL programming on top of NoSQL datatypes like JSON or XML - typically in a Hadoop cluster. As it is with the core Hadoop stack, Drill is also highly customizable, with plenty of performance tuning parameters to ensure optimal efficiency. Tweaking these parameters however, requires deep domain knowledge and technical insight, and even then the optimal configuration may not be evident. Businesses will want to use Apache Drill in a Hadoop cluster, without the hassle of configuring it, for the most cost-effective implementation. This can be done by solving the following problems:
 		\begin{itemize}
-			\item How to apply evolutionary algorithms in the most cost-effective way to automatically tune a distributed Apache Drill configuration, regardless of cluster environment.
+			\item How to apply evolutionary algorithms to automatically tune a distributed Apache Drill configuration, regardless of cluster environment.
 			\item How do we benchmark the cluster against default Drill settings to ensure that the algorithm is adding value to the cluster performance, measured as execution time.
 		\end{itemize}
 		To solve these problems we introduce the evolutionary algorithm SIILCK (Society Inspired Incremental Learning through Collective Knowledge), a development inspired by PBIL \cite{pbil}.
@@ -138,7 +138,7 @@
 		
 		\section{Research question - in full}
 		\subsection{Goal, justification and challenges}
-		The goal for this thesis is to optimize a SQL Engine that sits on top of a distributed storage, for more cost-effective big data handling, business intelligence and advanced analytics. Businesses that handle big data will most likely perform plenty of queries every day, or even every hour. If we were to add up the amount of time spent waiting for a query to complete, for a year, and converted the hours into money - we would find it costs a lot of money to convert raw data into information. That's why saving even 10\% in execution time can mean a big difference when it comes to overhead costs. So naturally there is a massive amount of research for improving execution time and other metrics, even more so when it comes to shared computing like cloud services where you pay by the minute. The SQL Engine chosen here is Apache Drill, a fairly new framework inspired by Google Dremel, and currently the only schema-free engine to run on top of HDFS, allowing users to drill into complex data like JSON. Looking to for example Yelp, we can see that their entire database is available as JSON \cite{yelp}, allowing for far more complex  and flexible handling of metrics than conventional ER databases. As with the other data handling engines on distributed storage platforms, there are many parameters to consider if one wants to increase performance - in fact so many that it is considered infeasible without in depth expertise of domain and engine. Considerations are:
+		The goal for this thesis is to optimize an SQL Engine called Apache Drill that sits on top of a distributed file system, for more cost-effective big data handling, business intelligence and advanced analytics. Businesses that handle big data will most likely perform plenty of queries every day, or even every hour. If we were to add up the amount of time spent waiting for a query to complete, for a year, and converted the hours into money - we would find it costs a lot of money to convert raw data into information. That's why saving even 1\% in execution time can mean a difference when it comes to overhead costs. So naturally there is a massive amount of research for improving execution time and other metrics, even more so when it comes to shared computing like cloud services where you pay by the minute. The SQL Engine chosen here is Apache Drill, a fairly new framework inspired by Google Dremel, and currently the only schema-free engine to run directly on top of HDFS, allowing users to drill into complex data like JSON. Looking to for example Yelp, we can see that their entire database is available as JSON \cite{yelp}, allowing for far more complex  and flexible handling of metrics than conventional ER databases. As with the other data handling engines on distributed storage platforms, there are many parameters to consider if one wants to increase performance - in fact so many that it is considered infeasible without in depth expertise of domain and engine. Considerations are:
 		\begin{itemize}
 			\item Type of storage (distributed or single node)
 			\item Amount of computing nodes (cluster or not)
@@ -154,14 +154,14 @@
 		
 		\section{Personal motivation}
 			\subsubsection{Subject}
-			The subject for this master thesis is a natural continuation of our previous work \emph{Hadoop MapReduce Scheduling Paradigms}, published in 2017, in the 2nd IEEE International Conference on Cloud Computing and Big Data Analysis (ISSSBDA 2017). Back then the topic was haphazardly picked from a list of eligible ones, but the more we read into it - the more we understood the incredible use cases for Hadoop within the massive industries that are driving forces for our technological advancements. As is common in IT, levels of abstraction get added on top of proven technologies both to make implementation better, and often to increase performance. Since then Apache Drill has seen plenty of stable builds and proven itself to be potentially industry-changing in the way we handle our data - entering a schema-on-the-fly paradigm.
+			The subject for this master thesis is a natural continuation of our previous work \emph{Hadoop MapReduce Scheduling Paradigms}, published in 2017, in the 2nd IEEE International Conference on Cloud Computing and Big Data Analysis \cite{own}. Back then the topic was haphazardly picked from a list of eligible ones, but the more we read into it - the more we understood the incredible use cases for Hadoop within the massive industries that are driving forces for our technological advancements. As is common in IT, levels of abstraction get added on top of proven technologies both to make implementation better, and often to increase performance. Since then Apache Drill has seen plenty of stable builds and proven itself to be potentially industry-changing in the way we handle our data - entering a schema-on-the-fly paradigm.
 			
 			\subsubsection{Apache Drill as a platform}
 			As mentioned previously there is little to no research done on Apache Drill as a platform. Some of the reasoning might be the that some still considers it to be in the early development phase, but as of this writing there has already been one major release, \textbf{1.0} in 2015, and 12 subsequent minor releases up till \textbf{1.12} \cite{drill_releases}. So we would argue the project is past the early development phase, and moving into the early adopter phase. But why choose to use this platform over more established ones, and what other options are there? This is discussed further in a following section: \hyperref[sec:why_drill]{Why is this worthwhile?}
 			
 		
 		\section{Research method in brief}
-		Throughout this thesis we will develop an entire suite of tools centered around a genetic algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. As the framework is expected to change, all of the parameters tweaked will be in relation to the current version being used, \textbf{1.12}. The main goal is to achieve a performance increase, measured as TTE (Time to Execute) for single and/or concurrent queries. Examining previous studies on SQL performance will provide a good basis for best practices within SQL query execution optimization, and how to measure it.
+		Throughout this thesis we will develop an entire suite of tools centered around an evolutionary algorithm for automatically optimizing Apache Drill on top of a Hadoop cluster, tested on big and diverse sample sets. As the framework is expected to change, all of the parameters tweaked will be in relation to the current Apache Drill version being used, \textbf{1.12}. The main goal is to achieve a performance increase, measured as TTE (Time to Execute) for single and/or concurrent queries.
 		
 		\section{Most relevant previous findings}
 		There is little to no research done on the impact of tuning Apache Drill. However, tuning of parameterized frameworks have been done a lot in the past on industry standards like SQL, MySQL, traditional Hadoop clusters (mapreduce scheduling algorithms), and Web applications. Since Apache Drill has its own SQL execution engine,  the tuning of SQL systems in previous works has value for how we will benchmark our Drill perfomance.
@@ -409,7 +409,6 @@
 		\subsection{Society}
 		\label{sec:society}
 		When initializing a optimization process the first crucial thing to get created is the society. The society extracts all of the information contained within the configuration file, to construct itself, the knowledge object, a default candidate and an initial population of candidates.
-		\subsubsection{Society operations}
 		\paragraph{Knowledge}
 		The first thing the society needs to do, apart from declaring various variables to itself, is generating a knowledge object. Without the knowledge the society can't initialize any candidates, as they are dependent on the knowledge to define probability vectors for what options each parameter should initialize to within the solutions. The global genetic material that defines candidate creation within SIILCK is stored in the collective knowledge, or rather \textbf{is the collective knowledge}. The knowledge is further explained in the \hyperref[knowledge]{next subsection.} 
 		\paragraph{Default candidate}
@@ -419,9 +418,9 @@
 		Based on a parameter from the configuration file, the society generates an entire generation of \textit{n} candidates carrying solutions to the respective problem. For each generation the society measures the fitness of all candidates and removes the weakest ones. Then the strongest / fittest ones get added to the academia, which is a set of candidates we call the \textbf{academics}. The academics are the ones that refine the knowledge, incrementally adapting it and reinforcing good solutions. After the knowledge has been altered by the newly added academics (and potentially academics from earlier generations), new candidates get added to the population to replace the ones that got removed. The configuration file can drastically alter the way the population behaves, by changing values for operations that are done on each generation:
 		\begin{itemize}
 			\item The size of the population
-			\item The number of academics to add to the academia each generation
-			\item The number of removals / replacements each generation
 			\item The size of the academia
+			\item The number of candidate removals / replacements each generation
+			\item The number of academics to add to the academia each generation
 			   \begin{itemize}
 				\item To keep the knowledge alterations based on fresh new solutions, we want to retire older academics, restricting Academia to a predefined amount of academics. This is generally a lower number than the population itself, but there are no restrictions. Retiring academics help convergence, since all academics then eventually will think alike the higher the generations. If there were no retirees there would be a lot of old academics altering the collective knowledge at a later stage, even though their solutions might no longer hold merit.
 				\end{itemize}
@@ -447,7 +446,7 @@
 			\item Parameter options are \textbf{[True,False]}
 			\item Binary representation will be \textbf{[1,0]}
 		\end{enumerate}
-		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in figure \ref{fig:memory_insight}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list- as shown in equation \ref{math:probability_vector}.\\
+		Once this binary option conversion is done for all candidates, we sum up the hits of each option and get a single list for all accumulated hits, as seen in figure \ref{fig:memory_insight}. Finally we can apply the mathematical formula to alter the probability vector, using the accumulated hits list - as shown in equation \ref{math:probability_vector}.\\
 
 		\begin{equation}\label{math:probability_vector}
 		P_{i,j}(t) = P_{i,j}(t)+\lambda\left(\frac{\mu_{i,j(t)}}{|\mu|}-P_{i,j}(t)\right)
@@ -500,11 +499,9 @@
 		\pagebreak
 		The first bar estimates when critical parameters are converged. This is done by tracking convergence values over time, and using a linear regression model to predict when the convergence threshold should hit. The linear regression model fails at one point, because the prediction starts to inverse - i.e it predicts that total convergence value should pass convergence threshold on generation \#60, while we're already at generation \#65. This then indicates strongly that academic consensus is missing, and the remaining values put forth begins to flatline, meaning only arbitrary parameters remain to be settled, meaning the system is estimated to have reached critical convergence. The second bar represents total convergence and is a simple and accurate function of current convergence * 100 - considering how current convergence is a number between 0-1.
 		\begin{algorithm}
-			\caption{Critical convergence estimation}\label{algo:critical_convergence}
+			\caption{Critical convergence estimation - pseudo code}\label{algo:critical_convergence}
 			\scriptsize
 			\begin{verbatim}
-			
-			TODO: Fix this, or maybe just add the code?
 			
 			# Estimate when convergence of critical parameters are done
 			cl = list of all convergence values for generations passed
@@ -531,14 +528,14 @@
 			\centering
 			\includegraphics[width=260pt]{est11}
 			\includegraphics[width=260pt]{est12}
-			\caption{Data from experiment E5, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same job. Estimated point of critical convergence can be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 22 parameters was converged, indicating that the remaining 7 parameters are arbitrary for current workload in current environment.}
+			\caption{Data from experiment N3, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same job. Estimated point of critical convergence can be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 22 parameters was converged, indicating that the remaining 7 parameters are arbitrary for current workload in current environment.}
 			\label{fig:estimation1}
 		\end{figure}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=260pt]{est21}
 			\includegraphics[width=260pt]{est22}
-			\caption{Data from experiment N3, showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same job. Estimated point of critical convergence can also here be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 19 parameters was converged, indicating that the remaining 10 parameters are arbitrary for current workload in current environment.}
+			\caption{Data from experiment E5 , showing when the model estimated that the point of critical convergence was hit. The first graph shows the amount of parameters converged, and the second graph shows the total convergence value - for the same job. Estimated point of critical convergence can also here be observed as the point in time where total convergence value first starts to flatline. Critical convergence was achieved after 19 parameters was converged, indicating that the remaining 10 parameters are arbitrary for current workload in current environment.}
 			\label{fig:estimation2}
 		\end{figure}
 		More information about how many parameters that are critical, and how many that are arbitrary is detailed in the results chapter, \hyperref[sec:aggres]{aggregated results}.
@@ -733,23 +730,26 @@
 		"NODE_LEAST_MEMORY" : 2147483648,
 		
 		"DISPLAY_OUTPUT" : false,
-		"LOGGING_FOLDER" : "/home/ubuntu/runlogs/",
+		"LOGGING_FOLDER" : "$HOME/runlogs/",
 		"RUN_NAME" : "default"
 		
 		}
 		
 	\end{verbatim}
-	Because of the very low memory specifications in the \hyperref[table:cluster_stable]{stable cluster}, we had to settle for a query amount value of 2, meaning 4 queries per candidate job. This is in actuality lower than advised for the algorithm to run effectively and produce certain solutions. Even so we could see an improvement in all experiments done during the solution assurance stage, proving that the algorithm performs well even under less than optimal settings, in low end environments.
+	Because of the very low memory specifications in the \hyperref[table:cluster_stable]{stable cluster}, we had to settle for a query amount value of 2, meaning 4 queries per candidate job. This is in actuality lower than advised for the algorithm to run effectively and produce certain solutions. Even so we could see an improvement in all experiments done during the solution assurance stage, proving that the algorithm performs well even under less than optimal settings, in low end environments. NB: The naming conventions of the configuration file follows the code, and not the abstract description of SIILCK, translations found in table \ref{table:code_names}. Further more GROWTH\_FACTOR is traditionally called learning rate, and GROWTH\_CHANCE describes mutation chance.
 	\clearpage
 	\section{Highlighted experiments}
+	\subsection{Experiments done}
+	There is data from eight experiments collected and shown in this thesis. They are called E1-E5 and N1-N3. The E simply represents the word experiment, and the N represents non-accelerated experiments.
 	\label{sec:highlighted}
-	\subsection{What experiment we highlight}
+	\subsection{Which experiments we highlight}
 	The experiments chosen for this section are simply the top 3, measured by cost saving. This means that there were no cherry picking for nice graphs or easily representable data. The top three experiments were:
 	\begin{itemize}
 		\item E1 at 1.99\% cost saving
 		\item E3 at 1.74\% cost saving
 		\item E5 at 1.64\% cost saving
 	\end{itemize}
+	\pagebreak
 	\subsection{Experiment E1}
 	\begin{verbatim}
 	
@@ -1002,7 +1002,7 @@
 		\subsection{Inspiration}
 		This thesis started out using a simple Genetic Algorithm for the candidate solutions. Further in the development process PBIL was implemented, as a better fit for the object oriented authority based system made, with the society at the top. Even still some alterations to the algorithm had to be made to reach the intended goal, and thus PBIL was not satisfactory. This led to the creation of a new algorithm named SIILCK.
 		\subsection{Genetic flexibility}
-		SIILCK accepts any type of structure as a solution, from numbers and strings to complex values like lists and matrices The parameter options can even be objects themselves. This is all handled by using the knowledge object held by the society, that mirrors the parameters held by the candidates. The flexibility in parameter options is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic material.
+		SIILCK accepts any type of structure as a solution, from numbers and strings to complex values like lists and matrices. The parameter options can even be objects themselves. This is all handled by using the knowledge object held by the society, that mirrors the parameters held by the candidates, representing them as a probability vector. The flexibility in parameter options is a considerable improvement over traditional genetic algorithms, which purely allow for binary genetic material.
 		\subsection{Mutation}
 		Genetic algorithms mutate candidates. PBIL mutates the collective probability vectors. SIILCK mutates on candidate level, potentially allowing an advantageous mutated candidate to reach academic status, thus altering the collective probability vector. In such a way SIILCK combines the methods presented in both GA and PBIL.
 		\clearpage
@@ -1010,9 +1010,9 @@
 		\subsection{Self optimizing system}
 		SIILCK is by every definition a self optimizing system. A user of the algorithm simply need to define a goal, how many parameters a solution object should have, and what options they should contain, to solve a given problem. The rest is up to the Society.
 		\subsection{Apache drill performance tuning}
-		No set value for how major the impact of performance tuning a drill cluster needed to be to be considered a success. With an average of 1.63\% cost saving in the testbed environment on a static query upon a large JSON dataset, we consider it a success. If the optimizer were to be run in more complex environment on more diverse datasets we are confident that the cost saving will be at least as much. Due to time constraints however, we need to conclude on the results at hand.
-		\section{Most valuable contribution}
-		The most valuable contribution of this thesis lies in the algorithm SIILCK, which can be used to solve several complex problems, improving upon traditional genetic and evolutionary algorithms with a major increase in genetic material flexibility.
+		With an average of 1.63\% cost saving in the testbed environment on a static query upon a large JSON dataset in a distributed file system, we consider it a success. Further more the algorithm will work in any environment and with any data type or data skewness due to the search based nature of SIILCK, as with other search based evolutionary algorithms like GA or PBIL.
+		\section{Valuable contribution}
+		The most valuable contribution of this thesis lies in the algorithm SIILCK, which can be used to solve several complex problems, improving upon traditional evolutionary algorithms with a major increase in genetic material flexibility, with an easy-to-grasp and relatable concept. It is also worth mentioning that this is the first ever tailor-made Apache Drill self optimization system, ensuring users can optimize their cluster without in-depth domain knowledge.
 	\begin{thebibliography}{1}
 		\bibitem{mronline}
 		Li, M., Zeng, L., Meng, S., Tan, J., Zhang, L., Butt, A. R., \& Fuller, N. (2014, June). \emph{Mronline: Mapreduce online performance tuning. In Proceedings of the 23rd international symposium on High-performance parallel and distributed computing (pp. 165-176).} ACM.
@@ -1221,6 +1221,7 @@
 \end{table}
 
 \chapter{Code}
+\section{Introduction}
 This thesis code directory contains 6 subdirectories with a total of 51 files within. A lot of files are scripts to help set up the cluster, many of them are configuration files that define the cluster, and some are code directly related to SIILCK and the optimization process. The code directly related to SIILCK and the optimization process is the code we chose to display in this chapter. Please view the attached code mostly as a contingency in case the public repo goes down, as it is hard to read in this format. To view the full extent and complexity of the project, nicely formatted, please visit the public GitLab page on this address:
 \\
 \\
@@ -1247,6 +1248,13 @@ Furthermore the code displayed does not follow the naming convention of the main
 		Academic & Elite \\
 	\end{tabular}
 \end{table}
+\section{Repository file overview}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{repo_tree}
+	\caption{All files and directories within the repository, and a brief description of their purpose.}
+	\label{fig:repotree}
+\end{figure}
 \pagebreak
 \section{config.py}
 This is the script that starts a process. It can be run with flags:
@@ -1257,11 +1265,11 @@ This is the script that starts a process. It can be run with flags:
 	\begin{tabular}{p{4cm}p{7cm}}
 		\\
 		\multicolumn{1}{l}{\bfseries flag} & \multicolumn{1}{l}{\bfseries effect} \\ \hline \\
-		-name:\$NAME& Choose name for process. Data will then be logged to logging folder specified in config.json, in a directory of the chosen \$NAME. If no name is chosen it default name is 'default' \\
+		-name:\$NAME& Choose name for process. Data will then be logged to logging folder specified in config.json, in a directory of the chosen \$NAME. If no name is chosen the default name is specified within config.json.' \\
 		\\
-		-display & Shows all output of queries ran, this is usually hidden as the act of displaying the results wastes time. \\
+		-display & Shows all output of queries ran, which is usually hidden as the act of displaying the results wastes time. \\
 		\\
-		-concurrent:\$NUM & Overrides the CONCURRENT\_RUNS setting from config.json to manually choose \$NUM amount of queries to perform. Can for instance be set to 1 to perform a quicker test run without altering the config file.  \\
+		-concurrent:\$NUM & Overrides the CONCURRENT\_RUNS setting from config.json to manually choose \$NUM amount of queries to perform. Can for instance be set to 1 to perform a quick cluster test run without altering the config file.  \\
 	\end{tabular}
 \end{table}
 \begin{lstlisting}[language=Python, caption=config.py. The file we run to start a process]
